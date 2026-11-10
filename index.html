@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#102e34"><meta name="description" content="VRT 總務整合工作台：SEC、GasCheck、GASExp 的功能入口、日週月年總覽與資料架構。"><title>VRT · 總務整合工作台</title><meta name="psjga-default-endpoint" content="https://script.google.com/macros/s/AKfycbzE50qR1ZV83_ywYEXlgnHJ16reJKvrttFSV4s37yVIqIVPseXEf4w2ZVCCM2GSmM7NXw/exec"><meta name="psjga-platform" content="workbench"><meta name="referrer" content="no-referrer"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-0wqf5cr+47D85z/C9l5wgNd/herzv57qqS+KftYWc9k='; style-src 'unsafe-inline'; img-src data: blob: https:; connect-src https://script.google.com https://script.googleusercontent.com; frame-src https://saintdou-weng.github.io; base-uri 'none'; form-action 'none'"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23102e34'/%3E%3Ctext x='12' y='43' font-size='31' fill='white' font-family='sans-serif'%3EGA%3C/text%3E%3C/svg%3E"><style>
+<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#102e34"><meta name="description" content="VRT 總務整合工作台：SEC、GasCheck、GASExp 的功能入口、日週月年總覽與資料架構。"><title>VRT · 總務整合工作台</title><meta name="psjga-default-endpoint" content="https://script.google.com/macros/s/AKfycbzE50qR1ZV83_ywYEXlgnHJ16reJKvrttFSV4s37yVIqIVPseXEf4w2ZVCCM2GSmM7NXw/exec"><meta name="psjga-platform" content="workbench"><meta name="referrer" content="no-referrer"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-+nZCW8Az+aXE0yM1WXnyUTOUJXCcM2SuuoFdrEEuXBk='; style-src 'unsafe-inline'; img-src data: blob: https:; connect-src https://script.google.com https://script.googleusercontent.com; frame-src https://saintdou-weng.github.io; base-uri 'none'; form-action 'none'"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23102e34'/%3E%3Ctext x='12' y='43' font-size='31' fill='white' font-family='sans-serif'%3EGA%3C/text%3E%3C/svg%3E"><style>
 :root{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC","Noto Sans Khmer",sans-serif;color:#20323e;background:#f5f7fa;font-synthesis:none;--nav:#102e34;--teal:#087f72;--blue:#2563eb;--line:#e3e9ef;--muted:#74828e;--shadow:0 4px 24px #23394507}*{box-sizing:border-box}body{margin:0}button,input,select{font:inherit}button,a,input,select{-webkit-tap-highlight-color:transparent}button,a{touch-action:manipulation}button{cursor:pointer}button:disabled{cursor:default;opacity:.5}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #64c8dc;outline-offset:3px}a{color:inherit;text-decoration:none}svg.icon{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}.skip{position:absolute;left:12px;top:-80px;background:white;padding:15px;z-index:100}.skip:focus{top:10px}.shell{display:grid;grid-template-columns:246px minmax(0,1fr);min-height:100vh}.sidebar{background:var(--nav);color:#bdcbd0;padding:28px 18px 18px;position:fixed;width:246px;inset:0 auto 0 0;display:flex;flex-direction:column;z-index:30;overflow-y:auto}.brand{display:flex;align-items:center;gap:11px;padding:0 10px 24px;color:#fff}.brand-mark{background:#4dba9f;width:44px;height:44px;display:grid;place-items:center;border-radius:12px;color:#10382f;font-weight:850;font-size:17px;letter-spacing:-1px}.brand strong{font-size:17px;display:block;letter-spacing:.2px}.brand small{display:block;color:#94aeb1;font-size:10px;letter-spacing:1.8px;margin-top:6px}.nav-caption{font-size:10px;letter-spacing:1.8px;text-transform:uppercase;color:#6f949a;padding:24px 14px 10px}.nav-btn{display:flex;width:100%;align-items:center;gap:12px;border:0;background:transparent;color:#bdcbd0;text-align:left;padding:12px 13px;border-radius:9px;margin:3px 0;font-size:13px;line-height:1.5}.nav-btn:hover{background:#ffffff0a;color:#fff}.nav-btn.active{background:#20484c;color:#d3fff1;box-shadow:inset 3px 0 #5fd6b0}.nav-count{margin-left:auto;font-size:11px;padding:2px 7px;background:#ffffff0d;border-radius:5px;color:#a8bfc2}.nav-foot{margin-top:auto;padding:24px 12px 8px;font-size:11px;line-height:1.8;color:#8caaad}.nav-foot strong{color:#b9d3d2;font-weight:500}.nav-rule{height:1px;background:#ffffff0d;margin-bottom:16px}.main-shell{grid-column:2;min-width:0}.topbar{height:80px;border-bottom:1px solid var(--line);background:#ffffffd9;display:flex;align-items:center;gap:20px;padding:0 36px;position:sticky;top:0;z-index:20;backdrop-filter:blur(14px)}.breadcrumbs{font-size:12px;color:#8c98a1;white-space:nowrap}.breadcrumbs strong{color:#3b5360;font-weight:550;margin-left:7px}.search-trigger{margin-left:auto;border:1px solid var(--line);background:#f9fafc;color:#8995a0;border-radius:8px;height:36px;display:flex;align-items:center;gap:9px;padding:0 12px;font-size:12px;min-width:245px}.search-trigger .icon{width:16px}.search-trigger kbd{margin-left:auto;color:#9ba6af;font-size:10px;border:1px solid #dce3e9;border-radius:3px;padding:2px 4px}.langs{display:flex;border:1px solid var(--line);border-radius:7px;overflow:hidden;flex-shrink:0}.langs button{border:0;background:transparent;color:#73818d;padding:7px 9px;font-size:11px}.langs button.on{background:#e8f4ef;color:#127663;font-weight:750}.avatar{background:#e0eae6;color:#275c4c;width:33px;height:33px;border-radius:50%;display:grid;place-items:center;font-size:10px;font-weight:700;flex-shrink:0}.mobile-only{display:none}main{max-width:1580px;margin:0 auto;padding:30px 36px 60px}.title-row{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;margin-bottom:24px}.eyebrow{font-size:10px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:#60857f;margin-bottom:9px}.title-row h1{margin:0;font-size:27px;font-weight:750;letter-spacing:-.7px;line-height:1.3}.title-row p{font-size:12px;color:var(--muted);line-height:1.7;margin:10px 0 0}.actions{display:flex;align-items:center;gap:9px;flex-wrap:wrap}.btn{display:inline-flex;justify-content:center;align-items:center;gap:8px;min-height:38px;padding:9px 13px;border:1px solid #dce4eb;background:white;border-radius:8px;color:#3b5260;font-size:12px;font-weight:600;line-height:1.45}.btn .icon{width:16px;height:16px}.btn:hover{border-color:#9bbdb4;background:#f7fcfa}.btn.primary{color:white;background:#087c70;border-color:#087c70;box-shadow:0 3px 8px #087c7014}.btn.primary:hover{background:#076c61}.btn.quiet{border:0;background:transparent;box-shadow:none;padding:7px}.btn.small{min-height:31px;padding:6px 9px;font-size:11px}.btn.square{padding:8px;width:35px;min-height:35px}.modebar{display:flex;align-items:center;gap:10px;background:#eef3fc;border:1px solid #dde6f7;padding:11px 15px;border-radius:9px;font-size:11px;color:#546b91;line-height:1.6;margin-bottom:20px}.modebar .icon{width:16px;flex-shrink:0}.modebar strong{font-weight:650}.modebar .actions{margin-left:auto}.modebar button{font-size:10px}.modebar.empty{background:#f6f7f8;border-color:#e5e8ec;color:#647580}.pill{display:inline-flex;align-items:center;gap:6px;border-radius:5px;padding:4px 7px;font-size:10px;font-weight:600;line-height:1.25;white-space:nowrap}.pill.teal{background:#e5f5ee;color:#237953}.pill.blue{background:#edf3ff;color:#496caf}.pill.amber{background:#fff5e3;color:#a3761e}.pill.red{background:#fef0ef;color:#ba5a53}.pill.purple{background:#f3eefa;color:#8866af}.pill.gray{background:#f0f3f6;color:#75818b}.dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:currentColor}.periodbar{display:flex;align-items:center;gap:12px;margin-bottom:23px;flex-wrap:wrap}.segments{display:flex;gap:3px;padding:4px;background:#eaf0f5;border-radius:8px}.segments button{background:transparent;border:0;border-radius:6px;padding:7px 13px;font-size:11px;color:#7a8a96;font-weight:600;min-height:32px}.segments button.active{background:white;color:#185b54;box-shadow:0 1px 5px #29475710}.periodnav{display:flex;align-items:center;gap:7px}.periodnav select,.filter-select{border:1px solid #e0e7ed;border-radius:7px;background:#fff;color:#435964;padding:8px 10px;font-size:12px;min-height:35px}.period-label{font-variant-numeric:tabular-nums;font-size:12px;min-width:95px;text-align:center;font-weight:650;color:#3b535d}.periodbar .range{color:#8a98a3;font-size:10px;font-variant-numeric:tabular-nums;margin-left:auto}.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px;margin-bottom:23px}.stat{padding:19px 20px 16px;border:1px solid var(--line);border-radius:11px;background:#fff;box-shadow:var(--shadow);position:relative;overflow:hidden;text-align:left;color:inherit;width:100%}.stat:hover{border-color:#a8c8c0}.stat-head{display:flex;justify-content:space-between;color:#758491;font-size:11px;align-items:center;gap:6px}.stat-head .icon{width:17px;height:17px;color:#8ba2a7}.stat-value{font-size:33px;letter-spacing:-1px;font-weight:720;line-height:1.2;margin:12px 0 9px;font-variant-numeric:tabular-nums}.stat-value.amount{font-size:28px}.stat-bottom{font-size:10px;color:#9aa5ae;line-height:1.5}.stat-bottom b{color:#488678;font-weight:600}.stat:nth-child(2) .stat-value{color:#b37b22}.stat:nth-child(3) .stat-value{color:#bc6055}.stat:nth-child(4) .stat-value{color:#147f6d}.grid-two{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(285px,1fr);gap:20px;margin-bottom:22px}.panel{background:white;border:1px solid var(--line);border-radius:11px;overflow:hidden;box-shadow:var(--shadow)}.panel-head{padding:18px 20px;border-bottom:1px solid #eff2f5;display:flex;align-items:center;justify-content:space-between;gap:12px}.panel h2{font-size:13px;letter-spacing:.15px;margin:0;font-weight:700}.panel-sub{margin-top:6px;font-size:10px;color:#94a0aa;line-height:1.5}.panel-body{padding:18px 20px}.text-link{border:0;background:none;color:#387d6d;font-size:10px;display:inline-flex;align-items:center;gap:5px;white-space:nowrap;cursor:pointer}.text-link .icon{width:13px}.task-line{display:flex;align-items:center;gap:12px;padding:15px 20px;border-bottom:1px solid #f0f3f6;cursor:pointer;transition:background .15s;text-align:left;background:transparent;width:100%;border-top:0;border-left:0;border-right:0;color:inherit;font:inherit}.task-line:hover{background:#f9fcfb}.task-line:last-child{border-bottom:0}.task-icon{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;flex-shrink:0;background:#f0f6f5;color:#5d9588}.task-icon.red{background:#fef1ee;color:#bd7765}.task-icon.amber{background:#fcf4e6;color:#b9934d}.task-main{min-width:0;flex:1}.task-main strong{font-size:12px;display:block;line-height:1.5;font-weight:600}.task-main small{font-size:10px;color:#8d99a3;display:block;margin-top:6px;line-height:1.5}.task-line> .icon{color:#b2c0c7;width:15px}.task-line .pill{margin-left:auto}.area-line{display:flex;align-items:center;gap:12px;padding:11px 0}.area-line .task-icon{width:31px;height:31px;border-radius:8px}.area-line strong{font-size:11px;display:block}.area-line small{font-size:9px;color:#8c9aa4;display:block;margin-top:5px}.area-line .area-number{margin-left:auto;text-align:right;font-size:16px;font-weight:700;font-variant-numeric:tabular-nums}.area-line .area-number small{font-size:9px;font-weight:400}.micro-progress{height:4px;background:#eef2f4;border-radius:6px;margin-top:10px;overflow:hidden}.micro-progress span{height:100%;display:block;border-radius:6px;background:#68b59f}.coverage-note{font-size:10px;line-height:1.6;color:#8e9aa3;margin-top:13px;border-top:1px solid #eef2f4;padding-top:12px}.chart-head-legend{display:flex;gap:12px;font-size:9px;color:#8b9aa3}.legend-square{width:7px;height:7px;display:inline-block;border-radius:2px;background:#43a28b;margin-right:4px}.chart{height:165px;padding:14px 20px 6px;display:flex;align-items:flex-end;gap:7px}.chart-column{flex:1;min-width:0;display:flex;align-items:center;flex-direction:column;justify-content:flex-end;height:100%;gap:7px}.bars{height:117px;display:flex;align-items:flex-end;justify-content:center;width:100%;gap:3px;border-bottom:1px solid #edf1f4}.bar{max-width:18px;width:30%;background:#77b7a4;border-radius:3px 3px 0 0;min-height:0;transition:height .3s}.bar.alert{background:#e5b297}.chart-column label{font-size:9px;color:#9aa6af;font-variant-numeric:tabular-nums;white-space:nowrap}.chart-number{font-size:9px;color:#6c827c}.chart-foot{font-size:10px;color:#8a9aa5;padding:9px 20px 17px;line-height:1.6}.ledger-top{display:flex;align-items:center;gap:10px;margin-bottom:16px}.ledger-top h2{font-size:15px;letter-spacing:-.2px;margin:0}.ledger-top p{font-size:10px;color:#8d9aa3;margin:5px 0 0}.ledger-top .actions{margin-left:auto}.table-scroll{overflow-x:auto}.data-table{width:100%;border-collapse:collapse;min-width:770px;text-align:left;font-size:11px}.data-table th{font-weight:500;color:#8c9aa6;background:#fafbfd;font-size:10px;padding:13px 16px;border-bottom:1px solid #e8edf2;white-space:nowrap}.data-table td{border-bottom:1px solid #eef2f6;padding:15px 16px;line-height:1.5}.data-table tbody tr{cursor:pointer}.data-table tbody tr:hover{background:#f8fcfb}.data-table tbody tr:last-child td{border-bottom:0}.data-table td.title-cell{font-weight:600;max-width:280px}.data-table .row-code{font-size:9px;color:#98a5ad;margin-top:4px;font-weight:400}.source-mini{color:#7d919b;font-size:9px;letter-spacing:.3px}.date-cell{font-variant-numeric:tabular-nums;color:#6d8290;font-size:10px;white-space:nowrap}.table-bottom{padding:13px 18px;font-size:10px;color:#8b9aa5;display:flex;justify-content:space-between;gap:10px;border-top:1px solid #eef2f5}.inline-search{border:1px solid var(--line);border-radius:7px;font-size:11px;min-height:35px;padding:8px 11px;min-width:160px;color:#455c68}.filters{display:flex;gap:9px;margin-bottom:17px;flex-wrap:wrap}.filters .inline-search{margin-left:auto}.module-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;margin:15px 0 28px}.module-card{border:1px solid var(--line);background:white;border-radius:11px;padding:20px;display:flex;flex-direction:column;gap:14px;min-width:0;transition:transform .16s,border-color .16s}.module-card:hover{transform:translateY(-2px);border-color:#a4c2bb}.module-card-head{display:flex;align-items:center;gap:10px}.module-card h3{font-size:13px;margin:0;line-height:1.4}.module-card p{font-size:11px;color:#8696a1;line-height:1.8;margin:0;flex:1}.module-card .source-mini{margin-left:auto}.module-card .actions{padding-top:7px;border-top:1px solid #f0f3f6}.module-card .btn{flex:1;font-size:10px}.section-title{font-size:16px;font-weight:700;display:flex;align-items:center;gap:9px;margin:0}.section-title .icon{color:#739b90}.section-title small{font-size:10px;color:#94a2ac;font-weight:400}.empty-state{text-align:center;padding:35px 20px;color:#8796a1;font-size:12px;line-height:1.8}.empty-state .icon{width:30px;height:30px;color:#aec3c0;margin-bottom:10px}.empty-state strong{display:block;color:#4f6973;font-size:13px;margin-bottom:8px}.empty-state p{margin:0 0 15px}.board{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}.board-column{background:#ecf1f4;border-radius:11px;padding:13px;min-height:300px}.board-heading{font-size:12px;display:flex;justify-content:space-between;padding:5px 3px 17px;color:#697f8b;font-weight:650}.board-card{background:white;padding:16px;border:1px solid #e0e6ea;border-radius:8px;margin-bottom:10px;text-align:left;width:100%;color:#314d58}.board-card strong{display:block;font-size:12px;line-height:1.6;margin:10px 0}.board-card small{font-size:10px;color:#94a2ac}.board-meta{margin-top:15px;display:flex;justify-content:space-between}.source-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.source-card{padding:24px}.source-card h3{font-size:20px;margin:0 0 8px}.source-card p{font-size:11px;line-height:1.8;color:#80939e}.source-card .keyline{border-top:1px solid var(--line);padding-top:12px;margin-top:16px;font-size:11px;color:#627c87;line-height:1.8}.architecture{display:grid;gap:18px}.arch-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}.arch-card{border:1px solid var(--line);border-radius:10px;background:white;padding:20px;min-width:0}.arch-card h3{font-size:13px;margin:0 0 9px}.arch-card p{font-size:11px;line-height:1.9;color:#81929b;margin:0}.arch-connector{text-align:center;color:#91a9a5;font-size:12px;letter-spacing:1px}.arch-core{padding:22px;background:#edf7f3;border:1px solid #cfe6dd;border-radius:10px}.arch-core h3{font-size:15px;color:#216757;margin:0 0 10px}.arch-core p{font-size:11px;color:#5e8a7e;line-height:1.9;margin:0}.rules{display:grid;grid-template-columns:1fr 1fr;gap:12px}.rule{display:flex;gap:12px;padding:18px;background:#fff;border:1px solid var(--line);border-radius:9px}.rule .icon{color:#4b9a84;flex-shrink:0}.rule strong{font-size:12px;display:block;margin-bottom:6px}.rule p{font-size:11px;color:#81929b;line-height:1.9;margin:0}.scope-note{padding:14px 17px;background:#f0f5f3;border-radius:8px;font-size:11px;line-height:1.8;color:#6b8a7f;margin:18px 0}.screen-footer{margin-top:28px;display:flex;justify-content:space-between;color:#a2adb5;font-size:9px;line-height:1.6}.screen-footer span:last-child{text-align:right}.module-workspace{background:white;border:1px solid var(--line);border-radius:10px;overflow:hidden}.workspace-head{padding:14px 18px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:15px;font-size:11px;color:#7c8f9a}.module-workspace iframe{width:100%;height:75vh;min-height:500px;border:0;background:#f4f7fb}.module-workspace .workspace-hint{padding:10px 18px;color:#8b9aa5;font-size:10px;background:#fafbfd}.icon-button{border:0;background:transparent;color:#7a8d97;display:inline-grid;place-items:center;width:34px;height:34px;border-radius:6px}.icon-button:hover{background:#eef4f2}.small-muted{font-size:10px;color:#91a0aa;line-height:1.7}dialog{border:0;padding:0;border-radius:14px;box-shadow:0 20px 80px #102e3433;max-width:calc(100vw - 28px);max-height:90dvh;width:660px;color:inherit;background:#fff}dialog::backdrop{background:#102c4266;backdrop-filter:blur(3px)}dialog.drawer{height:100dvh;max-height:100dvh;margin:0 0 0 auto;border-radius:0;width:640px;max-width:100vw}.dialog-head{display:flex;align-items:center;justify-content:space-between;padding:22px;border-bottom:1px solid var(--line);gap:14px}.dialog-head h2{font-size:17px;line-height:1.5;margin:0}.dialog-head small{font-size:10px;color:#8d9da6}.dialog-body{padding:24px}.dialog-footer{border-top:1px solid var(--line);padding:17px 22px;display:flex;justify-content:flex-end;gap:9px}.detail-title{font-size:22px;font-weight:700;line-height:1.5;margin:16px 0 21px;letter-spacing:-.5px}.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;padding:25px 0;border-top:1px solid var(--line)}.field-label{font-size:10px;color:#98a6ae;margin-bottom:8px}.field-value{font-size:13px;font-weight:550;line-height:1.7;overflow-wrap:anywhere}.detail-note{font-size:12px;line-height:1.9;white-space:pre-line;color:#6d8390;background:#f7faf9;padding:17px;border-radius:8px}.tabs{display:flex;border-bottom:1px solid var(--line);gap:20px;margin-top:6px}.tabs button{border:0;background:none;padding:14px 0;color:#85959f;font-size:12px;border-bottom:2px solid transparent}.tabs button.on{color:#168571;border-color:#168571}.attachments{display:grid;grid-template-columns:1fr 1fr;gap:10px}.attachments a{padding:14px;border:1px solid var(--line);border-radius:8px;color:#367f71;font-size:12px}.source-trace{font:10px/1.9 ui-monospace,monospace;background:#f5f7f9;border-radius:8px;padding:16px;white-space:pre-wrap;overflow-wrap:anywhere;color:#768a96}.command-input{width:100%;font-size:18px;border:0;outline:none;padding:8px}.command-result{padding:12px 8px;border-radius:7px;display:flex;gap:12px;align-items:center;font-size:12px}.command-result:hover{background:#f1f7f4}.command-result small{margin-left:auto;color:#97a5ae;font-size:10px}.command-list{max-height:55vh;overflow-y:auto}.currency-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-bottom:22px}.report-card{padding:24px}.report-card .stat-value{font-size:36px}.count-detail{display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid #edf2f5;font-size:12px}.count-detail:last-child{border-bottom:0}.import-box{border:1px dashed #bdd3cc;background:#f7fbfa;padding:32px;text-align:center;border-radius:10px;font-size:12px;line-height:1.9;color:#709086}.import-box strong{display:block;color:#356c5c;font-size:15px;margin:12px 0}#toast{position:fixed;bottom:25px;left:50%;transform:translateX(-50%) translateY(100px);background:#153e37;color:#fff;padding:13px 20px;font-size:12px;border-radius:9px;box-shadow:0 8px 24px #143b3733;transition:transform .2s;z-index:100;max-width:92vw;line-height:1.6}#toast.on{transform:translateX(-50%) translateY(0)}.backdrop{display:none}.mobile-nav{display:none}.hidden{display:none!important}.method-note{font-size:10px;color:#8c9ba5;line-height:1.9}.route-back{margin-bottom:20px}.report-block{margin-top:20px}.scroll-hint{display:none}input[type=checkbox]{accent-color:#087c70;width:15px;height:15px}
 @media(min-width:1500px){main{padding:35px 45px 60px}.topbar{padding:0 45px}.stats{gap:20px}.grid-two{gap:24px}.stat{padding:24px}.task-line{padding:18px 22px}}
 @media(max-width:1150px){.shell{grid-template-columns:212px minmax(0,1fr)}.sidebar{width:212px;padding-left:12px;padding-right:12px}.brand{padding-left:10px}.brand strong{font-size:15px}.brand small{font-size:9px}.nav-btn{font-size:12px}.topbar{padding:0 24px;gap:14px}.search-trigger{min-width:140px}.search-trigger span{display:none}.search-trigger kbd{display:none}main{padding:25px 24px 50px}.grid-two{grid-template-columns:minmax(0,1.5fr) minmax(245px,1fr);gap:15px}.module-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.stat{padding:16px}.stat-value{font-size:29px}.title-row h1{font-size:24px}.board{gap:10px}.source-grid{gap:12px}.source-card{padding:18px}.source-card h3{font-size:18px}}
@@ -123,6 +123,37 @@ main.is-original{padding-top:12px}
 @media(max-width:390px){.ledger-fields{grid-template-columns:minmax(0,1fr)}}
 @media print{.ledger-tools,.module-tabs{display:none}}
 
+/* The original records are the workbench's reporting layer. */
+.source-toolbar .small-muted{white-space:nowrap}
+.source-kinds{display:flex;gap:7px;flex-wrap:wrap;margin:0 0 13px}
+.source-kind{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:38px;padding:7px 10px;border:1px solid var(--line);border-radius:9px;background:#fff;color:#3b5260;font:inherit;font-size:12px;font-weight:650}
+.source-kind span{background:#e9f0f4;border-radius:6px;padding:2px 5px;font-variant-numeric:tabular-nums}
+.source-kind[aria-pressed=true]{border-color:#269682;background:#e3f5ef;color:#0d6656}
+.source-kind[aria-pressed=true] span{background:#d1ebe2}
+.source-cell-detail{display:block;color:#5b6f7c;margin-top:4px;font-weight:500}
+.source-date{white-space:nowrap;font-variant-numeric:tabular-nums}
+.source-table .data-table{min-width:580px}
+.source-table .data-table tbody tr:focus-visible{outline:2px solid var(--teal);outline-offset:-3px}
+.source-warning{display:flex;align-items:flex-start;gap:8px;background:#fff6e6;color:#74521e;border:1px solid #ebd9b7;border-radius:9px;padding:9px 12px;margin:0 0 12px;font-size:13px;line-height:1.55}
+.source-warning svg{flex-shrink:0}
+.source-list-row{display:grid;grid-template-columns:minmax(125px,1fr) 68px 130px 65px;align-items:center;gap:8px;padding:13px 16px;border-bottom:1px solid var(--line);font-size:13px}
+.source-list-row:last-child{border-bottom:0}
+.source-list-row .pill{justify-self:start}
+@media(max-width:640px){
+  .source-kind{flex:1 1 auto;min-height:42px}
+  .source-list-row{grid-template-columns:minmax(92px,1fr) 45px auto auto;padding:12px 10px;font-size:12px}
+  .source-table .data-table{min-width:0;display:block}
+  .source-table .data-table thead{display:none}
+  .source-table .data-table tbody,.source-table .data-table tr,.source-table .data-table td{display:block}
+  .source-table .data-table tbody tr{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 10px;padding:11px 12px;border-bottom:1px solid var(--line)}
+  .source-table .data-table tbody td{border:0;padding:0;white-space:normal;min-width:0}
+  .source-table .data-table td:nth-child(2){grid-column:1;grid-row:2}
+  .source-table .data-table td:nth-child(3){grid-column:1;grid-row:3}
+  .source-table .data-table td:nth-child(4){grid-column:1;grid-row:4;color:#5b6f7c}
+  .source-table .data-table td:nth-child(5){grid-column:2;grid-row:2}
+  .source-table .data-table td:nth-child(6){grid-column:2;grid-row:3;color:#118b74;justify-self:end}
+}
+
 </style></head>
 <body><a class="skip" href="#main">跳至內容 · Skip to content</a><div class="ga-wallpaper" aria-hidden="true"></div><div id="app"></div><noscript>請啟用 JavaScript 使用總務工作台。<a href="./legacy.html">開啟原稽核評鑑</a></noscript><dialog id="dialog"></dialog><div id="toast" role="status" aria-live="polite"></div><script type="module">
 const L=(zh,en,km)=>({zh,en,km});
@@ -174,7 +205,7 @@ const recordKey=r=>`${r.source}|${r.module}|${r.id}`;
 function reconcileRecords(rows){const map=new Map();let versions=0;for(const r of rows){const k=recordKey(r),old=map.get(k);if(old){versions++;if(stamp(old)>stamp(r)||stamp(old)===stamp(r)&&old.deleted&&!r.deleted)continue;}map.set(k,{...r});}return {records:[...map.values()],versions};}
 function eventRows(records){const map=new Map();for(const r of reconcileRecords(records).records){const key=r.canonicalEventId?'event|'+r.canonicalEventId:'record|'+recordKey(r),old=map.get(key);if(!old)map.set(key,{...r,sourceRefs:[recordKey(r)]});else {const keep=stamp(r)>stamp(old)||(stamp(r)===stamp(old)&&r.deleted)?r:old;const quantities=keep.quantity!=null?{quantity:keep.quantity,unit:keep.unit}:old.quantity!=null?{quantity:old.quantity,unit:old.unit}:r.quantity!=null?{quantity:r.quantity,unit:r.unit}:{};map.set(key,{...keep,...quantities,sourceRefs:[...new Set([...old.sourceRefs,recordKey(r)])]});}}return [...map.values()].filter(r=>!r.deleted);}
 function validateSnapshot(data){if(!data||data.schemaVersion!==1||!Array.isArray(data.records)||data.records.length>5000)throw Error('schemaVersion: 1; records: array, max 5000');if(!data.generatedAt||!Number.isFinite(Date.parse(data.generatedAt)))throw Error('generatedAt must be an ISO timestamp');const records=data.records.map((r,i)=>{if(!r||typeof r.id!=='string'||!r.id.trim()||r.id.length>200)throw Error(`Row ${i+1}: id required`);const m=MODULE_MAP[r.module];if(!m||m.source!==r.source)throw Error(`Row ${i+1}: module/source mismatch`);if(!validDate(r.date))throw Error(`Row ${i+1}: date must be local YYYY-MM-DD`);if(!r.updatedAt||!/(Z|[+-]\d{2}:\d{2})$/.test(r.updatedAt)||!Number.isFinite(Date.parse(r.updatedAt)))throw Error(`Row ${i+1}: updatedAt must include time zone`);if(!r.deleted&&r.status==='pending'&&r.requiresApproval!==true)throw Error(`Row ${i+1}: pending requires requiresApproval: true`);if(r.requiresApproval===true&&!m.approval)throw Error(`Row ${i+1}: this module has no unified approval mapping`);if(!r.deleted&&!STATUSES.includes(r.status))throw Error(`Row ${i+1}: invalid status`);if(r.amount!=null&&(!Number.isFinite(r.amount)||r.amount<0||Math.abs(r.amount*100-Math.round(r.amount*100))>0.000001||!['USD','KHR'].includes(r.currency)))throw Error(`Row ${i+1}: amount/currency invalid`);if(r.quantity!=null&&(!Number.isFinite(r.quantity)||r.quantity<0||!r.unit))throw Error(`Row ${i+1}: quantity/unit invalid`);if(r.canonicalEventId!=null&&(typeof r.canonicalEventId!=='string'||!r.canonicalEventId.trim()))throw Error(`Row ${i+1}: canonicalEventId invalid`);const title=typeof r.title==='string'?r.title.slice(0,500):r.title&&typeof r.title==='object'?Object.fromEntries(['zh','en','km'].map(k=>[k,String(r.title[k]||'').slice(0,500)])):String(r.id);const attachments=Array.isArray(r.attachments)?r.attachments.filter(p=>typeof p==='string'&&/^https:\/\//.test(p)).slice(0,100):[];return {...r,title,attachments,owner:String(r.owner||'').slice(0,150),location:String(r.location||'').slice(0,200),notes:String(r.notes||'').slice(0,5000),deleted:r.deleted===true,requiresApproval:r.requiresApproval===true,posted:r.posted===true};});return {schemaVersion:1,generatedAt:data.generatedAt,records:reconcileRecords(records).records};}
-function filterRecords(rows,{mode,ref,group='all',source='all',status='all',query='',module=null}={}){const range=periodRange(mode,ref),q=query.trim().toLowerCase();return eventRows(module?rows.filter(r=>r.module===module):rows).filter(r=>r.date>=range.from&&r.date<=range.to&&(group==='all'||MODULE_MAP[r.module].group===group)&&(source==='all'||r.source===source||r.sourceRefs.some(k=>k.startsWith(source+'|')))&&(status==='all'||r.status===status)&&(!q||[r.id,...Object.values(typeof r.title==='object'?r.title:{text:r.title}),r.owner,r.location,r.module].join(' ').toLowerCase().includes(q))).sort((a,b)=>b.date.localeCompare(a.date)||stamp(b)-stamp(a)||recordKey(a).localeCompare(recordKey(b)));}
+function filterRecords(rows,{mode,ref,group='all',source='all',status='all',query='',module=null}={}){const range=periodRange(mode,ref),q=query.trim().toLowerCase();return eventRows(module?rows.filter(r=>r.module===module):rows).filter(r=>r.date>=range.from&&r.date<=range.to&&(group==='all'||MODULE_MAP[r.module].group===group)&&(source==='all'||r.source===source||r.sourceRefs.some(k=>k.startsWith(source+'|')))&&(status==='all'||r.status===status)&&(!q||[r.id,r.displayId,r.subtitle,...Object.values(typeof r.title==='object'?r.title:{text:r.title}),r.owner,r.location,r.module].join(' ').toLowerCase().includes(q))).sort((a,b)=>b.date.localeCompare(a.date)||stamp(b)-stamp(a)||recordKey(a).localeCompare(recordKey(b)));}
 function metrics(rows){const expenses={};for(const r of rows)if(r.posted&&r.amount!=null)expenses[r.currency]=(expenses[r.currency]||0)+Math.round(r.amount*100);return {total:rows.length,pending:rows.filter(r=>r.requiresApproval&&r.status==='pending').length,abnormal:rows.filter(r=>r.status==='abnormal').length,completed:rows.filter(r=>r.status==='completed').length,open:rows.filter(r=>['pending','in_progress','abnormal'].includes(r.status)).length,expenses:Object.fromEntries(Object.entries(expenses).map(([k,v])=>[k,v/100]))};}
 function quantityTotals(rows){const totals=Object.create(null);for(const r of rows)if(r.quantity!=null&&!['%RH','%','°C','C','temperature','humidity'].includes(r.unit))totals[r.unit]=(totals[r.unit]||0)+r.quantity;return {...totals};}
 function csvCell(v){const s=String(v??'');const safe=/^[\s]*[=+@-]/.test(s)?"'"+s:s;return '"'+safe.replace(/"/g,'""')+'"';}
@@ -337,6 +368,599 @@ function ledgerFromCSV(input,{module=null,base=[]}={}){
 }
 
 ;
+// Existing web-app routing identifiers from the three original applications.
+const ORIGINAL_ENDPOINTS={
+  "SEC": "https://script.google.com/macros/s/AKfycbyxBN_t2AfxTPQ3AYdt7Jxl3pNiJV17H1T0pub4SR8GBgDH47WnDn9JF556KSxUiIU-/exec",
+  "GASCHECK": "https://script.google.com/macros/s/AKfycbzRsf_DuYJu0kXxqefR8qbLWhO7uz2flCY7jkPQQ73ZMwptcHDwrtJnhBQFwxG_EM3v/exec",
+  "GASEXP": "https://script.google.com/macros/s/AKfycbxPTXdEhjb4vhAxO-fQYYLnt_m4BZNkVsPiYVmyUzA-kxgr_b4VMC9yayXQCOS7xYYWAQ/exec"
+};
+
+;
+
+const SOURCE_KINDS={
+  truck:L('車輛出入','Truck log','កំណត់ត្រារថយន្ត'),insp:L('貨櫃檢查','Container inspection','ត្រួតពិនិត្យកុងតឺន័រ'),pass:L('放行／出貨單','Gate pass / delivery','លិខិតចេញ / ដឹកទំនិញ'),
+  car:L('汽車','Car','រថយន្ត'),bike:L('機車','Motorbike','ម៉ូតូ'),gate:L('門禁','Gate log','ច្រកចេញចូល'),late:L('遲到','Late arrival','មកយឺត'),
+  round:L('巡邏圈','Patrol round','ជុំល្បាត'),manual:L('人工巡邏','Manual patrol','ល្បាតដោយដៃ'),check:L('確認／巡檢','Inspection','ការត្រួតពិនិត្យ'),
+  attendance:L('保安出勤','Guard attendance','វត្តមានសន្តិសុខ'),changes:L('人員／設備異動','Staff / equipment changes','ការផ្លាស់ប្ដូរ'),cctv:L('CCTV 巡檢','CCTV inspection','ត្រួតពិនិត្យកាមេរ៉ា'),fire:L('消防檢查','Fire inspection','ត្រួតពិនិត្យអគ្គិភ័យ'),
+  am:L('上午','AM','ព្រឹក'),pm:L('下午','PM','រសៀល'),reading:L('溫濕度讀數','Climate reading','សីតុណ្ហភាព / សំណើម'),
+  clean:L('清潔巡檢','Cleaning check','ត្រួតពិនិត្យអនាម័យ'),wasteGate:L('回收／廢料出廠','Waste dispatch','សំណល់ចេញ'),internal:L('內部回收','Internal recycling','កែច្នៃខាងក្នុង'),wasteMonth:L('廢料月表','Waste monthly record','សំណល់ប្រចាំខែ'),
+  dorm:L('住宿申請','Dorm application','សំណើស្នាក់នៅ'),moveIn:L('入住','Move in','ចូលស្នាក់នៅ'),moveOut:L('退宿','Move out','ចេញពីអន្តេវាសិកដ្ឋាន'),
+  dormCheck:L('宿舍檢查','Dorm inspection','ត្រួតពិនិត្យអន្តេវាសិកដ្ឋាន'),violation:L('住宿違規','Dorm violation','ការបំពានក្នុងអន្តេវាសិកដ្ឋាន'),
+  asset:L('資產紀錄','Asset record','កំណត់ត្រាទ្រព្យសម្បត្តិ'),key:L('鑰匙借還','Key movement','ខ្ចី និងប្រគល់សោ'),water:L('送水日誌','Water delivery log','កំណត់ត្រាទឹក'),
+  procurement:L('月度採購單','Monthly PO','ការទិញប្រចាំខែ'),receive:L('收貨','Receiving','ទទួលទំនិញ'),issue:L('領用／出庫','Issue','បញ្ចេញទំនិញ'),
+  repair:L('維修','Repair','ជួសជុល'),tempPO:L('臨時採購','Temporary PO','ការទិញបន្ទាន់'),damage:L('損壞／遺失','Damage / loss','ខូច / បាត់'),
+  fuel:L('燃油','Fuel','ប្រេងឥន្ធនៈ'),transport:L('行車','Vehicle journey','ធ្វើដំណើរ'),toll:L('通行','Toll','ថ្លៃផ្លូវ'),topup:L('儲值','Top-up','បញ្ចូលប្រាក់'),
+  expense:L('費用','Expense','ចំណាយ'),purchase:L('採購費','Purchase expense','ចំណាយទិញ'),general:L('一般費用','General expense','ចំណាយទូទៅ'),txn:L('原費用單','Expense transaction','ប្រតិបត្តិការចំណាយ'),
+};
+const sourceText=v=>typeof v==='string'||typeof v==='number'?String(v).trim().slice(0,240):'';
+const firstSource=(...xs)=>xs.map(sourceText).find(Boolean)||'';
+const sourceToken=v=>sourceText(v).normalize('NFKC').toLowerCase().replace(/[\s_\-\/().（）]+/g,'');
+const sourceNote=(...xs)=>xs.map(sourceText).filter(Boolean).join(' · ');
+const sourceRowsArray=v=>Array.isArray(v)?v:[];
+const deletedSource=v=>v?._deleted===true||v?._deleted===1||v?._deleted==='true'||v?.deleted===true;
+const sourceObjectRow=x=>x&&typeof x==='object'&&!Array.isArray(x);
+function originalDate(value,{monthly=false}={}){
+  const s=sourceText(value);
+  const m=s.match(/^(20\d{2})[-/.](\d{1,2})(?:[-/.](\d{1,2}))?(?=$|[T ])/);
+  if(!m||!m[3]&&!monthly)return '';
+  const d=[m[1],m[2].padStart(2,'0'),(m[3]||'01').padStart(2,'0')].join('-');
+  return validDate(d)?d:'';
+}
+function sourceStamp(r){
+  let newest=0;
+  for(const x of [r.deletedAt,r.updatedAt,r.savedAt,r.approvedAt,r.reviewedAt,r.modifiedAt,r.timestamp,r.submittedAt,r.createdAt,r.ts]){
+    const s=sourceText(x);if(!s)continue;
+    const d=Date.parse(s.replace(' ','T')+(/^\d{4}-\d{2}-\d{2}[ T]\d{2}:\d{2}(?::\d{2}(?:\.\d+)?)?$/.test(s)?'+07:00':''));
+    if(Number.isFinite(d))newest=Math.max(newest,d);
+  }
+  return newest;
+}
+function sourceNumber(...values){
+  for(const v of values){
+    if(v==null||typeof v!=='number'&&typeof v!=='string'||!String(v).trim())continue;
+    const s=String(v).replace(/,/g,'').trim();
+    if(!/^-?(?:\d+(?:\.\d*)?|\.\d+)$/.test(s))continue;
+    if(Number.isFinite(Number(s)))return Number(s);
+  }
+  return undefined;
+}
+function originalStatus(r){
+  const s=sourceToken(firstSource(r.status,r.state,r.result,r.approvalStatus,r.stage));
+  if(/^(approved|authorized|completed|closed|normal|good|ok|pass|passed|核可|已核可|已批准|完成|正常|通過|合格)$/.test(s))return 'completed';
+  if(/^(rejected|denied|returned|void|voided|cancelled|退件|已退件|已退回|已作廢|不核可)$/.test(s))return 'rejected';
+  if(/^(pending(?:approval|review)?|submitted|review|inreview|reviewed|待審|待審核|待核可|待核准|待覆核|審核中)$/.test(s))return 'pending';
+  if(/^(abnormal|bad|fail|failed|fault|broken|ng|missed|overdue|error|異常|不合格|逾期)$/.test(s))return 'abnormal';
+  if(/^(open|inprogress|processing|ongoing|處理中|未完成)$/.test(s))return 'in_progress';
+  return 'recorded';
+}
+function sourceRevisionWinner(a,b){
+  if(!a)return b;
+  const diff=sourceStamp(b)-sourceStamp(a);
+  if(diff!==0)return diff>0?b:a;
+  if(deletedSource(a)!==deletedSource(b))return deletedSource(a)?a:b;
+  return b;
+}
+const rawOriginalId=r=>firstSource(r.id,r.recordId,r._recordKey,r._syncId,r.no,r.key,r.poId,r.poNumber);
+const dayOf=(...values)=>values.map(v=>originalDate(v)).find(Boolean)||'';
+const monthOf=(...values)=>values.map(v=>originalDate(v,{monthly:true})).find(Boolean)||'';
+const thinId=(...parts)=>parts.every(Boolean)?parts.join(':'):'';
+function sourceRawType(id,tool,r){
+  const k=firstSource(r._k,r.kind,r._kind);
+  if(id==='sec.container')return k==='truck'?'truck':['insp','inspection'].includes(k)?'insp':k==='gate'?'pass':'';
+  if(id==='sec.commute')return ['car','bike','gate','late'].includes(k)?k:'';
+  if(id==='sec.patrol')return ['round','manual','check'].includes(k)?k:r.manual?'manual':'';
+  if(id==='sec.attendance')return k==='attendance-day'||r.detail&&r.month?'attendance':'';
+  if(id==='sec.cctv')return k==='changes'?'changes':k==='log'?'cctv':'';
+  if(id==='sec.fire')return k==='changes'?'changes':k==='history'?'fire':'';
+  if(id==='sec.personnel')return k==='chg'?'changes':'';
+  if(id==='sec.expense')return 'expense';
+  if(id==='gc.temperature'){
+    const slot=sourceText(r.period??r.p??r.slot).toLowerCase();
+    return /morning|\bam\b|早上|上午|ព្រឹក/.test(slot)?'am':/afternoon|\bpm\b|下午|រសៀល/.test(slot)?'pm':'reading';
+  }
+  if(id==='gc.cleaning')return 'clean';
+  if(id==='gc.ehs')return {gate:'wasteGate',internal:'internal',monthly:'wasteMonth'}[r.module??r.sourceType]||'wasteGate';
+  if(id==='gc.dormitory'){
+    if(tool==='dormitory_inspections')return 'dormCheck';
+    if(tool==='dormitory_violations')return 'violation';
+    const typ=sourceToken(r.type);
+    return /^(movein|checkin|入住|搬入)$/.test(typ)?'moveIn':/^(moveout|checkout|退宿|搬出|離開)$/.test(typ)?'moveOut':'dorm';
+  }
+  if(id==='gc.asset')return 'asset';
+  if(id==='gc.keymovement')return 'key';
+  if(id==='gc.waterdrum')return 'water';
+  if(id==='exp.procurement')return 'procurement';
+  if(id==='exp.receiving')return /^(issue|out|領用|發出|出庫)$/.test(sourceToken(r.type||r.direction||r.action))?'issue':'receive';
+  if(id==='exp.maintenance')return tool==='rep'?'repair':'tempPO';
+  if(id==='exp.damage')return 'damage';
+  if(id==='exp.fuel')return 'fuel';
+  if(id==='exp.transportation')return 'transport';
+  if(id==='exp.etc')return /^(topup|recharge|deposit|儲值|充值)$/.test(sourceToken(r.type||r.kind))?'topup':'toll';
+  if(id==='exp.expense')return ['repair','purchase','general','txn'].includes(k)?k:'expense';
+  return '';
+}
+
+const ZONE_NAME={
+  za:L('A廠車間','Building A Workshop','អគារ A (រោងចក្រ)'),
+  zb:L('B廠車間','Building B Workshop','អគារ B (រោងចក្រ)'),
+  zc:L('B廠倉庫','Building B Warehouse','អគារ B (ឃ្លាំង)'),
+  zd:L('A廠後整倉','Building A Finishing Warehouse','ឃ្លាំងបញ្ចប់អគារ A'),
+};
+const ZONE_ALIAS=Object.fromEntries(Object.entries({
+  za:['za','z01','buildinga','buildingaworkshop','aworkshop','a廠車間','a厂车间'],
+  zb:['zb','z02','buildingb','buildingbworkshop','bworkshop','b廠車間','b厂车间'],
+  zc:['zc','z03','buildingbwh','buildingbwarehouse','bwarehouse','b廠倉庫','b厂仓库'],
+  zd:['zd','z04','zbuildingafinishingwh','buildingafinishingwh','buildingafinishingwarehouse','afinishingwh','finishingwarehouse','finishingwh','zfinishingwarehouse','a廠倉庫','a厂仓库','a廠後整倉'],
+}).flatMap(([key,aliases])=>aliases.map(a=>[a,key])));
+function originalZone(r,zones){
+  const id=firstSource(r.zoneId,r.z,r.zone,r.location),z=sourceRowsArray(zones).find(x=>String(x?.id)===id||sourceRowsArray(x?.aliasIds).some(x=>String(x)===id));
+  for(const v of [id,r.zoneEn,r.zoneName,z?.en,z?.zh,z?.id]){
+    const k=sourceToken(v).replace(/inside|area/g,'').replace(/factory/g,'building');
+    if(Object.hasOwn(ZONE_ALIAS,k))return {key:ZONE_ALIAS[k],name:ZONE_NAME[ZONE_ALIAS[k]]};
+    if(/^z?buildingafinishing(?:wh|warehouse)\d+$/.test(k))return {key:'zd',name:ZONE_NAME.zd};
+  }
+  return {key:id,name:firstSource(r.zoneName,r.zoneEn,z?.zh,z?.en,id)};
+}
+const minutesSource=v=>{const m=sourceText(v).match(/^(\d{1,2}):(\d{2})/);return m?+m[1]*60+ +m[2]:null;};
+const originalBool=v=>v===true||v===1||v==='1'||v==='true';
+const knownDate=(id,r)=>id==='gc.keymovement'?dayOf(r.issue_date,r.issueDate,r.date,r.return_date):
+  id==='gc.asset'?dayOf(r.purchaseDate,r.date,r.acquiredDate):dayOf(r.date,r.d,r.recordDate,r.checkDate,r.inspectionDate,r.effectiveDate,r.effDate,r.reportDate,r.day,r.last,r.t,r.submitDate,r.submittedAt,r.timestamp);
+function businessSource(id,tool,r,meta,context){
+  const kind=sourceRawType(id,tool,r);if(!kind)return null;
+  const m=MODULE_MAP[id],syncId=rawOriginalId(r);
+  let date=knownDate(id,r),reportDate='',title='',subtitle='',location=firstSource(r.location,r.loc,r.site,r.area,r.locId,r.locationId,r.roomNo,r.dept),
+    owner=firstSource(r.inspector,r.owner,r.driver,r.guard,r.reviewer,r.handler,r.by),note=sourceNote(r.notes,r.note,r.remark),idKey=syncId,dedupe='',quantity,unit,amount,currency,posted=false;
+  let status=originalStatus(r),direction='';
+  if(kind==='attendance'&&r.detail){
+    const month=originalDate(r.month,{monthly:true}).slice(0,7);
+    if(!month)return [];
+    return Object.entries(r.detail).flatMap(([day,value])=>{
+      const d=month+'-'+String(day).padStart(2,'0'),v=sourceText(value);
+      if(!validDate(d)||!v)return [];
+      return businessSource(id,tool,{...r,detail:null,_k:'attendance-day',date:d,id:thinId(syncId||firstSource(r._attKey,r.empId,r.name),d),_code:v},meta,context);
+    });
+  }
+  if(id==='sec.container'){
+    if(kind==='truck'){
+      title=firstSource(r.containerNo,r.truckNo,syncId);owner=firstSource(r.name,r.driver);location=firstSource(r.company,r.location);
+      direction=(originalBool(r.isImport)?'in':'')+(originalBool(r.isExport)?'out':'');
+      subtitle=sourceNote(r.truckNo,r.size,[r.timeIn,r.timeOut].filter(Boolean).join(' → '));
+      const ti=minutesSource(r.timeIn),to=minutesSource(r.timeOut);
+      if(ti!=null&&to!=null&&to<ti)status='abnormal';else if(!r.timeOut&&r.timeIn)status='in_progress';
+      if(r.src)dedupe=thinId('import',date,sourceToken(r.containerNo),sourceToken(r.name));
+    }else if(kind==='insp'){title=firstSource(r.containerNo,r.no,syncId);dedupe=thinId('inspection',date,sourceToken(r.containerNo));}
+    else{title=firstSource(r.no,r.docNo,syncId);subtitle=sourceNote(r.company,r.destination);dedupe=thinId('pass',sourceToken(r.no));}
+  }else if(id==='sec.commute'){
+    title=firstSource(r.carNo,r.plate,r.plateNo,r.licence,r.vehicleNo,r.bikeNo,r.empId,r.name,r.visitor,r.driver,syncId);
+    subtitle=sourceNote(r.timeIn||r.inTime||r.time,r.timeOut||r.outTime,r.purpose);
+    owner=firstSource(r.driver,r.name,r.guard);location=firstSource(r.dest,r.destination,r.gate,r.location,r.dept);
+    if(kind==='late')status='abnormal';
+  }else if(id==='sec.patrol'){
+    title=firstSource(r.location,r.guard,r.g,syncId);owner=firstSource(r.guard,r.g,r.inspector);subtitle=sourceNote(r.time,r.endTime,r.shift);
+    if(r.missed&&r.missed!=='ok'&&(Array.isArray(r.missed)?r.missed.length:true))status='abnormal';
+  }else if(id==='sec.attendance'){
+    title=firstSource(r.name,r.empId,r._attKey,syncId);subtitle=sourceNote(r._code,r.shift,r.post);owner='';
+  }else if(id==='sec.cctv'||id==='sec.fire'||id==='sec.personnel'){
+    title=firstSource(r.title,r.code,r.assetCode,r.name,r.checker,r.inspector,syncId);subtitle=sourceNote(r.type,r.checkType,r.uptime==null?'':String(r.uptime)+'%');
+  }else if(id==='sec.expense'){
+    title=firstSource(r.item,r.title,r.description,r.category,syncId);amount=sourceNumber(r.amount);currency=firstSource(r.currency,'USD');posted=amount!=null;
+  }else if(id==='gc.temperature'){
+    const zone=originalZone(r,meta.zones||context.zones),t=sourceNumber(r.temperature,r.temp,r.t),h=sourceNumber(r.humidity,r.rh,r.h);
+    title=zone.name||syncId;location=typeof zone.name==='string'?zone.name:'';
+    subtitle=[t==null?'':t+' °C',h==null?'':h+' %RH'].filter(Boolean).join(' / ');
+    dedupe=thinId('temp',date,kind==='reading'?'':kind,zone.key);
+  }else if(id==='gc.cleaning'){
+    title=firstSource(r.locationName,r.locName,r.location,r.locId,syncId);location=title;owner=firstSource(r.inspector,r.cleaner,r.checker,r.staff);
+    const slots=(Array.isArray(r.slots)?r.slots:[r.slot??r.checkTime??r.slots]).map(sourceText).filter(Boolean).sort();
+    subtitle=slots.join(' / ');dedupe=thinId('clean',date,firstSource(r.locId,r.locationId,r.location),subtitle);
+  }else if(id==='gc.ehs'){
+    title=firstSource(r.material,r.wasteName,r.item,r.wasteType,r.category,r.type,syncId);
+    location=firstSource(r.location,r.department,r.supplier,r.vendor);
+    quantity=sourceNumber(r.weight,r.netWeight,r.weightKg);unit=firstSource(r.unit,quantity!=null?'kg':'');
+    if(kind==='wasteMonth'&&!date){date=monthOf(r.month,r.period,r.yearMonth);reportDate=date;}
+  }else if(id==='gc.dormitory'){
+    title=firstSource(r.roomNo,r.room,r.location,r.area,syncId);subtitle=sourceNote(r.name,r.type);owner=firstSource(r.inspector,r.reviewer);
+    if(['moveIn','moveOut','dorm'].includes(kind))dedupe=thinId('dorm',sourceToken(r.type),sourceToken(r.idNo),sourceToken(r.roomNo),date);
+  }else if(id==='gc.asset'){
+    idKey=firstSource(r.id,r.code,syncId);title=firstSource(r.name,r.assetName,r.code,syncId);subtitle=sourceNote(r.code,r.category);
+  }else if(id==='gc.keymovement'){
+    title=firstSource(r.key_name,r.keyName,r.key_no,r.keyNo,r.key_code,r.code,syncId);owner=firstSource(r.holder,r.borrower,r.emp_name,r.employee_name,r.name);
+    subtitle=sourceNote(r.return_date,r.returnDate);
+  }else if(id==='gc.waterdrum'){
+    const row=sourceObjectRow(r.row)?r.row:r;
+    if(!date&&r.year&&r.month&&row.day)date=originalDate([r.year,r.month,row.day].join('-'));
+    dedupe=thinId('water',date);
+    title=firstSource(r.zone,r.location,r.site)||SOURCE_KINDS.water;
+    quantity=sourceNumber(r.totalDrums,r.drums,r.quantity,row.totalDrums);if(quantity!=null)unit='drum';
+  }else if(id==='exp.procurement'){
+    const y=Number(r.year),mo=Number(r.month);
+    if(Number.isInteger(y)&&y>=2000&&y<=2099&&Number.isInteger(mo)&&mo>=0&&mo<12)reportDate=y+'-'+String(mo+1).padStart(2,'0')+'-01';
+    date=dayOf(r.submitDate,r.submittedAt,r.date)||reportDate;
+    title=firstSource(r.poNumber,r.poNo,r.poId,syncId);
+    subtitle=reportDate.slice(0,7);
+    amount=sourceNumber(r.total,r.totalAmount);currency=firstSource(r.currency,'USD');
+  }else if(id==='exp.receiving'){
+    const item=context.catalog.get(firstSource(r.itemId,r.productId));
+    title=firstSource(r.itemName,r.name,item?.name,item?.itemName,r.itemId,syncId);subtitle=sourceNote(r.refNo,r.poNo,r.sourcePoId);
+    quantity=sourceNumber(r.qty,r.quantity);unit=firstSource(r.unit,item?.unit);
+  }else if(id==='exp.maintenance'){
+    title=firstSource(r.itemName,r.title,r.no,syncId);subtitle=firstSource(r.no,syncId);amount=sourceNumber(r.amount);currency=firstSource(r.currency,'USD');
+  }else if(id==='exp.damage'){
+    title=firstSource(r.desc,r.title,r.type,syncId);location=firstSource(r.loc,r.location,r.dept);
+    amount=sourceNumber(r.lossAmount);currency=firstSource(r.currency,'USD');
+  }else if(id==='exp.fuel'){
+    title=firstSource(r.machine,r.forklift,r.vehicle,r.plate,r.driver,r.equipment,syncId);
+    quantity=sourceNumber(r.liters,r.litres,r.ltr,r.volume,r.qty,r.quantity);if(quantity!=null)unit='L';
+  }else if(id==='exp.transportation'){
+    title=firstSource(r.vehicle,r.vehicleNo,r.plate,r.driver,r.destination,syncId);subtitle=sourceNote(r.origin,r.destination,r.purpose);
+    quantity=sourceNumber(r.distance,r.km,r.distanceKm);if(quantity!=null)unit='km';
+  }else if(id==='exp.etc'){
+    title=firstSource(r.plaza,r.entry,r.exit,r.plate,r.vehicle,r.driver,syncId);subtitle=sourceNote(r.entry,r.exit,r.route);
+    amount=sourceNumber(r.amount,r.fee,r.total);currency=firstSource(r.currency,'USD');
+  }else if(id==='exp.expense'){
+    title=firstSource(r.item,r.name,r.itemName,r.title,r.purpose,r.desc,r.category,syncId);
+    amount=sourceNumber(r.amount,r.total,r.totalAmount,r.cost);currency=firstSource(r.currency,'USD');posted=amount!=null;
+  }
+  if(!title)title=SOURCE_KINDS[kind];
+  if(!date||!idKey&&!dedupe)return false;
+  idKey=idKey||dedupe;
+  const displayId=syncId||dedupe;
+  if(!['USD','KHR'].includes(currency))amount=undefined;
+  if(!unit)quantity=undefined;
+  return {id:kind+':'+idKey,displayId,source:m.source,module:id,kind,date,reportDate,title,subtitle,location,owner,notes:note,status,direction,
+    updatedAt:sourceStamp(r)?new Date(sourceStamp(r)).toISOString():'',requiresApproval:status==='pending',attachments:[],
+    ...(amount==null?{}:{amount,currency,posted}),...(quantity==null?{}:{quantity,unit}),dedupe};
+}
+
+function sourceMaintenancePackets(packet){
+  const groups=new Map(),kind=packet.tool;
+  for(const raw of packet.rows){
+    if(!Array.isArray(raw)){
+      if(sourceObjectRow(raw)&&raw.id)groups.set(raw.id,raw);
+      continue;
+    }
+    const id=firstSource(raw[3],raw[21]);if(!id)continue;
+    const key=kind+':'+id;
+    const rowKey=firstSource(raw[21],JSON.stringify(raw.slice(0,21)));
+    if(!groups.has(key))groups.set(key,{id,no:id,date:raw[0],owner:raw[1],location:raw[6]||raw[2],status:raw[13],approvedAt:raw[15],items:[],lines:new Set(),amount:0});
+    const r=groups.get(key);
+    if(r.lines.has(rowKey))continue;
+    r.lines.add(rowKey);if(raw[4])r.items.push(raw[4]);
+    r.amount+=sourceNumber(kind==='rep'?raw[19]:raw[18],raw[11])??0;
+  }
+  return [...groups.values()].map(r=>({...r,itemName:r.items?.join(' · ')||r.itemName}));
+}
+function adaptOriginalRows(id,packets){
+  if(!Object.hasOwn(MODULE_MAP,id))return {rows:[],omitted:0};
+  const revisions=new Map(),candidates=new Map(),catalog=new Map(),workflow=new Map();let omitted=0;
+  const context={catalog,zones:packets.map(x=>x.meta?.zones).find(Array.isArray)||[]};
+  for(const packet of packets){
+    for(const p of sourceRowsArray(packet.meta?.workflow))if(p?.id)workflow.set(String(p.id),sourceRevisionWinner(workflow.get(String(p.id)),p));
+    if(id==='exp.receiving')for(const w of packet.rows)if(w?.kind==='item'&&w.row?.id&&!deletedSource(w.row))catalog.set(String(w.row.id),w.row);
+  }
+  for(const packet of packets){
+    const tool=packet.tool,extra={...packet.meta};
+    const raw=packet.rows.filter(r=>{if(r?.__smartExtra&&sourceObjectRow(r.extra)){Object.assign(extra,r.extra);return false;}return true;});
+    if(id==='sec.cctv')raw.push(...sourceRowsArray(extra.log).map(r=>({...r,_k:'log'})),...sourceRowsArray(extra.assetChanges).map(r=>({...r,_k:'changes'})));
+    if(id==='sec.fire')raw.push(...sourceRowsArray(extra.history).map(r=>({...r,_k:'history'})),...sourceRowsArray(extra.assetChanges).map(r=>({...r,_k:'changes'})));
+    if(id==='sec.attendance'&&sourceObjectRow(extra.attendance))for(const [month,staff] of Object.entries(extra.attendance)){
+      for(const [staffKey,detail] of Object.entries(staff||{}))raw.push({month,detail,name:staffKey,_attKey:staffKey,_recordKey:'attendance|month|'+month+'|'+staffKey});
+    }
+    const values=id==='exp.maintenance'?sourceMaintenancePackets({...packet,rows:raw}):raw;
+    for(const item of values){
+      if(!sourceObjectRow(item))continue;
+      let r=item;
+      if(id==='exp.receiving'||id==='exp.expense'){
+        if(item.kind==='meta'||id==='exp.receiving'&&item.kind==='item')continue;
+        if(item.row&&sourceObjectRow(item.row))r={...item.row,_syncId:item._syncId,_k:item.kind,_deleted:deletedSource(item)||deletedSource(item.row)||item.kind==='deleted'};
+      }
+      if(id==='exp.damage'){
+        const w=workflow.get(String(r.id));
+        if(w&&w.status&&sourceStamp(w)>=sourceStamp(r))r={...r,status:w.status,reviewedAt:w.reviewedAt||r.reviewedAt,approvedAt:w.approvedAt||r.approvedAt};
+      }
+      const type=sourceRawType(id,tool,r);
+      const reference=id==='sec.attendance'?firstSource(r._recordKey,thinId(r.month,r._attKey||r.empId||r.name)):rawOriginalId(r);
+      // Deleted wrapper records must match their original ID before business-key deduplication.
+      const identity=id==='exp.receiving'?firstSource(r.id,r.recordId,r._syncId):id==='exp.expense'?firstSource(r._syncId,thinId(type,reference)):reference;
+      const k=identity?[tool,id==='exp.receiving'?'record':id==='gc.temperature'||id==='gc.dormitory'?'base':type||firstSource(r._k,r.kind),identity].join('|'):'';
+      if(k){
+        const old=revisions.get(k);
+        if(!old||sourceRevisionWinner(old.r,r)===r)revisions.set(k,{r,tool,meta:extra});
+      }else if(!deletedSource(r))candidates.set(Symbol(),{r,tool,meta:extra});
+    }
+  }
+  for(const [k,v] of revisions)if(!deletedSource(v.r))candidates.set(k,v);
+  const out=new Map();
+  for(const {r,tool,meta} of candidates.values()){
+    const projected=businessSource(id,tool,r,meta,context);
+    if(projected===false){omitted++;continue;}
+    for(const row of Array.isArray(projected)?projected:projected?[projected]:[]){
+      if(!row){omitted++;continue;}
+      const key=row.dedupe||row.id,old=out.get(key);
+      if(!old||row.updatedAt>=old.updatedAt)out.set(key,row);
+    }
+  }
+  return {rows:[...out.values()],omitted};
+}
+
+;
+
+const SOURCE_TOOLS={
+  'sec.patrol':['patrol'],'sec.cctv':['cctv'],'sec.container':['container'],'sec.attendance':['attendance'],
+  'sec.commute':['commute'],'sec.fire':['fire'],'sec.personnel':['personnel'],'sec.expense':['expense'],
+  'gc.temperature':['temperature'],'gc.cleaning':['cleaning'],'gc.ehs':['ehs'],
+  'gc.dormitory':['dormitory','dormitory_inspections','dormitory_violations'],
+  'gc.asset':['asset'],'gc.keymovement':['keymovement'],'gc.waterdrum':['waterdrum'],
+  'exp.receiving':['receiving'],'exp.expense':['expense'],
+};
+const EXP_MOBILITY={'exp.fuel':'fuel','exp.transportation':'transport','exp.etc':'etc'};
+const SOURCE_READS=new Set(['smartManifest','smartBucket','pull','getHistory','damageLoad','damageWorkflow','exportRecords','mobilitySync']);
+const ORIGINAL_PARAMS={
+  smartManifest:['tool'],smartBucket:['tool','bucket','read'],pull:['tool','meta','legacy','chunk','uploadId'],
+  getHistory:['year'],damageLoad:[],damageWorkflow:[],exportRecords:['sys'],mobilitySync:['data'],
+};
+const APP_SCRIPT=/^https:\/\/script\.google\.com\/macros\/s\/[A-Za-z0-9_-]{20,160}\/exec$/;
+const sourceError=(code)=>Object.assign(new Error(code),{code});
+const sourceObject=x=>x!=null&&typeof x==='object'&&!Array.isArray(x);
+const sourceArray=x=>Array.isArray(x)?x:[];
+const sourceValue=(s,k)=>{try{return JSON.parse(s?.getItem(k)||'null');}catch{return null;}};
+function originalConnection(source,storage=globalThis.localStorage){
+  const cfg=sourceValue(storage,source==='SEC'?'ac_sec_config':source==='GASEXP'?'ac_ga_exp_config':'')||{};
+  const url=source==='GASCHECK'?ORIGINAL_ENDPOINTS[source]:APP_SCRIPT.test(cfg.gasUrl||'')?cfg.gasUrl:ORIGINAL_ENDPOINTS[source];
+  return {url,session:source==='GASEXP'&&cfg.gasUrl&&url!==cfg.gasUrl?'':source==='GASEXP'&&typeof cfg.session==='string'?cfg.session:''};
+}
+const unsupportedSource=/unknown (?:action|tool)|unsupported|not implemented|unknown_action|不支援|未知操作/i;
+async function requestOriginal(connection,action,parameters={},method='GET',{fetcher=globalThis.fetch,timeout=22000}={}){
+  if(!APP_SCRIPT.test(connection.url)||!SOURCE_READS.has(action)||!['GET','POST'].includes(method)||Object.keys(parameters).some(k=>!ORIGINAL_PARAMS[action].includes(k))||
+    method==='POST'&&!['smartManifest','smartBucket','pull','mobilitySync'].includes(action)||
+    action==='smartBucket'&&method==='POST'&&parameters.read!==true||
+    action==='mobilitySync'&&(method!=='POST'||!Array.isArray(parameters.data?.changes)||parameters.data.changes.length!==0||Object.keys(parameters.data).some(k=>!['module','changes'].includes(k))||!Object.values(EXP_MOBILITY).includes(parameters.data.module)))throw sourceError('UNSAFE_READ');
+  const controller=new AbortController(), timer=setTimeout(()=>controller.abort(),timeout);
+  try{
+    const url=new URL(connection.url),options={method,signal:controller.signal,referrerPolicy:'no-referrer',cache:'no-store'};
+    if(method==='GET'){
+      for(const [k,v] of Object.entries({action,...parameters,...(connection.session?{session:connection.session}:{})}))if(v!==undefined&&v!==null)url.searchParams.set(k,String(v));
+    }else{
+      options.headers={'Content-Type':'text/plain;charset=utf-8'};
+      options.body=JSON.stringify({action,...parameters,...(connection.session?{session:connection.session}:{})});
+    }
+    const response=await fetcher(url.href,options);
+    if(!response.ok)throw sourceError(response.status===401||response.status===403?'SOURCE_AUTH':'SOURCE_HTTP');
+    let result;try{result=await response.json();}catch{
+      throw sourceError(controller.signal.aborted?'SOURCE_TIMEOUT':'SOURCE_FORMAT');
+    }
+    if(result?.ok===false||result?.success===false){
+      const reason=String(result.code||result.error||result.msg||'');
+      throw sourceError(unsupportedSource.test(reason)?'NO_SMART':/auth|denied|login|session|permission|未登入|權限/i.test(reason)?'SOURCE_AUTH':'SOURCE_ERROR');
+    }
+    if(!sourceObject(result)&&!Array.isArray(result))throw sourceError('SOURCE_FORMAT');
+    return result;
+  }catch(e){throw e?.code?e:sourceError(controller.signal.aborted?'SOURCE_TIMEOUT':'SOURCE_NETWORK');}
+  finally{clearTimeout(timer);}
+}
+const sourceData=x=>sourceObject(x)&&Object.hasOwn(x,'data')?x.data:x;
+function sourceList(result,keys=['records','list','rows']){
+  const body=sourceData(result);
+  if(Array.isArray(body))return body;
+  for(const x of [body,result])for(const k of keys)if(Array.isArray(x?.[k]))return x[k];
+  if(body===null&&result?.ok===true)return [];
+  throw sourceError('SOURCE_FORMAT');
+}
+function originalBucketKeys(hashes,range,id){
+  const from=range.from.slice(0,7),to=range.to.slice(0,7);
+  return Object.keys(hashes).filter(k=>{
+    const m=k.match(/^(?:m:)?(20\d{2}-(?:0[1-9]|1[0-2]))(?:$|[:~_-])/);
+    if(m)return m[1]>=from&&m[1]<=to;
+    // CCTV/fire equipment masters and undated personnel are not activity records.
+    if(/^h:/.test(k)&&['sec.cctv','sec.fire','sec.personnel'].includes(id))return false;
+    return true;
+  }).sort();
+}
+// Reports use the original textual fields. Keep binary photos in their original app.
+function compactSource(x){
+  if(Array.isArray(x))return x.map(compactSource);
+  if(!sourceObject(x))return typeof x==='string'&&x.length>1600?x.slice(0,1600):x;
+  return Object.fromEntries(Object.entries(x).filter(([k])=>!/(photo|image|attach|signature|signIn|signOut|base64)/i.test(k)).map(([k,v])=>[k,compactSource(v)]));
+}
+const originalScope=r=>r.from.slice(0,7)+'/'+r.to.slice(0,7);
+function forOriginalPeriod(data,range){
+  const start=range.from.slice(0,7),end=range.to.slice(0,7);
+  const inMonths=d=>d&&d.slice(0,7)>=start&&d.slice(0,7)<=end;
+  return {...data,rows:data.rows.filter(r=>inMonths(r.date)||inMonths(r.reportDate))};
+}
+function originalPacket(tool,rows,meta={}){return {tool,rows:compactSource(rows),meta:sourceObject(meta)?compactSource(meta):{}};}
+function createOriginalReader({connect=originalConnection,request=requestOriginal,readLocal=readOriginalCache,limit=5,now=()=>Date.now()}={}){
+  const requests=[],units=new Map(),views=new Map();let running=0;
+  const drain=()=>{
+    while(running<limit&&requests.length){
+      const {fn,resolve,reject}=requests.shift();running++;
+      Promise.resolve().then(fn).then(resolve,reject).finally(()=>{running--;drain();});
+    }
+  };
+  const limited=fn=>new Promise((resolve,reject)=>{requests.push({fn,resolve,reject});drain();});
+  const get=(c,action,p={},method='GET')=>limited(()=>request(c,action,p,method));
+  function entry(c,source,tool){
+    const k=JSON.stringify([source,tool,c.url,c.session||'']);
+    if(!units.has(k))units.set(k,{buckets:new Map()});
+    return units.get(k);
+  }
+  async function legacy(c,source,tool){
+    const action='pull', p={tool,...(source==='GASEXP'?{meta:1,legacy:1}:{})};
+    const r=await get(c,action,p,source==='SEC'?'POST':'GET').catch(e=>{
+      if(source==='GASEXP'&&['NO_SMART','SOURCE_FORMAT'].includes(e.code))return get(c,action,p,'POST');
+      throw e;
+    });
+    const body=sourceData(r),b=sourceObject(body)?body:r,meta={...(b.extra||{}),...(b.meta||{})};
+    if(!b.chunked){
+      if(source==='GASEXP'&&sourceObject(b)){
+        const payload=sourceObject(b.data)?b.data:b;
+        if(tool==='expense'&&(Array.isArray(payload.txns)||sourceObject(payload.exp3))){
+          return originalPacket(tool,sourceArray(payload.txns).map(row=>({kind:'txn',row})).concat(Object.entries(payload.exp3||{}).flatMap(([kind,items])=>['repair','purchase','general'].includes(kind)?sourceArray(items).map(row=>({kind,row})):[])));
+        }
+        if(tool==='receiving'&&Array.isArray(payload.records))return originalPacket(tool,payload.records.map(row=>({kind:'record',row})).concat(sourceArray(payload.items).map(row=>({kind:'item',row})),Object.values(payload.deletedRecords||{}).map(row=>({kind:'deleted',row}))));
+      }
+      return originalPacket(tool,sourceList(r),meta);
+    }
+    const count=Number(b.chunks??b.meta?.totalChunks);
+    if(!Number.isSafeInteger(count)||count<1||count>150)throw sourceError('SOURCE_FORMAT');
+    const rows=[];
+    for(let chunk=0;chunk<count;chunk++){
+      const q={tool,chunk,...(b.meta?.uploadId?{uploadId:b.meta.uploadId}:{}),...(source==='GASEXP'?{legacy:1}:{})};
+      rows.push(...sourceList(await get(c,action,q,source==='SEC'?'POST':'GET')));
+    }
+    return originalPacket(tool,rows,meta);
+  }
+  async function smart(c,source,tool,id,range,force){
+    const u=entry(c,source,tool), key=originalScope(range);
+    if(!u.inflight){u.inflight=new Map();u.bucketJobs=new Map();}
+    if(u.inflight.has(key))return u.inflight.get(key);
+    const job=(async()=>{
+      if(!u.manifest||force){
+        if(!u.manifestJob)u.manifestJob=(async()=>{try{
+          const p={tool};
+          const result=await get(c,'smartManifest',p).catch(e=>{
+            if(source==='GASEXP'&&['NO_SMART','SOURCE_FORMAT'].includes(e.code))return get(c,'smartManifest',p,'POST');
+            throw e;
+          });
+          const m=sourceData(result);
+          if(!sourceObject(m)||typeof m.exists!=='boolean')throw sourceError('NO_SMART');
+          if(m.exists&&!sourceObject(m.hashes))throw sourceError('SOURCE_FORMAT');
+          u.manifest=m;
+        }catch(e){if(e.code!=='NO_SMART')throw e;u.manifest={exists:false,legacy:true};}})().finally(()=>{u.manifestJob=null;});
+        await u.manifestJob;
+      }
+      const m=u.manifest;
+      if(!m.exists){
+        if(m.legacy){
+          if(!u.legacy||force)u.legacy=await legacy(c,source,tool);
+          return u.legacy;
+        }
+        return originalPacket(tool,[],m.meta);
+      }
+      const keys=originalBucketKeys(m.hashes,range,id);
+      if(sourceArray(m.missingBuckets).some(k=>originalBucketKeys({[k]:true},range,id).length))throw sourceError('SOURCE_INCOMPLETE');
+      const results=await Promise.all(keys.map(async bucket=>{
+        const revision=String(m.hashes[bucket]??''),cached=u.buckets.get(bucket);
+        if(!revision)throw sourceError('SOURCE_FORMAT');
+        if(cached?.revision===revision)return cached.rows;
+        const version=bucket+'|'+revision;
+        if(u.bucketJobs.has(version))return u.bucketJobs.get(version);
+        const job=(async()=>{
+        let response;
+        const p={tool,bucket};
+        try{response=await get(c,'smartBucket',p);}
+        catch(e){if(source!=='GASEXP'||!['NO_SMART','SOURCE_FORMAT'].includes(e.code))throw e;response=await get(c,'smartBucket',{...p,read:true},'POST');}
+        const b=sourceData(response),rows=sourceList(response);
+        const expected=Number(m.counts?.[bucket]);
+        if(Number.isFinite(expected)&&rows.length!==expected)throw sourceError('SOURCE_INCOMPLETE');
+        if(b?.hash!=null&&String(b.hash)!==revision)throw sourceError('SOURCE_INCOMPLETE');
+        const packed=compactSource(rows);
+        u.buckets.set(bucket,{revision,rows:packed});
+        return packed;
+        })().finally(()=>u.bucketJobs.delete(version));
+        u.bucketJobs.set(version,job);return job;
+      }));
+      for(const k of u.buckets.keys())if(!Object.hasOwn(m.hashes,k))u.buckets.delete(k);
+      return originalPacket(tool,results.flat(),m.meta);
+    })().finally(()=>u.inflight.delete(key));
+    u.inflight.set(key,job);
+    return job;
+  }
+  async function full(c,source,id,range,force){
+    const tool=id.slice(4),yearList=Array.from({length:+range.to.slice(0,4)-+range.from.slice(0,4)+1},(_,i)=>+range.from.slice(0,4)+i);
+    const k=id==='exp.procurement'?tool+':'+yearList.join(','):tool,u=entry(c,source,k);
+    if(u.full&&!force)return u.full;
+    if(u.fullJob)return u.fullJob;
+    u.fullJob=(async()=>{
+      if(id==='exp.procurement')return Promise.all(yearList.map(async year=>originalPacket(tool,sourceList(await get(c,'getHistory',{year})))));
+      if(id==='exp.maintenance')return Promise.all(['rep','po'].map(async sys=>originalPacket(sys,sourceList(await get(c,'exportRecords',{sys})))));
+      if(id==='exp.damage'){
+        const raw=await get(c,'damageLoad');
+        const workflow=await get(c,'damageWorkflow');
+        return [originalPacket(tool,sourceList(raw),{workflow:sourceList(workflow)})];
+      }
+      const module=EXP_MOBILITY[id];
+      if(!module)throw sourceError('SOURCE_FORMAT');
+      // This is the original outbox protocol with an empty change list; it cannot submit a record.
+      const result=await get(c,'mobilitySync',{data:{module,changes:[]}},'POST');
+      return [originalPacket(module,sourceList(result))];
+    })().then(r=>(u.full=r)).finally(()=>{u.fullJob=null;});
+    return u.fullJob;
+  }
+  function getView(id,range){return views.get(id+'|'+originalScope(range))||{state:'idle',rows:[],omitted:0};}
+  function load(id,range,{force=false,onProgress=()=>{}}={}){
+    if(!Object.hasOwn(MODULE_MAP,id))throw sourceError('SOURCE_MODULE');
+    const key=id+'|'+originalScope(range),last=getView(id,range);
+    if(last.job)return last.job;
+    if(!force&&last.state!=='idle')return Promise.resolve(last);
+    const source=MODULE_MAP[id].source,c=connect(source),v={...last,state:'loading'};
+    views.set(key,v);
+    const update=()=>{if(views.get(key)===v)onProgress(id);};
+    const localJob=!last.rows.length?Promise.resolve().then(()=>readLocal(id,range)).then(packets=>{
+      if(v.state==='loading'&&packets?.length){
+        const data=forOriginalPeriod(adaptOriginalRows(id,packets),range);if(data.rows.length){Object.assign(v,data,{local:true});update();}
+      }
+    }).catch(()=>{}):Promise.resolve();
+    v.job=(async()=>{
+      const tools=SOURCE_TOOLS[id],result=tools?await Promise.allSettled(tools.map(tool=>smart(c,source,tool,id,range,force))):
+        [{status:'fulfilled',value:await full(c,source,id,range,force)}];
+      const usable=result.filter(x=>x.status==='fulfilled').flatMap(x=>x.value);
+      const failed=result.find(x=>x.status==='rejected');
+      if(!usable.length&&failed)throw failed.reason;
+      const adapted=forOriginalPeriod(adaptOriginalRows(id,usable),range);
+      if(failed&&!adapted.rows.length&&v.rows.length){v.state='stale';v.error=failed.reason?.code;return;}
+      Object.assign(v,adapted,{state:failed||adapted.omitted?'partial':'ready',local:false,at:now(),error:failed?.reason?.code});
+    })().catch(async e=>{
+      await localJob;
+      Object.assign(v,{state:v.rows.length?'stale':'error',error:e?.code||'SOURCE_ERROR'});
+    }).finally(()=>{delete v.job;update();}).then(()=>v);
+    return v.job;
+  }
+  return {getView,load,clear(){views.clear();units.clear();}};
+}
+
+const SEC_CACHE={
+  'sec.container':{truck:'vrt_truck_v2',insp:'vr-container-inspections',gate:'vrt_v2'},
+  'sec.commute':{car:'ac_sec_car_db',bike:'ac_sec_bike_db',gate:'ac_sec_gate_db',late:'ac_sec_late_db'},
+};
+const GC_CACHE={'gc.temperature':'vrt_th_r','gc.cleaning':'vrt_clean_hub_v2','gc.ehs':'vrt_waste_v3','gc.dormitory':'vrt_dorm_hub_v2','gc.keymovement':'vrt_keys'};
+function originalIDB(dbName,store,keys){
+  return new Promise(resolve=>{
+    let req;try{req=globalThis.indexedDB?.open(dbName);if(!req){resolve({});return;}}catch{resolve({});return;}
+    // No upgrade, database creation, or writes from the reader.
+    req.onupgradeneeded=()=>{req.transaction.abort();};
+    req.onerror=req.onblocked=()=>resolve({});
+    req.onsuccess=()=>{
+      const db=req.result,values={};let tx;
+      try{tx=db.transaction(store,'readonly');}
+      catch{db.close();resolve(values);return;}
+      for(const k of keys){const q=tx.objectStore(store).get(k);q.onsuccess=()=>{values[k]=q.result;};}
+      tx.oncomplete=tx.onerror=tx.onabort=()=>{db.close();resolve(values);};
+    };
+  });
+}
+async function readOriginalCache(id,range){
+  const get=k=>sourceValue(globalThis.localStorage,k);
+  const def=SEC_CACHE[id];
+  if(def){
+    const keys=Object.values(def),saved=await originalIDB('ac_sec_data_v1','records',keys);
+    const rows=Object.entries(def).flatMap(([kind,k])=>sourceArray(saved[k]??get(k)).map(r=>({...r,_k:kind})));
+    return rows.length?[originalPacket(id.slice(4),rows)]:[];
+  }
+  if(Object.hasOwn(EXP_MOBILITY,id)){
+    const key=EXP_MOBILITY[id],v=await originalIDB('ga-exp-mobility-v1','state',[key]),s=v[key];
+    return Array.isArray(s?.rows)&&s.rows.length?[originalPacket(key,s.rows)]:[];
+  }
+  const k=GC_CACHE[id],d=k?get(k):null,tool=id.slice(3);
+  if(id==='gc.ehs'&&d)return [originalPacket(tool,['gate','internal','monthly'].flatMap(m=>sourceArray(d[m]).map(r=>({...r,module:m}))).concat(sourceArray(d.tombstones).map(r=>({...r,_deleted:true}))))];
+  if(Array.isArray(d))return [originalPacket(tool,d,id==='gc.temperature'?{zones:get('vrt_th_z')}:{})];
+  if(Array.isArray(d?.records)){
+    return [originalPacket(tool,d.records),...(id==='gc.dormitory'?['inspections','violations'].filter(m=>Array.isArray(d[m])).map(m=>originalPacket('dormitory_'+m,d[m])):[])];
+  }
+  return [];
+}
+
+;
 function cloudRequestId(){return globalThis.crypto.randomUUID();}
 const PSJGA_PAIR_PAGE='https://saintdou-weng.github.io/PSJGAS/';
 function readDeviceGrant(result,expectedVault,kind='device'){
@@ -423,7 +1047,7 @@ return {schemaVersion:1,generatedAt:new Date().toISOString(),records:rows};}
 
 ;
 
-function createCloudUI({state,storage,T,t,esc,I,button,dialog,closeButton,openDialog,render,toast,download}){
+function createCloudUI({state,storage,T,t,esc,I,button,dialog,closeButton,openDialog,render,toast,download,readOnly=false}){
   const cloud={
     endpoint:storage.get('cloud_endpoint',document.querySelector('meta[name="psjga-default-endpoint"]')?.content||''),key:'',vaultId:'',snapshotVault:'',
     checked:false,revision:null,remoteRevision:null,updatedAt:null,lastSync:null,
@@ -503,6 +1127,7 @@ function createCloudUI({state,storage,T,t,esc,I,button,dialog,closeButton,openDi
       (cloud.error?'<div class="cloud-toolbar-note" role="status">'+esc(cloud.error)+'</div>':'')+'</section>';
   }
   function updateToolbar(){
+    if(readOnly)return;
     const root=document.querySelector('#cloud-slot');
     if(root)root.innerHTML=toolbar();
   }
@@ -621,10 +1246,10 @@ function createCloudUI({state,storage,T,t,esc,I,button,dialog,closeButton,openDi
     const fold=offerPhone||saved;
     const actions='<div class="cloud-actions">'+(cloud.checked?button(T('核准手機配對','Approve phone pairing','អនុម័តការភ្ជាប់ទូរស័ព្ទ'),'cloud-phone-approve-open','check','small','data-cloud-operation')+button(T('產生手機配對連結','Create phone pairing link'),'cloud-pair-create','link','small','data-cloud-operation'):'')+
       (saved?button(T('登出這台裝置','Sign out this device'),'cloud-device-forget',null,'small','data-cloud-operation'):'')+'</div>';
-    const connectButton=button(T('驗證並下載','Connect & download','ភ្ជាប់ និងទាញយក'),'cloud-connect','download','primary','data-cloud-operation');
+    const connectButton=button(readOnly?T('驗證裝置','Verify device','ផ្ទៀងផ្ទាត់ឧបករណ៍'):T('驗證並下載','Connect & download','ភ្ជាប់ និងទាញយក'),'cloud-connect','download','primary','data-cloud-operation');
     openDialog('<div class="dialog-head"><div><small>PSJGA_CORE</small><h2>'+T('雲端連線設定','Cloud connection','ការតភ្ជាប់ពពក')+'</h2></div>'+closeButton()+'</div>'+
       '<div class="dialog-body cloud-dialog">'+(offerPhone?'<div class="phone-pair-intro"><h3>'+T('第一次用這個瀏覽器？','First time in this browser?','ប្រើកម្មវិធីរុករកនេះជាលើកដំបូង?')+'</h3><p>'+T('用手機配對取得授權。Apps Script 網址已設定。','Pair this browser to get access. The Apps Script URL is already set.','ភ្ជាប់ទូរស័ព្ទដើម្បីទទួលសិទ្ធិ។ តំណ Apps Script បានកំណត់រួច។')+'</p>'+button(T('手機配對（免存取碼）','Pair phone without an access key','ភ្ជាប់ទូរស័ព្ទដោយមិនបាច់បញ្ចូលសោ'),'cloud-phone-request','link','primary','data-cloud-operation')+'</div>':'')+
-      (saved?'<div class="phone-pair-intro"><h3>'+T('這個瀏覽器已連線','This browser is connected','កម្មវិធីរុករកនេះបានភ្ជាប់')+'</h3><p>'+T('直接開啟工作台就會自動同步。','Open the workspace to sync automatically.','បើកផ្ទាំងការងារ ដើម្បីធ្វើសមកាលកម្មដោយស្វ័យប្រវត្តិ។')+'</p></div>':'')+
+      (saved?'<div class="phone-pair-intro"><h3>'+T('這個瀏覽器已連線','This browser is connected','កម្មវិធីរុករកនេះបានភ្ជាប់')+'</h3><p>'+(readOnly?T('這台裝置可查看原系統資料。','This device can view the source records.','ឧបករណ៍នេះអាចមើលកំណត់ត្រាប្រភព។'):T('直接開啟工作台就會自動同步。','Open the workspace to sync automatically.','បើកផ្ទាំងការងារ ដើម្បីធ្វើសមកាលកម្មដោយស្វ័យប្រវត្តិ។'))+'</p></div>':'')+
       (fold?'<details class="cloud-admin"><summary>'+T('進階設定（存取碼與網址）','Advanced settings (access key and URL)','ការកំណត់កម្រិតខ្ពស់ (សោ និងតំណ)')+'</summary><div class="cloud-dialog">':'')+
       '<label>'+T('Apps Script 部署網址','Apps Script deployment URL')+'<input id="psjga-endpoint" type="url" inputmode="url" autocomplete="off" spellcheck="false" value="'+esc(cloud.endpoint)+'" placeholder="https://script.google.com/macros/s/…/exec"></label>'+
       '<label>'+T('PSJGA 存取碼','PSJGA access key','សោចូលប្រើ')+'<input id="psjga-key" type="password" autocomplete="off" spellcheck="false" placeholder="'+(cloud.key?T('已在此分頁驗證；可留白','Verified in this tab; leave blank'):T('從 GS 的指令碼屬性取得','From Apps Script properties'))+'"></label>'+
@@ -635,12 +1260,12 @@ function createCloudUI({state,storage,T,t,esc,I,button,dialog,closeButton,openDi
       actions+'<div id="psjga-pair-link"></div>'+
       '<div class="cloud-actions">'+button(T('測試 Bot','Test Bot','សាកល្បង Bot'),'cloud-test-bot',null,'small','data-cloud-operation')+
       '<a class="btn small" href="https://github.com/saintdou-weng/PSJGAS/blob/main/INSTALL_CN.md" target="_blank" rel="noopener noreferrer">'+I('external')+T('GS 安裝說明','GS setup guide')+'</a></div>'+
-      '<p class="cloud-feedback" id="cloud-dialog-status" aria-live="polite">'+esc(cloud.error||server||T('先驗證連線，再下載總表。','Verify the connection, then download the shared dataset.'))+'</p></div>'+
+      '<p class="cloud-feedback" id="cloud-dialog-status" aria-live="polite">'+esc(cloud.error||server||(readOnly?T('配對後可查看原系統紀錄。','Pair this browser to view source records.','ភ្ជាប់ឧបករណ៍ដើម្បីមើលកំណត់ត្រា។'):T('先驗證連線，再下載總表。','Verify the connection, then download the shared dataset.')))+'</p></div>'+
       (fold?'':'<div class="dialog-footer">'+connectButton+'</div>'));
   }
   async function connectTo(endpoint,key,vault=cloud.snapshotVault){
-    const meta=readCloudMeta(await cloudRequest(endpoint,key,'download',{vaultId:vault||undefined}),vault);
-    adoptRemote(normalizeCloudSnapshot(meta.snapshot));
+    const meta=readCloudMeta(await cloudRequest(endpoint,key,readOnly?'status':'download',{vaultId:vault||undefined}),vault);
+    if(!readOnly)adoptRemote(normalizeCloudSnapshot(meta.snapshot));
     if(endpoint!==cloud.endpoint||key!==cloud.key)cloud.bot=null;
     cloud.endpoint=endpoint;cloud.key=key;cloud.snapshotVault=meta.vaultId;cloud.pending=null;
     setMeta(meta);cloud.revision=meta.revision;cloud.lastSync=new Date().toISOString();
@@ -662,8 +1287,8 @@ function createCloudUI({state,storage,T,t,esc,I,button,dialog,closeButton,openDi
     }
     if(dialog.querySelector('#psjga-key')){dialog.querySelector('#psjga-key').value='';dialog.querySelector('#psjga-key').placeholder=T('已在此分頁驗證；可留白','Verified in this tab; leave blank');}
     if(dialog.open)settings();
-    dialogStatus(T('已下載雲端版本','Downloaded cloud revision')+' '+meta.revision+(cloud.dirty?' · '+T('本機更新已保留，待上傳','Local changes retained for upload'):''));
-    toast(T('已連線並下載','Connected and downloaded'));
+    dialogStatus(readOnly?T('裝置已驗證，可查原系統。','Device verified; source records are available.','បានផ្ទៀងផ្ទាត់ឧបករណ៍។'):T('已下載雲端版本','Downloaded cloud revision')+' '+meta.revision+(cloud.dirty?' · '+T('本機更新已保留，待上傳','Local changes retained for upload'):''));
+    toast(readOnly?T('裝置已驗證','Device verified','បានផ្ទៀងផ្ទាត់ឧបករណ៍'):T('已連線並下載','Connected and downloaded'));
   }
   async function createPair(){
     if(!cloud.checked)return;
@@ -679,7 +1304,7 @@ function createCloudUI({state,storage,T,t,esc,I,button,dialog,closeButton,openDi
     openDialog('<div class="dialog-head"><div><small>PSJGA_CORE</small><h2>'+T('配對這台裝置','Pair this device')+'</h2></div>'+closeButton()+'</div>'+
       '<div class="dialog-body cloud-dialog"><p>'+T('請確認這是你自己產生的連結。配對後，這個瀏覽器會記住雲端授權 90 天。','Use a link you created yourself. Once paired, this browser will remember cloud access for 90 days.')+'</p>'+
       '<p class="cloud-feedback" id="cloud-dialog-status" aria-live="polite"></p></div>'+
-      '<div class="dialog-footer">'+button(T('配對並下載','Pair & download'),'cloud-pair-redeem','download','primary','data-cloud-operation')+'</div>');
+      '<div class="dialog-footer">'+button(readOnly?T('配對裝置','Pair device','ភ្ជាប់ឧបករណ៍'):T('配對並下載','Pair & download'),'cloud-pair-redeem','download','primary','data-cloud-operation')+'</div>');
   }
   async function redeemPair(){
     if(!pairIncoming)throw syncError('PAIR_EXPIRED');
@@ -863,6 +1488,7 @@ function createCloudUI({state,storage,T,t,esc,I,button,dialog,closeButton,openDi
     const send=dialog.querySelector('[data-action="cloud-send"]');if(send)send.hidden=true;
   }
   async function handle(a){
+    if(readOnly&&['cloud-download','cloud-upload','cloud-summary','cloud-preview','cloud-send'].includes(a))return;
     if(a==='cloud-settings'){settings();return;}
     if(a==='cloud-summary'){summary();return;}
     if(a==='cloud-connect'){await run(connect,{refresh:true});return;}
@@ -929,7 +1555,7 @@ function createCloudUI({state,storage,T,t,esc,I,button,dialog,closeButton,openDi
   document.addEventListener('visibilitychange',checkPhoneAutomatically);
   dialog.addEventListener('close',()=>{if(!visiblePhoneRequest())clearTimeout(phoneCheckTimer);});
   return {toolbar,handle,importSnapshot,exportSnapshot,datasetLabel,start,saveRecords,ensureConnected,discardConflict,
-    isBusy:()=>cloud.busy,hasConflict:id=>cloud.conflicts.has(id),serverRow:id=>cloud.base?.records.find(r=>recordKey(r)===id),
+    isAuthorized:()=>cloud.checked,isBusy:()=>cloud.busy,hasConflict:id=>cloud.conflicts.has(id),serverRow:id=>cloud.base?.records.find(r=>recordKey(r)===id),
     conflicts:()=>[...cloud.conflicts],pendingCount:(module=null,group='all')=>changed().filter(row=>scoped(row,module,group)).length};
 }
 
@@ -1039,174 +1665,180 @@ const icons={grid:'M3 3h7v7H3z M14 3h7v7h-7z M3 14h7v7H3z M14 14h7v7h-7z',check:
 const I=name=>`<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="${icons[name]||icons.grid}"/></svg>`;
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const storage={get(k,f){try{return JSON.parse(localStorage.getItem('vrt_ga_shell_v1_'+k))??f;}catch{return f;}},set(k,v){try{localStorage.setItem('vrt_ga_shell_v1_'+k,JSON.stringify(v));return true;}catch{return false;}}};
-const state={lang:storage.get('lang','zh'),route:'overview',module:null,mode:'month',ref:todayICT(),group:'all',source:'all',status:'all',query:'',dataset:storage.get('dataset','empty'),snapshot:null,menu:false,selected:new Set(),page:1,workspace:null};
+const state={lang:storage.get('lang','zh'),route:'overview',module:null,mode:'month',ref:todayICT(),group:'all',source:'all',status:'all',kind:'all',query:'',dataset:'empty',snapshot:null,menu:false,selected:new Set(),page:1,workspace:null};
 if(!['zh','en','km'].includes(state.lang))state.lang='zh';
-try{const saved=storage.get('snapshot',null);if(saved)state.snapshot=normalizeCloudSnapshot(saved);}catch{state.snapshot=null;}
-if(state.dataset==='snapshot'&&!state.snapshot)state.dataset='empty';
-if(!['demo','snapshot','empty'].includes(state.dataset))state.dataset='empty';
-const demo=validateSnapshot(demoSnapshot());
 const T=(zh,en,km)=>({zh,en,km})[state.lang]||en||zh;
 const t=obj=>typeof obj==='string'?obj:obj?.[state.lang]||obj?.en||obj?.zh||'';
 const app=document.querySelector('#app'),dialog=document.querySelector('#dialog');
-const sources=()=>state.dataset==='demo'?demo.records:state.dataset==='snapshot'?state.snapshot.records:[];
+const sourceReader=createOriginalReader();
+const sourceRange=()=>periodRange(state.mode,state.ref);
+const sourceModules=()=>MODULES.filter(m=>(!state.module||m.id===state.module)&&(state.group==='all'||m.group===state.group)&&(state.source==='all'||m.source===state.source));
+function sourceCoverage(){
+  const range=sourceRange(),items=sourceModules().map(m=>({m,...sourceReader.getView(m.id,range)}));
+  return {items,total:items.length,ready:items.filter(v=>v.state==='ready').length,
+    errors:items.filter(v=>['error','stale','partial'].includes(v.state)).length,busy:items.filter(v=>['idle','loading'].includes(v.state)).length,
+    any:items.some(v=>v.state==='ready'||v.rows.length),at:Math.max(0,...items.map(v=>v.at||0))};
+}
+function sources(){
+  if(!cloudUI.isAuthorized())return [];
+  const range=sourceRange();
+  return sourceModules().flatMap(m=>sourceReader.getView(m.id,range).rows).map(r=>
+    r.reportDate&&['month','year'].includes(state.mode)?{...r,sourceDate:r.date,date:r.reportDate}:r);
+}
 const selection=()=>({mode:state.mode,ref:state.ref,group:state.group,source:state.source,status:state.status,query:state.query,module:state.module});
-const rows=()=>filterRecords(sources(),selection());
+const rows=()=>filterRecords(sources(),selection()).filter(r=>state.kind==='all'||r.kind===state.kind);
+const kindText=k=>t(SOURCE_KINDS[k])||k;
+const sourceTime=ms=>new Date(ms).toLocaleString(state.lang==='zh'?'zh-TW':'en-GB',{timeZone:'Asia/Phnom_Penh',hour12:false});
+function sourceToolbar(){
+  if(state.workspace||state.route==='architecture'||state.route==='modules')return '';
+  const auth=cloudUI.isAuthorized(),c=sourceCoverage();
+  const label=!auth?T('裝置待驗證','Device needs verification','ត្រូវផ្ទៀងផ្ទាត់ឧបករណ៍'):
+    c.busy?T('讀取中','Reading','កំពុងអាន')+' · '+c.ready+'/'+c.total:
+    c.errors?T('部分來源未確認','Some sources unverified','ប្រភពខ្លះមិនទាន់ផ្ទៀងផ្ទាត់')+' · '+c.ready+'/'+c.total:
+    T('已讀取原表','Source records loaded','បានអានតារាងដើម')+' · '+c.ready+'/'+c.total;
+  const tone=!auth?'gray':c.errors||c.busy?'amber':'teal';
+  return `<section class="cloud-toolbar source-toolbar" aria-label="${T('原表狀態','Source status','ស្ថានភាពប្រភព')}">
+  <div class="cloud-toolbar-status">${I('database')}<div><strong>${T('原系統紀錄','Original records','កំណត់ត្រាដើម')}</strong> <span class="pill ${tone}" role="status"><span class="dot"></span>${esc(label)}</span>${c.at?' <small class="small-muted">· '+esc(sourceTime(c.at))+' ICT</small>':''}</div></div>
+  <div class="cloud-actions">${auth?button(T('更新資料','Refresh records','ធ្វើបច្ចុប្បន្នភាព'),'source-refresh','refresh','small',refreshingSources?'disabled':''):button(T('連線／配對','Connect / pair','ភ្ជាប់ឧបករណ៍'),'cloud-settings','link','primary small')}${auth?button(T('連線設定','Connection settings','ការកំណត់ការតភ្ជាប់'),'cloud-settings','link','small'):''}</div>
+  </section>`;
+}
+let sourcePaint=false,refreshingSources=false,sourceRunning=0,hadSourceAccess=false;
+const sourceJobs=new Map();
+const sourceRelevant=()=>!state.workspace&&state.route!=='modules'&&state.route!=='architecture';
+function sourceSchedulePaint(){
+  if(sourcePaint)return;
+  sourcePaint=true;
+  Promise.resolve().then(()=>{
+    sourcePaint=false;if(!sourceRelevant())return;
+    if(document.activeElement?.matches?.('[data-filter=query]')){const slot=document.querySelector('#cloud-slot');if(slot)slot.innerHTML=sourceToolbar();return;}
+    render();
+  });
+}
+function loadCurrentSources({force=false}={}){
+  if(!cloudUI.isAuthorized()||!sourceRelevant())return [];
+  const range=sourceRange(),mods=sourceModules(),prefix=range.from.slice(0,7)+'|'+range.to.slice(0,7)+'|';
+  const visible=new Set(mods.map(m=>prefix+m.id));
+  for(const [key,j] of sourceJobs)if(!j.started&&!visible.has(key)&&!j.force){sourceJobs.delete(key);j.finish();}
+  const jobs=[];
+  for(const m of mods){
+    const key=prefix+m.id,job=sourceJobs.get(key);
+    if(job){jobs.push(job.promise);continue;}
+    if(!force&&sourceReader.getView(m.id,range).state!=='idle')continue;
+    let finish;const promise=new Promise(resolve=>{finish=resolve;});
+    sourceJobs.set(key,{m,range,force,promise,finish,started:false});jobs.push(promise);
+  }
+  drainSourceJobs();return jobs;
+}
+function drainSourceJobs(){
+  if(!cloudUI.isAuthorized())return;
+  for(const [key,j] of sourceJobs){
+    if(sourceRunning>=3)break;
+    if(j.started)continue;
+    j.started=true;sourceRunning++;
+    sourceReader.load(j.m.id,j.range,{force:j.force,onProgress:sourceSchedulePaint}).finally(()=>{
+      sourceRunning--;if(sourceJobs.get(key)===j)sourceJobs.delete(key);j.finish();drainSourceJobs();
+    });
+  }
+}
+function sourceAuthChanged(){
+  const ok=cloudUI.isAuthorized();
+  if(!ok&&hadSourceAccess){
+    sourceReader.clear();for(const j of sourceJobs.values())j.finish();sourceJobs.clear();
+  }
+  hadSourceAccess=ok;
+  if(ok&&sourceRelevant())loadCurrentSources();
+  else for(const [key,j] of sourceJobs)if(!j.started){sourceJobs.delete(key);j.finish();}
+}
 const n=x=>new Intl.NumberFormat(state.lang==='zh'?'zh-TW':state.lang==='km'?'km-KH':'en-US',{maximumFractionDigits:2}).format(x);
 const money=(amount,currency)=>new Intl.NumberFormat(state.lang==='zh'?'zh-TW':'en-US',{style:'currency',currency,maximumFractionDigits:2}).format(amount);
-const statusText=s=>({pending:T('待核可','Awaiting approval','រង់ចាំអនុម័ត'),in_progress:T('處理中','In progress','កំពុងដំណើរការ'),abnormal:T('需注意','Needs attention','ត្រូវយកចិត្តទុកដាក់'),completed:T('已完成','Completed','បានបញ្ចប់'),rejected:T('已退件','Rejected','បានបដិសេធ')})[s]||s;
+const statusText=s=>({recorded:T('已登記','Recorded','បានកត់ត្រា'),pending:T('待核可','Awaiting approval','រង់ចាំអនុម័ត'),in_progress:T('處理中','In progress','កំពុងដំណើរការ'),abnormal:T('需注意','Needs attention','ត្រូវយកចិត្តទុកដាក់'),completed:T('已完成','Completed','បានបញ្ចប់'),rejected:T('已退件','Rejected','បានបដិសេធ')})[s]||s;
 const statusPill=s=>`<span class="pill ${{pending:'amber',in_progress:'blue',abnormal:'red',completed:'teal',rejected:'gray'}[s]||'gray'}"><span class="dot"></span>${esc(statusText(s))}</span>`;
 const routeNames=()=>({overview:T('總務總覽','Operations overview','ទិដ្ឋភាពទូទៅ'),tasks:T('待辦中心','Action center','កិច្ចការត្រូវធ្វើ'),records:T('全部紀錄','All records','កំណត់ត្រាទាំងអស់'),reports:T('分析報表','Reports & insights','របាយការណ៍ និងវិភាគ'),modules:T('功能總覽','All modules','មុខងារទាំងអស់'),sources:T('資料與連線','Data & connections','ទិន្នន័យ និងការតភ្ជាប់'),architecture:T('系統架構','System architecture','រចនាសម្ព័ន្ធប្រព័ន្ធ'),...Object.fromEntries(GROUPS.map(g=>[g.id,t(g.name)])),...Object.fromEntries(MODULES.map(m=>[m.id,t(m.name)]))});
 function button(label,action,icon,cls='',extra=''){return `<button type="button" class="btn ${cls}" data-action="${action}" ${extra}>${icon?I(icon):''}${label}</button>`;}
 function link(label,url,cls='btn',icon='external'){return `<a class="${cls}" href="${esc(url)}" target="_blank" rel="noopener noreferrer">${I(icon)}${label}</a>`;}
 function nav(route,icon,name,badge=''){return `<button class="nav-btn ${state.route===route?'active':''}" data-route="${route}" ${state.route===route?'aria-current="page"':''}>${I(icon)}<span>${esc(name)}</span>${badge?`<span class="nav-count">${badge}</span>`:''}</button>`;}
 function areaNavigation(){return GROUPS.map(g=>`<section class="nav-group" aria-label="${esc(t(g.name))}"><div class="nav-caption">${esc(t(g.name))}</div>${MODULES.filter(m=>m.group===g.id).map(m=>nav(m.id,m.icon,t(m.name))).join('')}</section>`).join('');}
-function sideContent(){const allOpen=metrics(eventRows(sources())).open;return `<a class="brand" href="#overview" data-route="overview"><span class="brand-mark">VRT</span><span><strong>${T('總務工作台','General Affairs','កិច្ចការទូទៅ')}</strong><small>GENERAL AFFAIRS</small></span></a><div class="nav-caption">${T('工作空間','Workspace','កន្លែងធ្វើការ')}</div>${nav('overview','grid',routeNames().overview)}${nav('tasks','clipboard',routeNames().tasks,state.dataset==='empty'?'—':allOpen||'')}${nav('records','file',routeNames().records)}${nav('reports','chart',routeNames().reports)}${areaNavigation()}<div class="nav-caption">${T('管理工具','Administration','ឧបករណ៍គ្រប់គ្រង')}</div>${nav('sources','database',routeNames().sources)}${nav('architecture','link',routeNames().architecture)}<a class="nav-btn legacy-nav" href="./legacy.html" target="_blank" rel="noopener noreferrer">${I('external')}<span>${T('原稽核評鑑','Compliance assessment','ការវាយតម្លៃអនុលោមភាព')}</span></a><div class="nav-foot"><div class="nav-rule"></div><strong>Vantage River Textiles</strong><br>Sihanoukville · Cambodia<br><span>${T('總務工作台 v1.2','GA workspace v1.2','កិច្ចការទូទៅ v1.2')}</span></div>`;}
+function sideContent(){return `<a class="brand" href="#overview" data-route="overview"><span class="brand-mark">VRT</span><span><strong>${T('總務工作台','General Affairs','កិច្ចការទូទៅ')}</strong><small>GENERAL AFFAIRS</small></span></a><div class="nav-caption">${T('工作空間','Workspace','កន្លែងធ្វើការ')}</div>${nav('overview','grid',routeNames().overview)}${nav('tasks','clipboard',routeNames().tasks)}${nav('records','file',routeNames().records)}${nav('reports','chart',routeNames().reports)}${areaNavigation()}<div class="nav-caption">${T('管理工具','Administration','ឧបករណ៍គ្រប់គ្រង')}</div>${nav('sources','database',routeNames().sources)}${nav('architecture','link',routeNames().architecture)}<a class="nav-btn legacy-nav" href="./legacy.html" target="_blank" rel="noopener noreferrer">${I('external')}<span>${T('原稽核評鑑','Compliance assessment','ការវាយតម្លៃអនុលោមភាព')}</span></a><div class="nav-foot"><div class="nav-rule"></div><strong>Vantage River Textiles</strong><br>Sihanoukville · Cambodia<br><span>${T('總務工作台 v1.3','GA workspace v1.3','កិច្ចការទូទៅ v1.3')}</span></div>`;}
 function topContent(){return `<button class="icon-button mobile-only" data-action="menu" aria-controls="ga-sidebar" aria-expanded="${state.menu}" aria-label="${T('開啟選單','Open menu','បើកម៉ឺនុយ')}">${I('menu')}</button><div class="breadcrumbs">VRT <span> / </span><strong>${esc(routeNames()[state.route]||routeNames().overview)}</strong></div><button class="search-trigger" data-action="command" aria-label="${T('搜尋功能與紀錄','Search modules and records','ស្វែងរកមុខងារ និងកំណត់ត្រា')}">${I('search')}<span>${T('搜尋功能、紀錄…','Search modules, records…','ស្វែងរកមុខងារ កំណត់ត្រា…')}</span><kbd>⌘ K</kbd></button><button class="icon-button ga-theme-trigger" data-action="appearance" aria-haspopup="dialog" aria-label="${T('背景與色彩','Background & colour','ផ្ទៃខាងក្រោយ និងពណ៌')}" title="${T('背景與色彩','Background & colour','ផ្ទៃខាងក្រោយ និងពណ៌')}">🎨</button><div class="langs" aria-label="Language">${[['zh','中'],['en','EN'],['km','ខ្មែរ']].map(([l,label])=>`<button data-lang="${l}" class="${state.lang===l?'on':''}" aria-pressed="${state.lang===l}">${label}</button>`).join('')}</div><span class="avatar" title="VRT General Affairs">GA</span>`;}
 function mobileContent(){return `${[['overview','grid'],['tasks','clipboard'],['records','file'],['reports','chart'],['menu','menu']].map(([r,i])=>`<button ${r==='menu'?'data-action="menu"':'data-route="'+r+'"'} class="${state.route===r||r==='menu'&&state.module?'on':''}">${I(i)}<span>${r==='menu'?T('業務選單','Modules','មុខងារ'):routeNames()[r]}</span></button>`).join('')}`;}
-function footer(){return `<span>VRT · General Affairs Workspace · v1.2</span><span>${T('業務日期 · Asia/Phnom_Penh · 資料可追溯','Business date · Asia/Phnom_Penh · traceable data','ថ្ងៃប្រតិបត្តិការ · Asia/Phnom_Penh · ទិន្នន័យអាចតាមដាន')}</span>`;}
+function footer(){return `<span>VRT · General Affairs Workspace · v1.3</span><span>${T('業務日期 · Asia/Phnom_Penh · 資料可追溯','Business date · Asia/Phnom_Penh · traceable data','ថ្ងៃប្រតិបត្តិការ · Asia/Phnom_Penh · ទិន្នន័យអាចតាមដាន')}</span>`;}
 function shell(){
   return `<div class="shell"><aside id="ga-sidebar" class="sidebar ${state.menu?'open':''}" aria-label="${T('主選單','Main navigation','ម៉ឺនុយមេ')}">${sideContent()}</aside><div class="backdrop ${state.menu?'on':''}" data-action="menu-close"></div>
   <div class="main-shell"><header class="topbar">${topContent()}</header><main id="main" tabindex="-1" class="${state.workspace?'is-original':''}">
-  <div id="cloud-slot" ${state.workspace?'hidden':''}>${cloudUI.toolbar()}</div><div id="ga-content">${content()}</div>
+  <div id="cloud-slot" ${state.workspace?'hidden':''}>${sourceToolbar()}</div><div id="ga-content">${content()}</div>
   <section id="ga-workspace" class="module-workspace" ${state.workspace?'':'hidden'}>${workspaceFrame()}</section>
   <footer class="screen-footer">${footer()}</footer></main></div><nav class="mobile-nav" aria-label="${T('快捷導覽','Quick navigation','រុករករហ័ស')}">${mobileContent()}</nav></div>`;
 }
-function title(name,sub,actions=true){return `<div class="title-row"><div><div class="eyebrow">VRT · GENERAL AFFAIRS</div><h1>${name}</h1><p>${sub}</p></div>${actions?`<div class="actions">${button(T('匯出','Export','នាំចេញ'),'export','download')}${button(T('新增紀錄','New record','កំណត់ត្រាថ្មី'),'new','plus','primary')}</div>`:''}</div>`;}
-function modebar(){const demoMode=state.dataset==='demo',snap=state.dataset==='snapshot';const label=demoMode?T('範例資料・非正式營運數據','Sample data · not live operational data','ទិន្នន័យគំរូ · មិនមែនទិន្នន័យប្រតិបត្តិការពិត'):snap?cloudUI.datasetLabel():T('尚未載入總表・可直接開啟原模組','Shared dataset not loaded · original modules available','មិនទាន់ផ្ទុកទិន្នន័យរួម · អាចបើកមុខងារដើម');return `<div class="modebar ${state.dataset==='empty'?'empty':''}">${I('info')}<span><strong>${label}</strong>${snap?` · ${new Date(state.snapshot.generatedAt).toLocaleString('en-GB',{timeZone:'Asia/Phnom_Penh',hour12:false})} ICT`:''}</span><div class="actions">${button(demoMode?T('返回正式總表','Return to shared dataset','ត្រឡប់ទៅទិន្នន័យរួម'):T('查看範例','View sample','មើលគំរូ'),demoMode?'empty':'demo',null,'quiet')}${button(T('資料來源','Sources','ប្រភព'),'sources',null,'quiet')}</div></div>`;}
+function title(name,sub){return `<div class="title-row"><div><div class="eyebrow">VRT · GENERAL AFFAIRS</div><h1>${name}</h1><p>${sub}</p></div></div>`;}
 function periods(){const r=periodRange(state.mode,state.ref),y=+state.ref.slice(0,4),mo=+state.ref.slice(5,7),years=Array.from({length:Math.max(15,y-2017+2)},(_,i)=>2018+i);let picker='';if(state.mode==='day')picker=`<input class="filter-select" type="date" data-filter="date" value="${state.ref}" aria-label="${T('日期','Date','កាលបរិច្ឆេទ')}">`;if(state.mode==='week')picker=`<span class="period-label">${isoWeek(state.ref)}</span><select data-filter="week" aria-label="${T('選週','Select week','ជ្រើសសប្ដាហ៍')}">${Array.from({length:21},(_,i)=>shiftPeriod('week',state.ref,i-10)).map(d=>`<option value="${d}" ${periodRange('week',d).from===r.from?'selected':''}>${isoWeek(d)} · ${d.slice(5)}</option>`).join('')}</select>`;if(state.mode==='month'||state.mode==='year'){picker=`<select data-filter="year" aria-label="${T('年份','Year','ឆ្នាំ')}">${years.map(v=>`<option ${v===y?'selected':''}>${v}</option>`).join('')}</select>`;if(state.mode==='month')picker+=`<select data-filter="month" aria-label="${T('月份','Month','ខែ')}">${Array.from({length:12},(_,i)=>`<option value="${i+1}" ${i+1===mo?'selected':''}>${new Intl.DateTimeFormat(state.lang==='zh'?'zh-TW':state.lang==='km'?'km-KH':'en-US',{month:'long',timeZone:'UTC'}).format(new Date(Date.UTC(y,i,1)))}</option>`).join('')}</select>`;}return `<div class="periodbar"><div class="segments" aria-label="${T('統計期間','Period','រយៈពេល')}">${[['day',T('日','Day','ថ្ងៃ')],['week',T('週','Week','សប្ដាហ៍')],['month',T('月','Month','ខែ')],['year',T('年','Year','ឆ្នាំ')]].map(([v,l])=>`<button class="${state.mode===v?'active':''}" data-period="${v}" aria-pressed="${state.mode===v}">${l}</button>`).join('')}</div><div class="periodnav">${button('','previous','left','square',`aria-label="${T('上一期','Previous period','រយៈពេលមុន')}"`)}${picker}${button('','next','chevron','square',`aria-label="${T('下一期','Next period','រយៈពេលបន្ទាប់')}"`)}${button(T('本期','Current','បច្ចុប្បន្ន'),'today',null,'small')}</div><span class="range">${r.from} — ${r.to} · ICT</span></div>`;}
 function emptyState(label=T('此期間沒有紀錄','No records for this period','គ្មានកំណត់ត្រាក្នុងរយៈពេលនេះ')){
-  const loaded=state.dataset!=='empty';
-  return `<div class="empty-state">${I('clipboard')}<strong>${loaded?label:T('尚未下載總表','Ledger not downloaded','មិនទាន់ទាញយកតារាង')}</strong><p>${loaded?T('可切換期間、調整篩選，或新增紀錄。','Change the period or filters, or add a record.','ប្ដូររយៈពេល តម្រង ឬបន្ថែមកំណត់ត្រា។'):T('點「下載總表」載入已儲存的資料。','Choose Download records to load saved records.','ចុចទាញយកតារាង ដើម្បីផ្ទុកទិន្នន័យដែលបានរក្សាទុក។')}</p></div>`;
+  const c=sourceCoverage(),auth=cloudUI.isAuthorized();
+  const title=!auth?T('連線後可查看原表','Connect to view source records','ភ្ជាប់ដើម្បីមើលកំណត់ត្រា'):
+    c.busy?T('正在讀取原表','Reading original records','កំពុងអានតារាងដើម'):
+    c.errors?T('部分原表尚未讀取成功','Some source records could not be read','មិនអាចអានប្រភពខ្លះ'):label;
+  const hint=!auth?T('使用已配對的裝置，或點上方「連線／配對」。','Use a paired device or choose Connect / pair.','ប្រើឧបករណ៍ដែលបានភ្ជាប់។'):
+    c.busy?T('會依期間讀取，完成的資料會先顯示。','Available records appear as each source finishes.','ទិន្នន័យនឹងបង្ហាញពេលអានរួច។'):
+    c.errors?T('可按「更新資料」重試，或進入原系統核對。','Refresh to retry, or check the original system.','ធ្វើបច្ចុប្បន្នភាព ឬពិនិត្យប្រព័ន្ធដើម។'):
+    T('可切換期間或調整篩選。','Change the period or filters.','ប្ដូររយៈពេល ឬតម្រង។');
+  return `<div class="empty-state">${I(c.errors?'alert':'clipboard')}<strong>${title}</strong><p>${hint}</p></div>`;
 }
-function stats(){const m=metrics(rows()),value=x=>state.dataset==='empty'?'—':n(x);const values=[{label:T('本期工作紀錄','Records this period','កំណត់ត្រាក្នុងរយៈពេល'),v:value(m.total),icon:'clipboard',sub:T('按業務事件去重','Unique business events','កិច្ចការមិនស្ទួន'),action:'records'}, {label:T('待核可','Awaiting approval','រង់ចាំអនុម័ត'),v:value(m.pending),icon:'clock',sub:T('保留原審查與核可流程','Original review & approval flow','រក្សាលំហូរពិនិត្យ និងអនុម័តដើម'),action:'pending'}, {label:T('需關注事項','Needs attention','កិច្ចការត្រូវយកចិត្តទុកដាក់'),v:value(m.abnormal),icon:'alert',sub:T('異常集中追蹤','Issues in one place','តាមដានបញ្ហានៅកន្លែងតែមួយ'),action:'abnormal'}, {label:T('本期已完成','Completed this period','បានបញ្ចប់ក្នុងរយៈពេល'),v:value(m.completed),icon:'check',sub:T('點開核對明細與來源','Open details & source','បើកព័ត៌មានលម្អិត និងប្រភព'),action:'completed'}];return `<div class="stats">${values.map(v=>`<button class="stat" data-action="${v.action}"><div class="stat-head"><span>${v.label}</span>${I(v.icon)}</div><div class="stat-value">${v.v}</div><div class="stat-bottom">${v.sub}</div></button>`).join('')}</div>`;}
+function stats(){const m=metrics(rows()),value=x=>!sourceCoverage().any?'—':n(x);const values=[{label:T('本期工作紀錄','Records this period','កំណត់ត្រាក្នុងរយៈពេល'),v:value(m.total),icon:'clipboard',sub:T('按業務事件去重','Unique business events','កិច្ចការមិនស្ទួន'),action:'records'}, {label:T('待核可','Awaiting approval','រង់ចាំអនុម័ត'),v:value(m.pending),icon:'clock',sub:T('保留原審查與核可流程','Original review & approval flow','រក្សាលំហូរពិនិត្យ និងអនុម័តដើម'),action:'pending'}, {label:T('需關注事項','Needs attention','កិច្ចការត្រូវយកចិត្តទុកដាក់'),v:value(m.abnormal),icon:'alert',sub:T('異常集中追蹤','Issues in one place','តាមដានបញ្ហានៅកន្លែងតែមួយ'),action:'abnormal'}, {label:T('本期已完成','Completed this period','បានបញ្ចប់ក្នុងរយៈពេល'),v:value(m.completed),icon:'check',sub:T('點開核對明細與來源','Open details & source','បើកព័ត៌មានលម្អិត និងប្រភព'),action:'completed'}];return `<div class="stats">${values.map(v=>`<button class="stat" data-action="${v.action}"><div class="stat-head"><span>${v.label}</span>${I(v.icon)}</div><div class="stat-value">${v.v}</div><div class="stat-bottom">${v.sub}</div></button>`).join('')}</div>`;}
 function taskLine(r){const m=MODULE_MAP[r.module];return `<button class="task-line" data-record="${esc(recordKey(r))}"><span class="task-icon ${r.status==='abnormal'?'red':r.status==='pending'?'amber':''}">${I(m.icon)}</span><span class="task-main"><strong>${esc(t(r.title))}</strong><small>${esc(t(m.name))} · ${esc(r.owner||'—')} · ${r.date.slice(5)} <span class="source-mini"> / ${SOURCES[r.source].name}</span></small></span>${statusPill(r.status)}${I('chevron')}</button>`;}
-function trend(){const filtered=rows(),range=periodRange(state.mode,state.ref),from=new Date(range.from+'T00:00:00Z'),to=new Date(range.to+'T00:00:00Z');let buckets=[];if(state.mode==='year'){buckets=Array.from({length:12},(_,i)=>({label:`${i+1}`,key:range.from.slice(0,4)+'-'+String(i+1).padStart(2,'0')}));}else{const span=Math.round((to-from)/86400000)+1,step=span>14?Math.ceil(span/10):1;for(let i=0;i<span;i+=step){const a=new Date(+from+i*86400000).toISOString().slice(0,10),b=new Date(+from+Math.min(span-1,i+step-1)*86400000).toISOString().slice(0,10);buckets.push({label:a.slice(5),a,b});}}if(buckets.length===1){buckets=[{label:range.from.slice(5),a:range.from,b:range.to}];}for(const b of buckets){const list=filtered.filter(r=>b.key?r.date.startsWith(b.key):r.date>=b.a&&r.date<=b.b);b.total=list.length;b.bad=list.filter(r=>r.status==='abnormal').length;b.good=b.total-b.bad;}const max=Math.max(1,...buckets.map(b=>b.total));return `<section class="panel"><div class="panel-head"><div><h2>${T('工作紀錄趨勢','Activity trend','និន្នាការកំណត់ត្រា')}</h2><div class="panel-sub">${T('跟著所選日／週／月／年變動','Follows the selected day / week / month / year','ប្រែប្រួលតាមថ្ងៃ / សប្ដាហ៍ / ខែ / ឆ្នាំ')}</div></div><div class="chart-head-legend"><span><i class="legend-square"></i>${T('紀錄','Records','កំណត់ត្រា')}</span><span><i class="legend-square" style="background:#e5b297"></i>${T('異常','Issues','បញ្ហា')}</span></div></div>${state.dataset==='empty'?emptyState():`<div class="chart" role="img" aria-label="${esc(buckets.map(b=>`${b.label}: ${b.total}, ${statusText('abnormal')}: ${b.bad}`).join('; '))}">${buckets.map(b=>`<div class="chart-column"><span class="chart-number">${b.total||''}</span><div class="bars"><span class="bar" style="height:${b.good/max*100}%"></span><span class="bar alert" style="height:${b.bad/max*100}%"></span></div><label>${b.label}</label></div>`).join('')}</div><div class="chart-foot">${T('顯示事件筆數；金額、重量與數量分開統計。','Event counts only. Cost, weight and quantity are calculated separately.','បង្ហាញចំនួនកិច្ចការ។ ចំណាយ ទម្ងន់ និងបរិមាណគណនាដាច់ដោយឡែក។')}</div>`}</section>`;}
-function coverage(){const list=rows();return `<section class="panel"><div class="panel-head"><div><h2>${T('四大業務，一個入口','Four areas. One workspace.','ផ្នែកបួន នៅកន្លែងតែមួយ')}</h2><div class="panel-sub">SEC · GasCheck · GASExp</div></div><span class="pill teal">23 ${T('模組','modules','មុខងារ')}</span></div><div class="panel-body">${GROUPS.map(g=>{const count=list.filter(r=>MODULE_MAP[r.module].group===g.id).length,mods=MODULES.filter(m=>m.group===g.id).length;return `<button class="area-line" data-route="${g.id}" style="width:100%;background:transparent;border:0;text-align:left;color:inherit"><span class="task-icon" style="color:${g.color};background:${g.color}0d">${I(g.icon)}</span><span><strong>${t(g.name)}</strong><small>${mods} ${T('個原功能入口','original modules','មុខងារដើម')}</small></span><span class="area-number">${state.dataset==='empty'?'—':count}<small>${T('本期紀錄','this period','ក្នុងរយៈពេល')}</small></span></button>`;}).join('')}<div class="coverage-note">${T('入口已按目前程式盤點；原模組的新增、刪改、照片、匯入出及核可仍由原頁處理。','Entrypoints checked against current source. Editing, photos, import/export and approval remain in the original pages.','ច្រកចូលបានផ្ទៀងផ្ទាត់តាមកូដបច្ចុប្បន្ន។ កែប្រែ រូបថត នាំចូល/ចេញ និងអនុម័តនៅទំព័រដើម។')}</div></div></section>`;}
-function table(list,full=false){const pages=Math.max(1,Math.ceil(list.length/20));state.page=Math.min(state.page,pages);const view=full?list.slice((state.page-1)*20,state.page*20):list.slice(0,6);if(!view.length)return `<div class="panel">${emptyState()}</div>`;return `<div class="panel"><div class="table-scroll"><table class="data-table"><thead><tr><th><input type="checkbox" data-action="select-all" aria-label="${T('選取本頁','Select this page','ជ្រើសទំព័រនេះ')}" ${view.every(r=>state.selected.has(recordKey(r)))?'checked':''}></th><th>${T('工作／紀錄','Activity / record','កិច្ចការ / កំណត់ត្រា')}</th><th>${T('業務模組','Module','មុខងារ')}</th><th>${T('日期','Date','កាលបរិច្ឆេទ')}</th><th>${T('負責人','Owner','អ្នកទទួលខុសត្រូវ')}</th><th>${T('狀態','Status','ស្ថានភាព')}</th><th>${T('來源','Source','ប្រភព')}</th>${full&&state.dataset==='snapshot'?'<th>'+T('操作','Actions','សកម្មភាព')+'</th>':''}</tr></thead><tbody>${view.map(r=>`<tr data-record="${esc(recordKey(r))}" tabindex="0"><td><input type="checkbox" data-select="${esc(recordKey(r))}" ${state.selected.has(recordKey(r))?'checked':''} aria-label="${esc(r.id)}"></td><td class="title-cell">${esc(t(r.title))}<div class="row-code">${esc(r.id)}</div></td><td>${esc(t(MODULE_MAP[r.module].name))}</td><td class="date-cell">${r.date}</td><td>${esc(r.owner||'—')}</td><td>${statusPill(r.status)}</td><td class="source-mini">${SOURCES[r.source].name}${r.sourceRefs.length>1?` · ${r.sourceRefs.length} ${T('關聯','linked','តំណ')}`:''}</td>${full&&state.dataset==='snapshot'?`<td class="record-actions">${button(T('編輯','Edit','កែ'),'ledger-edit','edit','small',`data-key="${esc(recordKey(r))}"`)}</td>`:''}</tr>`).join('')}</tbody></table></div><div class="table-bottom"><span>${state.selected.size?`${state.selected.size} ${T('筆已選','selected','បានជ្រើស')} · `:''}${full?`${(state.page-1)*20+1}–${Math.min(state.page*20,list.length)} / ${list.length}`:`${T('顯示最近','Latest','ចុងក្រោយ')} ${view.length} / ${list.length}`} ${T('筆紀錄','records','កំណត់ត្រា')}</span>${full?`<div class="actions">${button('','page-prev','left','small',`aria-label="Previous page" ${state.page===1?'disabled':''}`)}<span>${state.page} / ${pages}</span>${button('','page-next','chevron','small',`aria-label="Next page" ${state.page===pages?'disabled':''}`)}</div>`:`<button class="text-link" data-route="records">${T('全部紀錄','All records','កំណត់ត្រាទាំងអស់')} ${I('chevron')}</button>`}</div></div>`;}
+function trend(){const filtered=rows(),range=periodRange(state.mode,state.ref),from=new Date(range.from+'T00:00:00Z'),to=new Date(range.to+'T00:00:00Z');let buckets=[];if(state.mode==='year'){buckets=Array.from({length:12},(_,i)=>({label:`${i+1}`,key:range.from.slice(0,4)+'-'+String(i+1).padStart(2,'0')}));}else{const span=Math.round((to-from)/86400000)+1,step=span>14?Math.ceil(span/10):1;for(let i=0;i<span;i+=step){const a=new Date(+from+i*86400000).toISOString().slice(0,10),b=new Date(+from+Math.min(span-1,i+step-1)*86400000).toISOString().slice(0,10);buckets.push({label:a.slice(5),a,b});}}if(buckets.length===1){buckets=[{label:range.from.slice(5),a:range.from,b:range.to}];}for(const b of buckets){const list=filtered.filter(r=>b.key?r.date.startsWith(b.key):r.date>=b.a&&r.date<=b.b);b.total=list.length;b.bad=list.filter(r=>r.status==='abnormal').length;b.good=b.total-b.bad;}const max=Math.max(1,...buckets.map(b=>b.total));return `<section class="panel"><div class="panel-head"><div><h2>${T('工作紀錄趨勢','Activity trend','និន្នាការកំណត់ត្រា')}</h2><div class="panel-sub">${T('跟著所選日／週／月／年變動','Follows the selected day / week / month / year','ប្រែប្រួលតាមថ្ងៃ / សប្ដាហ៍ / ខែ / ឆ្នាំ')}</div></div><div class="chart-head-legend"><span><i class="legend-square"></i>${T('紀錄','Records','កំណត់ត្រា')}</span><span><i class="legend-square" style="background:#e5b297"></i>${T('異常','Issues','បញ្ហា')}</span></div></div>${!sourceCoverage().any?emptyState():`<div class="chart" role="img" aria-label="${esc(buckets.map(b=>`${b.label}: ${b.total}, ${statusText('abnormal')}: ${b.bad}`).join('; '))}">${buckets.map(b=>`<div class="chart-column"><span class="chart-number">${b.total||''}</span><div class="bars"><span class="bar" style="height:${b.good/max*100}%"></span><span class="bar alert" style="height:${b.bad/max*100}%"></span></div><label>${b.label}</label></div>`).join('')}</div><div class="chart-foot">${T('顯示事件筆數；金額、重量與數量分開統計。','Event counts only. Cost, weight and quantity are calculated separately.','បង្ហាញចំនួនកិច្ចការ។ ចំណាយ ទម្ងន់ និងបរិមាណគណនាដាច់ដោយឡែក។')}</div>`}</section>`;}
+function coverage(){const list=rows();return `<section class="panel"><div class="panel-head"><div><h2>${T('四大業務，一個入口','Four areas. One workspace.','ផ្នែកបួន នៅកន្លែងតែមួយ')}</h2><div class="panel-sub">SEC · GasCheck · GASExp</div></div><span class="pill teal">23 ${T('模組','modules','មុខងារ')}</span></div><div class="panel-body">${GROUPS.map(g=>{const count=list.filter(r=>MODULE_MAP[r.module].group===g.id).length,mods=MODULES.filter(m=>m.group===g.id).length;return `<button class="area-line" data-route="${g.id}" style="width:100%;background:transparent;border:0;text-align:left;color:inherit"><span class="task-icon" style="color:${g.color};background:${g.color}0d">${I(g.icon)}</span><span><strong>${t(g.name)}</strong><small>${mods} ${T('個原功能入口','original modules','មុខងារដើម')}</small></span><span class="area-number">${!sourceCoverage().any?'—':count}<small>${T('本期紀錄','this period','ក្នុងរយៈពេល')}</small></span></button>`;}).join('')}<div class="coverage-note">${T('入口已按目前程式盤點；原模組的新增、刪改、照片、匯入出及核可仍由原頁處理。','Entrypoints checked against current source. Editing, photos, import/export and approval remain in the original pages.','ច្រកចូលបានផ្ទៀងផ្ទាត់តាមកូដបច្ចុប្បន្ន។ កែប្រែ រូបថត នាំចូល/ចេញ និងអនុម័តនៅទំព័រដើម។')}</div></div></section>`;}
+function table(list,full=false){
+  const pages=Math.max(1,Math.ceil(list.length/24));state.page=Math.min(state.page,pages);
+  const view=full?list.slice((state.page-1)*24,state.page*24):list.slice(0,6);
+  if(!view.length)return `<div class="panel">${emptyState()}</div>`;
+  const dir=r=>r.direction==='inout'?T('進口＋出口','Import + export','នាំចូល + នាំចេញ'):r.direction==='in'?T('進口','Import','នាំចូល'):r.direction==='out'?T('出口','Export','នាំចេញ'):'';
+  return `<div class="panel source-table"><div class="table-scroll"><table class="data-table"><thead><tr>
+    <th>${T('業務日期','Date','កាលបរិច្ឆេទ')}</th><th>${T('原表紀錄','Original record','កំណត់ត្រាដើម')}</th>
+    <th>${T('分類','Category','ប្រភេទ')}</th><th>${T('地點／對象','Location / party','ទីតាំង')}</th><th>${T('狀態','Status','ស្ថានភាព')}</th><th></th>
+    </tr></thead><tbody>${view.map(r=>`<tr data-record="${esc(recordKey(r))}" tabindex="0"><td class="source-date">${esc(r.sourceDate||r.date)}</td>
+      <td><strong>${esc(t(r.title))}</strong><small class="source-cell-detail">${esc([r.subtitle,dir(r)].filter(Boolean).join(' · '))}</small></td>
+      <td><span class="source-mini">${SOURCES[r.source].name}${!state.module?' / '+esc(t(MODULE_MAP[r.module].name)):''}</span><small class="source-cell-detail">${esc(kindText(r.kind))}</small></td>
+      <td>${esc([r.location,r.owner].filter(Boolean).join(' · ')||'—')}</td><td>${statusPill(r.status)}</td><td>${I('chevron')}</td></tr>`).join('')}
+    </tbody></table></div>${full?`<div class="pager"><span>${n(list.length)} ${T('筆符合','matching records','កំណត់ត្រាត្រូវគ្នា')}</span><div class="actions">${button('','page-prev','left','square',state.page<=1?'disabled':'')}<span>${state.page} / ${pages}</span>${button('','page-next','chevron','square',state.page>=pages?'disabled':'')}</div></div>`:''}</div>`;
+}
 function filters(){return `<div class="filters">${state.module?'':`<select class="filter-select" data-filter="group" aria-label="${T('業務類別','Business area','ផ្នែកការងារ')}"><option value="all">${T('全部業務','All areas','គ្រប់ផ្នែក')}</option>${GROUPS.map(g=>`<option value="${g.id}" ${state.group===g.id?'selected':''}>${t(g.name)}</option>`).join('')}</select><select class="filter-select" data-filter="source" aria-label="Source"><option value="all">${T('全部來源','All sources','គ្រប់ប្រភព')}</option>${Object.entries(SOURCES).map(([k,v])=>`<option value="${k}" ${state.source===k?'selected':''}>${v.name}</option>`).join('')}</select>`}
-  ${!state.module&&(state.route==='records'||GROUPS.some(g=>g.id===state.route))?`<select class="filter-select" data-filter="ledger-module" aria-label="${T('業務分頁','Module','មុខងារ')}"><option value="">${T('選擇業務分頁','Choose a module','ជ្រើសមុខងារ')}</option>${MODULES.filter(m=>state.group==='all'||m.group===state.group).map(m=>`<option value="${m.id}">${esc(t(m.name))}</option>`).join('')}</select>`:''}<select class="filter-select" data-filter="status" aria-label="${T('狀態','Status','ស្ថានភាព')}"><option value="all">${T('全部狀態','All statuses','គ្រប់ស្ថានភាព')}</option>${STATUSES.map(s=>`<option value="${s}" ${state.status===s?'selected':''}>${statusText(s)}</option>`).join('')}</select><input class="inline-search" data-filter="query" value="${esc(state.query)}" placeholder="${T('搜尋名稱、單號、地點…','Search name, ID, location…','ស្វែងរកឈ្មោះ លេខ ទីតាំង…')}" aria-label="${T('搜尋紀錄','Search records','ស្វែងរកកំណត់ត្រា')}"></div>`;}
-function overview(){const list=rows(),tasks=list.filter(r=>['abnormal','pending','in_progress'].includes(r.status)).sort((a,b)=>({abnormal:0,pending:1,in_progress:2}[a.status]-{abnormal:0,pending:1,in_progress:2}[b.status])).slice(0,4);return `${title(T('總務營運總覽','Your operations, at a glance.','ទិដ្ឋភាពប្រតិបត្តិការទូទៅ'),T('先看待辦與異常，再進入每一筆明細。','Start with what needs attention. Follow every item to its source.','មើលកិច្ចការ និងបញ្ហាជាមុន រួចបើកព័ត៌មានលម្អិតនីមួយៗ។'))}${modebar()}${periods()}${stats()}<div class="grid-two"><section class="panel"><div class="panel-head"><div><h2>${T('優先處理','Your priorities','អាទិភាពត្រូវដោះស្រាយ')}</h2><div class="panel-sub">${T('待核可、異常與進行中事項集中顯示','Approvals, exceptions and ongoing work in one place','កិច្ចការអនុម័ត បញ្ហា និងការងារកំពុងដំណើរការ')}</div></div><button class="text-link" data-route="tasks">${T('全部待辦','All actions','កិច្ចការទាំងអស់')} ${I('chevron')}</button></div>${tasks.length?tasks.map(taskLine).join(''):emptyState(T('本期沒有待處理事項','Nothing pending in this period','គ្មានកិច្ចការរង់ចាំក្នុងរយៈពេលនេះ'))}</section>${coverage()}</div><div class="grid-two">${trend()}<section class="panel"><div class="panel-head"><div><h2>${T('費用口徑，清楚分開','Clear expense boundaries','បែងចែកចំណាយឱ្យច្បាស់')}</h2><div class="panel-sub">${T('申請額 ≠ 收貨額 ≠ 已入帳費用','Requests ≠ receipts ≠ posted expenses','សំណើ ≠ ទទួលទំនិញ ≠ ចំណាយបានចុះបញ្ជី')}</div></div>${I('wallet')}</div><div class="panel-body">${Object.keys(metrics(list).expenses).length?Object.entries(metrics(list).expenses).map(([c,v])=>`<div class="count-detail"><span>${T('已入帳','Posted','បានចុះបញ្ជី')} · ${c}</span><strong>${money(v,c)}</strong></div>`).join(''):`<div class="stat-value amount">${state.dataset==='empty'?'—':T('無已入帳費用','No posted expenses','គ្មានចំណាយបានចុះបញ្ជី')}</div>`}<div class="coverage-note">${T('只加總標記已入帳的費用；USD 與 KHR 分列，關聯同一事件只計一次。','Only posted expenses count. USD and KHR stay separate; linked copies count once.','គិតតែចំណាយបានចុះបញ្ជី។ USD និង KHR ដាច់គ្នា និងមិនរាប់កិច្ចការភ្ជាប់ស្ទួន។')}</div><button class="text-link" data-route="reports" style="margin-top:14px">${T('查看統計口徑','View reporting rules','មើលវិធីគណនា')} ${I('chevron')}</button></div></section></div><div class="ledger-top"><div><h2>${T('最近工作紀錄','Recent activity','កំណត់ត្រាថ្មីៗ')}</h2><p>${T('點選一筆，開啟明細、證據與原模組','Open a record for details, evidence and the original module','ចុចកំណត់ត្រាដើម្បីមើលព័ត៌មាន ភស្តុតាង និងមុខងារដើម')}</p></div><div class="actions">${button(T('篩選紀錄','Filter records','ត្រងកំណត់ត្រា'),'records','search','small')}</div></div>${table(list)}`;}
+  ${!state.module&&(state.route==='records'||GROUPS.some(g=>g.id===state.route))?`<select class="filter-select" data-filter="ledger-module" aria-label="${T('業務分頁','Module','មុខងារ')}"><option value="">${T('選擇業務分頁','Choose a module','ជ្រើសមុខងារ')}</option>${MODULES.filter(m=>state.group==='all'||m.group===state.group).map(m=>`<option value="${m.id}">${esc(t(m.name))}</option>`).join('')}</select>`:''}<select class="filter-select" data-filter="status" aria-label="${T('狀態','Status','ស្ថានភាព')}"><option value="all">${T('全部狀態','All statuses','គ្រប់ស្ថានភាព')}</option>${[...STATUSES,'recorded'].map(s=>`<option value="${s}" ${state.status===s?'selected':''}>${statusText(s)}</option>`).join('')}</select><input class="inline-search" data-filter="query" value="${esc(state.query)}" placeholder="${T('搜尋名稱、單號、地點…','Search name, ID, location…','ស្វែងរកឈ្មោះ លេខ ទីតាំង…')}" aria-label="${T('搜尋紀錄','Search records','ស្វែងរកកំណត់ត្រា')}"></div>`;}
+function overview(){const list=rows(),tasks=list.filter(r=>['abnormal','pending','in_progress'].includes(r.status)).sort((a,b)=>({abnormal:0,pending:1,in_progress:2}[a.status]-{abnormal:0,pending:1,in_progress:2}[b.status])).slice(0,4);return `${title(T('總務營運總覽','Your operations, at a glance.','ទិដ្ឋភាពប្រតិបត្តិការទូទៅ'),T('先看待辦與異常，再進入每一筆明細。','Start with what needs attention. Follow every item to its source.','មើលកិច្ចការ និងបញ្ហាជាមុន រួចបើកព័ត៌មានលម្អិតនីមួយៗ។'))}${periods()}${stats()}<div class="grid-two"><section class="panel"><div class="panel-head"><div><h2>${T('優先處理','Your priorities','អាទិភាពត្រូវដោះស្រាយ')}</h2><div class="panel-sub">${T('待核可、異常與進行中事項集中顯示','Approvals, exceptions and ongoing work in one place','កិច្ចការអនុម័ត បញ្ហា និងការងារកំពុងដំណើរការ')}</div></div><button class="text-link" data-route="tasks">${T('全部待辦','All actions','កិច្ចការទាំងអស់')} ${I('chevron')}</button></div>${tasks.length?tasks.map(taskLine).join(''):emptyState(T('本期沒有待處理事項','Nothing pending in this period','គ្មានកិច្ចការរង់ចាំក្នុងរយៈពេលនេះ'))}</section>${coverage()}</div><div class="grid-two">${trend()}<section class="panel"><div class="panel-head"><div><h2>${T('費用口徑，清楚分開','Clear expense boundaries','បែងចែកចំណាយឱ្យច្បាស់')}</h2><div class="panel-sub">${T('申請額 ≠ 收貨額 ≠ 已入帳費用','Requests ≠ receipts ≠ posted expenses','សំណើ ≠ ទទួលទំនិញ ≠ ចំណាយបានចុះបញ្ជី')}</div></div>${I('wallet')}</div><div class="panel-body">${Object.keys(metrics(list).expenses).length?Object.entries(metrics(list).expenses).map(([c,v])=>`<div class="count-detail"><span>${T('已入帳','Posted','បានចុះបញ្ជី')} · ${c}</span><strong>${money(v,c)}</strong></div>`).join(''):`<div class="stat-value amount">${!sourceCoverage().any?'—':T('無已入帳費用','No posted expenses','គ្មានចំណាយបានចុះបញ្ជី')}</div>`}<div class="coverage-note">${T('只加總標記已入帳的費用；USD 與 KHR 分列，關聯同一事件只計一次。','Only posted expenses count. USD and KHR stay separate; linked copies count once.','គិតតែចំណាយបានចុះបញ្ជី។ USD និង KHR ដាច់គ្នា និងមិនរាប់កិច្ចការភ្ជាប់ស្ទួន។')}</div><button class="text-link" data-route="reports" style="margin-top:14px">${T('查看統計口徑','View reporting rules','មើលវិធីគណនា')} ${I('chevron')}</button></div></section></div><div class="ledger-top"><div><h2>${T('最近工作紀錄','Recent activity','កំណត់ត្រាថ្មីៗ')}</h2><p>${T('點選一筆，開啟明細、證據與原模組','Open a record for details, evidence and the original module','ចុចកំណត់ត្រាដើម្បីមើលព័ត៌មាន ភស្តុតាង និងមុខងារដើម')}</p></div><div class="actions">${button(T('篩選紀錄','Filter records','ត្រងកំណត់ត្រា'),'records','search','small')}</div></div>${table(list)}`;}
 function moduleCard(m){return `<article class="module-card"><div class="module-card-head"><span class="task-icon" style="color:${SOURCES[m.source].color};background:${SOURCES[m.source].color}0c">${I(m.icon)}</span><h3>${esc(t(m.name))}</h3><span class="source-mini">${SOURCES[m.source].name}</span></div><p>${esc(t(m.desc))}</p><div class="actions">${button(T('開啟業務','Open module','បើកមុខងារ'),'module',null,'',`data-module="${m.id}"`)}${link(T('原頁','Original','ទំព័រដើម'),m.url,'btn','external')}</div></article>`;}
-function modulesPage(){const g=GROUPS.find(g=>g.id===state.route),groups=g?[g]:GROUPS;return `${title(g?t(g.name):T('所有功能，清楚歸位。','Every tool. In its place.','មុខងារទាំងអស់ នៅកន្លែងត្រឹមត្រូវ។'),g?t(g.desc):T('依工作找功能，保留三個平台的完整操作入口。','Find tools by task. Keep the complete original workflows.','ស្វែងរកមុខងារតាមការងារ និងរក្សាលំហូរដើមទាំងអស់។'),false)}<div class="scope-note">${I('shield')} ${T('從側欄可直接進入原業務頁。各業務頁也可切到總表紀錄。','Open each original module directly from the sidebar. Switch to its ledger from the module page.','បើកមុខងារដើមពីរបារចំហៀង ហើយប្ដូរទៅកំណត់ត្រាពីទំព័រមុខងារ។')}</div>${groups.map(g=>`<h2 class="section-title">${I(g.icon)}${t(g.name)} <small>${MODULES.filter(m=>m.group===g.id).length} ${T('個模組','modules','មុខងារ')}</small></h2><div class="module-grid">${MODULES.filter(m=>m.group===g.id).map(moduleCard).join('')}</div>`).join('')}`;}
-function tasksPage(){const all=rows().filter(r=>['pending','in_progress','abnormal'].includes(r.status));return `${title(T('把待辦，一件件完成。','Keep work moving.','បញ្ចប់កិច្ចការម្ដងមួយៗ។'),T('跨系統查看狀態，沿用原模組完成審查與處理。','Review across systems. Resolve each item through its original workflow.','មើលស្ថានភាពឆ្លងប្រព័ន្ធ និងដោះស្រាយតាមលំហូរដើម។'))}${modebar()}${periods()}${filters()}<div class="board">${['pending','in_progress','abnormal'].map(status=>{const list=all.filter(r=>r.status===status);return `<section class="board-column"><div class="board-heading">${statusText(status)}<span>${state.dataset==='empty'?'—':list.length}</span></div>${list.length?list.map(r=>`<button class="board-card" data-record="${esc(recordKey(r))}"><span class="source-mini">${SOURCES[r.source].name} / ${esc(t(MODULE_MAP[r.module].name))}</span><strong>${esc(t(r.title))}</strong><span class="small-muted">${esc(r.location||'—')}</span><div class="board-meta"><small>${esc(r.owner||'—')}</small><small>${r.date.slice(5)}</small></div></button>`).join(''):`<p class="small-muted">${T('此分類尚無資料','No items in this column','គ្មានទិន្នន័យក្នុងផ្នែកនេះ')}</p>`}</section>`;}).join('')}</div>`;}
+function modulesPage(){const g=GROUPS.find(g=>g.id===state.route),groups=g?[g]:GROUPS;return `${title(g?t(g.name):T('所有功能，清楚歸位。','Every tool. In its place.','មុខងារទាំងអស់ នៅកន្លែងត្រឹមត្រូវ។'),g?t(g.desc):T('依工作找功能，保留三個平台的完整操作入口。','Find tools by task. Keep the complete original workflows.','ស្វែងរកមុខងារតាមការងារ និងរក្សាលំហូរដើមទាំងអស់។'),false)}<div class="scope-note">${I('shield')} ${T('從側欄可直接進入原業務頁。各業務頁也可切到原表查詢。','Open each original module directly from the sidebar. Switch to its ledger from the module page.','បើកមុខងារដើមពីរបារចំហៀង ហើយប្ដូរទៅកំណត់ត្រាពីទំព័រមុខងារ។')}</div>${groups.map(g=>`<h2 class="section-title">${I(g.icon)}${t(g.name)} <small>${MODULES.filter(m=>m.group===g.id).length} ${T('個模組','modules','មុខងារ')}</small></h2><div class="module-grid">${MODULES.filter(m=>m.group===g.id).map(moduleCard).join('')}</div>`).join('')}`;}
+function tasksPage(){const all=rows().filter(r=>['pending','in_progress','abnormal'].includes(r.status));return `${title(T('把待辦，一件件完成。','Keep work moving.','បញ្ចប់កិច្ចការម្ដងមួយៗ។'),T('跨系統查看待辦，從原系統完成審查與處理。','Review across systems. Resolve each item through its original workflow.','មើលស្ថានភាពឆ្លងប្រព័ន្ធ និងដោះស្រាយតាមលំហូរដើម។'))}${periods()}${filters()}<div class="board">${['pending','in_progress','abnormal'].map(status=>{const list=all.filter(r=>r.status===status);return `<section class="board-column"><div class="board-heading">${statusText(status)}<span>${!sourceCoverage().any?'—':list.length}</span></div>${list.length?list.map(r=>`<button class="board-card" data-record="${esc(recordKey(r))}"><span class="source-mini">${SOURCES[r.source].name} / ${esc(t(MODULE_MAP[r.module].name))}</span><strong>${esc(t(r.title))}</strong><span class="small-muted">${esc(r.location||'—')}</span><div class="board-meta"><small>${esc(r.owner||'—')}</small><small>${r.date.slice(5)}</small></div></button>`).join(''):`<p class="small-muted">${T('此分類尚無資料','No items in this column','គ្មានទិន្នន័យក្នុងផ្នែកនេះ')}</p>`}</section>`;}).join('')}</div>`;}
 function recordsPage(){
-  const m=MODULE_MAP[state.module],g=GROUPS.find(x=>x.id===state.route),list=rows();
-  const scopeName=m?t(m.name):g?t(g.name):T('全部紀錄','All records','កំណត់ត្រាទាំងអស់');
-  const changed=cloudUI.pendingCount(state.module,state.group);
-  return `${title(esc(scopeName),m?esc(t(m.desc)):T('集中查詢及管理 PSJGA 總表紀錄。','Manage the PSJGA records in one place.','គ្រប់គ្រងកំណត់ត្រា PSJGA នៅកន្លែងតែមួយ។'),false)}
-  ${m?moduleTabs(m):''}<div class="ledger-tools" aria-label="${T('紀錄操作','Record actions','សកម្មភាពកំណត់ត្រា')}">
-    ${button(T('新增紀錄','New record','កំណត់ត្រាថ្មី'),'new','plus','primary')}
-    ${button(T('匯入 JSON／CSV','Import JSON / CSV','នាំចូល JSON / CSV'),'import','upload')}
-    ${button(T('匯出 CSV','Export CSV','នាំចេញ CSV'),'export','download')}
-    ${button(T('備份 JSON','Backup JSON','បម្រុងទុក JSON'),'cloud-export','database','small')}
-    ${button(T('回收站','Trash','ធុងសំរាម'),'ledger-trash','trash','small')}
-    ${state.selected.size&&state.dataset!=='demo'?button(T('刪除已選','Delete selected','លុបអ្វីដែលបានជ្រើស')+' · '+state.selected.size,'ledger-delete-selected','trash','small danger'):''}
-  </div>
-  <p class="ledger-source-note">${T('這裡管理 PSJGA 雲端總表。原系統的歷史紀錄和核可流程仍在原頁。','This page manages the PSJGA cloud ledger. Original records and approvals stay in their own systems.','ទំព័រនេះគ្រប់គ្រងតារាងពពក PSJGA។ កំណត់ត្រា និងអនុម័តដើមនៅប្រព័ន្ធដើម។')}${changed?' · '+n(changed)+' '+T('筆待上傳','pending changes','រង់ចាំផ្ទុក'):''}</p>
-  ${state.dataset==='demo'?modebar():''}${periods()}${filters()}${ledgerConflictPanel()}
-  <p class="scroll-hint">${T('點紀錄看明細，可左右滑動表格。','Open a record for details; swipe for more columns.','ចុចកំណត់ត្រាដើម្បីមើលលម្អិត។')}</p>${table(list,true)}`;
+  const m=MODULE_MAP[state.module],g=GROUPS.find(x=>x.id===state.route),c=sourceCoverage();
+  const name=m?t(m.name):g?t(g.name):T('全部紀錄','All records','កំណត់ត្រាទាំងអស់'),range=sourceRange();
+  const base=eventRows(sources()).filter(r=>r.date>=range.from&&r.date<=range.to);
+  const counts=new Map();for(const r of base)counts.set(r.kind,(counts.get(r.kind)||0)+1);
+  const kinds=m?.id==='sec.container'?['truck','insp','pass']:m?.id==='sec.commute'?['car','bike','gate','late']:m?[...counts.keys()]:[];
+  const chips=kinds.length?`<div class="source-kinds" aria-label="${T('紀錄分類','Record categories','ប្រភេទកំណត់ត្រា')}">
+    ${[['all',T('全部','All','ទាំងអស់'),base.length],...kinds.map(k=>[k,kindText(k),counts.get(k)||0])].map(([key,label,count])=>`<button class="source-kind" data-action="source-kind" data-kind="${esc(key)}" aria-pressed="${state.kind===key}">${esc(label)} <span>${c.any?n(count):'—'}</span></button>`).join('')}
+  </div>`:'';
+  const errors=c.items.filter(v=>['error','stale','partial'].includes(v.state)),omitted=c.items.reduce((a,v)=>a+v.omitted,0);
+  return `${title(esc(name),m?esc(t(m.desc)):T('跨部門查詢原系統紀錄','Search records across the original systems','ស្វែងរកកំណត់ត្រាពីប្រព័ន្ធដើម'),false)}
+    ${m?moduleTabs(m):''}${periods()}${chips}${filters()}
+    ${errors.length?`<div class="source-warning" role="status">${I('alert')}<span>${T('下列資料尚未完整確認：','The following sources are incomplete: ','ប្រភពទិន្នន័យមិនទាន់ពេញលេញ៖ ')}${errors.map(v=>esc(t(v.m.name))+(v.local?' · '+T('顯示本機原表','showing device records','បង្ហាញទិន្នន័យក្នុងឧបករណ៍'):'')).join('、')}</span></div>`:''}
+    ${omitted?`<p class="scroll-hint">${T('另有原始資料缺日期或識別碼，請到原頁核對。','Some original rows lack a date or identifier; check the source page.','កំណត់ត្រាខ្លះគ្មានកាលបរិច្ឆេទ ឬលេខ។')}</p>`:''}
+    ${table(rows(),true)}`;
 }
-const rawLedgerRow=key=>state.snapshot?.records.find(row=>recordKey(row)===key);
-const inLedgerScope=row=>(!state.module||row.module===state.module)&&(state.group==='all'||MODULE_MAP[row.module].group===state.group);
-function ledgerConflictPanel(){
-  const conflicted=cloudUI.conflicts().map(rawLedgerRow).filter(row=>row&&inLedgerScope(row));
-  if(!conflicted.length)return '';
-  return `<section class="panel ledger-conflicts"><h2>${T('雲端與本機都有修改','Cloud and local edits conflict','ការកែប្រែមានជម្លោះ')}</h2><p>${T('本機修改已保留，選好版本才會上傳。','Your draft is retained. Choose a version before uploading.','ការកែប្រែក្នុងម៉ាស៊ីនបានរក្សាទុក។')}</p>${conflicted.map(row=>{
-    const key=recordKey(row),remote=cloudUI.serverRow(key),attrs=`data-key="${esc(key)}"`;
-    return `<div class="ledger-conflict-row"><div><strong>${esc(row.id)}</strong><small>${T('本機','Local','ក្នុងម៉ាស៊ីន')}：${esc(t(row.title))}${row.deleted?' · '+T('已刪除','Deleted','បានលុប'):''}<br>${T('雲端','Cloud','ពពក')}：${esc(t(remote?.title)||'—')}${remote?.deleted?' · '+T('已刪除','Deleted','បានលុប'):''}</small></div><div class="actions">${button(T('採用雲端版','Keep cloud version','ប្រើកំណែពពក'),'ledger-conflict-discard',null,'small',attrs)}${button(T('保留本機版','Keep local version','រក្សាកំណែក្នុងម៉ាស៊ីន'),'ledger-conflict-keep',null,'small',attrs)}</div></div>`;
-  }).join('')}</section>`;
+function reportsPage(){const list=rows(),m=metrics(list),qt=quantityTotals(list);return `${title(T('看得懂，也對得起來。','Clear numbers. Clear meaning.','តួលេខច្បាស់ យល់ន័យច្បាស់។'),T('筆數、金額與數量分開，每個數字都能下鑽核對。','Counts, currencies and units stay separate. Drill into every figure.','បំបែកចំនួន រូបិយប័ណ្ណ និងឯកតា។ ចុចដើម្បីផ្ទៀងផ្ទាត់តួលេខ។'))}${periods()}${filters()}${stats()}<div class="currency-grid">${['USD','KHR'].map(c=>`<section class="panel report-card"><span class="pill gray">${c} · ${T('已入帳實支','Posted actual expenses','ចំណាយពិតបានចុះបញ្ជី')}</span><div class="stat-value">${!sourceCoverage().any?'—':money(m.expenses[c]||0,c)}</div><div class="method-note">${T('不含待核可採購、收貨庫存價值、ETC 儲值；不同幣別不直接相加。','Excludes pending PO, stock receipt value and ETC top-ups. No mixed-currency total.','មិនរាប់ការទិញរង់ចាំអនុម័ត តម្លៃស្តុកទទួល និងបញ្ចូល ETC។ មិនបូករូបិយប័ណ្ណផ្សេងគ្នា។')}</div></section>`).join('')}</div><div class="grid-two">${trend()}<section class="panel"><div class="panel-head"><h2>${T('按單位分列','Units, kept separate','បែងចែកតាមឯកតា')}</h2>${I('layers')}</div><div class="panel-body">${Object.keys(qt).length?Object.entries(qt).map(([unit,v])=>`<div class="count-detail"><span>${esc(unit)}</span><strong>${n(v)}</strong></div>`).join(''):`<p class="small-muted">${T('本期無可加總數量','No additive quantities in this period','គ្មានបរិមាណសម្រាប់បូកក្នុងរយៈពេលនេះ')}</p>`}<p class="method-note">${T('公斤、公升、桶數各自統計；溫度及相對濕度屬讀數，不做累加。','kg, litres and drums are separate. Temperature and humidity are readings, not additive totals.','គីឡូក្រាម លីត្រ និងធុងគណនាដាច់គ្នា។ មិនបូកសីតុណ្ហភាព ឬសំណើម។')}</p></div></section></div><div class="scope-note">${T('計算方式：來源＋模組＋原始 ID 識別紀錄，保留最新版與刪除標記；明確關聯為同一事件才跨來源去重。','Method: source + module + original ID; latest revision and deletion markers retained. Cross-source deduplication requires an explicit shared event ID.','វិធីគណនា៖ ប្រភព + មុខងារ + ID ដើម រក្សាកំណែថ្មី និងសញ្ញាលុប។ បំបាត់ស្ទួនឆ្លងប្រភពត្រូវមាន ID កិច្ចការរួមច្បាស់លាស់។')}</div>${table(list)}`;}
+function sourcesPage(){
+  const c=sourceCoverage(),auth=cloudUI.isAuthorized();
+  return `${title(T('原表來源與狀態','Source connections','ស្ថានភាពប្រភព'),T('各業務的原系統為唯一作業入口。','Use each original system to make changes.','កែប្រែទិន្នន័យនៅប្រព័ន្ធដើម។'),false)}${periods()}
+    <div class="source-list panel">${c.items.map(v=>{
+      const label=!auth?T('待驗證裝置','Verify device','ផ្ទៀងផ្ទាត់ឧបករណ៍'):v.state==='ready'?T('已讀取','Read','បានអាន'):v.state==='partial'||v.state==='stale'?T('未完整確認','Not fully verified','មិនទាន់ផ្ទៀងផ្ទាត់'):v.state==='error'?T('讀取失敗','Read failed','មិនអាចអាន'):T('等候讀取','Waiting','កំពុងរង់ចាំ');
+      return `<div class="source-list-row"><strong>${esc(t(v.m.name))}</strong><span class="source-mini">${SOURCES[v.m.source].name}</span><span class="pill ${v.state==='ready'?'teal':v.state==='error'?'red':'amber'}">${label}</span><a href="#${v.m.id}/records" data-route="${v.m.id}/records" class="text-link">${T('查看','View','មើល')} ${I('chevron')}</a></div>`;
+    }).join('')}</div>`;
 }
-let ledgerEditing=null;
-function ledgerEditor(key=null){
-  if(state.dataset==='demo'){toast(T('請先返回正式總表。','Return to the live ledger first.','សូមត្រឡប់ទៅតារាងពិត។'));return;}
-  if(cloudUI.isBusy()||!cloudUI.ensureConnected())return;
-  const row=key?rawLedgerRow(key):null;
-  if(key&&(!row||row.deleted))return;
-  const modules=row?[MODULE_MAP[row.module]]:state.module?[MODULE_MAP[state.module]]:MODULES.filter(m=>state.group==='all'||m.group===state.group);
-  const range=periodRange(state.mode,state.ref),today=todayICT(),date=row?.date||(today>=range.from&&today<=range.to?today:state.ref);
-  ledgerEditing={key,generatedId:row?.id||'PSJGA-'+globalThis.crypto.randomUUID(),version:row?stableJSON(row):null};
-  const field=(label,id,value,attributes='')=>`<label>${label}<input id="${id}" value="${esc(value)}" ${attributes}></label>`;
-  openDialog(`<div class="dialog-head"><div><small>PSJGA</small><h2>${row?T('編輯紀錄','Edit record','កែសម្រួលកំណត់ត្រា'):T('新增紀錄','New record','កំណត់ត្រាថ្មី')}</h2></div>${closeButton()}</div>
-  <form id="ledger-form" class="ledger-form">
-    <div class="dialog-body cloud-dialog ledger-fields">
-      <label>${T('業務','Module','មុខងារ')}<select id="ledger-module" ${row||state.module?'disabled':''}>${modules.map(m=>`<option value="${m.id}">${esc(t(m.name))}</option>`).join('')}</select></label>
-      ${field(T('業務日期','Business date','ថ្ងៃប្រតិបត្តិការ'),'ledger-date',date,'type="date" required')}
-      ${field(T('單號／紀錄 ID','Reference / record ID','លេខកំណត់ត្រា'),'ledger-id',row?.id||'',row?'readonly':'maxlength="200" placeholder="'+esc(T('留空自動產生','Generated if blank','ទុកទទេដើម្បីបង្កើត'))+'"')}
-      <label>${T('狀態','Status','ស្ថានភាព')}<select id="ledger-status" ${row?.requiresApproval?'disabled':''}>${STATUSES.filter(v=>v===row?.status||['in_progress','abnormal','completed'].includes(v)).map(v=>`<option value="${v}" ${v===(row?.status||'in_progress')?'selected':''}>${statusText(v)}</option>`).join('')}</select></label>
-      <label class="ledger-wide">${T('標題','Title','ចំណងជើង')}<input id="ledger-title" value="${esc(row?t(row.title):'')}" maxlength="500" required></label>
-      ${field(T('負責人','Owner','អ្នកទទួលខុសត្រូវ'),'ledger-owner',row?.owner||'','maxlength="150"')}
-      ${field(T('地點','Location','ទីតាំង'),'ledger-location',row?.location||'','maxlength="200"')}
-      ${field(T('金額','Amount','ចំនួនប្រាក់'),'ledger-amount',row?.amount??'','type="number" min="0" step=".01"')}
-      <label>${T('幣別','Currency','រូបិយប័ណ្ណ')}<select id="ledger-currency"><option>USD</option><option ${row?.currency==='KHR'?'selected':''}>KHR</option></select></label>
-      ${field(T('數量','Quantity','បរិមាណ'),'ledger-quantity',row?.quantity??'','type="number" min="0" step="any"')}
-      ${field(T('單位','Unit','ឯកតា'),'ledger-unit',row?.unit||'','maxlength="200" placeholder="kg / L / 件"')}
-      ${field(T('關聯單號','Related document','លេខឯកសារពាក់ព័ន្ធ'),'ledger-related',row?.relatedDocumentId||'','maxlength="200"')}
-      <label class="ledger-posted"><input type="checkbox" id="ledger-posted" ${row?.posted?'checked':''}>${T('已入帳實支','Posted expense','ចំណាយបានចុះបញ្ជី')}</label>
-      <label class="ledger-wide">${T('備註','Notes','កំណត់សម្គាល់')}<textarea id="ledger-notes" maxlength="5000" rows="3">${esc(row?.notes||'')}</textarea></label>
-      <label class="ledger-wide">${T('附件網址（HTTPS，每行一筆）','Attachment URLs (HTTPS, one per line)','តំណឯកសារ HTTPS មួយក្នុងមួយបន្ទាត់')}<textarea id="ledger-attachments" rows="2">${esc((row?.attachments||[]).join('\n'))}</textarea></label>
-      <p id="ledger-form-note" class="ledger-wide">${T('儲存會寫入 PSJGA 總表。原系統核可請到原頁完成。','Save writes to the PSJGA ledger. Approvals still belong in the original system.','រក្សាទុកទៅតារាង PSJGA។ ការអនុម័តធ្វើនៅប្រព័ន្ធដើម។')}</p>
-      <p class="cloud-feedback error ledger-wide" id="ledger-form-error" role="alert" hidden></p>
-    </div><div class="dialog-footer"><button class="btn primary" type="submit" id="ledger-save">${I('check')}${T('儲存到雲端','Save to cloud','រក្សាទុកក្នុងពពក')}</button></div></form>`);
+function architecturePage(){
+  return `${title(T('三套原系統，同一個工作台','Three original systems, one workspace','ប្រព័ន្ធដើមបី កន្លែងធ្វើការមួយ'),T('PSJGA 統一呈現原表。新增、修改、上傳及核可都從原系統作業。','PSJGA displays original records. Create, edit, upload and approve in the original system.','PSJGA បង្ហាញកំណត់ត្រាដើម។ កែប្រែ និងអនុម័តនៅប្រព័ន្ធដើម។'),false)}
+  <div class="grid-two">${Object.values(SOURCES).map(s=>`<section class="panel panel-body"><h2>${s.name}</h2><p>${link(T('開啟原系統','Open original system','បើកប្រព័ន្ធដើម'),s.url)}</p></section>`).join('')}</div>`;
 }
-async function saveLedgerForm(){
-  if(!ledgerEditing||cloudUI.isBusy())return;
-  const el=id=>dialog.querySelector('#ledger-'+id),value=id=>el(id)?.value?.trim()||'';
-  const error=msg=>{const e=el('form-error');if(e){e.hidden=false;e.textContent=msg;}};
-  const old=ledgerEditing.key?rawLedgerRow(ledgerEditing.key):null;
-  if(ledgerEditing.key&&(!old||old.deleted||stableJSON(old)!==ledgerEditing.version)){error(T('紀錄已變更，請重新開啟編輯。','The record changed. Reopen it to edit.','កំណត់ត្រាបានផ្លាស់ប្តូរ។ សូមបើកម្ដងទៀត។'));return;}
-  const moduleId=value('module'),m=Object.hasOwn(MODULE_MAP,moduleId)?MODULE_MAP[moduleId]:null,id=old?.id||value('id')||ledgerEditing.generatedId;
-  const title=value('title'),date=value('date'),qty=value('quantity'),amount=value('amount');
-  const urls=value('attachments').split(/\r?\n/).map(v=>v.trim()).filter(Boolean);
-  if(!m||!title||!date||id.includes('|')||urls.length>100||urls.some(s=>s.length>3000||!/^https:\/\//i.test(s))){
-    error(T('請確認標題、日期、單號和 HTTPS 附件網址。','Check the title, date, record ID, and HTTPS attachments.','សូមពិនិត្យចំណងជើង កាលបរិច្ឆេទ លេខ និងតំណ HTTPS។'));return;
-  }
-  const k=recordKey({id,source:m.source,module:m.id});
-  if(!old&&rawLedgerRow(k)){error(T('這個業務已有相同單號，請編輯原紀錄或到回收站還原。','This ID already exists. Edit it or restore it from the trash.','លេខនេះមានរួច។ សូមកែ ឬស្ដារពីធុងសំរាម។'));return;}
-  if(cloudUI.hasConflict(k)){error(T('請先在紀錄頁選擇保留本機版或雲端版。','Choose the local or cloud version on the records page first.','សូមជ្រើសកំណែក្នុងម៉ាស៊ីន ឬពពកជាមុន។'));return;}
-  const posted=!!el('posted')?.checked;
-  if((qty&&!value('unit'))||(posted&&!amount)){error(T('有數量時請填單位；已入帳實支須填金額。','Quantity needs a unit; a posted expense needs an amount.','បរិមាណត្រូវការឯកតា។ ចំណាយបានចុះបញ្ជីត្រូវការចំនួនប្រាក់។'));return;}
-  let row;
-  try{
-    row=normalizeCloudSnapshot({schemaVersion:1,generatedAt:new Date().toISOString(),records:[{...old,id,source:m.source,module:m.id,date,
-      title:old&&title===t(old.title)?old.title:title,updatedAt:old?.updatedAt||ledgerNextStamp(),
-      status:old?.requiresApproval?old.status:value('status'),owner:value('owner'),location:value('location'),notes:el('notes')?.value||'',
-      amount:amount?Number(amount):undefined,currency:amount?value('currency'):undefined,posted,
-      quantity:qty?Number(qty):undefined,unit:qty?value('unit'):undefined,relatedDocumentId:value('related'),attachments:urls,deleted:false}]}).records[0];
-  }catch{error(T('資料格式不符，請核對日期、金額、數量和必填欄位。','Check the date, amount, quantity, and required fields.','សូមពិនិត្យកាលបរិច្ឆេទ ចំនួនប្រាក់ បរិមាណ និងវាលចាំបាច់។'));return;}
-  if(old&&stableJSON(old)===stableJSON(row)){dialog.close();toast(T('沒有變更。','No changes.','គ្មានការផ្លាស់ប្តូរ។'));return;}
-  row.updatedAt=ledgerNextStamp(old,cloudUI.serverRow(k));
-  const ok=await cloudUI.saveRecords([row],{onStaged:()=>{
-    state.ref=date;state.query='';state.status='all';state.page=1;ledgerEditing=null;dialog.close();
-  }});
-  if(!ok&&dialog.querySelector('#ledger-form'))error(T('無法儲存，請查看雲端狀態。','Save failed. Check the cloud status.','មិនអាចរក្សាទុកបាន។ សូមពិនិត្យស្ថានភាពពពក។'));
-}
-async function deleteLedger(keys){
-  if(state.dataset!=='snapshot'||cloudUI.isBusy()||!cloudUI.ensureConnected())return;
-  const candidates=[...new Set(keys)].map(rawLedgerRow).filter(row=>row&&!row.deleted&&inLedgerScope(row));
-  if(!candidates.length)return;
-  if(candidates.some(row=>cloudUI.hasConflict(recordKey(row)))){toast(T('請先處理紀錄衝突。','Resolve record conflicts first.','សូមដោះស្រាយជម្លោះជាមុន។'));return;}
-  if(!confirm(T('將 '+candidates.length+' 筆紀錄移到 PSJGA 回收站？原系統不變。','Move '+candidates.length+' records to PSJGA trash? Original systems are unaffected.','ផ្លាស់ទី '+candidates.length+' កំណត់ត្រាទៅធុងសំរាម PSJGA?')))return;
-  await cloudUI.saveRecords(candidates.map(row=>({...row,deleted:true,updatedAt:ledgerNextStamp(row)})),{onStaged:()=>dialog.close()});
-}
-function ledgerTrash(){
-  const removed=(state.snapshot?.records||[]).filter(r=>r.deleted&&inLedgerScope(r)).sort((a,b)=>b.updatedAt.localeCompare(a.updatedAt));
-  openDialog(`<div class="dialog-head"><div><small>PSJGA</small><h2>${T('回收站','Trash','ធុងសំរាម')}</h2></div>${closeButton()}</div><div class="dialog-body cloud-dialog">
-  <p>${T('已刪除紀錄不列入統計，可使用原單號還原。','Deleted records do not count in reports and can be restored with their original IDs.','កំណត់ត្រាលុបមិនរាប់ក្នុងរបាយការណ៍ ហើយអាចស្ដារវិញ។')}</p>
-  ${removed.length?removed.slice(0,100).map(r=>`<div class="ledger-conflict-row"><div><strong>${esc(t(r.title))}</strong><small>${esc(r.id)}</small></div>${button(T('還原','Restore','ស្ដារ'),'ledger-restore',null,'small',`data-key="${esc(recordKey(r))}"`)}</div>`).join(''):T('沒有已刪除的紀錄。','No deleted records.','គ្មានកំណត់ត្រាលុប។')}${removed.length>100?T('顯示最近 100 筆。','Showing the 100 latest.','បង្ហាញ ១០០ ចុងក្រោយ។'):''}</div>`);
-}
-async function restoreLedger(key){
-  const row=rawLedgerRow(key);
-  if(state.dataset!=='snapshot'||!row?.deleted||!inLedgerScope(row)||cloudUI.hasConflict(key)||!cloudUI.ensureConnected())return;
-  if(!confirm(T('還原這筆 PSJGA 紀錄？','Restore this PSJGA record?','ស្ដារកំណត់ត្រា PSJGA នេះ?')))return;
-  await cloudUI.saveRecords([{...row,deleted:false,updatedAt:ledgerNextStamp(row)}],{onStaged:()=>dialog.close()});
-}
-function reportsPage(){const list=rows(),m=metrics(list),qt=quantityTotals(list);return `${title(T('看得懂，也對得起來。','Clear numbers. Clear meaning.','តួលេខច្បាស់ យល់ន័យច្បាស់។'),T('筆數、金額與數量分開，每個數字都能下鑽核對。','Counts, currencies and units stay separate. Drill into every figure.','បំបែកចំនួន រូបិយប័ណ្ណ និងឯកតា។ ចុចដើម្បីផ្ទៀងផ្ទាត់តួលេខ។'))}${modebar()}${periods()}${filters()}${stats()}<div class="currency-grid">${['USD','KHR'].map(c=>`<section class="panel report-card"><span class="pill gray">${c} · ${T('已入帳實支','Posted actual expenses','ចំណាយពិតបានចុះបញ្ជី')}</span><div class="stat-value">${state.dataset==='empty'?'—':money(m.expenses[c]||0,c)}</div><div class="method-note">${T('不含待核可採購、收貨庫存價值、ETC 儲值；不同幣別不直接相加。','Excludes pending PO, stock receipt value and ETC top-ups. No mixed-currency total.','មិនរាប់ការទិញរង់ចាំអនុម័ត តម្លៃស្តុកទទួល និងបញ្ចូល ETC។ មិនបូករូបិយប័ណ្ណផ្សេងគ្នា។')}</div></section>`).join('')}</div><div class="grid-two">${trend()}<section class="panel"><div class="panel-head"><h2>${T('按單位分列','Units, kept separate','បែងចែកតាមឯកតា')}</h2>${I('layers')}</div><div class="panel-body">${Object.keys(qt).length?Object.entries(qt).map(([unit,v])=>`<div class="count-detail"><span>${esc(unit)}</span><strong>${n(v)}</strong></div>`).join(''):`<p class="small-muted">${T('本期無可加總數量','No additive quantities in this period','គ្មានបរិមាណសម្រាប់បូកក្នុងរយៈពេលនេះ')}</p>`}<p class="method-note">${T('公斤、公升、桶數各自統計；溫度及相對濕度屬讀數，不做累加。','kg, litres and drums are separate. Temperature and humidity are readings, not additive totals.','គីឡូក្រាម លីត្រ និងធុងគណនាដាច់គ្នា។ មិនបូកសីតុណ្ហភាព ឬសំណើម។')}</p></div></section></div><div class="scope-note">${T('計算方式：來源＋模組＋原始 ID 識別紀錄，保留最新版與刪除標記；明確關聯為同一事件才跨來源去重。','Method: source + module + original ID; latest revision and deletion markers retained. Cross-source deduplication requires an explicit shared event ID.','វិធីគណនា៖ ប្រភព + មុខងារ + ID ដើម រក្សាកំណែថ្មី និងសញ្ញាលុប។ បំបាត់ស្ទួនឆ្លងប្រភពត្រូវមាន ID កិច្ចការរួមច្បាស់លាស់។')}</div>${table(list)}`;}
-function sourcesPage(){const live=eventRows(sources());return `${title(T('先確認來源，再相信數字。','Know where your data comes from.','ដឹងប្រភព មុនជឿតួលេខ។'),T('原模組已核對；統一總表接入狀態單獨顯示。','Module entrypoints are verified. Unified-data connection is shown separately.','ច្រកមុខងារបានផ្ទៀងផ្ទាត់។ ស្ថានភាពភ្ជាប់ទិន្នន័យរួមបង្ហាញដាច់ដោយឡែក។'),false)}${modebar()}<div class="source-grid">${Object.entries(SOURCES).map(([key,s])=>`<section class="panel source-card"><span class="pill gray">${T('原功能保留','Original workflows retained','រក្សាមុខងារដើម')}</span><h3 style="color:${s.color};margin-top:18px">${s.name}</h3><p>${esc(s.repo)} · ${MODULES.filter(m=>m.source===key).length} ${T('個入口已盤點','entrypoints checked','ច្រកចូលបានផ្ទៀងផ្ទាត់')}</p><div class="keyline">${T('原模組入口','Module entrypoints','ច្រកមុខងារដើម')} <span class="pill teal">${T('程式已核對','Source checked','បានពិនិត្យកូដ')}</span><br>${T('原資料庫','Original database','មូលដ្ឋានទិន្នន័យដើម')} <span class="pill gray">${T('由原模組同步','Sync in original module','សមកាលកម្មក្នុងមុខងារដើម')}</span><br>${T('總表目前紀錄','Current workspace records','កំណត់ត្រារួមបច្ចុប្បន្ន')} · ${state.dataset==='empty'?'—':live.filter(r=>r.source===key||r.sourceRefs.some(k=>k.startsWith(key+'|'))).length}</div><div class="actions" style="margin-top:20px">${link(T('開啟原平台','Original platform','បើកប្រព័ន្ធដើម'),s.url,'btn small')}</div></section>`).join('')}</div><section class="panel report-block"><div class="panel-head"><div><h2>${T('接入統一資料快照','Load a unified data snapshot','ផ្ទុករូបថតទិន្នន័យរួម')}</h2><div class="panel-sub">${T('合併後可上傳 PSJGA 總表。各原系統仍在原頁同步。','Merge then upload to PSJGA. Original systems sync in their own modules.','បញ្ចូលរួចផ្ទុកទៅ PSJGA។ ប្រព័ន្ធដើមសមកាលកម្មនៅទំព័រដើម។')}</div></div></div><div class="panel-body"><div class="import-box">${I('upload')}<strong>${T('選擇標準 JSON 快照','Choose a standard JSON snapshot','ជ្រើសរូបថតទិន្នន័យ JSON ស្តង់ដារ')}</strong>${T('保留來源、模組、原始 ID、業務日期及更新時間。','Preserves source, module, original ID, business date and revision time.','រក្សាប្រភព មុខងារ ID ដើម កាលបរិច្ឆេទ និងពេលធ្វើបច្ចុប្បន្នភាព។')}<div class="actions" style="justify-content:center;margin-top:18px">${button(T('選取 JSON','Choose JSON','ជ្រើស JSON'),'import','upload','primary')}${button(T('下載格式範例','Download example','ទាញយកគំរូ'),'template','download')}${button(T('匯出總表 JSON','Export full JSON','នាំចេញ JSON'),'cloud-export','download')}</div></div><div class="scope-note">${T('Excel 匯入、新增、修改、刪除、核可與上雲，仍可在各原模組完整操作。此處為新總表的資料介面，不會重建或清除原資料。','Excel import, editing, deletion, approval and cloud sync remain available in each original module. This snapshot interface is for the new unified view.','នាំចូល Excel កែប្រែ លុប អនុម័ត និងសមកាលកម្មពពកនៅមុខងារដើម។ ចំណុចនេះសម្រាប់ទិដ្ឋភាពទិន្នន័យរួមថ្មី។')}</div><p class="method-note">${T('上傳只同步 PSJGA 總表；匯出 JSON 包含版本與刪除標記，可用於備份。','Uploads sync only the PSJGA dataset. Full JSON exports preserve revisions and deletions for backup.','ការផ្ទុកឡើងសមកាលកម្មតែ PSJGA។ ឯកសារ JSON រក្សាកំណែ និងសញ្ញាលុប។')}</p></div></section>`;}
-function architecturePage(){const ruleData=[['link',T('一件事，一個主來源','One event, one owner','កិច្ចការមួយ ប្រភពមេមួយ'),T('單號與關聯明確才去重；不以同日期、同金額或同重量直接合併。','Link records explicitly. Never merge solely on equal date, amount or weight.','ភ្ជាប់កំណត់ត្រាច្បាស់។ កុំបញ្ចូលដោយសារកាលបរិច្ឆេទ ចំនួនប្រាក់ ឬទម្ងន់ស្មើគ្នា។')],['shield',T('保留原功能與核可','Retain workflows and approval','រក្សាមុខងារ និងការអនុម័ត'),T('第一階段保留原頁與原 GS；新平台先統一入口與讀取規格。','Phase one keeps original pages and GS. The workspace unifies navigation and the read model.','ដំណាក់កាលទីមួយរក្សាទំព័រ និង GS ដើម។ ផ្ទាំងការងាររួមបញ្ចូលការរុករក និងទម្រង់ទិន្នន័យ។')],['clock',T('日期規則一致','One calendar convention','ក្បួនកាលបរិច្ឆេទតែមួយ'),T('柬埔寨時間；週一至週日、曆月、曆年；按業務日期歸期。','Cambodia time; Monday–Sunday, calendar months and years, using the business date.','ម៉ោងកម្ពុជា សប្ដាហ៍ពីចន្ទដល់អាទិត្យ ខែ/ឆ្នាំប្រតិទិន តាមថ្ងៃប្រតិបត្តិការ។')],['wallet',T('數據分清再加總','Separate before summing','បែងចែកមុនបូក'),T('申請、收貨、實支分開；幣別與單位分列；溫濕度讀數不累加。','Separate PO, receipt and actual spend; keep currencies and units distinct; never sum climate readings.','បំបែកការទិញ ការទទួល និងចំណាយពិត រូបិយប័ណ្ណ និងឯកតា ហើយមិនបូកតម្លៃសីតុណ្ហភាព។')]];return `${title(T('總務全貌，清楚串起。','A clear architecture for General Affairs.','រចនាសម្ព័ន្ធច្បាស់សម្រាប់កិច្ចការទូទៅ។'),T('先統一入口，再依資料契約逐步接入。','Unified navigation first, then verified data adapters.','បញ្ចូលច្រកចូលរួមមុន រួចភ្ជាប់ទិន្នន័យដែលបានផ្ទៀងផ្ទាត់។'),false)}<div class="architecture"><div class="arch-row">${Object.entries(SOURCES).map(([id,s])=>`<article class="arch-card"><h3 style="color:${s.color}">${s.name}</h3><p>${MODULES.filter(m=>m.source===id).length} ${T('個原模組','original modules','មុខងារដើម')} · ${s.repo}<br>${T('原資料、原照片、原核可','Original data, photos and approvals','ទិន្នន័យ រូបថត និងអនុម័តដើម')}</p></article>`).join('')}</div><div class="arch-connector">↓ ${T('讀取轉接・只認主來源','Read adapters · authoritative sources','ភ្ជាប់ការអាន · ប្រភពមេ')} ↓</div><article class="arch-core"><h3>${T('總務統一資料層','Unified General Affairs read model','ស្រទាប់ទិន្នន័យរួមកិច្ចការទូទៅ')}</h3><p>${T('來源＋模組＋原始 ID → 版本核對／刪除標記 → 事件關聯 → 日週月年統計 → 可追溯明細','Source + module + original ID → revisions / tombstones → explicit event links → period metrics → traceable detail','ប្រភព + មុខងារ + ID ដើម → កំណែ / សញ្ញាលុប → តំណកិច្ចការ → ស្ថិតិតាមរយៈពេល → ព័ត៌មានអាចតាមដាន')}</p></article><div class="arch-connector">↓ ${T('同一套搜尋、期間、明細與待辦','Shared search, periods, detail and actions','ការស្វែងរក រយៈពេល ព័ត៌មាន និងកិច្ចការរួម')} ↓</div><div class="module-grid" style="margin:0">${GROUPS.map(g=>`<button class="arch-card" style="text-align:left" data-route="${g.id}"><h3>${I(g.icon)} ${t(g.name)}</h3><p>${t(g.desc)}</p></button>`).join('')}</div><div class="rules">${ruleData.map(([i,h,p])=>`<div class="rule">${I(i)}<div><strong>${h}</strong><p>${p}</p></div></div>`).join('')}</div><section class="panel"><div class="panel-head"><h2>${T('功能連續性','Workflow continuity','ការបន្តមុខងារ')}</h2><span class="pill teal">23 / 23 ${T('入口已盤點','entrypoints mapped','ច្រកបានរៀបចំ')}</span></div><div class="panel-body"><p class="method-note">${T('原新增／編輯／刪除、照片、Excel 匯入出、上傳下載、歷史與核可入口均可沿原模組進入。此版本沒有改寫三個正式平台或 GS；完整跨系統資料接入及核可整合須再依原欄位驗收。','Original editing, photos, Excel, upload/download, history and approval are accessible through the original modules. This version does not rewrite the three production apps or GS; unified live data and approval require adapter validation.','ការកែប្រែ រូបថត Excel សមកាលកម្ម ប្រវត្តិ និងអនុម័តនៅតែអាចចូលតាមមុខងារដើម។ កំណែនេះមិនកែប្រព័ន្ធពិតទាំងបី ឬ GS ទេ។ ទិន្នន័យពិត និងអនុម័តរួមត្រូវផ្ទៀងផ្ទាត់ការភ្ជាប់បន្ថែម។')}</p></div></section></div>`;}
 function moduleTabs(m){
   return `<nav class="module-tabs" aria-label="${T('業務分頁','Module views','ទំព័រមុខងារ')}"><div class="module-tabs-inner">
     <a href="#${m.id}" data-route="${m.id}" ${state.workspace?'aria-current="page"':''}>${I(m.icon)}${T('原系統作業','Operations','ប្រតិបត្តិការដើម')}</a>
-    <a href="#${m.id}/records" data-route="${m.id}/records" ${state.workspace?'':'aria-current="page"'}>${I('file')}${T('總表紀錄','Ledger records','តារាងកំណត់ត្រា')}</a>
+    <a href="#${m.id}/records" data-route="${m.id}/records" ${state.workspace?'':'aria-current="page"'}>${I('file')}${T('原表查詢','Source records','កំណត់ត្រាប្រភព')}</a>
   </div>${link(T('另開原頁','Open original tab','បើកទំព័រដើម'),m.url,'btn small')}</nav>`;
 }
 function workspacePage(){
@@ -1232,6 +1864,7 @@ function render(){
   document.documentElement.lang=state.lang==='zh'?'zh-Hant':state.lang==='km'?'km':'en';
   document.body.style.overflow=state.menu?'hidden':'';
   document.title='VRT · '+(state.module?t(MODULE_MAP[state.module].name):T('總務整合工作台','General Affairs Workspace','ផ្ទាំងការងារកិច្ចការទូទៅ'));
+  sourceAuthChanged();
   const view=app.querySelector?.('#ga-content');
   if(!view){app.innerHTML=shell();mountedWorkspace=state.workspace;return;}
   const sidebar=app.querySelector('#ga-sidebar'),main=app.querySelector('#main'),cloud=app.querySelector('#cloud-slot'),host=app.querySelector('#ga-workspace');
@@ -1241,7 +1874,7 @@ function render(){
   app.querySelector('.mobile-nav').innerHTML=mobileContent();
   app.querySelector('.screen-footer').innerHTML=footer();
   view.innerHTML=content();
-  cloud.hidden=!!state.workspace;cloud.innerHTML=cloudUI.toolbar();
+  cloud.hidden=!!state.workspace;cloud.innerHTML=sourceToolbar();
   main.classList.toggle('is-original',!!state.workspace);
   host.hidden=!state.workspace;
   // Keep one original page mounted when the user looks at its ledger.
@@ -1260,7 +1893,7 @@ function route(path,{write=true}={}){
   dialog.close();
   if(same){setMenu(false);return;}
   state.workspace=next.workspace;state.route=next.name;state.module=next.mod;state.menu=false;state.page=1;state.selected.clear();
-  state.group=GROUPS.some(g=>g.id===next.name)?next.name:'all';state.status='all';state.query='';state.source='all';
+  state.group=GROUPS.some(g=>g.id===next.name)?next.name:'all';state.status='all';state.kind=next.mod==='sec.container'&&!next.workspace?'truck':'all';state.query='';state.source='all';
   if(write)(history.pushState||history.replaceState).call(history,null,'','#'+next.path);
   render();window.scrollTo(0,0);
 }
@@ -1270,9 +1903,24 @@ function openDialog(html,drawer=false){dialog.close();dialog.className=drawer?'d
 const closeButton=()=>`<button class="icon-button" data-action="close" aria-label="${T('關閉','Close','បិទ')}">${I('close')}</button>`;
 let drawerList=[],drawerIndex=0,drawerTab='detail';
 function recordDialog(key){drawerList=rows();drawerIndex=drawerList.findIndex(r=>recordKey(r)===key);if(drawerIndex<0)return;drawerTab='detail';drawRecord();}
-function drawRecord(){const r=drawerList[drawerIndex],m=MODULE_MAP[r.module],f=(name,value)=>`<div><div class="field-label">${name}</div><div class="field-value">${esc(value||'—')}</div></div>`;const base=`<div class="dialog-head"><div><small>${SOURCES[r.source].name} / ${esc(t(m.name))}</small><h2>${esc(r.id)}</h2></div><div class="actions"><span class="small-muted">${drawerIndex+1}/${drawerList.length}</span>${button('','detail-prev','left','square',`aria-label="Previous record" ${drawerIndex===0?'disabled':''}`)}${button('','detail-next','chevron','square',`aria-label="Next record" ${drawerIndex===drawerList.length-1?'disabled':''}`)}${closeButton()}</div></div><div class="dialog-body">${statusPill(r.status)}<div class="detail-title">${esc(t(r.title))}</div><div class="tabs">${[['detail',T('基本資料','Details','ព័ត៌មានមូលដ្ឋាន')],['photos',T('照片／證據','Evidence','ភស្តុតាង')],['source',T('來源與核對','Source & checks','ប្រភព និងផ្ទៀងផ្ទាត់')]].map(([k,l])=>`<button data-detail-tab="${k}" class="${drawerTab===k?'on':''}">${l}${k==='photos'?' '+r.attachments.length:''}</button>`).join('')}</div>`;let body='';if(drawerTab==='detail')body=`<div class="detail-grid">${f(T('業務日期','Business date','ថ្ងៃប្រតិបត្តិការ'),r.date)}${f(T('所屬模組','Module','មុខងារ'),t(m.name))}${f(T('負責人','Owner','អ្នកទទួលខុសត្រូវ'),r.owner)}${f(T('地點','Location','ទីតាំង'),r.location)}${r.amount!=null?f(T('金額／幣別','Amount / currency','ចំនួនប្រាក់ / រូបិយប័ណ្ណ'),money(r.amount,r.currency)):''}${r.quantity!=null?f(T('數量／單位','Quantity / unit','បរិមាណ / ឯកតា'),n(r.quantity)+' '+r.unit):''}${r.reviewer?f(T('審查流程','Review','លំហូរពិនិត្យ'),r.reviewer):''}${r.approver?f(T('核可人','Approver','អ្នកអនុម័ត'),r.approver):''}</div>${r.notes?`<div class="detail-note">${esc(r.notes)}</div>`:''}<div class="scope-note">${T('可在總表編輯紀錄；原系統的核可及原始照片從原頁處理。','Edit this ledger record here. Original approvals and photos remain in the source system.','អាចកែតារាងនៅទីនេះ។ ការអនុម័ត និងរូបថតដើមនៅប្រព័ន្ធដើម។')}</div>`;if(drawerTab==='photos')body=`<div style="padding:24px 0">${r.attachments.length?`<div class="attachments">${r.attachments.map((url,i)=>link(T('查看附件','Open evidence','បើកភស្តុតាង')+' '+(i+1),url)).join('')}</div>`:`<div class="empty-state">${I('camera')}<strong>${T('此筆預覽未附照片','No photos in this preview record','គ្មានរូបថតក្នុងកំណត់ត្រាមើលនេះ')}</strong><p>${T('原模組的照片功能仍保留；正式接入時帶入附件連結。','Original photo workflows remain available. Live adapters will provide attachment references.','មុខងាររូបថតដើមនៅរក្សា។ ការភ្ជាប់ទិន្នន័យពិតនឹងនាំចូលតំណឯកសារ។')}</p></div>`}</div>`;if(drawerTab==='source')body=`<div class="detail-grid">${f(T('原系統','Original system','ប្រព័ន្ធដើម'),SOURCES[r.source].name)}${f(T('原始 ID','Original ID','ID ដើម'),r.id)}${f(T('更新時間','Updated at','ពេលបច្ចុប្បន្នភាព'),r.updatedAt)}${f(T('已入帳實支','Posted actual expense','ចំណាយពិតបានចុះបញ្ជី'),r.posted?T('是','Yes','បាទ/ចាស'):T('否／其他業務階段','No / other workflow stage','ទេ / ដំណាក់កាលការងារផ្សេង'))}</div><div class="source-trace">${esc(r.sourceRefs.join('\n'))}${r.canonicalEventId?'\n\nEvent: '+esc(r.canonicalEventId):''}</div><p class="method-note">${T('相同來源與 ID 取最新版本；跨來源只依明確事件關聯去重。','Latest revision per source ID. Cross-source deduplication uses explicit event links.','យកកំណែថ្មីតាម ID ប្រភព។ បំបាត់ស្ទួនឆ្លងប្រភពដោយតំណកិច្ចការច្បាស់លាស់។')}</p>`;openDialog(base+body+`</div><div class="dialog-footer">${state.dataset==='snapshot'?button(T('編輯','Edit','កែ'),'ledger-edit','edit','primary',`data-key="${esc(recordKey(r))}"`)+button(T('刪除','Delete','លុប'),'ledger-delete','trash','danger',`data-key="${esc(recordKey(r))}"`):''}${link(T('另開原頁','Open original page','បើកទំព័រដើម'),m.url)}</div>`,true);}
+function drawRecord(){
+  const r=drawerList[drawerIndex];if(!r)return;
+  const m=MODULE_MAP[r.module],f=(name,value)=>`<div><div class="field-label">${name}</div><div class="field-value">${esc(value||'—')}</div></div>`;
+  openDialog(`<div class="dialog-head"><div><small>${SOURCES[r.source].name} / ${esc(t(m.name))}</small><h2>${esc(t(r.title))}</h2></div>${closeButton()}</div>
+  <div class="dialog-body">${statusPill(r.status)}<div class="detail-grid">
+    ${f(T('原始單號','Original reference','លេខដើម'),r.displayId)}
+    ${f(T('業務日期','Business date','កាលបរិច្ឆេទ'),r.sourceDate||r.date)}
+    ${f(T('紀錄分類','Category','ប្រភេទ'),kindText(r.kind))}
+    ${f(T('地點','Location','ទីតាំង'),r.location)}
+    ${f(T('相關人員','Person','បុគ្គល'),r.owner)}
+    ${r.quantity!=null?f(T('數量','Quantity','បរិមាណ'),n(r.quantity)+' '+r.unit):''}
+    ${r.amount!=null?f(T('金額','Amount','ចំនួនប្រាក់'),money(r.amount,r.currency)):''}
+    ${r.subtitle?f(T('原表明細','Source details','ព័ត៌មានដើម'),r.subtitle):''}
+  </div>${r.notes?`<div class="detail-note">${esc(r.notes)}</div>`:''}</div>
+  <div class="dialog-footer">${button('','detail-prev','left','square',drawerIndex===0?'disabled':'')}${button('','detail-next','chevron','square',drawerIndex===drawerList.length-1?'disabled':'')}${button(T('進入原系統','Go to original','ចូលប្រព័ន្ធដើម'),'module','external','primary','data-module="'+m.id+'"')}</div>`,true);
+}
 function command(){openDialog(`<div class="dialog-head">${I('search')}<input class="command-input" id="command-input" placeholder="${T('搜尋功能、紀錄或單號…','Search tools, records or IDs…','ស្វែងរកមុខងារ កំណត់ត្រា ឬលេខ…')}" aria-label="Search">${closeButton()}</div><div class="dialog-body command-list" id="command-list"></div>`);updateCommand('');document.querySelector('#command-input').focus();}
-function updateCommand(q){q=q.toLowerCase().trim();const mods=MODULES.filter(m=>[...Object.values(m.name),...Object.values(m.desc),m.id,m.source].join(' ').toLowerCase().includes(q));const records=q?eventRows(sources()).filter(r=>[r.id,t(r.title),r.owner].join(' ').toLowerCase().includes(q)).slice(0,8):[];document.querySelector('#command-list').innerHTML=mods.slice(0,12).map(m=>`<button class="command-result" style="width:100%;border:0;background:transparent;text-align:left;color:inherit" data-action="module" data-module="${m.id}">${I(m.icon)}${esc(t(m.name))}<small>${SOURCES[m.source].name}</small>${I('chevron')}</button>`).join('')+records.map(r=>`<button class="command-result" style="width:100%;border:0;background:transparent;text-align:left;color:inherit" data-command-record="${esc(recordKey(r))}">${I('file')}${esc(t(r.title))}<small>${esc(r.id)}</small></button>`).join('')+(!mods.length&&!records.length?`<p class="small-muted">${T('找不到相符項目','No matching results','រកមិនឃើញលទ្ធផលត្រូវគ្នា')}</p>`:'');}
+function updateCommand(q){q=q.toLowerCase().trim();const mods=MODULES.filter(m=>[...Object.values(m.name),...Object.values(m.desc),m.id,m.source].join(' ').toLowerCase().includes(q));const records=q?eventRows(sources()).filter(r=>[r.id,r.displayId,t(r.title),r.owner].join(' ').toLowerCase().includes(q)).slice(0,8):[];document.querySelector('#command-list').innerHTML=mods.slice(0,12).map(m=>`<button class="command-result" style="width:100%;border:0;background:transparent;text-align:left;color:inherit" data-action="module" data-module="${m.id}">${I(m.icon)}${esc(t(m.name))}<small>${SOURCES[m.source].name}</small>${I('chevron')}</button>`).join('')+records.map(r=>`<button class="command-result" style="width:100%;border:0;background:transparent;text-align:left;color:inherit" data-command-record="${esc(recordKey(r))}">${I('file')}${esc(t(r.title))}<small>${esc(r.id)}</small></button>`).join('')+(!mods.length&&!records.length?`<p class="small-muted">${T('找不到相符項目','No matching results','រកមិនឃើញលទ្ធផលត្រូវគ្នា')}</p>`:'');}
 function selectModule(id){if(Object.hasOwn(MODULE_MAP,id))route(id);}
 function setMenu(open){
   state.menu=open;
@@ -1283,75 +1931,34 @@ function setMenu(open){
   document.body.style.overflow=open?'hidden':'';
   if(open){sidebar.querySelector('[aria-current="page"]')?.scrollIntoView({block:'nearest'});}
 }
-const cloudUI=createCloudUI({state,storage,T,t,esc,I,button,dialog,closeButton,openDialog,render,toast,download});
+const cloudUI=createCloudUI({state,storage,T,t,esc,I,button,dialog,closeButton,openDialog,render,toast,download,readOnly:true});
 const appearanceUI=createAppearanceUI({storage,T,dialog,openDialog,closeButton,toast});
 async function action(a,el={}){
   if(a==='appearance'||a.startsWith('appearance-')){await appearanceUI.handle(a,el);return;}
-  if(a==='cloud-export'){cloudUI.exportSnapshot({module:state.module,group:state.group});return;}
   if(a.startsWith('cloud-')){await cloudUI.handle(a);return;}
   if(a==='close'){dialog.close();return;}
   if(a==='module'){selectModule(el.dataset?.module);return;}
   if(a==='menu'||a==='menu-close'){setMenu(a==='menu'?!state.menu:false);return;}
   if(a==='command'){command();return;}
-  if(a==='new'){ledgerEditor();return;}
-  if(a==='ledger-edit'){ledgerEditor(el.dataset?.key);return;}
-  if(a==='ledger-save'){await saveLedgerForm();return;}
-  if(a==='ledger-delete'){await deleteLedger([el.dataset?.key]);return;}
-  if(a==='ledger-delete-selected'){await deleteLedger([...state.selected]);return;}
-  if(a==='ledger-trash'){ledgerTrash();return;}
-  if(a==='ledger-restore'){await restoreLedger(el.dataset?.key);return;}
-  if(a==='ledger-conflict-discard'){
-    if(confirm(T('採用雲端版本，捨棄這筆本機修改？','Keep the cloud version and discard this local draft?','ប្រើកំណែពពក ហើយបោះបង់ការកែប្រែក្នុងម៉ាស៊ីន?'))&&cloudUI.discardConflict(el.dataset?.key))render();
-    return;
-  }
-  if(a==='ledger-conflict-keep'){
-    const key=el.dataset?.key,row=rawLedgerRow(key);
-    if(row&&cloudUI.hasConflict(key)&&confirm(T('以本機版本更新這筆雲端紀錄？','Update this cloud record with the local version?','ធ្វើបច្ចុប្បន្នភាពកំណត់ត្រាពពកដោយកំណែក្នុងម៉ាស៊ីន?'))){
-      await cloudUI.saveRecords([{...row,updatedAt:ledgerNextStamp(row,cloudUI.serverRow(key))}],{resolve:new Set([key])});
-    }
-    return;
+  if(a==='source-kind'){state.kind=el.dataset.kind;state.page=1;render();return;}
+  if(a==='source-refresh'){
+    if(refreshingSources||!cloudUI.ensureConnected())return;
+    refreshingSources=true;const jobs=loadCurrentSources({force:true});render();
+    await Promise.all(jobs);refreshingSources=false;render();return;
   }
   if(a==='sources'||a==='records'){route(a);return;}
   if(['pending','abnormal','completed'].includes(a)){route(a==='pending'?'tasks':'records');state.status=a;render();return;}
   if(a==='previous'||a==='next'||a==='today'){state.ref=a==='today'?todayICT():shiftPeriod(state.mode,state.ref,a==='previous'?-1:1);state.page=1;state.selected.clear();render();return;}
-  if(a==='demo'||a==='empty'){state.dataset=a==='empty'&&state.snapshot?'snapshot':a;state.page=1;state.selected.clear();storage.set('dataset',state.dataset);render();return;}
   if(a==='page-next'||a==='page-prev'){state.page+=a==='page-next'?1:-1;render();return;}
   if(a==='detail-prev'||a==='detail-next'){drawerIndex+=a==='detail-next'?1:-1;drawRecord();return;}
-  if(a==='select-all'){const list=rows(),view=state.route==='overview'?list.slice(0,6):list.slice((state.page-1)*20,state.page*20);view.forEach(r=>el.checked?state.selected.add(recordKey(r)):state.selected.delete(recordKey(r)));render();return;}
-  if(a==='export'){
-    const all=rows(),list=state.selected.size?all.filter(r=>state.selected.has(recordKey(r))):all;
-    if(!list.length){toast(T('此範圍沒有可匯出的紀錄','No records to export in this scope','គ្មានកំណត់ត្រាសម្រាប់នាំចេញក្នុងជម្រើសនេះ'));return;}
-    download('PSJGA_'+(state.module||'records')+'_'+state.mode+'_'+state.ref+'.csv',ledgerCSV(list,state.lang),'text/csv;charset=utf-8');
-    toast(T('已匯出所選範圍，含來源、單號和版本。','Exported the selected scope with sources, IDs, and revisions.','បាននាំចេញជម្រើសជាមួយប្រភព លេខ និងកំណែ។'));return;
-  }
-  if(a==='template'){download('VRT_GA_SAMPLE_snapshot.json',JSON.stringify(demo,null,2),'application/json');return;}
-  if(a==='import'){
-    if(cloudUI.isBusy()||!cloudUI.ensureConnected())return;
-    openDialog(`<div class="dialog-head"><div><small>PSJGA</small><h2>${T('匯入總表紀錄','Import ledger records','នាំចូលកំណត់ត្រា')}</h2></div>${closeButton()}</div>
-      <div class="dialog-body cloud-dialog"><p>${T('選擇 JSON 備份或 Excel 另存的 UTF-8 CSV。相同業務與單號會比對版本。','Choose a JSON backup or UTF-8 CSV saved from Excel. Existing records are matched by module and ID.','ជ្រើស JSON ឬ CSV UTF-8 ពី Excel។ ផ្គូផ្គងតាមមុខងារ និងលេខកំណត់ត្រា។')}</p>
-      <p>${T('使用 CSV 範本時，日期請填 YYYY-MM-DD。匯入後可先核對，再按上傳。','In the CSV template, use YYYY-MM-DD for dates. Review imported rows before uploading.','ប្រើកាលបរិច្ឆេទ YYYY-MM-DD។ ពិនិត្យទិន្នន័យមុនផ្ទុក។')}</p>
-      ${button(T('下載 CSV 範本','Download CSV template','ទាញយកគំរូ CSV'),'ledger-template','download','small')}</div>
-      <div class="dialog-footer">${button(T('選擇檔案','Choose file','ជ្រើសឯកសារ'),'ledger-choose','upload','primary')}</div>`);
-    return;
-  }
-  if(a==='ledger-template'){
-    download('PSJGA_'+(state.module||'records')+'_template.csv',ledgerCSVTemplate(state.module),'text/csv;charset=utf-8');
-    return;
-  }
-  if(a==='ledger-choose'){
-    const module=state.module,group=state.group,input=document.createElement('input');input.type='file';input.accept='.json,.csv,application/json,text/csv';
-    input.addEventListener('change',()=>{if(input.files[0]){dialog.close();void cloudUI.importSnapshot(input.files[0],{module,group});}},{once:true});
-    input.click();return;
-  }
 }
-document.addEventListener('submit',e=>{if(e.target.id==='ledger-form'){e.preventDefault();void saveLedgerForm();}});
-document.addEventListener('click',e=>{const sel=e.target.closest('[data-select]');if(sel){sel.checked?state.selected.add(sel.dataset.select):state.selected.delete(sel.dataset.select);e.stopPropagation();render();return;}const lang=e.target.closest('[data-lang]');if(lang){state.lang=lang.dataset.lang;storage.set('lang',state.lang);render();return;}const period=e.target.closest('[data-period]');if(period){state.mode=period.dataset.period;state.page=1;state.selected.clear();render();return;}const tab=e.target.closest('[data-detail-tab]');if(tab){drawerTab=tab.dataset.detailTab;drawRecord();return;}const cmdRecord=e.target.closest('[data-command-record]');if(cmdRecord){const key=cmdRecord.dataset.commandRecord,found=eventRows(sources()).find(r=>recordKey(r)===key);if(found){route(found.module+'/records');state.ref=found.date;render();recordDialog(key);}return;}const routeEl=e.target.closest('[data-route]');if(routeEl){e.preventDefault();route(routeEl.dataset.route);return;}const actionEl=e.target.closest('[data-action]');if(actionEl){e.preventDefault();action(actionEl.dataset.action,actionEl);return;}const record=e.target.closest('[data-record]');if(record)recordDialog(record.dataset.record);});
+document.addEventListener('click',e=>{const lang=e.target.closest('[data-lang]');if(lang){state.lang=lang.dataset.lang;storage.set('lang',state.lang);render();return;}const period=e.target.closest('[data-period]');if(period){state.mode=period.dataset.period;state.page=1;state.selected.clear();render();return;}const tab=e.target.closest('[data-detail-tab]');if(tab){drawerTab=tab.dataset.detailTab;drawRecord();return;}const cmdRecord=e.target.closest('[data-command-record]');if(cmdRecord){const key=cmdRecord.dataset.commandRecord,found=eventRows(sources()).find(r=>recordKey(r)===key);if(found){route(found.module+'/records');state.ref=found.date;state.kind='all';render();recordDialog(key);}return;}const routeEl=e.target.closest('[data-route]');if(routeEl){e.preventDefault();route(routeEl.dataset.route);return;}const actionEl=e.target.closest('[data-action]');if(actionEl){e.preventDefault();action(actionEl.dataset.action,actionEl);return;}const record=e.target.closest('[data-record]');if(record)recordDialog(record.dataset.record);});
 let searchTimer;document.addEventListener('input',e=>{if(e.target.id==='command-input')updateCommand(e.target.value);if(e.target.dataset.filter==='query'){state.query=e.target.value;clearTimeout(searchTimer);const pos=e.target.selectionStart;searchTimer=setTimeout(()=>{state.page=1;state.selected.clear();render();const input=document.querySelector('[data-filter=query]');if(input){input.focus();input.setSelectionRange(pos,pos);}},150);}});
 document.addEventListener('change',e=>{const f=e.target.dataset.filter;if(!f)return;const v=e.target.value;if(f==='ledger-module'){if(v)route(v+'/records');return;}if(f==='date'||f==='week'){if(!v)return;try{periodRange('day',v);}catch{return;}state.ref=v;}else if(f==='year'){state.ref=v+'-'+(state.mode==='year'?'01':state.ref.slice(5,7))+'-01';}else if(f==='month'){state.ref=state.ref.slice(0,4)+'-'+v.padStart(2,'0')+'-01';}else state[f]=v;state.page=1;state.selected.clear();render();});
 document.addEventListener('keydown',e=>{if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='k'){e.preventDefault();command();}if(e.key==='Escape'&&state.menu)setMenu(false);if(e.key==='Enter'&&e.target.matches('tr[data-record]'))recordDialog(e.target.dataset.record);});
 dialog.addEventListener('click',e=>{if(e.target===dialog){const rect=dialog.getBoundingClientRect();if(e.clientX<rect.left||e.clientX>rect.right||e.clientY<rect.top||e.clientY>rect.bottom)dialog.close();}});
 const start=decodeRoute(location.hash.slice(1));
-if(start){state.route=start.name;state.workspace=start.workspace;state.module=start.mod;state.group=GROUPS.some(g=>g.id===start.name)?start.name:'all';}
+if(start){state.route=start.name;state.workspace=start.workspace;state.module=start.mod;state.kind=start.mod==='sec.container'&&!start.workspace?'truck':'all';state.group=GROUPS.some(g=>g.id===start.name)?start.name:'all';}
 render();void cloudUI.start(location.hash);
 function followLocation(){
   const h=location.hash.slice(1);
