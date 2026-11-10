@@ -13,3 +13,10 @@
 - [測試結果](TEST_RESULTS.txt)
 
 本儲存庫保存可直接發布的成品。v1.3 沿用既有 Apps Script 部署與手機授權。
+
+
+## 修改 index.html 後必做（2026-11-11）
+
+`index.html` 的 `<meta http-equiv="Content-Security-Policy">` 以 sha256 鎖定頁內腳本。
+只要改了 `<script type="module">` 裡任何一個字，就必須重新計算雜湊並更新 `script-src`，
+否則瀏覽器會擋下整段腳本，頁面變成空白。計算方式：對 `<script type="module">` 與 `</script>` 之間的原文做 SHA-256 後 base64。
