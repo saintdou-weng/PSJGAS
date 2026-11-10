@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#102e34"><meta name="description" content="VRT 總務整合工作台：SEC、GasCheck、GASExp 的功能入口、日週月年總覽與資料架構。"><title>VRT · 總務整合工作台</title><meta name="psjga-default-endpoint" content="https://script.google.com/macros/s/AKfycbzE50qR1ZV83_ywYEXlgnHJ16reJKvrttFSV4s37yVIqIVPseXEf4w2ZVCCM2GSmM7NXw/exec"><meta name="psjga-platform" content="workbench"><meta name="referrer" content="no-referrer"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-zdM64az1XNgjdI2wjiAVTQ0+ve/019cqPhMcnXMs1Ig='; style-src 'unsafe-inline'; img-src data: blob: https:; connect-src https://script.google.com https://script.googleusercontent.com; frame-src https://saintdou-weng.github.io; base-uri 'none'; form-action 'none'"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23102e34'/%3E%3Ctext x='12' y='43' font-size='31' fill='white' font-family='sans-serif'%3EGA%3C/text%3E%3C/svg%3E"><style>
+<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#102e34"><meta name="description" content="VRT 總務整合工作台：SEC、GasCheck、GASExp 的功能入口、日週月年總覽與資料架構。"><title>VRT · 總務整合工作台</title><meta name="psjga-default-endpoint" content="https://script.google.com/macros/s/AKfycbzE50qR1ZV83_ywYEXlgnHJ16reJKvrttFSV4s37yVIqIVPseXEf4w2ZVCCM2GSmM7NXw/exec"><meta name="psjga-platform" content="workbench"><meta name="referrer" content="no-referrer"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-0wqf5cr+47D85z/C9l5wgNd/herzv57qqS+KftYWc9k='; style-src 'unsafe-inline'; img-src data: blob: https:; connect-src https://script.google.com https://script.googleusercontent.com; frame-src https://saintdou-weng.github.io; base-uri 'none'; form-action 'none'"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23102e34'/%3E%3Ctext x='12' y='43' font-size='31' fill='white' font-family='sans-serif'%3EGA%3C/text%3E%3C/svg%3E"><style>
 :root{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC","Noto Sans Khmer",sans-serif;color:#20323e;background:#f5f7fa;font-synthesis:none;--nav:#102e34;--teal:#087f72;--blue:#2563eb;--line:#e3e9ef;--muted:#74828e;--shadow:0 4px 24px #23394507}*{box-sizing:border-box}body{margin:0}button,input,select{font:inherit}button,a,input,select{-webkit-tap-highlight-color:transparent}button,a{touch-action:manipulation}button{cursor:pointer}button:disabled{cursor:default;opacity:.5}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #64c8dc;outline-offset:3px}a{color:inherit;text-decoration:none}svg.icon{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}.skip{position:absolute;left:12px;top:-80px;background:white;padding:15px;z-index:100}.skip:focus{top:10px}.shell{display:grid;grid-template-columns:246px minmax(0,1fr);min-height:100vh}.sidebar{background:var(--nav);color:#bdcbd0;padding:28px 18px 18px;position:fixed;width:246px;inset:0 auto 0 0;display:flex;flex-direction:column;z-index:30;overflow-y:auto}.brand{display:flex;align-items:center;gap:11px;padding:0 10px 24px;color:#fff}.brand-mark{background:#4dba9f;width:44px;height:44px;display:grid;place-items:center;border-radius:12px;color:#10382f;font-weight:850;font-size:17px;letter-spacing:-1px}.brand strong{font-size:17px;display:block;letter-spacing:.2px}.brand small{display:block;color:#94aeb1;font-size:10px;letter-spacing:1.8px;margin-top:6px}.nav-caption{font-size:10px;letter-spacing:1.8px;text-transform:uppercase;color:#6f949a;padding:24px 14px 10px}.nav-btn{display:flex;width:100%;align-items:center;gap:12px;border:0;background:transparent;color:#bdcbd0;text-align:left;padding:12px 13px;border-radius:9px;margin:3px 0;font-size:13px;line-height:1.5}.nav-btn:hover{background:#ffffff0a;color:#fff}.nav-btn.active{background:#20484c;color:#d3fff1;box-shadow:inset 3px 0 #5fd6b0}.nav-count{margin-left:auto;font-size:11px;padding:2px 7px;background:#ffffff0d;border-radius:5px;color:#a8bfc2}.nav-foot{margin-top:auto;padding:24px 12px 8px;font-size:11px;line-height:1.8;color:#8caaad}.nav-foot strong{color:#b9d3d2;font-weight:500}.nav-rule{height:1px;background:#ffffff0d;margin-bottom:16px}.main-shell{grid-column:2;min-width:0}.topbar{height:80px;border-bottom:1px solid var(--line);background:#ffffffd9;display:flex;align-items:center;gap:20px;padding:0 36px;position:sticky;top:0;z-index:20;backdrop-filter:blur(14px)}.breadcrumbs{font-size:12px;color:#8c98a1;white-space:nowrap}.breadcrumbs strong{color:#3b5360;font-weight:550;margin-left:7px}.search-trigger{margin-left:auto;border:1px solid var(--line);background:#f9fafc;color:#8995a0;border-radius:8px;height:36px;display:flex;align-items:center;gap:9px;padding:0 12px;font-size:12px;min-width:245px}.search-trigger .icon{width:16px}.search-trigger kbd{margin-left:auto;color:#9ba6af;font-size:10px;border:1px solid #dce3e9;border-radius:3px;padding:2px 4px}.langs{display:flex;border:1px solid var(--line);border-radius:7px;overflow:hidden;flex-shrink:0}.langs button{border:0;background:transparent;color:#73818d;padding:7px 9px;font-size:11px}.langs button.on{background:#e8f4ef;color:#127663;font-weight:750}.avatar{background:#e0eae6;color:#275c4c;width:33px;height:33px;border-radius:50%;display:grid;place-items:center;font-size:10px;font-weight:700;flex-shrink:0}.mobile-only{display:none}main{max-width:1580px;margin:0 auto;padding:30px 36px 60px}.title-row{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;margin-bottom:24px}.eyebrow{font-size:10px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:#60857f;margin-bottom:9px}.title-row h1{margin:0;font-size:27px;font-weight:750;letter-spacing:-.7px;line-height:1.3}.title-row p{font-size:12px;color:var(--muted);line-height:1.7;margin:10px 0 0}.actions{display:flex;align-items:center;gap:9px;flex-wrap:wrap}.btn{display:inline-flex;justify-content:center;align-items:center;gap:8px;min-height:38px;padding:9px 13px;border:1px solid #dce4eb;background:white;border-radius:8px;color:#3b5260;font-size:12px;font-weight:600;line-height:1.45}.btn .icon{width:16px;height:16px}.btn:hover{border-color:#9bbdb4;background:#f7fcfa}.btn.primary{color:white;background:#087c70;border-color:#087c70;box-shadow:0 3px 8px #087c7014}.btn.primary:hover{background:#076c61}.btn.quiet{border:0;background:transparent;box-shadow:none;padding:7px}.btn.small{min-height:31px;padding:6px 9px;font-size:11px}.btn.square{padding:8px;width:35px;min-height:35px}.modebar{display:flex;align-items:center;gap:10px;background:#eef3fc;border:1px solid #dde6f7;padding:11px 15px;border-radius:9px;font-size:11px;color:#546b91;line-height:1.6;margin-bottom:20px}.modebar .icon{width:16px;flex-shrink:0}.modebar strong{font-weight:650}.modebar .actions{margin-left:auto}.modebar button{font-size:10px}.modebar.empty{background:#f6f7f8;border-color:#e5e8ec;color:#647580}.pill{display:inline-flex;align-items:center;gap:6px;border-radius:5px;padding:4px 7px;font-size:10px;font-weight:600;line-height:1.25;white-space:nowrap}.pill.teal{background:#e5f5ee;color:#237953}.pill.blue{background:#edf3ff;color:#496caf}.pill.amber{background:#fff5e3;color:#a3761e}.pill.red{background:#fef0ef;color:#ba5a53}.pill.purple{background:#f3eefa;color:#8866af}.pill.gray{background:#f0f3f6;color:#75818b}.dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:currentColor}.periodbar{display:flex;align-items:center;gap:12px;margin-bottom:23px;flex-wrap:wrap}.segments{display:flex;gap:3px;padding:4px;background:#eaf0f5;border-radius:8px}.segments button{background:transparent;border:0;border-radius:6px;padding:7px 13px;font-size:11px;color:#7a8a96;font-weight:600;min-height:32px}.segments button.active{background:white;color:#185b54;box-shadow:0 1px 5px #29475710}.periodnav{display:flex;align-items:center;gap:7px}.periodnav select,.filter-select{border:1px solid #e0e7ed;border-radius:7px;background:#fff;color:#435964;padding:8px 10px;font-size:12px;min-height:35px}.period-label{font-variant-numeric:tabular-nums;font-size:12px;min-width:95px;text-align:center;font-weight:650;color:#3b535d}.periodbar .range{color:#8a98a3;font-size:10px;font-variant-numeric:tabular-nums;margin-left:auto}.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px;margin-bottom:23px}.stat{padding:19px 20px 16px;border:1px solid var(--line);border-radius:11px;background:#fff;box-shadow:var(--shadow);position:relative;overflow:hidden;text-align:left;color:inherit;width:100%}.stat:hover{border-color:#a8c8c0}.stat-head{display:flex;justify-content:space-between;color:#758491;font-size:11px;align-items:center;gap:6px}.stat-head .icon{width:17px;height:17px;color:#8ba2a7}.stat-value{font-size:33px;letter-spacing:-1px;font-weight:720;line-height:1.2;margin:12px 0 9px;font-variant-numeric:tabular-nums}.stat-value.amount{font-size:28px}.stat-bottom{font-size:10px;color:#9aa5ae;line-height:1.5}.stat-bottom b{color:#488678;font-weight:600}.stat:nth-child(2) .stat-value{color:#b37b22}.stat:nth-child(3) .stat-value{color:#bc6055}.stat:nth-child(4) .stat-value{color:#147f6d}.grid-two{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(285px,1fr);gap:20px;margin-bottom:22px}.panel{background:white;border:1px solid var(--line);border-radius:11px;overflow:hidden;box-shadow:var(--shadow)}.panel-head{padding:18px 20px;border-bottom:1px solid #eff2f5;display:flex;align-items:center;justify-content:space-between;gap:12px}.panel h2{font-size:13px;letter-spacing:.15px;margin:0;font-weight:700}.panel-sub{margin-top:6px;font-size:10px;color:#94a0aa;line-height:1.5}.panel-body{padding:18px 20px}.text-link{border:0;background:none;color:#387d6d;font-size:10px;display:inline-flex;align-items:center;gap:5px;white-space:nowrap;cursor:pointer}.text-link .icon{width:13px}.task-line{display:flex;align-items:center;gap:12px;padding:15px 20px;border-bottom:1px solid #f0f3f6;cursor:pointer;transition:background .15s;text-align:left;background:transparent;width:100%;border-top:0;border-left:0;border-right:0;color:inherit;font:inherit}.task-line:hover{background:#f9fcfb}.task-line:last-child{border-bottom:0}.task-icon{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;flex-shrink:0;background:#f0f6f5;color:#5d9588}.task-icon.red{background:#fef1ee;color:#bd7765}.task-icon.amber{background:#fcf4e6;color:#b9934d}.task-main{min-width:0;flex:1}.task-main strong{font-size:12px;display:block;line-height:1.5;font-weight:600}.task-main small{font-size:10px;color:#8d99a3;display:block;margin-top:6px;line-height:1.5}.task-line> .icon{color:#b2c0c7;width:15px}.task-line .pill{margin-left:auto}.area-line{display:flex;align-items:center;gap:12px;padding:11px 0}.area-line .task-icon{width:31px;height:31px;border-radius:8px}.area-line strong{font-size:11px;display:block}.area-line small{font-size:9px;color:#8c9aa4;display:block;margin-top:5px}.area-line .area-number{margin-left:auto;text-align:right;font-size:16px;font-weight:700;font-variant-numeric:tabular-nums}.area-line .area-number small{font-size:9px;font-weight:400}.micro-progress{height:4px;background:#eef2f4;border-radius:6px;margin-top:10px;overflow:hidden}.micro-progress span{height:100%;display:block;border-radius:6px;background:#68b59f}.coverage-note{font-size:10px;line-height:1.6;color:#8e9aa3;margin-top:13px;border-top:1px solid #eef2f4;padding-top:12px}.chart-head-legend{display:flex;gap:12px;font-size:9px;color:#8b9aa3}.legend-square{width:7px;height:7px;display:inline-block;border-radius:2px;background:#43a28b;margin-right:4px}.chart{height:165px;padding:14px 20px 6px;display:flex;align-items:flex-end;gap:7px}.chart-column{flex:1;min-width:0;display:flex;align-items:center;flex-direction:column;justify-content:flex-end;height:100%;gap:7px}.bars{height:117px;display:flex;align-items:flex-end;justify-content:center;width:100%;gap:3px;border-bottom:1px solid #edf1f4}.bar{max-width:18px;width:30%;background:#77b7a4;border-radius:3px 3px 0 0;min-height:0;transition:height .3s}.bar.alert{background:#e5b297}.chart-column label{font-size:9px;color:#9aa6af;font-variant-numeric:tabular-nums;white-space:nowrap}.chart-number{font-size:9px;color:#6c827c}.chart-foot{font-size:10px;color:#8a9aa5;padding:9px 20px 17px;line-height:1.6}.ledger-top{display:flex;align-items:center;gap:10px;margin-bottom:16px}.ledger-top h2{font-size:15px;letter-spacing:-.2px;margin:0}.ledger-top p{font-size:10px;color:#8d9aa3;margin:5px 0 0}.ledger-top .actions{margin-left:auto}.table-scroll{overflow-x:auto}.data-table{width:100%;border-collapse:collapse;min-width:770px;text-align:left;font-size:11px}.data-table th{font-weight:500;color:#8c9aa6;background:#fafbfd;font-size:10px;padding:13px 16px;border-bottom:1px solid #e8edf2;white-space:nowrap}.data-table td{border-bottom:1px solid #eef2f6;padding:15px 16px;line-height:1.5}.data-table tbody tr{cursor:pointer}.data-table tbody tr:hover{background:#f8fcfb}.data-table tbody tr:last-child td{border-bottom:0}.data-table td.title-cell{font-weight:600;max-width:280px}.data-table .row-code{font-size:9px;color:#98a5ad;margin-top:4px;font-weight:400}.source-mini{color:#7d919b;font-size:9px;letter-spacing:.3px}.date-cell{font-variant-numeric:tabular-nums;color:#6d8290;font-size:10px;white-space:nowrap}.table-bottom{padding:13px 18px;font-size:10px;color:#8b9aa5;display:flex;justify-content:space-between;gap:10px;border-top:1px solid #eef2f5}.inline-search{border:1px solid var(--line);border-radius:7px;font-size:11px;min-height:35px;padding:8px 11px;min-width:160px;color:#455c68}.filters{display:flex;gap:9px;margin-bottom:17px;flex-wrap:wrap}.filters .inline-search{margin-left:auto}.module-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;margin:15px 0 28px}.module-card{border:1px solid var(--line);background:white;border-radius:11px;padding:20px;display:flex;flex-direction:column;gap:14px;min-width:0;transition:transform .16s,border-color .16s}.module-card:hover{transform:translateY(-2px);border-color:#a4c2bb}.module-card-head{display:flex;align-items:center;gap:10px}.module-card h3{font-size:13px;margin:0;line-height:1.4}.module-card p{font-size:11px;color:#8696a1;line-height:1.8;margin:0;flex:1}.module-card .source-mini{margin-left:auto}.module-card .actions{padding-top:7px;border-top:1px solid #f0f3f6}.module-card .btn{flex:1;font-size:10px}.section-title{font-size:16px;font-weight:700;display:flex;align-items:center;gap:9px;margin:0}.section-title .icon{color:#739b90}.section-title small{font-size:10px;color:#94a2ac;font-weight:400}.empty-state{text-align:center;padding:35px 20px;color:#8796a1;font-size:12px;line-height:1.8}.empty-state .icon{width:30px;height:30px;color:#aec3c0;margin-bottom:10px}.empty-state strong{display:block;color:#4f6973;font-size:13px;margin-bottom:8px}.empty-state p{margin:0 0 15px}.board{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}.board-column{background:#ecf1f4;border-radius:11px;padding:13px;min-height:300px}.board-heading{font-size:12px;display:flex;justify-content:space-between;padding:5px 3px 17px;color:#697f8b;font-weight:650}.board-card{background:white;padding:16px;border:1px solid #e0e6ea;border-radius:8px;margin-bottom:10px;text-align:left;width:100%;color:#314d58}.board-card strong{display:block;font-size:12px;line-height:1.6;margin:10px 0}.board-card small{font-size:10px;color:#94a2ac}.board-meta{margin-top:15px;display:flex;justify-content:space-between}.source-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.source-card{padding:24px}.source-card h3{font-size:20px;margin:0 0 8px}.source-card p{font-size:11px;line-height:1.8;color:#80939e}.source-card .keyline{border-top:1px solid var(--line);padding-top:12px;margin-top:16px;font-size:11px;color:#627c87;line-height:1.8}.architecture{display:grid;gap:18px}.arch-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}.arch-card{border:1px solid var(--line);border-radius:10px;background:white;padding:20px;min-width:0}.arch-card h3{font-size:13px;margin:0 0 9px}.arch-card p{font-size:11px;line-height:1.9;color:#81929b;margin:0}.arch-connector{text-align:center;color:#91a9a5;font-size:12px;letter-spacing:1px}.arch-core{padding:22px;background:#edf7f3;border:1px solid #cfe6dd;border-radius:10px}.arch-core h3{font-size:15px;color:#216757;margin:0 0 10px}.arch-core p{font-size:11px;color:#5e8a7e;line-height:1.9;margin:0}.rules{display:grid;grid-template-columns:1fr 1fr;gap:12px}.rule{display:flex;gap:12px;padding:18px;background:#fff;border:1px solid var(--line);border-radius:9px}.rule .icon{color:#4b9a84;flex-shrink:0}.rule strong{font-size:12px;display:block;margin-bottom:6px}.rule p{font-size:11px;color:#81929b;line-height:1.9;margin:0}.scope-note{padding:14px 17px;background:#f0f5f3;border-radius:8px;font-size:11px;line-height:1.8;color:#6b8a7f;margin:18px 0}.screen-footer{margin-top:28px;display:flex;justify-content:space-between;color:#a2adb5;font-size:9px;line-height:1.6}.screen-footer span:last-child{text-align:right}.module-workspace{background:white;border:1px solid var(--line);border-radius:10px;overflow:hidden}.workspace-head{padding:14px 18px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:15px;font-size:11px;color:#7c8f9a}.module-workspace iframe{width:100%;height:75vh;min-height:500px;border:0;background:#f4f7fb}.module-workspace .workspace-hint{padding:10px 18px;color:#8b9aa5;font-size:10px;background:#fafbfd}.icon-button{border:0;background:transparent;color:#7a8d97;display:inline-grid;place-items:center;width:34px;height:34px;border-radius:6px}.icon-button:hover{background:#eef4f2}.small-muted{font-size:10px;color:#91a0aa;line-height:1.7}dialog{border:0;padding:0;border-radius:14px;box-shadow:0 20px 80px #102e3433;max-width:calc(100vw - 28px);max-height:90dvh;width:660px;color:inherit;background:#fff}dialog::backdrop{background:#102c4266;backdrop-filter:blur(3px)}dialog.drawer{height:100dvh;max-height:100dvh;margin:0 0 0 auto;border-radius:0;width:640px;max-width:100vw}.dialog-head{display:flex;align-items:center;justify-content:space-between;padding:22px;border-bottom:1px solid var(--line);gap:14px}.dialog-head h2{font-size:17px;line-height:1.5;margin:0}.dialog-head small{font-size:10px;color:#8d9da6}.dialog-body{padding:24px}.dialog-footer{border-top:1px solid var(--line);padding:17px 22px;display:flex;justify-content:flex-end;gap:9px}.detail-title{font-size:22px;font-weight:700;line-height:1.5;margin:16px 0 21px;letter-spacing:-.5px}.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;padding:25px 0;border-top:1px solid var(--line)}.field-label{font-size:10px;color:#98a6ae;margin-bottom:8px}.field-value{font-size:13px;font-weight:550;line-height:1.7;overflow-wrap:anywhere}.detail-note{font-size:12px;line-height:1.9;white-space:pre-line;color:#6d8390;background:#f7faf9;padding:17px;border-radius:8px}.tabs{display:flex;border-bottom:1px solid var(--line);gap:20px;margin-top:6px}.tabs button{border:0;background:none;padding:14px 0;color:#85959f;font-size:12px;border-bottom:2px solid transparent}.tabs button.on{color:#168571;border-color:#168571}.attachments{display:grid;grid-template-columns:1fr 1fr;gap:10px}.attachments a{padding:14px;border:1px solid var(--line);border-radius:8px;color:#367f71;font-size:12px}.source-trace{font:10px/1.9 ui-monospace,monospace;background:#f5f7f9;border-radius:8px;padding:16px;white-space:pre-wrap;overflow-wrap:anywhere;color:#768a96}.command-input{width:100%;font-size:18px;border:0;outline:none;padding:8px}.command-result{padding:12px 8px;border-radius:7px;display:flex;gap:12px;align-items:center;font-size:12px}.command-result:hover{background:#f1f7f4}.command-result small{margin-left:auto;color:#97a5ae;font-size:10px}.command-list{max-height:55vh;overflow-y:auto}.currency-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-bottom:22px}.report-card{padding:24px}.report-card .stat-value{font-size:36px}.count-detail{display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid #edf2f5;font-size:12px}.count-detail:last-child{border-bottom:0}.import-box{border:1px dashed #bdd3cc;background:#f7fbfa;padding:32px;text-align:center;border-radius:10px;font-size:12px;line-height:1.9;color:#709086}.import-box strong{display:block;color:#356c5c;font-size:15px;margin:12px 0}#toast{position:fixed;bottom:25px;left:50%;transform:translateX(-50%) translateY(100px);background:#153e37;color:#fff;padding:13px 20px;font-size:12px;border-radius:9px;box-shadow:0 8px 24px #143b3733;transition:transform .2s;z-index:100;max-width:92vw;line-height:1.6}#toast.on{transform:translateX(-50%) translateY(0)}.backdrop{display:none}.mobile-nav{display:none}.hidden{display:none!important}.method-note{font-size:10px;color:#8c9ba5;line-height:1.9}.route-back{margin-bottom:20px}.report-block{margin-top:20px}.scroll-hint{display:none}input[type=checkbox]{accent-color:#087c70;width:15px;height:15px}
 @media(min-width:1500px){main{padding:35px 45px 60px}.topbar{padding:0 45px}.stats{gap:20px}.grid-two{gap:24px}.stat{padding:24px}.task-line{padding:18px 22px}}
 @media(max-width:1150px){.shell{grid-template-columns:212px minmax(0,1fr)}.sidebar{width:212px;padding-left:12px;padding-right:12px}.brand{padding-left:10px}.brand strong{font-size:15px}.brand small{font-size:9px}.nav-btn{font-size:12px}.topbar{padding:0 24px;gap:14px}.search-trigger{min-width:140px}.search-trigger span{display:none}.search-trigger kbd{display:none}main{padding:25px 24px 50px}.grid-two{grid-template-columns:minmax(0,1.5fr) minmax(245px,1fr);gap:15px}.module-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.stat{padding:16px}.stat-value{font-size:29px}.title-row h1{font-size:24px}.board{gap:10px}.source-grid{gap:12px}.source-card{padding:18px}.source-card h3{font-size:18px}}
@@ -62,6 +62,67 @@ dialog:has(.ga-appearance)::backdrop{background:#10233026;backdrop-filter:none}
 @media(max-width:640px){dialog:has(.ga-appearance){inset:58px 14px auto auto;max-height:calc(100dvh - 72px)}.ga-appearance{padding:12px 16px 18px}.ga-theme-trigger{width:36px;height:36px;min-width:36px}.ga-swatch-dot{width:32px;height:32px}}
 @media print{.ga-wallpaper{display:none}:root{background:#fff}[data-ga-dark] .title-row>div:first-child,[data-ga-dark] .title-row p,[data-ga-dark] .eyebrow,[data-ga-dark] .screen-footer{color:#20323e;text-shadow:none}}
 
+/* Direct business navigation and the ledger. */
+:root{--ga-side:#e8f0fa;--ga-side-line:#ccd8e4;--ga-side-ink:#23364b;--ga-side-muted:#52677d;--ga-side-hover:#dce8f4;--ga-side-active:#e9fbf4;--ga-side-accent:#116457}
+.sidebar{background:var(--ga-side);border-right:1px solid var(--ga-side-line);color:var(--ga-side-ink);padding:0 12px 16px;overscroll-behavior:contain;scrollbar-width:thin}
+.sidebar .brand{position:sticky;top:0;z-index:1;gap:12px;min-height:84px;padding:15px 12px;margin:0 -12px;background:var(--ga-side);border-bottom:1px solid var(--ga-side-line);color:var(--ga-side-ink)}
+.sidebar .brand-mark{background:#245cca;color:#fff;flex-shrink:0}
+.sidebar .brand small,.sidebar .nav-foot,.sidebar .nav-foot strong{color:var(--ga-side-muted)}
+.sidebar .nav-caption{padding:19px 9px 7px;color:var(--ga-side-muted);font-size:11px;font-weight:700;letter-spacing:.055em}
+.sidebar .nav-group{border-top:1px solid var(--ga-side-line);margin-top:10px}
+.sidebar .nav-group .nav-caption{padding-top:13px}
+.sidebar .nav-btn{min-height:40px;padding:9px 10px;margin:2px 0;color:var(--ga-side-ink);font-size:13px;gap:10px}
+.sidebar .nav-btn .icon{color:#3460ac;flex-shrink:0}
+.sidebar .nav-btn:hover{background:var(--ga-side-hover);color:var(--ga-side-ink)}
+.sidebar .nav-btn.active{background:var(--ga-side-active);color:var(--ga-side-accent);box-shadow:inset 3px 0 #118b74;font-weight:700}
+.sidebar .nav-btn.active .icon{color:inherit}
+.sidebar .nav-count{color:inherit;background:var(--ga-side-hover)}
+.sidebar .nav-rule{background:var(--ga-side-line)}
+[data-ga-dark]{--ga-side:#1d2d3c;--ga-side-line:#435360;--ga-side-ink:#e6edf5;--ga-side-muted:#bacad9;--ga-side-hover:#2c4155;--ga-side-active:#294c47;--ga-side-accent:#c3f5e5}
+[data-ga-dark] .sidebar .nav-btn .icon{color:#a5c2f4}
+.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+.module-tabs{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin:0 0 12px;padding:4px 9px;border:1px solid var(--line);border-radius:12px;background:#f9fbfd}
+.module-tabs-inner{display:flex;align-items:stretch;gap:5px;max-width:100%}
+.module-tabs-inner a{display:flex;align-items:center;justify-content:center;gap:7px;min-height:42px;padding:5px 12px;border-radius:8px;color:#385366;font-size:13px;font-weight:650;text-align:center}
+.module-tabs-inner a:hover{background:#edf3f9}
+.module-tabs-inner a[aria-current=page]{background:#e2f3ed;color:#116457;box-shadow:inset 0 -2px #138774}
+.module-workspace[hidden],#cloud-slot[hidden]{display:none}
+.module-workspace{overflow:hidden;border:1px solid var(--line);border-radius:12px;background:#fff}
+.module-workspace iframe{display:block;width:100%;height:max(510px,calc(100dvh - 166px));border:0;background:#fff}
+main.is-original{padding-top:12px}
+.ledger-tools{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin:0 0 9px}
+.ledger-tools .btn{white-space:normal}
+.ledger-source-note,.ledger-conflicts p{color:#49616e;font-size:13px;line-height:1.6}
+.ledger-source-note{background:#f3f9fa;border:1px solid #dce8ed;border-radius:8px;padding:8px 12px;margin:0 0 14px}
+.ledger-fields{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start}
+.ledger-fields .ledger-wide{grid-column:1/-1}
+.ledger-fields .ledger-posted{display:flex;align-items:center;align-self:end;min-height:40px}
+.ledger-posted input{width:auto;accent-color:#087f72}
+.ledger-fields textarea{min-width:0;width:100%;border:1px solid var(--line);border-radius:9px;padding:10px 12px;background:#f7faf9;color:inherit;font:inherit;font-size:14px;resize:vertical}
+.ledger-conflicts{padding:12px 15px;margin:0 0 14px;background:#fff9ec}
+.ledger-conflicts h2{margin:0;font-size:15px}
+.ledger-conflicts p{margin:6px 0}
+.ledger-conflict-row{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;border-top:1px solid var(--line);padding:9px 0;overflow-wrap:anywhere}
+.ledger-conflict-row small{display:block;color:#49616e;line-height:1.55}
+.btn.danger{color:#9b312b;border-color:#e4bdb9;background:#fff6f5}
+@media(max-width:850px){
+  .sidebar{width:min(82vw,315px);padding:0 11px 18px}
+  .sidebar .brand{margin:0 -11px}
+  .sidebar .nav-btn{min-height:46px;font-size:14px}
+  .module-workspace iframe{height:max(480px,calc(100dvh - 188px))}
+}
+@media(max-width:640px){
+  main.is-original{padding:8px 8px 92px}
+  .module-tabs{padding:4px 6px;gap:4px}
+  .module-tabs-inner a{padding:5px 7px;gap:4px;font-size:12px}
+  .module-tabs-inner .icon{width:15px;height:15px}
+  .module-tabs>.btn{padding:6px 7px;min-height:40px}
+  .ledger-tools .btn,.cloud-toolbar .cloud-actions .btn{min-height:42px;font-size:12px}
+  .ledger-tools .btn{flex:1 1 29%;padding:7px}
+}
+@media(max-width:390px){.ledger-fields{grid-template-columns:minmax(0,1fr)}}
+@media print{.ledger-tools,.module-tabs{display:none}}
+
 </style></head>
 <body><a class="skip" href="#main">跳至內容 · Skip to content</a><div class="ga-wallpaper" aria-hidden="true"></div><div id="app"></div><noscript>請啟用 JavaScript 使用總務工作台。<a href="./legacy.html">開啟原稽核評鑑</a></noscript><dialog id="dialog"></dialog><div id="toast" role="status" aria-live="polite"></div><script type="module">
 const L=(zh,en,km)=>({zh,en,km});
@@ -113,7 +174,7 @@ const recordKey=r=>`${r.source}|${r.module}|${r.id}`;
 function reconcileRecords(rows){const map=new Map();let versions=0;for(const r of rows){const k=recordKey(r),old=map.get(k);if(old){versions++;if(stamp(old)>stamp(r)||stamp(old)===stamp(r)&&old.deleted&&!r.deleted)continue;}map.set(k,{...r});}return {records:[...map.values()],versions};}
 function eventRows(records){const map=new Map();for(const r of reconcileRecords(records).records){const key=r.canonicalEventId?'event|'+r.canonicalEventId:'record|'+recordKey(r),old=map.get(key);if(!old)map.set(key,{...r,sourceRefs:[recordKey(r)]});else {const keep=stamp(r)>stamp(old)||(stamp(r)===stamp(old)&&r.deleted)?r:old;const quantities=keep.quantity!=null?{quantity:keep.quantity,unit:keep.unit}:old.quantity!=null?{quantity:old.quantity,unit:old.unit}:r.quantity!=null?{quantity:r.quantity,unit:r.unit}:{};map.set(key,{...keep,...quantities,sourceRefs:[...new Set([...old.sourceRefs,recordKey(r)])]});}}return [...map.values()].filter(r=>!r.deleted);}
 function validateSnapshot(data){if(!data||data.schemaVersion!==1||!Array.isArray(data.records)||data.records.length>5000)throw Error('schemaVersion: 1; records: array, max 5000');if(!data.generatedAt||!Number.isFinite(Date.parse(data.generatedAt)))throw Error('generatedAt must be an ISO timestamp');const records=data.records.map((r,i)=>{if(!r||typeof r.id!=='string'||!r.id.trim()||r.id.length>200)throw Error(`Row ${i+1}: id required`);const m=MODULE_MAP[r.module];if(!m||m.source!==r.source)throw Error(`Row ${i+1}: module/source mismatch`);if(!validDate(r.date))throw Error(`Row ${i+1}: date must be local YYYY-MM-DD`);if(!r.updatedAt||!/(Z|[+-]\d{2}:\d{2})$/.test(r.updatedAt)||!Number.isFinite(Date.parse(r.updatedAt)))throw Error(`Row ${i+1}: updatedAt must include time zone`);if(!r.deleted&&r.status==='pending'&&r.requiresApproval!==true)throw Error(`Row ${i+1}: pending requires requiresApproval: true`);if(r.requiresApproval===true&&!m.approval)throw Error(`Row ${i+1}: this module has no unified approval mapping`);if(!r.deleted&&!STATUSES.includes(r.status))throw Error(`Row ${i+1}: invalid status`);if(r.amount!=null&&(!Number.isFinite(r.amount)||r.amount<0||Math.abs(r.amount*100-Math.round(r.amount*100))>0.000001||!['USD','KHR'].includes(r.currency)))throw Error(`Row ${i+1}: amount/currency invalid`);if(r.quantity!=null&&(!Number.isFinite(r.quantity)||r.quantity<0||!r.unit))throw Error(`Row ${i+1}: quantity/unit invalid`);if(r.canonicalEventId!=null&&(typeof r.canonicalEventId!=='string'||!r.canonicalEventId.trim()))throw Error(`Row ${i+1}: canonicalEventId invalid`);const title=typeof r.title==='string'?r.title.slice(0,500):r.title&&typeof r.title==='object'?Object.fromEntries(['zh','en','km'].map(k=>[k,String(r.title[k]||'').slice(0,500)])):String(r.id);const attachments=Array.isArray(r.attachments)?r.attachments.filter(p=>typeof p==='string'&&/^https:\/\//.test(p)).slice(0,100):[];return {...r,title,attachments,owner:String(r.owner||'').slice(0,150),location:String(r.location||'').slice(0,200),notes:String(r.notes||'').slice(0,5000),deleted:r.deleted===true,requiresApproval:r.requiresApproval===true,posted:r.posted===true};});return {schemaVersion:1,generatedAt:data.generatedAt,records:reconcileRecords(records).records};}
-function filterRecords(rows,{mode,ref,group='all',source='all',status='all',query=''}={}){const range=periodRange(mode,ref),q=query.trim().toLowerCase();return eventRows(rows).filter(r=>r.date>=range.from&&r.date<=range.to&&(group==='all'||MODULE_MAP[r.module].group===group)&&(source==='all'||r.source===source||r.sourceRefs.some(k=>k.startsWith(source+'|')))&&(status==='all'||r.status===status)&&(!q||[r.id,...Object.values(typeof r.title==='object'?r.title:{text:r.title}),r.owner,r.location,r.module].join(' ').toLowerCase().includes(q))).sort((a,b)=>b.date.localeCompare(a.date)||stamp(b)-stamp(a)||recordKey(a).localeCompare(recordKey(b)));}
+function filterRecords(rows,{mode,ref,group='all',source='all',status='all',query='',module=null}={}){const range=periodRange(mode,ref),q=query.trim().toLowerCase();return eventRows(module?rows.filter(r=>r.module===module):rows).filter(r=>r.date>=range.from&&r.date<=range.to&&(group==='all'||MODULE_MAP[r.module].group===group)&&(source==='all'||r.source===source||r.sourceRefs.some(k=>k.startsWith(source+'|')))&&(status==='all'||r.status===status)&&(!q||[r.id,...Object.values(typeof r.title==='object'?r.title:{text:r.title}),r.owner,r.location,r.module].join(' ').toLowerCase().includes(q))).sort((a,b)=>b.date.localeCompare(a.date)||stamp(b)-stamp(a)||recordKey(a).localeCompare(recordKey(b)));}
 function metrics(rows){const expenses={};for(const r of rows)if(r.posted&&r.amount!=null)expenses[r.currency]=(expenses[r.currency]||0)+Math.round(r.amount*100);return {total:rows.length,pending:rows.filter(r=>r.requiresApproval&&r.status==='pending').length,abnormal:rows.filter(r=>r.status==='abnormal').length,completed:rows.filter(r=>r.status==='completed').length,open:rows.filter(r=>['pending','in_progress','abnormal'].includes(r.status)).length,expenses:Object.fromEntries(Object.entries(expenses).map(([k,v])=>[k,v/100]))};}
 function quantityTotals(rows){const totals=Object.create(null);for(const r of rows)if(r.quantity!=null&&!['%RH','%','°C','C','temperature','humidity'].includes(r.unit))totals[r.unit]=(totals[r.unit]||0)+r.quantity;return {...totals};}
 function csvCell(v){const s=String(v??'');const safe=/^[\s]*[=+@-]/.test(s)?"'"+s:s;return '"'+safe.replace(/"/g,'""')+'"';}
@@ -181,6 +242,98 @@ function normalizeCloudURL(input){
   const url=String(input||'').trim();
   if(!/^https:\/\/script\.google\.com\/macros\/s\/[A-Za-z0-9_-]{20,160}\/exec$/.test(url))throw syncError('BAD_URL');
   return url;
+}
+
+;
+
+function ledgerRowMap(rows=[]){return new Map(rows.map(row=>[recordKey(row),row]));}
+function ledgerChangedRows(base,current){
+  const index=ledgerRowMap(base);
+  return current.filter(row=>stableJSON(index.get(recordKey(row)))!==stableJSON(row));
+}
+function ledgerNextStamp(...rows){
+  return new Date(Math.max(Date.now(),...rows.map(row=>row?Date.parse(row.updatedAt)+1:0))).toISOString();
+}
+function ledgerRebase(remote,drafts,bases){
+  const records=ledgerRowMap(remote.records),pending=new Map(),conflicts=new Set();
+  for(const row of drafts){
+    const key=recordKey(row),server=records.get(key),signature=stableJSON(server);
+    if(signature===stableJSON(row))continue;
+    const previous=bases.has(key)?bases.get(key):signature;
+    if(previous!==signature)conflicts.add(key);
+    pending.set(key,previous);records.set(key,row);
+  }
+  return {snapshot:{...remote,records:[...records.values()]},bases:pending,conflicts};
+}
+
+const ledgerCSVFields=[
+  ['ID','id'],['Source','source'],['Module','module'],['Business date','date'],['Status','status'],
+  ['Title','title'],['Owner','owner'],['Location','location'],['Amount','amount'],['Currency','currency'],
+  ['Quantity','quantity'],['Unit','unit'],['Posted','posted'],['Updated at','updatedAt'],
+  ['Requires approval','requiresApproval'],['Deleted','deleted'],['Reviewer','reviewer'],['Approver','approver'],
+  ['Related document ID','relatedDocumentId'],['Canonical event ID','canonicalEventId'],['Notes','notes'],['Attachments','attachments'],['Title JSON','titleJSON'],
+];
+function ledgerCSVTemplate(module){
+  const columns=['ID',...(module?[]:['Module']),'Business date','Title','Status','Owner','Location','Notes','Quantity','Unit','Amount','Currency'];
+  return '\uFEFF'+columns.map(csvCell).join(',')+'\r\n';
+}
+function ledgerCSV(rows,language='zh'){
+  return '\uFEFF'+[ledgerCSVFields.map(([label])=>label),...rows.map(r=>ledgerCSVFields.map(([,k])=>{
+    if(k==='title')return typeof r.title==='string'?r.title:r.title?.[language]||r.title?.en||r.title?.zh||r.id;
+    if(k==='titleJSON')return typeof r.title==='object'?JSON.stringify(r.title):'';
+    if(k==='attachments')return (r.attachments||[]).join('\n');
+    if(typeof r[k]==='boolean')return r[k]?'yes':'no';
+    return r[k]??'';
+  }))].map(row=>row.map(csvCell).join(',')).join('\r\n');
+}
+function ledgerParseCSV(input){
+  const s=input.replace(/^\uFEFF/,''), rows=[];let row=[],cell='',quoted=false,closed=false;
+  for(let i=0;i<s.length;i++){
+    const c=s[i];
+    if(quoted){if(c==='"'&&s[i+1]==='"'){cell+='"';i++;}else if(c==='"'){quoted=false;closed=true;}else cell+=c;continue;}
+    if(c===','||c==='\n'||c==='\r'){
+      row.push(cell);cell='';closed=false;
+      if(c!==','){if(c==='\r'&&s[i+1]==='\n')i++;if(row.some(Boolean))rows.push(row);row=[];if(rows.length>5001)throw syncError('TOO_MANY_ROWS');}
+    }else if(c==='"'&&!cell&&!closed)quoted=true;
+    else if(c==='"'||closed)throw syncError('LEDGER_CSV');
+    else cell+=c;
+  }
+  if(quoted)throw syncError('LEDGER_CSV');
+  row.push(cell);if(row.some(Boolean))rows.push(row);
+  return rows;
+}
+function ledgerFromCSV(input,{module=null,base=[]}={}){
+  const [header,...data]=ledgerParseCSV(input);
+  const normalize=s=>s.trim().toLowerCase();
+  const names=new Map(ledgerCSVFields.map(([label,k])=>[normalize(label),k]));
+  for(const [a,k] of [['單號','id'],['紀錄編號','id'],['模組','module'],['來源','source'],['日期','date'],['業務日期','date'],['名稱','title'],['標題','title'],['負責人','owner'],['地點','location'],['備註','notes']])names.set(a,k);
+  const columns=(header||[]).map(h=>names.get(normalize(h)));
+  const known=columns.filter(Boolean);
+  if(!data.length||!['id','date','title',...(module?[]:['module'])].every(k=>columns.includes(k))||known.length!==new Set(known).size)throw syncError('LEDGER_CSV');
+  const prev=ledgerRowMap(base),now=new Date().toISOString();
+  const records=data.map(values=>{
+    if(values.length!==columns.length)throw syncError('LEDGER_CSV');
+    const entries=columns.flatMap((k,i)=>k?[[k,/^'[\s]*[=+@-]/.test(values[i])?values[i].slice(1):values[i]]]:[]);
+    const v=Object.fromEntries(entries),moduleId=v.module?.trim()||module||'',m=Object.hasOwn(MODULE_MAP,moduleId)?MODULE_MAP[moduleId]:null;
+    if(!m||(module&&module!==m.id)||(v.source?.trim()&&m.source!==v.source.trim()))throw syncError('LEDGER_SCOPE');
+    const id=v.id?.trim(),date=v.date?.trim(),title=v.title;if(!id||!date||!title?.trim())throw syncError('LEDGER_CSV');
+    const old=prev.get(recordKey({source:m.source,module:m.id,id}));
+    const r={...old,id,source:m.source,module:m.id,date,title,status:v.status?.trim()||old?.status||'completed',updatedAt:v.updatedAt?.trim()||old?.updatedAt||now};
+    for(const k of ['owner','location','notes','reviewer','approver','relatedDocumentId','canonicalEventId','unit','currency'])if(k in v)r[k]=['owner','location','notes'].includes(k)?v[k]:(v[k].trim()||undefined);
+    for(const k of ['amount','quantity'])if(k in v)r[k]=v[k].trim()?Number(v[k]):undefined;
+    for(const k of ['posted','requiresApproval','deleted'])if(k in v){
+      const b=normalize(v[k]);if(!['','yes','no','true','false','1','0'].includes(b))throw syncError('LEDGER_CSV');
+      r[k]=['yes','true','1'].includes(b);
+    }
+    if('attachments' in v)r.attachments=v.attachments.split(/\r?\n/).map(s=>s.trim()).filter(Boolean);
+    if(v.titleJSON){try{r.title=JSON.parse(v.titleJSON);}catch{throw syncError('LEDGER_CSV');}}
+    const row=normalizeCloudSnapshot({...emptySnapshot(now),records:[r]}).records[0];
+    if(old&&!v.updatedAt?.trim()&&stableJSON(row)!==stableJSON(old))row.updatedAt=new Date(Math.max(Date.parse(now),Date.parse(old.updatedAt)+1)).toISOString();
+    // An unversioned file must not re-create a row already marked as deleted.
+    if(old?.deleted&&!row.deleted&&!v.updatedAt?.trim())return old;
+    return row;
+  });
+  return normalizeCloudSnapshot({...emptySnapshot(now),records});
 }
 
 ;
@@ -275,8 +428,9 @@ function createCloudUI({state,storage,T,t,esc,I,button,dialog,closeButton,openDi
     endpoint:storage.get('cloud_endpoint',document.querySelector('meta[name="psjga-default-endpoint"]')?.content||''),key:'',vaultId:'',snapshotVault:'',
     checked:false,revision:null,remoteRevision:null,updatedAt:null,lastSync:null,
     telegramConfigured:false,bot:null,dirty:!!state.snapshot,backedUp:!state.snapshot,
-    busy:false,error:'',pending:null,
+    busy:false,error:'',pending:null,base:null,bases:new Map(),conflicts:new Set(),
   };
+  const scoped=(row,module,group)=>module?row.module===module:!group||group==='all'||MODULE_MAP[row.module].group===group;
   let preview=null,pairIncoming=null,pairOutgoing=null,phoneRequest=null;
   let phoneCheckTimer,phoneClaim=null,phoneCheckDelay=12000;
   const ict=iso=>new Date(iso).toLocaleString(state.lang==='zh'?'zh-TW':'en-GB',{timeZone:'Asia/Phnom_Penh',hour12:false});
@@ -302,6 +456,9 @@ function createCloudUI({state,storage,T,t,esc,I,button,dialog,closeButton,openDi
       ROW_CONFLICT:['有同單號、同更新時間但內容不同的紀錄。請核對來源。','The same record and update time have different values. Check the source.'],
       REQUEST_REUSE:['這次請求與前次內容不同。請重新下載後再上傳。','This request conflicts with a prior upload. Download before retrying.'],
       BAD_SNAPSHOT:['快照格式不符，未更動資料。','The snapshot format is invalid; data is unchanged.'],
+      LEDGER_CSV:['CSV 格式不符。請用匯出的欄位，至少保留單號、業務日期及標題。','Invalid CSV. Use the exported columns, including ID, business date, and title.'],
+      LEDGER_SCOPE:['檔案含其他業務的紀錄。請在「全部紀錄」匯入，或改選本頁的檔案。','The file contains records for another module. Import under All records or choose a file for this module.'],
+      LEDGER_CONFLICT:['雲端也改了同一筆。本機版本已保留，請開啟有衝突的紀錄選擇版本。','The same record changed in the cloud. Your draft is retained; open the conflict to choose a version.'],
       DEMO_REJECTED:['範例資料不能匯入正式總表或上傳。','Demo data cannot be imported or uploaded to the shared dataset.'],
       TOO_LARGE:['快照超過 4 MB。請保留附件連結，勿把照片直接放進 JSON。','Snapshot exceeds 4 MB. Use attachment links rather than embedded photos.'],
       TOO_MANY_ROWS:['快照超過 5,000 筆上限。','Snapshot exceeds 5,000 records.'],
@@ -329,16 +486,18 @@ function createCloudUI({state,storage,T,t,esc,I,button,dialog,closeButton,openDi
     if(cloud.busy)return [T('同步處理中…','Working…','កំពុងដំណើរការ…'),'amber'];
     if(cloud.error)return [T('請查看同步狀態','Check sync status','ពិនិត្យសមកាលកម្ម'),'amber'];
     if(!cloud.checked)return [cloud.endpoint?T('等待驗證連線','Connection needs verification','រង់ចាំផ្ទៀងផ្ទាត់'):T('雲端尚未設定','Cloud not configured','ពពកមិនទាន់កំណត់'),'gray'];
+    if(cloud.conflicts.size)return [T('有衝突待核對','Conflicts to review','មានទិន្នន័យត្រូវផ្ទៀងផ្ទាត់'),'amber'];
     if(cloud.dirty)return [T('有變更待上傳','Local changes to upload','មានការផ្លាស់ប្តូរត្រូវផ្ទុក'),'amber'];
     if(cloud.lastSync)return [T('已同步','Synced','បានសមកាលកម្ម')+' · '+ict(cloud.lastSync),'teal'];
     return [T('已連線，待下載','Connected · download to load records','បានភ្ជាប់ · ទាញយកកំណត់ត្រា'),'teal'];
   }
   function toolbar(){
     const [label,color]=status(),disabled=cloud.busy?'disabled':'';
+    const scope=state.module&&Object.hasOwn(MODULE_MAP,state.module)?state.module:null;
     return '<section class="cloud-toolbar" aria-label="'+T('雲端同步','Cloud sync','សមកាលកម្មពពក')+'">'+
-      '<div class="cloud-toolbar-status">'+I('database')+'<div><strong>PSJGA CORE</strong> <span class="pill '+color+'" role="status"><span class="dot"></span>'+esc(label)+'</span></div></div>'+
-      '<div class="cloud-actions">'+button(T('上傳','Upload','ផ្ទុកឡើង'),'cloud-upload','upload','small',disabled)+
-      button(T('下載','Download','ទាញយក'),'cloud-download','download','small',disabled)+
+      '<div class="cloud-toolbar-status">'+I('database')+'<div><strong>'+T('PSJGA 總表','PSJGA records','តារាង PSJGA')+'</strong> <span class="pill '+color+'" role="status"><span class="dot"></span>'+esc(label)+'</span></div></div>'+
+      '<div class="cloud-actions">'+button(scope?T('上傳本業務','Upload this module','ផ្ទុកមុខងារនេះ'):state.group!=='all'?T('上傳本類別','Upload this area','ផ្ទុកផ្នែកនេះ'):T('上傳變更','Upload changes','ផ្ទុកការផ្លាស់ប្តូរ'),'cloud-upload','upload','small',disabled)+
+      button(T('下載總表','Download records','ទាញយកតារាង'),'cloud-download','download','small',disabled)+
       button(T('發摘要','Send summary','ផ្ញើសង្ខេប'),'cloud-summary','file','small',disabled)+
       button(T('雲端設定','Cloud settings','កំណត់ពពក'),'cloud-settings','link','small',disabled)+'</div>'+
       (cloud.error?'<div class="cloud-toolbar-note" role="status">'+esc(cloud.error)+'</div>':'')+'</section>';
@@ -368,20 +527,48 @@ function createCloudUI({state,storage,T,t,esc,I,button,dialog,closeButton,openDi
     cloud.updatedAt=meta.updatedAt;cloud.telegramConfigured=meta.telegramConfigured;
   }
   async function run(fn,{refresh=false,send=false}={}){
-    if(cloud.busy)return;
+    if(cloud.busy)return false;
     cloud.error='';setBusy(true);
     try{
       await fn();
       if(refresh&&!state.workspace)render();
+      return true;
     }catch(e){
       if(e?.code==='DEVICE_EXPIRED'&&cloud.key.startsWith('device_')){
         storage.set('cloud_device',null);cloud.key='';cloud.checked=false;cloud.bot=null;pairOutgoing=null;
       }
       cloud.error=send&&e?.code==='TIMEOUT'?T('未收到發送確認。請先到群組查核。','Send confirmation timed out. Check the group first.'):message(e);
       dialogStatus(cloud.error,true);toast(cloud.error);
+      if(refresh&&!state.workspace)render();
+      return false;
     }finally{setBusy(false);}
   }
   const request=(action,payload={})=>cloudRequest(cloud.endpoint,cloud.key,action,{vaultId:cloud.vaultId||undefined,...payload});
+  const changed=()=>ledgerChangedRows(cloud.base?.records||[],state.snapshot?.records||[]);
+  function adoptRemote(remote){
+    const local=state.snapshot;
+    const drafts=cloud.base?changed():local?ledgerChangedRows(remote.records,mergeSnapshots(remote,local).records):[];
+    const {snapshot,bases,conflicts}=ledgerRebase(remote,drafts,cloud.bases);
+    cloud.base=remote;cloud.bases=bases;cloud.conflicts=conflicts;
+    setDataset(bases.size?{...snapshot,generatedAt:local?.generatedAt||remote.generatedAt}:remote,!!bases.size);
+  }
+  function stageRows(updates,{resolve=new Set()}={}){
+    if(!updates.length)return;
+    const current=ledgerRowMap(state.snapshot?.records||[]),server=ledgerRowMap(cloud.base?.records||[]);
+    for(const row of updates){
+      const id=recordKey(row);
+      if(cloud.conflicts.has(id)&&!resolve.has(id))throw syncError('LEDGER_CONFLICT');
+      current.set(id,row);
+    }
+    const snap=normalizeCloudSnapshot({...emptySnapshot(),records:[...current.values()]});
+    for(const row of updates){
+      const id=recordKey(row);
+      if(!cloud.bases.has(id)||resolve.has(id))cloud.bases.set(id,stableJSON(server.get(id)));
+      if(resolve.has(id))cloud.conflicts.delete(id);
+    }
+    cloud.backedUp=false;cloud.pending=null;
+    setDataset(snap,ledgerChangedRows(cloud.base?.records||[],snap.records).length>0);
+  }
   async function pull({force=false}={}){
     const knownRevision=!force&&state.snapshot&&cloud.snapshotVault===cloud.vaultId?cloud.revision??undefined:undefined;
     const meta=readCloudMeta(await request('download',{knownRevision}),cloud.snapshotVault||cloud.vaultId);
@@ -389,27 +576,42 @@ function createCloudUI({state,storage,T,t,esc,I,button,dialog,closeButton,openDi
       if(!state.snapshot||knownRevision!==meta.revision)throw syncError('NOT_PSJGA');
       state.dataset='snapshot';storage.set('dataset','snapshot');
     }else{
-      const remote=normalizeCloudSnapshot(meta.snapshot);
-      const merged=state.snapshot?mergeSnapshots(remote,state.snapshot):remote;
-      const dirty=!sameRows(remote.records,merged.records);
-      setDataset(dirty?merged:remote,dirty);
+      adoptRemote(normalizeCloudSnapshot(meta.snapshot));
     }
     setMeta(meta);cloud.snapshotVault=meta.vaultId;cloud.revision=meta.revision;cloud.lastSync=new Date().toISOString();
     if(!cloud.dirty||cloud.pending?.revision!==cloud.revision)cloud.pending=null;
     return meta;
   }
-  async function push(){
+  async function push({module=null,group='all',keys=null}={}){
     if(!state.snapshot||state.dataset==='demo'){toast(T('先匯入正式快照，再上傳。','Import a real snapshot before uploading.'));return;}
     if(cloud.revision===null)await pull({force:true});
-    const snapshot=normalizeCloudSnapshot(state.snapshot), fingerprint=stableJSON(snapshot);
+    const rows=changed().filter(row=>scoped(row,module,group)&&(!keys||keys.has(recordKey(row))));
+    if(!rows.length){toast(T('這個範圍沒有待上傳的變更。','There are no changes to upload in this scope.'));return;}
+    if(rows.some(r=>cloud.conflicts.has(recordKey(r))))throw syncError('LEDGER_CONFLICT');
+    const snapshot=normalizeCloudSnapshot({...state.snapshot,records:rows}),fingerprint=stableJSON(snapshot);
     if(!cloud.pending||cloud.pending.fingerprint!==fingerprint||cloud.pending.vaultId!==cloud.vaultId||cloud.pending.revision!==cloud.revision){
       cloud.pending={fingerprint,vaultId:cloud.vaultId,revision:cloud.revision,id:cloudRequestId()};
     }
     const meta=readCloudMeta(await request('upload',{requestId:cloud.pending.id,expectedRevision:cloud.revision,snapshot}),cloud.vaultId);
-    const remote=normalizeCloudSnapshot(meta.snapshot);
-    setDataset(remote,false);setMeta(meta);
+    adoptRemote(normalizeCloudSnapshot(meta.snapshot));setMeta(meta);
     cloud.snapshotVault=meta.vaultId;cloud.revision=meta.revision;cloud.lastSync=new Date().toISOString();cloud.pending=null;
-    toast(meta.unchanged?T('雲端已是相同資料，沒有重複寫入。','Cloud data already matches; nothing was written twice.'):T('已上傳並核對雲端版本','Uploaded and verified cloud revision')+' '+meta.revision);
+    toast(cloud.conflicts.size?message({code:'LEDGER_CONFLICT'}):meta.unchanged?T('雲端已是相同資料，沒有重複寫入。','Cloud data already matches; nothing was written twice.'):T('已儲存到雲端','Saved to the cloud')+' · '+T('版本','revision')+' '+meta.revision);
+  }
+  function ensureConnected(){if(!cloud.checked){settings();return false;}return true;}
+  async function saveRecords(records,{resolve=new Set(),onStaged}={}){
+    if(state.dataset==='demo'){toast(message({code:'DEMO_REJECTED'}));return false;}
+    if(!ensureConnected())return false;
+    return run(async()=>{
+      const clean=normalizeCloudSnapshot({...emptySnapshot(),records}).records;
+      stageRows(clean,{resolve});onStaged?.();
+      await push({keys:new Set(clean.map(recordKey))});
+    },{refresh:true});
+  }
+  function discardConflict(id){
+    if(cloud.busy||!cloud.conflicts.has(id)||!cloud.base)return false;
+    const r=ledgerRebase(cloud.base,changed().filter(row=>recordKey(row)!==id),cloud.bases);
+    cloud.bases=r.bases;cloud.conflicts=r.conflicts;cloud.pending=null;
+    setDataset(r.snapshot,!!r.bases.size);updateToolbar();return true;
   }
   function settings(){
     preview=null;
@@ -438,10 +640,7 @@ function createCloudUI({state,storage,T,t,esc,I,button,dialog,closeButton,openDi
   }
   async function connectTo(endpoint,key,vault=cloud.snapshotVault){
     const meta=readCloudMeta(await cloudRequest(endpoint,key,'download',{vaultId:vault||undefined}),vault);
-    const remote=normalizeCloudSnapshot(meta.snapshot);
-    const merged=state.snapshot?mergeSnapshots(remote,state.snapshot):remote;
-    const dirty=!sameRows(remote.records,merged.records);
-    setDataset(dirty?merged:remote,dirty);
+    adoptRemote(normalizeCloudSnapshot(meta.snapshot));
     if(endpoint!==cloud.endpoint||key!==cloud.key)cloud.bot=null;
     cloud.endpoint=endpoint;cloud.key=key;cloud.snapshotVault=meta.vaultId;cloud.pending=null;
     setMeta(meta);cloud.revision=meta.revision;cloud.lastSync=new Date().toISOString();
@@ -580,7 +779,7 @@ function createCloudUI({state,storage,T,t,esc,I,button,dialog,closeButton,openDi
     if(!cloud.key.startsWith('device_'))return;
     await request('device_revoke');
     storage.set('cloud_device',null);cloud.key='';cloud.checked=false;cloud.bot=null;cloud.lastSync=null;pairOutgoing=null;
-    if(!cloud.dirty){state.snapshot=null;state.dataset='empty';state.selected.clear();storage.set('dataset','empty');}
+    if(!cloud.dirty){state.snapshot=null;state.dataset='empty';cloud.base=null;cloud.snapshotVault='';cloud.bases.clear();cloud.conflicts.clear();state.selected.clear();storage.set('dataset','empty');}
     if(dialog.open)settings();
     toast(T('已登出這台裝置','This device has been signed out'));
   }
@@ -593,6 +792,7 @@ function createCloudUI({state,storage,T,t,esc,I,button,dialog,closeButton,openDi
       return;
     }
     const phone=fragment==='#phone';
+    if(cloud.checked){if(phone)settings();return;}
     const showPhone=()=>run(async()=>{try{await phoneDialog();}catch(e){settings();throw e;}});
     const saved=storage.get('cloud_device',null);
     if(!saved){if(phone)await showPhone();return;}
@@ -619,10 +819,10 @@ function createCloudUI({state,storage,T,t,esc,I,button,dialog,closeButton,openDi
     }
     preview=null;
     const range=periodRange(state.mode,state.ref);
-    const options=MODULES.filter(m=>(state.group==='all'||state.group===m.group)&&(state.source==='all'||state.source===m.source));
+    const options=MODULES.filter(m=>(!state.module||state.module===m.id)&&(state.group==='all'||state.group===m.group)&&(state.source==='all'||state.source===m.source));
     openDialog('<div class="dialog-head"><div><small>Telegram · @psjga_bot</small><h2>'+T('總務摘要','GA summary','របាយការណ៍សង្ខេប')+'</h2></div>'+closeButton()+'</div>'+
       '<div class="dialog-body cloud-dialog"><p><strong>'+range.from+' → '+range.to+' ICT</strong> · '+(state.source==='all'?T('全部來源','All sources'):SOURCES[state.source].name)+'</p>'+
-      '<label>'+T('選擇摘要模組','Select a module','ជ្រើសមុខងារ')+'<select id="psjga-summary-module"><option value="all">'+T('此範圍全部模組','All modules in this scope')+'</option>'+options.map(m=>'<option value="'+esc(m.id)+'">'+esc(t(m.name))+'</option>').join('')+'</select></label>'+
+      '<label>'+T('選擇摘要模組','Select a module','ជ្រើសមុខងារ')+'<select id="psjga-summary-module">'+(state.module?'':'<option value="all">'+T('此範圍全部模組','All modules in this scope')+'</option>')+options.map(m=>'<option value="'+esc(m.id)+'">'+esc(t(m.name))+'</option>').join('')+'</select></label>'+
       '<p>'+T('使用雲端總表。各模組的原始報告、照片和核可，請由原頁發送。','Uses the cloud dataset. Send original reports, photos and approval requests from their module.')+'</p>'+
       '<p id="cloud-dialog-status" class="cloud-feedback" aria-live="polite">'+(cloud.bot?esc('@'+cloud.bot.username+' · '+cloud.bot.group):T('請先在雲端設定測試 Bot，確認目的群組。','Test the Bot in cloud settings to confirm the destination.'))+'</p>'+
       '<pre class="cloud-preview" id="psjga-summary-preview" hidden></pre></div>'+
@@ -698,25 +898,28 @@ function createCloudUI({state,storage,T,t,esc,I,button,dialog,closeButton,openDi
         const meta=await pull();
         toast(meta.unchanged?T('已是最新雲端版本','Cloud version is current'):T('已下載雲端版本','Downloaded cloud revision')+' '+meta.revision);
       },{refresh:true});
-      else await run(push,{refresh:true});
+      else await run(()=>push({module:state.module,group:state.group}),{refresh:true});
     }
   }
-  async function importSnapshot(file){
+  async function importSnapshot(file,{module=null,group='all'}={}){
     if(!file||cloud.busy)return;
     await run(async()=>{
       if(file.size>4*1024*1024)throw syncError('TOO_LARGE');
-      let data;try{data=JSON.parse(await file.text());}catch{throw syncError('BAD_SNAPSHOT');}
-      const incoming=normalizeCloudSnapshot(data),base=state.snapshot||emptySnapshot(),merged=mergeSnapshots(base,incoming);
-      const changed=!sameRows(base.records,merged.records);
-      if(changed){cloud.backedUp=false;cloud.pending=null;}
-      setDataset(changed?merged:base,changed||cloud.dirty);
-      toast(changed?T('已合併快照；可上傳到雲端。','Snapshot merged. Upload to sync it to the cloud.'):T('沒有較新的紀錄，未重複匯入。','No newer records; nothing was imported twice.'));
+      const contents=await file.text(),base=state.snapshot||emptySnapshot();
+      let incoming;
+      if(/\.csv$/i.test(file.name||'')||file.type==='text/csv')incoming=ledgerFromCSV(contents,{module,base:base.records});
+      else{let data;try{data=JSON.parse(contents.replace(/^\uFEFF/,''));}catch{throw syncError('BAD_SNAPSHOT');}incoming=normalizeCloudSnapshot(data);}
+      if(incoming.records.some(row=>!scoped(row,module,group)))throw syncError('LEDGER_SCOPE');
+      const updates=ledgerChangedRows(base.records,mergeSnapshots(base,incoming).records);
+      stageRows(updates);
+      toast(updates.length?T('已合併 ','Merged ')+updates.length+T(' 筆，待上傳。',' changes. Upload to save them to the cloud.'):T('沒有較新的紀錄，未重複匯入。','No newer records; nothing was imported twice.'));
     },{refresh:true});
   }
-  function exportSnapshot(){
+  function exportSnapshot({module=null,group='all'}={}){
     if(!state.snapshot||state.dataset==='demo'){toast(T('目前沒有正式快照可匯出。','No live snapshot is available to export.'));return;}
-    download('PSJGA_snapshot_'+new Date().toISOString().slice(0,10)+'.json',JSON.stringify(state.snapshot,null,2),'application/json');
-    cloud.backedUp=true;
+    const full=!module&&group==='all',snap=full?state.snapshot:{...state.snapshot,records:state.snapshot.records.filter(row=>scoped(row,module,group))};
+    download('PSJGA_'+(module||'snapshot')+'_'+new Date().toISOString().slice(0,10)+'.json',JSON.stringify(snap,null,2),'application/json');
+    if(full)cloud.backedUp=true;
   }
   function datasetLabel(){
     if(cloud.dirty)return T('本機快照 · 待上傳','Local snapshot · upload pending','ទិន្នន័យក្នុងម៉ាស៊ីន · រង់ចាំផ្ទុក');
@@ -725,7 +928,9 @@ function createCloudUI({state,storage,T,t,esc,I,button,dialog,closeButton,openDi
   window.addEventListener('beforeunload',e=>{if(cloud.dirty&&!cloud.backedUp){e.preventDefault();e.returnValue='';}});
   document.addEventListener('visibilitychange',checkPhoneAutomatically);
   dialog.addEventListener('close',()=>{if(!visiblePhoneRequest())clearTimeout(phoneCheckTimer);});
-  return {toolbar,handle,importSnapshot,exportSnapshot,datasetLabel,start};
+  return {toolbar,handle,importSnapshot,exportSnapshot,datasetLabel,start,saveRecords,ensureConnected,discardConflict,
+    isBusy:()=>cloud.busy,hasConflict:id=>cloud.conflicts.has(id),serverRow:id=>cloud.base?.records.find(r=>recordKey(r)===id),
+    conflicts:()=>[...cloud.conflicts],pendingCount:(module=null,group='all')=>changed().filter(row=>scoped(row,module,group)).length};
 }
 
 ;
@@ -830,11 +1035,11 @@ function createAppearanceUI({storage,T,dialog,openDialog,closeButton,toast}){
 }
 
 ;
-const icons={grid:'M3 3h7v7H3z M14 3h7v7h-7z M3 14h7v7H3z M14 14h7v7h-7z',check:'M5 12l4 4L19 6',clipboard:'M9 4H5v17h14V4h-4 M9 2h6v4H9z M8 11h8 M8 15h5',shield:'M12 2l8 4v6c0 5-8 10-8 10S4 17 4 12V6z M8 12l3 3 5-6',leaf:'M20 3C8 1 1 7 5 16s17 4 15-13z M5 19l11-11',building:'M4 22V5l8-3 8 3v17 M2 22h20 M8 7v2 M12 7v2 M16 7v2 M8 12v2 M12 12v2 M16 12v2 M10 22v-4h4v4',wallet:'M20 6H5a2 2 0 0 1 0-4h13v4 M3 4v15a2 2 0 0 0 2 2h15V6 M20 11h-6v5h6',search:'M20 20l-5-5 M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0',chevron:'M9 5l7 7-7 7',left:'M15 5l-7 7 7 7',down:'M6 9l6 6 6-6',plus:'M12 4v16 M4 12h16',download:'M12 3v12 M7 10l5 5 5-5 M4 16v5h16v-5',upload:'M12 16V4 M7 9l5-5 5 5 M4 17v4h16v-4',external:'M14 3h7v7 M21 3L10 14 M10 3H3v18h18v-7',close:'M6 6l12 12 M18 6L6 18',menu:'M4 6h16 M4 12h16 M4 18h16',chart:'M3 3v18h18 M7 16v-5 M12 16V6 M17 16v-8',clock:'M12 8v5l3 2 M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0',route:'M4 5h6l4 14h6 M6 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0 M22 19a2 2 0 1 1-4 0 2 2 0 0 1 4 0',camera:'M3 6h4l2-3h6l2 3h4v15H3z M16 13a4 4 0 1 1-8 0 4 4 0 0 1 8 0',truck:'M3 4h12v13H3z M15 9h4l3 4v4h-7 M8 18a2 2 0 1 1-4 0 2 2 0 0 1 4 0 M21 18a2 2 0 1 1-4 0 2 2 0 0 1 4 0',car:'M5 6h14l3 8v6h-3v-3H5v3H2v-6z M3 13h18 M6 15h1 M17 15h1',users:'M16 21v-3a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v3 M12 6a4 4 0 1 1-8 0 4 4 0 0 1 8 0 M17 3a4 4 0 0 1 0 8 M22 21v-3a4 4 0 0 0-3-4',flame:'M12 2c2 7-6 7-6 13a6 6 0 0 0 12 0c0-3-1-5-3-7 0 4-3 5-3 5s2-6 0-11z',receipt:'M5 2l3 2 4-2 4 2 3-2v20l-3-2-4 2-4-2-3 2z M8 8h8 M8 12h8 M8 16h5',thermometer:'M9 14V5a3 3 0 0 1 6 0v9a6 6 0 1 1-6 0 M12 7v10',sparkles:'M12 2l2 7 7 3-7 2-2 8-2-8-8-2 8-3z M20 2v4 M18 4h4',recycle:'M8 4l4-2 5 8 M15 5l2 5-5-1 M19 12l3 4-5 6H8 M19 20l-3 2 1-5 M6 19H2l1-9 4-6 M2 9l1 1 5 1',box:'M12 2l9 5v10l-9 5-9-5V7z M3 7l9 5 9-5 M12 12v10 M7 5l9 5',package:'M3 7l9-5 9 5v12l-9 3-9-3z M3 7l9 4 9-4 M12 11v11 M8 4l9 5',key:'M14 7a5 5 0 1 1-10 0 5 5 0 0 1 10 0 M12 11l9 9 M18 16l3-3 M15 13l3-3',droplet:'M12 2C8 8 4 12 4 16a8 8 0 0 0 16 0c0-4-4-8-8-14z',cart:'M2 3h3l3 13h11l3-9H6 M10 20h.01 M18 20h.01',wrench:'M14 3a6 6 0 0 0-6 7L2 17l5 5 7-7a6 6 0 0 0 7-6l-4 3-4-4 3-5z',alert:'M12 2l11 19H1z M12 8v5 M12 17h.01',fuel:'M4 21V3h10v18 M3 21h12 M4 10h10 M14 7l4 3v7a2 2 0 0 0 4 0V9l-4-4',link:'M10 14l4-4 M8 16l-2 2a4 4 0 0 1-6-6l4-4a4 4 0 0 1 6 0 M14 8l2-2a4 4 0 0 1 6 6l-4 4a4 4 0 0 1-6 0',database:'M20 5c0 5-16 5-16 0s16-5 16 0z M4 5v14c0 5 16 5 16 0V5 M4 12c0 5 16 5 16 0',layers:'M12 2l10 6-10 6L2 8z M2 13l10 6 10-6 M2 18l10 6 10-6',info:'M12 11v6 M12 7h.01 M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0',print:'M6 8V2h12v6 M6 18H3V8h18v10h-3 M6 14h12v8H6z',file:'M14 2H4v20h16V8z M14 2v6h6 M8 12h8 M8 16h6'};
+const icons={grid:'M3 3h7v7H3z M14 3h7v7h-7z M3 14h7v7H3z M14 14h7v7h-7z',check:'M5 12l4 4L19 6',clipboard:'M9 4H5v17h14V4h-4 M9 2h6v4H9z M8 11h8 M8 15h5',shield:'M12 2l8 4v6c0 5-8 10-8 10S4 17 4 12V6z M8 12l3 3 5-6',leaf:'M20 3C8 1 1 7 5 16s17 4 15-13z M5 19l11-11',building:'M4 22V5l8-3 8 3v17 M2 22h20 M8 7v2 M12 7v2 M16 7v2 M8 12v2 M12 12v2 M16 12v2 M10 22v-4h4v4',wallet:'M20 6H5a2 2 0 0 1 0-4h13v4 M3 4v15a2 2 0 0 0 2 2h15V6 M20 11h-6v5h6',search:'M20 20l-5-5 M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0',chevron:'M9 5l7 7-7 7',left:'M15 5l-7 7 7 7',down:'M6 9l6 6 6-6',plus:'M12 4v16 M4 12h16',download:'M12 3v12 M7 10l5 5 5-5 M4 16v5h16v-5',upload:'M12 16V4 M7 9l5-5 5 5 M4 17v4h16v-4',external:'M14 3h7v7 M21 3L10 14 M10 3H3v18h18v-7',close:'M6 6l12 12 M18 6L6 18',menu:'M4 6h16 M4 12h16 M4 18h16',chart:'M3 3v18h18 M7 16v-5 M12 16V6 M17 16v-8',clock:'M12 8v5l3 2 M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0',route:'M4 5h6l4 14h6 M6 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0 M22 19a2 2 0 1 1-4 0 2 2 0 0 1 4 0',camera:'M3 6h4l2-3h6l2 3h4v15H3z M16 13a4 4 0 1 1-8 0 4 4 0 0 1 8 0',truck:'M3 4h12v13H3z M15 9h4l3 4v4h-7 M8 18a2 2 0 1 1-4 0 2 2 0 0 1 4 0 M21 18a2 2 0 1 1-4 0 2 2 0 0 1 4 0',car:'M5 6h14l3 8v6h-3v-3H5v3H2v-6z M3 13h18 M6 15h1 M17 15h1',users:'M16 21v-3a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v3 M12 6a4 4 0 1 1-8 0 4 4 0 0 1 8 0 M17 3a4 4 0 0 1 0 8 M22 21v-3a4 4 0 0 0-3-4',flame:'M12 2c2 7-6 7-6 13a6 6 0 0 0 12 0c0-3-1-5-3-7 0 4-3 5-3 5s2-6 0-11z',receipt:'M5 2l3 2 4-2 4 2 3-2v20l-3-2-4 2-4-2-3 2z M8 8h8 M8 12h8 M8 16h5',thermometer:'M9 14V5a3 3 0 0 1 6 0v9a6 6 0 1 1-6 0 M12 7v10',sparkles:'M12 2l2 7 7 3-7 2-2 8-2-8-8-2 8-3z M20 2v4 M18 4h4',recycle:'M8 4l4-2 5 8 M15 5l2 5-5-1 M19 12l3 4-5 6H8 M19 20l-3 2 1-5 M6 19H2l1-9 4-6 M2 9l1 1 5 1',box:'M12 2l9 5v10l-9 5-9-5V7z M3 7l9 5 9-5 M12 12v10 M7 5l9 5',package:'M3 7l9-5 9 5v12l-9 3-9-3z M3 7l9 4 9-4 M12 11v11 M8 4l9 5',key:'M14 7a5 5 0 1 1-10 0 5 5 0 0 1 10 0 M12 11l9 9 M18 16l3-3 M15 13l3-3',droplet:'M12 2C8 8 4 12 4 16a8 8 0 0 0 16 0c0-4-4-8-8-14z',cart:'M2 3h3l3 13h11l3-9H6 M10 20h.01 M18 20h.01',wrench:'M14 3a6 6 0 0 0-6 7L2 17l5 5 7-7a6 6 0 0 0 7-6l-4 3-4-4 3-5z',alert:'M12 2l11 19H1z M12 8v5 M12 17h.01',fuel:'M4 21V3h10v18 M3 21h12 M4 10h10 M14 7l4 3v7a2 2 0 0 0 4 0V9l-4-4',link:'M10 14l4-4 M8 16l-2 2a4 4 0 0 1-6-6l4-4a4 4 0 0 1 6 0 M14 8l2-2a4 4 0 0 1 6 6l-4 4a4 4 0 0 1-6 0',database:'M20 5c0 5-16 5-16 0s16-5 16 0z M4 5v14c0 5 16 5 16 0V5 M4 12c0 5 16 5 16 0',layers:'M12 2l10 6-10 6L2 8z M2 13l10 6 10-6 M2 18l10 6 10-6',info:'M12 11v6 M12 7h.01 M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0',print:'M6 8V2h12v6 M6 18H3V8h18v10h-3 M6 14h12v8H6z',edit:'M4 20l4-1 11-11-3-3L5 16z M14 7l3 3',trash:'M3 6h18 M8 6V3h8v3 M6 6l1 15h10l1-15 M10 10v7 M14 10v7',file:'M14 2H4v20h16V8z M14 2v6h6 M8 12h8 M8 16h6'};
 const I=name=>`<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="${icons[name]||icons.grid}"/></svg>`;
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const storage={get(k,f){try{return JSON.parse(localStorage.getItem('vrt_ga_shell_v1_'+k))??f;}catch{return f;}},set(k,v){try{localStorage.setItem('vrt_ga_shell_v1_'+k,JSON.stringify(v));return true;}catch{return false;}}};
-const state={lang:storage.get('lang','zh'),route:'overview',mode:'month',ref:todayICT(),group:'all',source:'all',status:'all',query:'',dataset:storage.get('dataset','empty'),snapshot:null,menu:false,selected:new Set(),page:1,workspace:null};
+const state={lang:storage.get('lang','zh'),route:'overview',module:null,mode:'month',ref:todayICT(),group:'all',source:'all',status:'all',query:'',dataset:storage.get('dataset','empty'),snapshot:null,menu:false,selected:new Set(),page:1,workspace:null};
 if(!['zh','en','km'].includes(state.lang))state.lang='zh';
 try{const saved=storage.get('snapshot',null);if(saved)state.snapshot=normalizeCloudSnapshot(saved);}catch{state.snapshot=null;}
 if(state.dataset==='snapshot'&&!state.snapshot)state.dataset='empty';
@@ -844,60 +1049,316 @@ const T=(zh,en,km)=>({zh,en,km})[state.lang]||en||zh;
 const t=obj=>typeof obj==='string'?obj:obj?.[state.lang]||obj?.en||obj?.zh||'';
 const app=document.querySelector('#app'),dialog=document.querySelector('#dialog');
 const sources=()=>state.dataset==='demo'?demo.records:state.dataset==='snapshot'?state.snapshot.records:[];
-const selection=()=>({mode:state.mode,ref:state.ref,group:state.group,source:state.source,status:state.status,query:state.query});
+const selection=()=>({mode:state.mode,ref:state.ref,group:state.group,source:state.source,status:state.status,query:state.query,module:state.module});
 const rows=()=>filterRecords(sources(),selection());
 const n=x=>new Intl.NumberFormat(state.lang==='zh'?'zh-TW':state.lang==='km'?'km-KH':'en-US',{maximumFractionDigits:2}).format(x);
 const money=(amount,currency)=>new Intl.NumberFormat(state.lang==='zh'?'zh-TW':'en-US',{style:'currency',currency,maximumFractionDigits:2}).format(amount);
 const statusText=s=>({pending:T('待核可','Awaiting approval','រង់ចាំអនុម័ត'),in_progress:T('處理中','In progress','កំពុងដំណើរការ'),abnormal:T('需注意','Needs attention','ត្រូវយកចិត្តទុកដាក់'),completed:T('已完成','Completed','បានបញ្ចប់'),rejected:T('已退件','Rejected','បានបដិសេធ')})[s]||s;
 const statusPill=s=>`<span class="pill ${{pending:'amber',in_progress:'blue',abnormal:'red',completed:'teal',rejected:'gray'}[s]||'gray'}"><span class="dot"></span>${esc(statusText(s))}</span>`;
-const routeNames=()=>({overview:T('總務總覽','Operations overview','ទិដ្ឋភាពទូទៅ'),tasks:T('待辦中心','Action center','កិច្ចការត្រូវធ្វើ'),records:T('全部紀錄','All records','កំណត់ត្រាទាំងអស់'),reports:T('分析報表','Reports & insights','របាយការណ៍ និងវិភាគ'),modules:T('功能總覽','All modules','មុខងារទាំងអស់'),sources:T('資料與連線','Data & connections','ទិន្នន័យ និងការតភ្ជាប់'),architecture:T('系統架構','System architecture','រចនាសម្ព័ន្ធប្រព័ន្ធ'),...Object.fromEntries(GROUPS.map(g=>[g.id,t(g.name)]))});
-function button(label,action,icon,cls='',extra=''){return `<button class="btn ${cls}" data-action="${action}" ${extra}>${icon?I(icon):''}${label}</button>`;}
+const routeNames=()=>({overview:T('總務總覽','Operations overview','ទិដ្ឋភាពទូទៅ'),tasks:T('待辦中心','Action center','កិច្ចការត្រូវធ្វើ'),records:T('全部紀錄','All records','កំណត់ត្រាទាំងអស់'),reports:T('分析報表','Reports & insights','របាយការណ៍ និងវិភាគ'),modules:T('功能總覽','All modules','មុខងារទាំងអស់'),sources:T('資料與連線','Data & connections','ទិន្នន័យ និងការតភ្ជាប់'),architecture:T('系統架構','System architecture','រចនាសម្ព័ន្ធប្រព័ន្ធ'),...Object.fromEntries(GROUPS.map(g=>[g.id,t(g.name)])),...Object.fromEntries(MODULES.map(m=>[m.id,t(m.name)]))});
+function button(label,action,icon,cls='',extra=''){return `<button type="button" class="btn ${cls}" data-action="${action}" ${extra}>${icon?I(icon):''}${label}</button>`;}
 function link(label,url,cls='btn',icon='external'){return `<a class="${cls}" href="${esc(url)}" target="_blank" rel="noopener noreferrer">${I(icon)}${label}</a>`;}
-function nav(route,icon,name,badge=''){return `<button class="nav-btn ${state.route===route?'active':''}" data-route="${route}">${I(icon)}<span>${name}</span>${badge?`<span class="nav-count">${badge}</span>`:''}</button>`;}
-function shell(){const allOpen=metrics(eventRows(sources())).open;return `<div class="shell"><aside class="sidebar ${state.menu?'open':''}" aria-label="${T('主選單','Main navigation','ម៉ឺនុយមេ')}"><a class="brand" href="#overview" data-route="overview"><span class="brand-mark">VRT</span><span><strong>${T('總務工作台','General Affairs','កិច្ចការទូទៅ')}</strong><small>GENERAL AFFAIRS</small></span></a><div class="nav-caption">${T('工作空間','Workspace','កន្លែងធ្វើការ')}</div>${nav('overview','grid',routeNames().overview)}${nav('tasks','clipboard',routeNames().tasks,state.dataset==='empty'?'—':allOpen||'')}${nav('records','file',routeNames().records)}${nav('reports','chart',routeNames().reports)}<div class="nav-caption">${T('業務管理','Operations','ការគ្រប់គ្រង')}</div>${GROUPS.map(g=>nav(g.id,g.icon,t(g.name))).join('')}<div class="nav-caption">${T('管理工具','Administration','ឧបករណ៍គ្រប់គ្រង')}</div>${nav('modules','layers',routeNames().modules,'23')}${nav('sources','database',routeNames().sources)}${nav('architecture','link',routeNames().architecture)}<a class="nav-btn legacy-nav" href="./legacy.html" target="_blank" rel="noopener noreferrer">${I('external')}<span>${T('原稽核評鑑','Compliance assessment','ការវាយតម្លៃអនុលោមភាព')}</span></a><div class="nav-foot"><div class="nav-rule"></div><strong>Vantage River Textiles</strong><br>Sihanoukville · Cambodia<br><span>${T('總務工作台 v1.1','GA workspace v1.1','កិច្ចការទូទៅ v1.1')}</span></div></aside><div class="backdrop ${state.menu?'on':''}" data-action="menu-close"></div><div class="main-shell"><header class="topbar"><button class="icon-button mobile-only" data-action="menu" aria-label="${T('開啟選單','Open menu','បើកម៉ឺនុយ')}">${I('menu')}</button><div class="breadcrumbs">VRT <span> / </span><strong>${esc(state.workspace?t(MODULE_MAP[state.workspace].name):routeNames()[state.route]||routeNames().overview)}</strong></div><button class="search-trigger" data-action="command" aria-label="${T('搜尋功能與紀錄','Search modules and records','ស្វែងរកមុខងារ និងកំណត់ត្រា')}">${I('search')}<span>${T('搜尋功能、紀錄…','Search modules, records…','ស្វែងរកមុខងារ កំណត់ត្រា…')}</span><kbd>⌘ K</kbd></button><button class="icon-button ga-theme-trigger" data-action="appearance" aria-haspopup="dialog" aria-label="${T('背景與色彩','Background & colour','ផ្ទៃខាងក្រោយ និងពណ៌')}" title="${T('背景與色彩','Background & colour','ផ្ទៃខាងក្រោយ និងពណ៌')}">🎨</button><div class="langs" aria-label="Language">${[['zh','中'],['en','EN'],['km','ខ្មែរ']].map(([l,label])=>`<button data-lang="${l}" class="${state.lang===l?'on':''}" aria-pressed="${state.lang===l}">${label}</button>`).join('')}</div><span class="avatar" title="VRT General Affairs">GA</span></header><main id="main" tabindex="-1"><div id="cloud-slot">${cloudUI.toolbar()}</div>${content()}</main></div><nav class="mobile-nav" aria-label="${T('快捷導覽','Quick navigation','រុករករហ័ស')}">${[['overview','grid'],['tasks','clipboard'],['modules','layers'],['reports','chart'],['sources','database']].map(([r,i])=>`<button data-route="${r}" class="${state.route===r?'on':''}">${I(i)}<span>${routeNames()[r]}</span></button>`).join('')}</nav></div>`;}
+function nav(route,icon,name,badge=''){return `<button class="nav-btn ${state.route===route?'active':''}" data-route="${route}" ${state.route===route?'aria-current="page"':''}>${I(icon)}<span>${esc(name)}</span>${badge?`<span class="nav-count">${badge}</span>`:''}</button>`;}
+function areaNavigation(){return GROUPS.map(g=>`<section class="nav-group" aria-label="${esc(t(g.name))}"><div class="nav-caption">${esc(t(g.name))}</div>${MODULES.filter(m=>m.group===g.id).map(m=>nav(m.id,m.icon,t(m.name))).join('')}</section>`).join('');}
+function sideContent(){const allOpen=metrics(eventRows(sources())).open;return `<a class="brand" href="#overview" data-route="overview"><span class="brand-mark">VRT</span><span><strong>${T('總務工作台','General Affairs','កិច្ចការទូទៅ')}</strong><small>GENERAL AFFAIRS</small></span></a><div class="nav-caption">${T('工作空間','Workspace','កន្លែងធ្វើការ')}</div>${nav('overview','grid',routeNames().overview)}${nav('tasks','clipboard',routeNames().tasks,state.dataset==='empty'?'—':allOpen||'')}${nav('records','file',routeNames().records)}${nav('reports','chart',routeNames().reports)}${areaNavigation()}<div class="nav-caption">${T('管理工具','Administration','ឧបករណ៍គ្រប់គ្រង')}</div>${nav('sources','database',routeNames().sources)}${nav('architecture','link',routeNames().architecture)}<a class="nav-btn legacy-nav" href="./legacy.html" target="_blank" rel="noopener noreferrer">${I('external')}<span>${T('原稽核評鑑','Compliance assessment','ការវាយតម្លៃអនុលោមភាព')}</span></a><div class="nav-foot"><div class="nav-rule"></div><strong>Vantage River Textiles</strong><br>Sihanoukville · Cambodia<br><span>${T('總務工作台 v1.2','GA workspace v1.2','កិច្ចការទូទៅ v1.2')}</span></div>`;}
+function topContent(){return `<button class="icon-button mobile-only" data-action="menu" aria-controls="ga-sidebar" aria-expanded="${state.menu}" aria-label="${T('開啟選單','Open menu','បើកម៉ឺនុយ')}">${I('menu')}</button><div class="breadcrumbs">VRT <span> / </span><strong>${esc(routeNames()[state.route]||routeNames().overview)}</strong></div><button class="search-trigger" data-action="command" aria-label="${T('搜尋功能與紀錄','Search modules and records','ស្វែងរកមុខងារ និងកំណត់ត្រា')}">${I('search')}<span>${T('搜尋功能、紀錄…','Search modules, records…','ស្វែងរកមុខងារ កំណត់ត្រា…')}</span><kbd>⌘ K</kbd></button><button class="icon-button ga-theme-trigger" data-action="appearance" aria-haspopup="dialog" aria-label="${T('背景與色彩','Background & colour','ផ្ទៃខាងក្រោយ និងពណ៌')}" title="${T('背景與色彩','Background & colour','ផ្ទៃខាងក្រោយ និងពណ៌')}">🎨</button><div class="langs" aria-label="Language">${[['zh','中'],['en','EN'],['km','ខ្មែរ']].map(([l,label])=>`<button data-lang="${l}" class="${state.lang===l?'on':''}" aria-pressed="${state.lang===l}">${label}</button>`).join('')}</div><span class="avatar" title="VRT General Affairs">GA</span>`;}
+function mobileContent(){return `${[['overview','grid'],['tasks','clipboard'],['records','file'],['reports','chart'],['menu','menu']].map(([r,i])=>`<button ${r==='menu'?'data-action="menu"':'data-route="'+r+'"'} class="${state.route===r||r==='menu'&&state.module?'on':''}">${I(i)}<span>${r==='menu'?T('業務選單','Modules','មុខងារ'):routeNames()[r]}</span></button>`).join('')}`;}
+function footer(){return `<span>VRT · General Affairs Workspace · v1.2</span><span>${T('業務日期 · Asia/Phnom_Penh · 資料可追溯','Business date · Asia/Phnom_Penh · traceable data','ថ្ងៃប្រតិបត្តិការ · Asia/Phnom_Penh · ទិន្នន័យអាចតាមដាន')}</span>`;}
+function shell(){
+  return `<div class="shell"><aside id="ga-sidebar" class="sidebar ${state.menu?'open':''}" aria-label="${T('主選單','Main navigation','ម៉ឺនុយមេ')}">${sideContent()}</aside><div class="backdrop ${state.menu?'on':''}" data-action="menu-close"></div>
+  <div class="main-shell"><header class="topbar">${topContent()}</header><main id="main" tabindex="-1" class="${state.workspace?'is-original':''}">
+  <div id="cloud-slot" ${state.workspace?'hidden':''}>${cloudUI.toolbar()}</div><div id="ga-content">${content()}</div>
+  <section id="ga-workspace" class="module-workspace" ${state.workspace?'':'hidden'}>${workspaceFrame()}</section>
+  <footer class="screen-footer">${footer()}</footer></main></div><nav class="mobile-nav" aria-label="${T('快捷導覽','Quick navigation','រុករករហ័ស')}">${mobileContent()}</nav></div>`;
+}
 function title(name,sub,actions=true){return `<div class="title-row"><div><div class="eyebrow">VRT · GENERAL AFFAIRS</div><h1>${name}</h1><p>${sub}</p></div>${actions?`<div class="actions">${button(T('匯出','Export','នាំចេញ'),'export','download')}${button(T('新增紀錄','New record','កំណត់ត្រាថ្មី'),'new','plus','primary')}</div>`:''}</div>`;}
 function modebar(){const demoMode=state.dataset==='demo',snap=state.dataset==='snapshot';const label=demoMode?T('範例資料・非正式營運數據','Sample data · not live operational data','ទិន្នន័យគំរូ · មិនមែនទិន្នន័យប្រតិបត្តិការពិត'):snap?cloudUI.datasetLabel():T('尚未載入總表・可直接開啟原模組','Shared dataset not loaded · original modules available','មិនទាន់ផ្ទុកទិន្នន័យរួម · អាចបើកមុខងារដើម');return `<div class="modebar ${state.dataset==='empty'?'empty':''}">${I('info')}<span><strong>${label}</strong>${snap?` · ${new Date(state.snapshot.generatedAt).toLocaleString('en-GB',{timeZone:'Asia/Phnom_Penh',hour12:false})} ICT`:''}</span><div class="actions">${button(demoMode?T('返回正式總表','Return to shared dataset','ត្រឡប់ទៅទិន្នន័យរួម'):T('查看範例','View sample','មើលគំរូ'),demoMode?'empty':'demo',null,'quiet')}${button(T('資料來源','Sources','ប្រភព'),'sources',null,'quiet')}</div></div>`;}
 function periods(){const r=periodRange(state.mode,state.ref),y=+state.ref.slice(0,4),mo=+state.ref.slice(5,7),years=Array.from({length:Math.max(15,y-2017+2)},(_,i)=>2018+i);let picker='';if(state.mode==='day')picker=`<input class="filter-select" type="date" data-filter="date" value="${state.ref}" aria-label="${T('日期','Date','កាលបរិច្ឆេទ')}">`;if(state.mode==='week')picker=`<span class="period-label">${isoWeek(state.ref)}</span><select data-filter="week" aria-label="${T('選週','Select week','ជ្រើសសប្ដាហ៍')}">${Array.from({length:21},(_,i)=>shiftPeriod('week',state.ref,i-10)).map(d=>`<option value="${d}" ${periodRange('week',d).from===r.from?'selected':''}>${isoWeek(d)} · ${d.slice(5)}</option>`).join('')}</select>`;if(state.mode==='month'||state.mode==='year'){picker=`<select data-filter="year" aria-label="${T('年份','Year','ឆ្នាំ')}">${years.map(v=>`<option ${v===y?'selected':''}>${v}</option>`).join('')}</select>`;if(state.mode==='month')picker+=`<select data-filter="month" aria-label="${T('月份','Month','ខែ')}">${Array.from({length:12},(_,i)=>`<option value="${i+1}" ${i+1===mo?'selected':''}>${new Intl.DateTimeFormat(state.lang==='zh'?'zh-TW':state.lang==='km'?'km-KH':'en-US',{month:'long',timeZone:'UTC'}).format(new Date(Date.UTC(y,i,1)))}</option>`).join('')}</select>`;}return `<div class="periodbar"><div class="segments" aria-label="${T('統計期間','Period','រយៈពេល')}">${[['day',T('日','Day','ថ្ងៃ')],['week',T('週','Week','សប្ដាហ៍')],['month',T('月','Month','ខែ')],['year',T('年','Year','ឆ្នាំ')]].map(([v,l])=>`<button class="${state.mode===v?'active':''}" data-period="${v}" aria-pressed="${state.mode===v}">${l}</button>`).join('')}</div><div class="periodnav">${button('','previous','left','square',`aria-label="${T('上一期','Previous period','រយៈពេលមុន')}"`)}${picker}${button('','next','chevron','square',`aria-label="${T('下一期','Next period','រយៈពេលបន្ទាប់')}"`)}${button(T('本期','Current','បច្ចុប្បន្ន'),'today',null,'small')}</div><span class="range">${r.from} — ${r.to} · ICT</span></div>`;}
-function emptyState(label=T('此期間沒有紀錄','No records for this period','គ្មានកំណត់ត្រាក្នុងរយៈពេលនេះ')){return `<div class="empty-state">${I('clipboard')}<strong>${state.dataset==='empty'?T('等待接入正式資料','Waiting for live data','កំពុងរង់ចាំទិន្នន័យពិត'):label}</strong><p>${state.dataset==='empty'?T('原模組照常操作；總表接入後才顯示正式數字。','Original modules work as usual. Verified data will appear after connection.','មុខងារដើមដំណើរការដូចធម្មតា។ ទិន្នន័យពិតបង្ហាញបន្ទាប់ពីភ្ជាប់។'):T('可切換上一期、下拉選擇期間，或調整篩選。','Move to a previous period or adjust the filters.','ប្ដូរទៅរយៈពេលមុន ឬកែតម្រង។')}</p>${button(state.dataset==='empty'?T('接入資料','Connect data','ភ្ជាប់ទិន្នន័យ'):T('回到本期','Current period','រយៈពេលបច្ចុប្បន្ន'),state.dataset==='empty'?'sources':'today',null,'small')}</div>`;}
+function emptyState(label=T('此期間沒有紀錄','No records for this period','គ្មានកំណត់ត្រាក្នុងរយៈពេលនេះ')){
+  const loaded=state.dataset!=='empty';
+  return `<div class="empty-state">${I('clipboard')}<strong>${loaded?label:T('尚未下載總表','Ledger not downloaded','មិនទាន់ទាញយកតារាង')}</strong><p>${loaded?T('可切換期間、調整篩選，或新增紀錄。','Change the period or filters, or add a record.','ប្ដូររយៈពេល តម្រង ឬបន្ថែមកំណត់ត្រា។'):T('點「下載總表」載入已儲存的資料。','Choose Download records to load saved records.','ចុចទាញយកតារាង ដើម្បីផ្ទុកទិន្នន័យដែលបានរក្សាទុក។')}</p></div>`;
+}
 function stats(){const m=metrics(rows()),value=x=>state.dataset==='empty'?'—':n(x);const values=[{label:T('本期工作紀錄','Records this period','កំណត់ត្រាក្នុងរយៈពេល'),v:value(m.total),icon:'clipboard',sub:T('按業務事件去重','Unique business events','កិច្ចការមិនស្ទួន'),action:'records'}, {label:T('待核可','Awaiting approval','រង់ចាំអនុម័ត'),v:value(m.pending),icon:'clock',sub:T('保留原審查與核可流程','Original review & approval flow','រក្សាលំហូរពិនិត្យ និងអនុម័តដើម'),action:'pending'}, {label:T('需關注事項','Needs attention','កិច្ចការត្រូវយកចិត្តទុកដាក់'),v:value(m.abnormal),icon:'alert',sub:T('異常集中追蹤','Issues in one place','តាមដានបញ្ហានៅកន្លែងតែមួយ'),action:'abnormal'}, {label:T('本期已完成','Completed this period','បានបញ្ចប់ក្នុងរយៈពេល'),v:value(m.completed),icon:'check',sub:T('點開核對明細與來源','Open details & source','បើកព័ត៌មានលម្អិត និងប្រភព'),action:'completed'}];return `<div class="stats">${values.map(v=>`<button class="stat" data-action="${v.action}"><div class="stat-head"><span>${v.label}</span>${I(v.icon)}</div><div class="stat-value">${v.v}</div><div class="stat-bottom">${v.sub}</div></button>`).join('')}</div>`;}
 function taskLine(r){const m=MODULE_MAP[r.module];return `<button class="task-line" data-record="${esc(recordKey(r))}"><span class="task-icon ${r.status==='abnormal'?'red':r.status==='pending'?'amber':''}">${I(m.icon)}</span><span class="task-main"><strong>${esc(t(r.title))}</strong><small>${esc(t(m.name))} · ${esc(r.owner||'—')} · ${r.date.slice(5)} <span class="source-mini"> / ${SOURCES[r.source].name}</span></small></span>${statusPill(r.status)}${I('chevron')}</button>`;}
 function trend(){const filtered=rows(),range=periodRange(state.mode,state.ref),from=new Date(range.from+'T00:00:00Z'),to=new Date(range.to+'T00:00:00Z');let buckets=[];if(state.mode==='year'){buckets=Array.from({length:12},(_,i)=>({label:`${i+1}`,key:range.from.slice(0,4)+'-'+String(i+1).padStart(2,'0')}));}else{const span=Math.round((to-from)/86400000)+1,step=span>14?Math.ceil(span/10):1;for(let i=0;i<span;i+=step){const a=new Date(+from+i*86400000).toISOString().slice(0,10),b=new Date(+from+Math.min(span-1,i+step-1)*86400000).toISOString().slice(0,10);buckets.push({label:a.slice(5),a,b});}}if(buckets.length===1){buckets=[{label:range.from.slice(5),a:range.from,b:range.to}];}for(const b of buckets){const list=filtered.filter(r=>b.key?r.date.startsWith(b.key):r.date>=b.a&&r.date<=b.b);b.total=list.length;b.bad=list.filter(r=>r.status==='abnormal').length;b.good=b.total-b.bad;}const max=Math.max(1,...buckets.map(b=>b.total));return `<section class="panel"><div class="panel-head"><div><h2>${T('工作紀錄趨勢','Activity trend','និន្នាការកំណត់ត្រា')}</h2><div class="panel-sub">${T('跟著所選日／週／月／年變動','Follows the selected day / week / month / year','ប្រែប្រួលតាមថ្ងៃ / សប្ដាហ៍ / ខែ / ឆ្នាំ')}</div></div><div class="chart-head-legend"><span><i class="legend-square"></i>${T('紀錄','Records','កំណត់ត្រា')}</span><span><i class="legend-square" style="background:#e5b297"></i>${T('異常','Issues','បញ្ហា')}</span></div></div>${state.dataset==='empty'?emptyState():`<div class="chart" role="img" aria-label="${esc(buckets.map(b=>`${b.label}: ${b.total}, ${statusText('abnormal')}: ${b.bad}`).join('; '))}">${buckets.map(b=>`<div class="chart-column"><span class="chart-number">${b.total||''}</span><div class="bars"><span class="bar" style="height:${b.good/max*100}%"></span><span class="bar alert" style="height:${b.bad/max*100}%"></span></div><label>${b.label}</label></div>`).join('')}</div><div class="chart-foot">${T('顯示事件筆數；金額、重量與數量分開統計。','Event counts only. Cost, weight and quantity are calculated separately.','បង្ហាញចំនួនកិច្ចការ។ ចំណាយ ទម្ងន់ និងបរិមាណគណនាដាច់ដោយឡែក។')}</div>`}</section>`;}
 function coverage(){const list=rows();return `<section class="panel"><div class="panel-head"><div><h2>${T('四大業務，一個入口','Four areas. One workspace.','ផ្នែកបួន នៅកន្លែងតែមួយ')}</h2><div class="panel-sub">SEC · GasCheck · GASExp</div></div><span class="pill teal">23 ${T('模組','modules','មុខងារ')}</span></div><div class="panel-body">${GROUPS.map(g=>{const count=list.filter(r=>MODULE_MAP[r.module].group===g.id).length,mods=MODULES.filter(m=>m.group===g.id).length;return `<button class="area-line" data-route="${g.id}" style="width:100%;background:transparent;border:0;text-align:left;color:inherit"><span class="task-icon" style="color:${g.color};background:${g.color}0d">${I(g.icon)}</span><span><strong>${t(g.name)}</strong><small>${mods} ${T('個原功能入口','original modules','មុខងារដើម')}</small></span><span class="area-number">${state.dataset==='empty'?'—':count}<small>${T('本期紀錄','this period','ក្នុងរយៈពេល')}</small></span></button>`;}).join('')}<div class="coverage-note">${T('入口已按目前程式盤點；原模組的新增、刪改、照片、匯入出及核可仍由原頁處理。','Entrypoints checked against current source. Editing, photos, import/export and approval remain in the original pages.','ច្រកចូលបានផ្ទៀងផ្ទាត់តាមកូដបច្ចុប្បន្ន។ កែប្រែ រូបថត នាំចូល/ចេញ និងអនុម័តនៅទំព័រដើម។')}</div></div></section>`;}
-function table(list,full=false){const pages=Math.max(1,Math.ceil(list.length/20));state.page=Math.min(state.page,pages);const view=full?list.slice((state.page-1)*20,state.page*20):list.slice(0,6);if(!view.length)return `<div class="panel">${emptyState()}</div>`;return `<div class="panel"><div class="table-scroll"><table class="data-table"><thead><tr><th><input type="checkbox" data-action="select-all" aria-label="${T('選取本頁','Select this page','ជ្រើសទំព័រនេះ')}" ${view.every(r=>state.selected.has(recordKey(r)))?'checked':''}></th><th>${T('工作／紀錄','Activity / record','កិច្ចការ / កំណត់ត្រា')}</th><th>${T('業務模組','Module','មុខងារ')}</th><th>${T('日期','Date','កាលបរិច្ឆេទ')}</th><th>${T('負責人','Owner','អ្នកទទួលខុសត្រូវ')}</th><th>${T('狀態','Status','ស្ថានភាព')}</th><th>${T('來源','Source','ប្រភព')}</th></tr></thead><tbody>${view.map(r=>`<tr data-record="${esc(recordKey(r))}" tabindex="0"><td><input type="checkbox" data-select="${esc(recordKey(r))}" ${state.selected.has(recordKey(r))?'checked':''} aria-label="${esc(r.id)}"></td><td class="title-cell">${esc(t(r.title))}<div class="row-code">${esc(r.id)}</div></td><td>${esc(t(MODULE_MAP[r.module].name))}</td><td class="date-cell">${r.date}</td><td>${esc(r.owner||'—')}</td><td>${statusPill(r.status)}</td><td class="source-mini">${SOURCES[r.source].name}${r.sourceRefs.length>1?` · ${r.sourceRefs.length} ${T('關聯','linked','តំណ')}`:''}</td></tr>`).join('')}</tbody></table></div><div class="table-bottom"><span>${state.selected.size?`${state.selected.size} ${T('筆已選','selected','បានជ្រើស')} · `:''}${full?`${(state.page-1)*20+1}–${Math.min(state.page*20,list.length)} / ${list.length}`:`${T('顯示最近','Latest','ចុងក្រោយ')} ${view.length} / ${list.length}`} ${T('筆紀錄','records','កំណត់ត្រា')}</span>${full?`<div class="actions">${button('','page-prev','left','small',`aria-label="Previous page" ${state.page===1?'disabled':''}`)}<span>${state.page} / ${pages}</span>${button('','page-next','chevron','small',`aria-label="Next page" ${state.page===pages?'disabled':''}`)}</div>`:`<button class="text-link" data-route="records">${T('全部紀錄','All records','កំណត់ត្រាទាំងអស់')} ${I('chevron')}</button>`}</div></div>`;}
-function filters(){return `<div class="filters"><select class="filter-select" data-filter="group" aria-label="${T('業務類別','Business area','ផ្នែកការងារ')}"><option value="all">${T('全部業務','All areas','គ្រប់ផ្នែក')}</option>${GROUPS.map(g=>`<option value="${g.id}" ${state.group===g.id?'selected':''}>${t(g.name)}</option>`).join('')}</select><select class="filter-select" data-filter="source" aria-label="Source"><option value="all">${T('全部來源','All sources','គ្រប់ប្រភព')}</option>${Object.entries(SOURCES).map(([k,v])=>`<option value="${k}" ${state.source===k?'selected':''}>${v.name}</option>`).join('')}</select><select class="filter-select" data-filter="status" aria-label="${T('狀態','Status','ស្ថានភាព')}"><option value="all">${T('全部狀態','All statuses','គ្រប់ស្ថានភាព')}</option>${STATUSES.map(s=>`<option value="${s}" ${state.status===s?'selected':''}>${statusText(s)}</option>`).join('')}</select><input class="inline-search" data-filter="query" value="${esc(state.query)}" placeholder="${T('搜尋名稱、單號、地點…','Search name, ID, location…','ស្វែងរកឈ្មោះ លេខ ទីតាំង…')}" aria-label="${T('搜尋紀錄','Search records','ស្វែងរកកំណត់ត្រា')}"></div>`;}
+function table(list,full=false){const pages=Math.max(1,Math.ceil(list.length/20));state.page=Math.min(state.page,pages);const view=full?list.slice((state.page-1)*20,state.page*20):list.slice(0,6);if(!view.length)return `<div class="panel">${emptyState()}</div>`;return `<div class="panel"><div class="table-scroll"><table class="data-table"><thead><tr><th><input type="checkbox" data-action="select-all" aria-label="${T('選取本頁','Select this page','ជ្រើសទំព័រនេះ')}" ${view.every(r=>state.selected.has(recordKey(r)))?'checked':''}></th><th>${T('工作／紀錄','Activity / record','កិច្ចការ / កំណត់ត្រា')}</th><th>${T('業務模組','Module','មុខងារ')}</th><th>${T('日期','Date','កាលបរិច្ឆេទ')}</th><th>${T('負責人','Owner','អ្នកទទួលខុសត្រូវ')}</th><th>${T('狀態','Status','ស្ថានភាព')}</th><th>${T('來源','Source','ប្រភព')}</th>${full&&state.dataset==='snapshot'?'<th>'+T('操作','Actions','សកម្មភាព')+'</th>':''}</tr></thead><tbody>${view.map(r=>`<tr data-record="${esc(recordKey(r))}" tabindex="0"><td><input type="checkbox" data-select="${esc(recordKey(r))}" ${state.selected.has(recordKey(r))?'checked':''} aria-label="${esc(r.id)}"></td><td class="title-cell">${esc(t(r.title))}<div class="row-code">${esc(r.id)}</div></td><td>${esc(t(MODULE_MAP[r.module].name))}</td><td class="date-cell">${r.date}</td><td>${esc(r.owner||'—')}</td><td>${statusPill(r.status)}</td><td class="source-mini">${SOURCES[r.source].name}${r.sourceRefs.length>1?` · ${r.sourceRefs.length} ${T('關聯','linked','តំណ')}`:''}</td>${full&&state.dataset==='snapshot'?`<td class="record-actions">${button(T('編輯','Edit','កែ'),'ledger-edit','edit','small',`data-key="${esc(recordKey(r))}"`)}</td>`:''}</tr>`).join('')}</tbody></table></div><div class="table-bottom"><span>${state.selected.size?`${state.selected.size} ${T('筆已選','selected','បានជ្រើស')} · `:''}${full?`${(state.page-1)*20+1}–${Math.min(state.page*20,list.length)} / ${list.length}`:`${T('顯示最近','Latest','ចុងក្រោយ')} ${view.length} / ${list.length}`} ${T('筆紀錄','records','កំណត់ត្រា')}</span>${full?`<div class="actions">${button('','page-prev','left','small',`aria-label="Previous page" ${state.page===1?'disabled':''}`)}<span>${state.page} / ${pages}</span>${button('','page-next','chevron','small',`aria-label="Next page" ${state.page===pages?'disabled':''}`)}</div>`:`<button class="text-link" data-route="records">${T('全部紀錄','All records','កំណត់ត្រាទាំងអស់')} ${I('chevron')}</button>`}</div></div>`;}
+function filters(){return `<div class="filters">${state.module?'':`<select class="filter-select" data-filter="group" aria-label="${T('業務類別','Business area','ផ្នែកការងារ')}"><option value="all">${T('全部業務','All areas','គ្រប់ផ្នែក')}</option>${GROUPS.map(g=>`<option value="${g.id}" ${state.group===g.id?'selected':''}>${t(g.name)}</option>`).join('')}</select><select class="filter-select" data-filter="source" aria-label="Source"><option value="all">${T('全部來源','All sources','គ្រប់ប្រភព')}</option>${Object.entries(SOURCES).map(([k,v])=>`<option value="${k}" ${state.source===k?'selected':''}>${v.name}</option>`).join('')}</select>`}
+  ${!state.module&&(state.route==='records'||GROUPS.some(g=>g.id===state.route))?`<select class="filter-select" data-filter="ledger-module" aria-label="${T('業務分頁','Module','មុខងារ')}"><option value="">${T('選擇業務分頁','Choose a module','ជ្រើសមុខងារ')}</option>${MODULES.filter(m=>state.group==='all'||m.group===state.group).map(m=>`<option value="${m.id}">${esc(t(m.name))}</option>`).join('')}</select>`:''}<select class="filter-select" data-filter="status" aria-label="${T('狀態','Status','ស្ថានភាព')}"><option value="all">${T('全部狀態','All statuses','គ្រប់ស្ថានភាព')}</option>${STATUSES.map(s=>`<option value="${s}" ${state.status===s?'selected':''}>${statusText(s)}</option>`).join('')}</select><input class="inline-search" data-filter="query" value="${esc(state.query)}" placeholder="${T('搜尋名稱、單號、地點…','Search name, ID, location…','ស្វែងរកឈ្មោះ លេខ ទីតាំង…')}" aria-label="${T('搜尋紀錄','Search records','ស្វែងរកកំណត់ត្រា')}"></div>`;}
 function overview(){const list=rows(),tasks=list.filter(r=>['abnormal','pending','in_progress'].includes(r.status)).sort((a,b)=>({abnormal:0,pending:1,in_progress:2}[a.status]-{abnormal:0,pending:1,in_progress:2}[b.status])).slice(0,4);return `${title(T('總務營運總覽','Your operations, at a glance.','ទិដ្ឋភាពប្រតិបត្តិការទូទៅ'),T('先看待辦與異常，再進入每一筆明細。','Start with what needs attention. Follow every item to its source.','មើលកិច្ចការ និងបញ្ហាជាមុន រួចបើកព័ត៌មានលម្អិតនីមួយៗ។'))}${modebar()}${periods()}${stats()}<div class="grid-two"><section class="panel"><div class="panel-head"><div><h2>${T('優先處理','Your priorities','អាទិភាពត្រូវដោះស្រាយ')}</h2><div class="panel-sub">${T('待核可、異常與進行中事項集中顯示','Approvals, exceptions and ongoing work in one place','កិច្ចការអនុម័ត បញ្ហា និងការងារកំពុងដំណើរការ')}</div></div><button class="text-link" data-route="tasks">${T('全部待辦','All actions','កិច្ចការទាំងអស់')} ${I('chevron')}</button></div>${tasks.length?tasks.map(taskLine).join(''):emptyState(T('本期沒有待處理事項','Nothing pending in this period','គ្មានកិច្ចការរង់ចាំក្នុងរយៈពេលនេះ'))}</section>${coverage()}</div><div class="grid-two">${trend()}<section class="panel"><div class="panel-head"><div><h2>${T('費用口徑，清楚分開','Clear expense boundaries','បែងចែកចំណាយឱ្យច្បាស់')}</h2><div class="panel-sub">${T('申請額 ≠ 收貨額 ≠ 已入帳費用','Requests ≠ receipts ≠ posted expenses','សំណើ ≠ ទទួលទំនិញ ≠ ចំណាយបានចុះបញ្ជី')}</div></div>${I('wallet')}</div><div class="panel-body">${Object.keys(metrics(list).expenses).length?Object.entries(metrics(list).expenses).map(([c,v])=>`<div class="count-detail"><span>${T('已入帳','Posted','បានចុះបញ្ជី')} · ${c}</span><strong>${money(v,c)}</strong></div>`).join(''):`<div class="stat-value amount">${state.dataset==='empty'?'—':T('無已入帳費用','No posted expenses','គ្មានចំណាយបានចុះបញ្ជី')}</div>`}<div class="coverage-note">${T('只加總標記已入帳的費用；USD 與 KHR 分列，關聯同一事件只計一次。','Only posted expenses count. USD and KHR stay separate; linked copies count once.','គិតតែចំណាយបានចុះបញ្ជី។ USD និង KHR ដាច់គ្នា និងមិនរាប់កិច្ចការភ្ជាប់ស្ទួន។')}</div><button class="text-link" data-route="reports" style="margin-top:14px">${T('查看統計口徑','View reporting rules','មើលវិធីគណនា')} ${I('chevron')}</button></div></section></div><div class="ledger-top"><div><h2>${T('最近工作紀錄','Recent activity','កំណត់ត្រាថ្មីៗ')}</h2><p>${T('點選一筆，開啟明細、證據與原模組','Open a record for details, evidence and the original module','ចុចកំណត់ត្រាដើម្បីមើលព័ត៌មាន ភស្តុតាង និងមុខងារដើម')}</p></div><div class="actions">${button(T('篩選紀錄','Filter records','ត្រងកំណត់ត្រា'),'records','search','small')}</div></div>${table(list)}`;}
-function moduleCard(m){return `<article class="module-card"><div class="module-card-head"><span class="task-icon" style="color:${SOURCES[m.source].color};background:${SOURCES[m.source].color}0c">${I(m.icon)}</span><h3>${esc(t(m.name))}</h3><span class="source-mini">${SOURCES[m.source].name}</span></div><p>${esc(t(m.desc))}</p><div class="actions">${button(T('工作台開啟','Open workspace','បើកក្នុងផ្ទាំងការងារ'),'module',null,'',`data-module="${m.id}"`)}${link(T('原頁','Original','ទំព័រដើម'),m.url,'btn','external')}</div></article>`;}
-function modulesPage(){const g=GROUPS.find(g=>g.id===state.route),groups=g?[g]:GROUPS;return `${title(g?t(g.name):T('所有功能，清楚歸位。','Every tool. In its place.','មុខងារទាំងអស់ នៅកន្លែងត្រឹមត្រូវ។'),g?t(g.desc):T('依工作找功能，保留三個平台的完整操作入口。','Find tools by task. Keep the complete original workflows.','ស្វែងរកមុខងារតាមការងារ និងរក្សាលំហូរដើមទាំងអស់។'),false)}<div class="scope-note">${I('shield')} ${T('23 個入口已依目前程式核對。點「工作台開啟」載入原模組；點「原頁」可在新分頁完整操作。','23 entrypoints checked against current source. Open a module inside the workspace or in its own tab.','ច្រកចូល 23 បានផ្ទៀងផ្ទាត់តាមកូដបច្ចុប្បន្ន។ បើកមុខងារក្នុងផ្ទាំងការងារ ឬទំព័រដើម។')}</div>${groups.map(g=>`<h2 class="section-title">${I(g.icon)}${t(g.name)} <small>${MODULES.filter(m=>m.group===g.id).length} ${T('個模組','modules','មុខងារ')}</small></h2><div class="module-grid">${MODULES.filter(m=>m.group===g.id).map(moduleCard).join('')}</div>`).join('')}`;}
+function moduleCard(m){return `<article class="module-card"><div class="module-card-head"><span class="task-icon" style="color:${SOURCES[m.source].color};background:${SOURCES[m.source].color}0c">${I(m.icon)}</span><h3>${esc(t(m.name))}</h3><span class="source-mini">${SOURCES[m.source].name}</span></div><p>${esc(t(m.desc))}</p><div class="actions">${button(T('開啟業務','Open module','បើកមុខងារ'),'module',null,'',`data-module="${m.id}"`)}${link(T('原頁','Original','ទំព័រដើម'),m.url,'btn','external')}</div></article>`;}
+function modulesPage(){const g=GROUPS.find(g=>g.id===state.route),groups=g?[g]:GROUPS;return `${title(g?t(g.name):T('所有功能，清楚歸位。','Every tool. In its place.','មុខងារទាំងអស់ នៅកន្លែងត្រឹមត្រូវ។'),g?t(g.desc):T('依工作找功能，保留三個平台的完整操作入口。','Find tools by task. Keep the complete original workflows.','ស្វែងរកមុខងារតាមការងារ និងរក្សាលំហូរដើមទាំងអស់។'),false)}<div class="scope-note">${I('shield')} ${T('從側欄可直接進入原業務頁。各業務頁也可切到總表紀錄。','Open each original module directly from the sidebar. Switch to its ledger from the module page.','បើកមុខងារដើមពីរបារចំហៀង ហើយប្ដូរទៅកំណត់ត្រាពីទំព័រមុខងារ។')}</div>${groups.map(g=>`<h2 class="section-title">${I(g.icon)}${t(g.name)} <small>${MODULES.filter(m=>m.group===g.id).length} ${T('個模組','modules','មុខងារ')}</small></h2><div class="module-grid">${MODULES.filter(m=>m.group===g.id).map(moduleCard).join('')}</div>`).join('')}`;}
 function tasksPage(){const all=rows().filter(r=>['pending','in_progress','abnormal'].includes(r.status));return `${title(T('把待辦，一件件完成。','Keep work moving.','បញ្ចប់កិច្ចការម្ដងមួយៗ។'),T('跨系統查看狀態，沿用原模組完成審查與處理。','Review across systems. Resolve each item through its original workflow.','មើលស្ថានភាពឆ្លងប្រព័ន្ធ និងដោះស្រាយតាមលំហូរដើម។'))}${modebar()}${periods()}${filters()}<div class="board">${['pending','in_progress','abnormal'].map(status=>{const list=all.filter(r=>r.status===status);return `<section class="board-column"><div class="board-heading">${statusText(status)}<span>${state.dataset==='empty'?'—':list.length}</span></div>${list.length?list.map(r=>`<button class="board-card" data-record="${esc(recordKey(r))}"><span class="source-mini">${SOURCES[r.source].name} / ${esc(t(MODULE_MAP[r.module].name))}</span><strong>${esc(t(r.title))}</strong><span class="small-muted">${esc(r.location||'—')}</span><div class="board-meta"><small>${esc(r.owner||'—')}</small><small>${r.date.slice(5)}</small></div></button>`).join(''):`<p class="small-muted">${T('此分類尚無資料','No items in this column','គ្មានទិន្នន័យក្នុងផ្នែកនេះ')}</p>`}</section>`;}).join('')}</div>`;}
-function recordsPage(){return `${title(T('每一筆，都有來源。','Every record. Traceable.','កំណត់ត្រានីមួយៗ មានប្រភព។'),T('集中查詢，日期、狀態與資料來源一眼清楚。','Search by period, status and source without duplicating records.','ស្វែងរកតាមរយៈពេល ស្ថានភាព និងប្រភពដោយមិនស្ទួន។'))}${modebar()}${periods()}${filters()}<p class="scroll-hint">${T('左右滑動查看完整欄位','Swipe horizontally for more columns','អូសឆ្វេងស្ដាំដើម្បីមើលជួរឈរបន្ថែម')}</p>${table(rows(),true)}`;}
+function recordsPage(){
+  const m=MODULE_MAP[state.module],g=GROUPS.find(x=>x.id===state.route),list=rows();
+  const scopeName=m?t(m.name):g?t(g.name):T('全部紀錄','All records','កំណត់ត្រាទាំងអស់');
+  const changed=cloudUI.pendingCount(state.module,state.group);
+  return `${title(esc(scopeName),m?esc(t(m.desc)):T('集中查詢及管理 PSJGA 總表紀錄。','Manage the PSJGA records in one place.','គ្រប់គ្រងកំណត់ត្រា PSJGA នៅកន្លែងតែមួយ។'),false)}
+  ${m?moduleTabs(m):''}<div class="ledger-tools" aria-label="${T('紀錄操作','Record actions','សកម្មភាពកំណត់ត្រា')}">
+    ${button(T('新增紀錄','New record','កំណត់ត្រាថ្មី'),'new','plus','primary')}
+    ${button(T('匯入 JSON／CSV','Import JSON / CSV','នាំចូល JSON / CSV'),'import','upload')}
+    ${button(T('匯出 CSV','Export CSV','នាំចេញ CSV'),'export','download')}
+    ${button(T('備份 JSON','Backup JSON','បម្រុងទុក JSON'),'cloud-export','database','small')}
+    ${button(T('回收站','Trash','ធុងសំរាម'),'ledger-trash','trash','small')}
+    ${state.selected.size&&state.dataset!=='demo'?button(T('刪除已選','Delete selected','លុបអ្វីដែលបានជ្រើស')+' · '+state.selected.size,'ledger-delete-selected','trash','small danger'):''}
+  </div>
+  <p class="ledger-source-note">${T('這裡管理 PSJGA 雲端總表。原系統的歷史紀錄和核可流程仍在原頁。','This page manages the PSJGA cloud ledger. Original records and approvals stay in their own systems.','ទំព័រនេះគ្រប់គ្រងតារាងពពក PSJGA។ កំណត់ត្រា និងអនុម័តដើមនៅប្រព័ន្ធដើម។')}${changed?' · '+n(changed)+' '+T('筆待上傳','pending changes','រង់ចាំផ្ទុក'):''}</p>
+  ${state.dataset==='demo'?modebar():''}${periods()}${filters()}${ledgerConflictPanel()}
+  <p class="scroll-hint">${T('點紀錄看明細，可左右滑動表格。','Open a record for details; swipe for more columns.','ចុចកំណត់ត្រាដើម្បីមើលលម្អិត។')}</p>${table(list,true)}`;
+}
+const rawLedgerRow=key=>state.snapshot?.records.find(row=>recordKey(row)===key);
+const inLedgerScope=row=>(!state.module||row.module===state.module)&&(state.group==='all'||MODULE_MAP[row.module].group===state.group);
+function ledgerConflictPanel(){
+  const conflicted=cloudUI.conflicts().map(rawLedgerRow).filter(row=>row&&inLedgerScope(row));
+  if(!conflicted.length)return '';
+  return `<section class="panel ledger-conflicts"><h2>${T('雲端與本機都有修改','Cloud and local edits conflict','ការកែប្រែមានជម្លោះ')}</h2><p>${T('本機修改已保留，選好版本才會上傳。','Your draft is retained. Choose a version before uploading.','ការកែប្រែក្នុងម៉ាស៊ីនបានរក្សាទុក។')}</p>${conflicted.map(row=>{
+    const key=recordKey(row),remote=cloudUI.serverRow(key),attrs=`data-key="${esc(key)}"`;
+    return `<div class="ledger-conflict-row"><div><strong>${esc(row.id)}</strong><small>${T('本機','Local','ក្នុងម៉ាស៊ីន')}：${esc(t(row.title))}${row.deleted?' · '+T('已刪除','Deleted','បានលុប'):''}<br>${T('雲端','Cloud','ពពក')}：${esc(t(remote?.title)||'—')}${remote?.deleted?' · '+T('已刪除','Deleted','បានលុប'):''}</small></div><div class="actions">${button(T('採用雲端版','Keep cloud version','ប្រើកំណែពពក'),'ledger-conflict-discard',null,'small',attrs)}${button(T('保留本機版','Keep local version','រក្សាកំណែក្នុងម៉ាស៊ីន'),'ledger-conflict-keep',null,'small',attrs)}</div></div>`;
+  }).join('')}</section>`;
+}
+let ledgerEditing=null;
+function ledgerEditor(key=null){
+  if(state.dataset==='demo'){toast(T('請先返回正式總表。','Return to the live ledger first.','សូមត្រឡប់ទៅតារាងពិត។'));return;}
+  if(cloudUI.isBusy()||!cloudUI.ensureConnected())return;
+  const row=key?rawLedgerRow(key):null;
+  if(key&&(!row||row.deleted))return;
+  const modules=row?[MODULE_MAP[row.module]]:state.module?[MODULE_MAP[state.module]]:MODULES.filter(m=>state.group==='all'||m.group===state.group);
+  const range=periodRange(state.mode,state.ref),today=todayICT(),date=row?.date||(today>=range.from&&today<=range.to?today:state.ref);
+  ledgerEditing={key,generatedId:row?.id||'PSJGA-'+globalThis.crypto.randomUUID(),version:row?stableJSON(row):null};
+  const field=(label,id,value,attributes='')=>`<label>${label}<input id="${id}" value="${esc(value)}" ${attributes}></label>`;
+  openDialog(`<div class="dialog-head"><div><small>PSJGA</small><h2>${row?T('編輯紀錄','Edit record','កែសម្រួលកំណត់ត្រា'):T('新增紀錄','New record','កំណត់ត្រាថ្មី')}</h2></div>${closeButton()}</div>
+  <form id="ledger-form" class="ledger-form">
+    <div class="dialog-body cloud-dialog ledger-fields">
+      <label>${T('業務','Module','មុខងារ')}<select id="ledger-module" ${row||state.module?'disabled':''}>${modules.map(m=>`<option value="${m.id}">${esc(t(m.name))}</option>`).join('')}</select></label>
+      ${field(T('業務日期','Business date','ថ្ងៃប្រតិបត្តិការ'),'ledger-date',date,'type="date" required')}
+      ${field(T('單號／紀錄 ID','Reference / record ID','លេខកំណត់ត្រា'),'ledger-id',row?.id||'',row?'readonly':'maxlength="200" placeholder="'+esc(T('留空自動產生','Generated if blank','ទុកទទេដើម្បីបង្កើត'))+'"')}
+      <label>${T('狀態','Status','ស្ថានភាព')}<select id="ledger-status" ${row?.requiresApproval?'disabled':''}>${STATUSES.filter(v=>v===row?.status||['in_progress','abnormal','completed'].includes(v)).map(v=>`<option value="${v}" ${v===(row?.status||'in_progress')?'selected':''}>${statusText(v)}</option>`).join('')}</select></label>
+      <label class="ledger-wide">${T('標題','Title','ចំណងជើង')}<input id="ledger-title" value="${esc(row?t(row.title):'')}" maxlength="500" required></label>
+      ${field(T('負責人','Owner','អ្នកទទួលខុសត្រូវ'),'ledger-owner',row?.owner||'','maxlength="150"')}
+      ${field(T('地點','Location','ទីតាំង'),'ledger-location',row?.location||'','maxlength="200"')}
+      ${field(T('金額','Amount','ចំនួនប្រាក់'),'ledger-amount',row?.amount??'','type="number" min="0" step=".01"')}
+      <label>${T('幣別','Currency','រូបិយប័ណ្ណ')}<select id="ledger-currency"><option>USD</option><option ${row?.currency==='KHR'?'selected':''}>KHR</option></select></label>
+      ${field(T('數量','Quantity','បរិមាណ'),'ledger-quantity',row?.quantity??'','type="number" min="0" step="any"')}
+      ${field(T('單位','Unit','ឯកតា'),'ledger-unit',row?.unit||'','maxlength="200" placeholder="kg / L / 件"')}
+      ${field(T('關聯單號','Related document','លេខឯកសារពាក់ព័ន្ធ'),'ledger-related',row?.relatedDocumentId||'','maxlength="200"')}
+      <label class="ledger-posted"><input type="checkbox" id="ledger-posted" ${row?.posted?'checked':''}>${T('已入帳實支','Posted expense','ចំណាយបានចុះបញ្ជី')}</label>
+      <label class="ledger-wide">${T('備註','Notes','កំណត់សម្គាល់')}<textarea id="ledger-notes" maxlength="5000" rows="3">${esc(row?.notes||'')}</textarea></label>
+      <label class="ledger-wide">${T('附件網址（HTTPS，每行一筆）','Attachment URLs (HTTPS, one per line)','តំណឯកសារ HTTPS មួយក្នុងមួយបន្ទាត់')}<textarea id="ledger-attachments" rows="2">${esc((row?.attachments||[]).join('\n'))}</textarea></label>
+      <p id="ledger-form-note" class="ledger-wide">${T('儲存會寫入 PSJGA 總表。原系統核可請到原頁完成。','Save writes to the PSJGA ledger. Approvals still belong in the original system.','រក្សាទុកទៅតារាង PSJGA។ ការអនុម័តធ្វើនៅប្រព័ន្ធដើម។')}</p>
+      <p class="cloud-feedback error ledger-wide" id="ledger-form-error" role="alert" hidden></p>
+    </div><div class="dialog-footer"><button class="btn primary" type="submit" id="ledger-save">${I('check')}${T('儲存到雲端','Save to cloud','រក្សាទុកក្នុងពពក')}</button></div></form>`);
+}
+async function saveLedgerForm(){
+  if(!ledgerEditing||cloudUI.isBusy())return;
+  const el=id=>dialog.querySelector('#ledger-'+id),value=id=>el(id)?.value?.trim()||'';
+  const error=msg=>{const e=el('form-error');if(e){e.hidden=false;e.textContent=msg;}};
+  const old=ledgerEditing.key?rawLedgerRow(ledgerEditing.key):null;
+  if(ledgerEditing.key&&(!old||old.deleted||stableJSON(old)!==ledgerEditing.version)){error(T('紀錄已變更，請重新開啟編輯。','The record changed. Reopen it to edit.','កំណត់ត្រាបានផ្លាស់ប្តូរ។ សូមបើកម្ដងទៀត។'));return;}
+  const moduleId=value('module'),m=Object.hasOwn(MODULE_MAP,moduleId)?MODULE_MAP[moduleId]:null,id=old?.id||value('id')||ledgerEditing.generatedId;
+  const title=value('title'),date=value('date'),qty=value('quantity'),amount=value('amount');
+  const urls=value('attachments').split(/\r?\n/).map(v=>v.trim()).filter(Boolean);
+  if(!m||!title||!date||id.includes('|')||urls.length>100||urls.some(s=>s.length>3000||!/^https:\/\//i.test(s))){
+    error(T('請確認標題、日期、單號和 HTTPS 附件網址。','Check the title, date, record ID, and HTTPS attachments.','សូមពិនិត្យចំណងជើង កាលបរិច្ឆេទ លេខ និងតំណ HTTPS។'));return;
+  }
+  const k=recordKey({id,source:m.source,module:m.id});
+  if(!old&&rawLedgerRow(k)){error(T('這個業務已有相同單號，請編輯原紀錄或到回收站還原。','This ID already exists. Edit it or restore it from the trash.','លេខនេះមានរួច។ សូមកែ ឬស្ដារពីធុងសំរាម។'));return;}
+  if(cloudUI.hasConflict(k)){error(T('請先在紀錄頁選擇保留本機版或雲端版。','Choose the local or cloud version on the records page first.','សូមជ្រើសកំណែក្នុងម៉ាស៊ីន ឬពពកជាមុន។'));return;}
+  const posted=!!el('posted')?.checked;
+  if((qty&&!value('unit'))||(posted&&!amount)){error(T('有數量時請填單位；已入帳實支須填金額。','Quantity needs a unit; a posted expense needs an amount.','បរិមាណត្រូវការឯកតា។ ចំណាយបានចុះបញ្ជីត្រូវការចំនួនប្រាក់។'));return;}
+  let row;
+  try{
+    row=normalizeCloudSnapshot({schemaVersion:1,generatedAt:new Date().toISOString(),records:[{...old,id,source:m.source,module:m.id,date,
+      title:old&&title===t(old.title)?old.title:title,updatedAt:old?.updatedAt||ledgerNextStamp(),
+      status:old?.requiresApproval?old.status:value('status'),owner:value('owner'),location:value('location'),notes:el('notes')?.value||'',
+      amount:amount?Number(amount):undefined,currency:amount?value('currency'):undefined,posted,
+      quantity:qty?Number(qty):undefined,unit:qty?value('unit'):undefined,relatedDocumentId:value('related'),attachments:urls,deleted:false}]}).records[0];
+  }catch{error(T('資料格式不符，請核對日期、金額、數量和必填欄位。','Check the date, amount, quantity, and required fields.','សូមពិនិត្យកាលបរិច្ឆេទ ចំនួនប្រាក់ បរិមាណ និងវាលចាំបាច់។'));return;}
+  if(old&&stableJSON(old)===stableJSON(row)){dialog.close();toast(T('沒有變更。','No changes.','គ្មានការផ្លាស់ប្តូរ។'));return;}
+  row.updatedAt=ledgerNextStamp(old,cloudUI.serverRow(k));
+  const ok=await cloudUI.saveRecords([row],{onStaged:()=>{
+    state.ref=date;state.query='';state.status='all';state.page=1;ledgerEditing=null;dialog.close();
+  }});
+  if(!ok&&dialog.querySelector('#ledger-form'))error(T('無法儲存，請查看雲端狀態。','Save failed. Check the cloud status.','មិនអាចរក្សាទុកបាន។ សូមពិនិត្យស្ថានភាពពពក។'));
+}
+async function deleteLedger(keys){
+  if(state.dataset!=='snapshot'||cloudUI.isBusy()||!cloudUI.ensureConnected())return;
+  const candidates=[...new Set(keys)].map(rawLedgerRow).filter(row=>row&&!row.deleted&&inLedgerScope(row));
+  if(!candidates.length)return;
+  if(candidates.some(row=>cloudUI.hasConflict(recordKey(row)))){toast(T('請先處理紀錄衝突。','Resolve record conflicts first.','សូមដោះស្រាយជម្លោះជាមុន។'));return;}
+  if(!confirm(T('將 '+candidates.length+' 筆紀錄移到 PSJGA 回收站？原系統不變。','Move '+candidates.length+' records to PSJGA trash? Original systems are unaffected.','ផ្លាស់ទី '+candidates.length+' កំណត់ត្រាទៅធុងសំរាម PSJGA?')))return;
+  await cloudUI.saveRecords(candidates.map(row=>({...row,deleted:true,updatedAt:ledgerNextStamp(row)})),{onStaged:()=>dialog.close()});
+}
+function ledgerTrash(){
+  const removed=(state.snapshot?.records||[]).filter(r=>r.deleted&&inLedgerScope(r)).sort((a,b)=>b.updatedAt.localeCompare(a.updatedAt));
+  openDialog(`<div class="dialog-head"><div><small>PSJGA</small><h2>${T('回收站','Trash','ធុងសំរាម')}</h2></div>${closeButton()}</div><div class="dialog-body cloud-dialog">
+  <p>${T('已刪除紀錄不列入統計，可使用原單號還原。','Deleted records do not count in reports and can be restored with their original IDs.','កំណត់ត្រាលុបមិនរាប់ក្នុងរបាយការណ៍ ហើយអាចស្ដារវិញ។')}</p>
+  ${removed.length?removed.slice(0,100).map(r=>`<div class="ledger-conflict-row"><div><strong>${esc(t(r.title))}</strong><small>${esc(r.id)}</small></div>${button(T('還原','Restore','ស្ដារ'),'ledger-restore',null,'small',`data-key="${esc(recordKey(r))}"`)}</div>`).join(''):T('沒有已刪除的紀錄。','No deleted records.','គ្មានកំណត់ត្រាលុប។')}${removed.length>100?T('顯示最近 100 筆。','Showing the 100 latest.','បង្ហាញ ១០០ ចុងក្រោយ។'):''}</div>`);
+}
+async function restoreLedger(key){
+  const row=rawLedgerRow(key);
+  if(state.dataset!=='snapshot'||!row?.deleted||!inLedgerScope(row)||cloudUI.hasConflict(key)||!cloudUI.ensureConnected())return;
+  if(!confirm(T('還原這筆 PSJGA 紀錄？','Restore this PSJGA record?','ស្ដារកំណត់ត្រា PSJGA នេះ?')))return;
+  await cloudUI.saveRecords([{...row,deleted:false,updatedAt:ledgerNextStamp(row)}],{onStaged:()=>dialog.close()});
+}
 function reportsPage(){const list=rows(),m=metrics(list),qt=quantityTotals(list);return `${title(T('看得懂，也對得起來。','Clear numbers. Clear meaning.','តួលេខច្បាស់ យល់ន័យច្បាស់។'),T('筆數、金額與數量分開，每個數字都能下鑽核對。','Counts, currencies and units stay separate. Drill into every figure.','បំបែកចំនួន រូបិយប័ណ្ណ និងឯកតា។ ចុចដើម្បីផ្ទៀងផ្ទាត់តួលេខ។'))}${modebar()}${periods()}${filters()}${stats()}<div class="currency-grid">${['USD','KHR'].map(c=>`<section class="panel report-card"><span class="pill gray">${c} · ${T('已入帳實支','Posted actual expenses','ចំណាយពិតបានចុះបញ្ជី')}</span><div class="stat-value">${state.dataset==='empty'?'—':money(m.expenses[c]||0,c)}</div><div class="method-note">${T('不含待核可採購、收貨庫存價值、ETC 儲值；不同幣別不直接相加。','Excludes pending PO, stock receipt value and ETC top-ups. No mixed-currency total.','មិនរាប់ការទិញរង់ចាំអនុម័ត តម្លៃស្តុកទទួល និងបញ្ចូល ETC។ មិនបូករូបិយប័ណ្ណផ្សេងគ្នា។')}</div></section>`).join('')}</div><div class="grid-two">${trend()}<section class="panel"><div class="panel-head"><h2>${T('按單位分列','Units, kept separate','បែងចែកតាមឯកតា')}</h2>${I('layers')}</div><div class="panel-body">${Object.keys(qt).length?Object.entries(qt).map(([unit,v])=>`<div class="count-detail"><span>${esc(unit)}</span><strong>${n(v)}</strong></div>`).join(''):`<p class="small-muted">${T('本期無可加總數量','No additive quantities in this period','គ្មានបរិមាណសម្រាប់បូកក្នុងរយៈពេលនេះ')}</p>`}<p class="method-note">${T('公斤、公升、桶數各自統計；溫度及相對濕度屬讀數，不做累加。','kg, litres and drums are separate. Temperature and humidity are readings, not additive totals.','គីឡូក្រាម លីត្រ និងធុងគណនាដាច់គ្នា។ មិនបូកសីតុណ្ហភាព ឬសំណើម។')}</p></div></section></div><div class="scope-note">${T('計算方式：來源＋模組＋原始 ID 識別紀錄，保留最新版與刪除標記；明確關聯為同一事件才跨來源去重。','Method: source + module + original ID; latest revision and deletion markers retained. Cross-source deduplication requires an explicit shared event ID.','វិធីគណនា៖ ប្រភព + មុខងារ + ID ដើម រក្សាកំណែថ្មី និងសញ្ញាលុប។ បំបាត់ស្ទួនឆ្លងប្រភពត្រូវមាន ID កិច្ចការរួមច្បាស់លាស់។')}</div>${table(list)}`;}
 function sourcesPage(){const live=eventRows(sources());return `${title(T('先確認來源，再相信數字。','Know where your data comes from.','ដឹងប្រភព មុនជឿតួលេខ។'),T('原模組已核對；統一總表接入狀態單獨顯示。','Module entrypoints are verified. Unified-data connection is shown separately.','ច្រកមុខងារបានផ្ទៀងផ្ទាត់។ ស្ថានភាពភ្ជាប់ទិន្នន័យរួមបង្ហាញដាច់ដោយឡែក។'),false)}${modebar()}<div class="source-grid">${Object.entries(SOURCES).map(([key,s])=>`<section class="panel source-card"><span class="pill gray">${T('原功能保留','Original workflows retained','រក្សាមុខងារដើម')}</span><h3 style="color:${s.color};margin-top:18px">${s.name}</h3><p>${esc(s.repo)} · ${MODULES.filter(m=>m.source===key).length} ${T('個入口已盤點','entrypoints checked','ច្រកចូលបានផ្ទៀងផ្ទាត់')}</p><div class="keyline">${T('原模組入口','Module entrypoints','ច្រកមុខងារដើម')} <span class="pill teal">${T('程式已核對','Source checked','បានពិនិត្យកូដ')}</span><br>${T('原資料庫','Original database','មូលដ្ឋានទិន្នន័យដើម')} <span class="pill gray">${T('由原模組同步','Sync in original module','សមកាលកម្មក្នុងមុខងារដើម')}</span><br>${T('總表目前紀錄','Current workspace records','កំណត់ត្រារួមបច្ចុប្បន្ន')} · ${state.dataset==='empty'?'—':live.filter(r=>r.source===key||r.sourceRefs.some(k=>k.startsWith(key+'|'))).length}</div><div class="actions" style="margin-top:20px">${link(T('開啟原平台','Original platform','បើកប្រព័ន្ធដើម'),s.url,'btn small')}</div></section>`).join('')}</div><section class="panel report-block"><div class="panel-head"><div><h2>${T('接入統一資料快照','Load a unified data snapshot','ផ្ទុករូបថតទិន្នន័យរួម')}</h2><div class="panel-sub">${T('合併後可上傳 PSJGA 總表。各原系統仍在原頁同步。','Merge then upload to PSJGA. Original systems sync in their own modules.','បញ្ចូលរួចផ្ទុកទៅ PSJGA។ ប្រព័ន្ធដើមសមកាលកម្មនៅទំព័រដើម។')}</div></div></div><div class="panel-body"><div class="import-box">${I('upload')}<strong>${T('選擇標準 JSON 快照','Choose a standard JSON snapshot','ជ្រើសរូបថតទិន្នន័យ JSON ស្តង់ដារ')}</strong>${T('保留來源、模組、原始 ID、業務日期及更新時間。','Preserves source, module, original ID, business date and revision time.','រក្សាប្រភព មុខងារ ID ដើម កាលបរិច្ឆេទ និងពេលធ្វើបច្ចុប្បន្នភាព។')}<div class="actions" style="justify-content:center;margin-top:18px">${button(T('選取 JSON','Choose JSON','ជ្រើស JSON'),'import','upload','primary')}${button(T('下載格式範例','Download example','ទាញយកគំរូ'),'template','download')}${button(T('匯出總表 JSON','Export full JSON','នាំចេញ JSON'),'cloud-export','download')}</div></div><div class="scope-note">${T('Excel 匯入、新增、修改、刪除、核可與上雲，仍可在各原模組完整操作。此處為新總表的資料介面，不會重建或清除原資料。','Excel import, editing, deletion, approval and cloud sync remain available in each original module. This snapshot interface is for the new unified view.','នាំចូល Excel កែប្រែ លុប អនុម័ត និងសមកាលកម្មពពកនៅមុខងារដើម។ ចំណុចនេះសម្រាប់ទិដ្ឋភាពទិន្នន័យរួមថ្មី។')}</div><p class="method-note">${T('上傳只同步 PSJGA 總表；匯出 JSON 包含版本與刪除標記，可用於備份。','Uploads sync only the PSJGA dataset. Full JSON exports preserve revisions and deletions for backup.','ការផ្ទុកឡើងសមកាលកម្មតែ PSJGA។ ឯកសារ JSON រក្សាកំណែ និងសញ្ញាលុប។')}</p></div></section>`;}
 function architecturePage(){const ruleData=[['link',T('一件事，一個主來源','One event, one owner','កិច្ចការមួយ ប្រភពមេមួយ'),T('單號與關聯明確才去重；不以同日期、同金額或同重量直接合併。','Link records explicitly. Never merge solely on equal date, amount or weight.','ភ្ជាប់កំណត់ត្រាច្បាស់។ កុំបញ្ចូលដោយសារកាលបរិច្ឆេទ ចំនួនប្រាក់ ឬទម្ងន់ស្មើគ្នា។')],['shield',T('保留原功能與核可','Retain workflows and approval','រក្សាមុខងារ និងការអនុម័ត'),T('第一階段保留原頁與原 GS；新平台先統一入口與讀取規格。','Phase one keeps original pages and GS. The workspace unifies navigation and the read model.','ដំណាក់កាលទីមួយរក្សាទំព័រ និង GS ដើម។ ផ្ទាំងការងាររួមបញ្ចូលការរុករក និងទម្រង់ទិន្នន័យ។')],['clock',T('日期規則一致','One calendar convention','ក្បួនកាលបរិច្ឆេទតែមួយ'),T('柬埔寨時間；週一至週日、曆月、曆年；按業務日期歸期。','Cambodia time; Monday–Sunday, calendar months and years, using the business date.','ម៉ោងកម្ពុជា សប្ដាហ៍ពីចន្ទដល់អាទិត្យ ខែ/ឆ្នាំប្រតិទិន តាមថ្ងៃប្រតិបត្តិការ។')],['wallet',T('數據分清再加總','Separate before summing','បែងចែកមុនបូក'),T('申請、收貨、實支分開；幣別與單位分列；溫濕度讀數不累加。','Separate PO, receipt and actual spend; keep currencies and units distinct; never sum climate readings.','បំបែកការទិញ ការទទួល និងចំណាយពិត រូបិយប័ណ្ណ និងឯកតា ហើយមិនបូកតម្លៃសីតុណ្ហភាព។')]];return `${title(T('總務全貌，清楚串起。','A clear architecture for General Affairs.','រចនាសម្ព័ន្ធច្បាស់សម្រាប់កិច្ចការទូទៅ។'),T('先統一入口，再依資料契約逐步接入。','Unified navigation first, then verified data adapters.','បញ្ចូលច្រកចូលរួមមុន រួចភ្ជាប់ទិន្នន័យដែលបានផ្ទៀងផ្ទាត់។'),false)}<div class="architecture"><div class="arch-row">${Object.entries(SOURCES).map(([id,s])=>`<article class="arch-card"><h3 style="color:${s.color}">${s.name}</h3><p>${MODULES.filter(m=>m.source===id).length} ${T('個原模組','original modules','មុខងារដើម')} · ${s.repo}<br>${T('原資料、原照片、原核可','Original data, photos and approvals','ទិន្នន័យ រូបថត និងអនុម័តដើម')}</p></article>`).join('')}</div><div class="arch-connector">↓ ${T('讀取轉接・只認主來源','Read adapters · authoritative sources','ភ្ជាប់ការអាន · ប្រភពមេ')} ↓</div><article class="arch-core"><h3>${T('總務統一資料層','Unified General Affairs read model','ស្រទាប់ទិន្នន័យរួមកិច្ចការទូទៅ')}</h3><p>${T('來源＋模組＋原始 ID → 版本核對／刪除標記 → 事件關聯 → 日週月年統計 → 可追溯明細','Source + module + original ID → revisions / tombstones → explicit event links → period metrics → traceable detail','ប្រភព + មុខងារ + ID ដើម → កំណែ / សញ្ញាលុប → តំណកិច្ចការ → ស្ថិតិតាមរយៈពេល → ព័ត៌មានអាចតាមដាន')}</p></article><div class="arch-connector">↓ ${T('同一套搜尋、期間、明細與待辦','Shared search, periods, detail and actions','ការស្វែងរក រយៈពេល ព័ត៌មាន និងកិច្ចការរួម')} ↓</div><div class="module-grid" style="margin:0">${GROUPS.map(g=>`<button class="arch-card" style="text-align:left" data-route="${g.id}"><h3>${I(g.icon)} ${t(g.name)}</h3><p>${t(g.desc)}</p></button>`).join('')}</div><div class="rules">${ruleData.map(([i,h,p])=>`<div class="rule">${I(i)}<div><strong>${h}</strong><p>${p}</p></div></div>`).join('')}</div><section class="panel"><div class="panel-head"><h2>${T('功能連續性','Workflow continuity','ការបន្តមុខងារ')}</h2><span class="pill teal">23 / 23 ${T('入口已盤點','entrypoints mapped','ច្រកបានរៀបចំ')}</span></div><div class="panel-body"><p class="method-note">${T('原新增／編輯／刪除、照片、Excel 匯入出、上傳下載、歷史與核可入口均可沿原模組進入。此版本沒有改寫三個正式平台或 GS；完整跨系統資料接入及核可整合須再依原欄位驗收。','Original editing, photos, Excel, upload/download, history and approval are accessible through the original modules. This version does not rewrite the three production apps or GS; unified live data and approval require adapter validation.','ការកែប្រែ រូបថត Excel សមកាលកម្ម ប្រវត្តិ និងអនុម័តនៅតែអាចចូលតាមមុខងារដើម។ កំណែនេះមិនកែប្រព័ន្ធពិតទាំងបី ឬ GS ទេ។ ទិន្នន័យពិត និងអនុម័តរួមត្រូវផ្ទៀងផ្ទាត់ការភ្ជាប់បន្ថែម។')}</p></div></section></div>`;}
-function workspacePage(){const m=MODULE_MAP[state.workspace];return `${title(esc(t(m.name)),`${SOURCES[m.source].name} · ${esc(t(m.desc))}`,false)}<div class="route-back">${button(T('返回功能列表','Back to modules','ត្រឡប់ទៅបញ្ជីមុខងារ'),'workspace-back','left','small')}</div><section class="module-workspace"><div class="workspace-head"><span>${T('原功能操作區・日期以原模組設定為準','Original workspace · dates follow the module settings','មុខងារដើម · រយៈពេលតាមការកំណត់ក្នុងមុខងារ')}</span><div class="actions">${link(T('另開完整原頁','Open full original page','បើកទំព័រដើមពេញលេញ'),m.url,'btn small')}</div></div><iframe title="${esc(t(m.name))}" src="${esc(m.url)}" referrerpolicy="no-referrer" loading="eager"></iframe><div class="workspace-hint">${T('若原頁限制嵌入或尚在載入，可直接另開原頁。原有資料與核可仍由原系統處理。','If the original page blocks embedding or is still loading, open it in its own tab. Data and approval stay in the original system.','បើទំព័រដើមមិនអនុញ្ញាតបង្កប់ ឬកំពុងផ្ទុក សូមបើកទំព័រដើមដាច់ដោយឡែក។ ទិន្នន័យ និងអនុម័តនៅប្រព័ន្ធដើម។')}</div></section>`;}
-function content(){let c=state.workspace?workspacePage():state.route==='overview'?overview():state.route==='tasks'?tasksPage():state.route==='records'?recordsPage():state.route==='reports'?reportsPage():state.route==='sources'?sourcesPage():state.route==='architecture'?architecturePage():modulesPage();return c+`<footer class="screen-footer"><span>VRT · General Affairs Workspace · v1.1</span><span>${T('業務日期 · Asia/Phnom_Penh · 資料可追溯','Business date · Asia/Phnom_Penh · traceable data','ថ្ងៃប្រតិបត្តិការ · Asia/Phnom_Penh · ទិន្នន័យអាចតាមដាន')}</span></footer>`;}
-function render(){document.documentElement.lang=state.lang==='zh'?'zh-Hant':state.lang==='km'?'km':'en';app.innerHTML=shell();document.body.style.overflow=state.menu?'hidden':'';document.title='VRT · '+T('總務整合工作台','General Affairs Workspace','ផ្ទាំងការងារកិច្ចការទូទៅ');}
-function route(r){if(state.workspace&&!confirm(T('切換前請先儲存原模組填寫內容。確定離開？','Save any changes in the original module before leaving. Continue?','សូមរក្សាទុកការកែប្រែក្នុងមុខងារដើមមុនចាកចេញ។ បន្ត?')))return;state.workspace=null;state.route=r;state.menu=false;state.page=1;state.selected.clear();state.group=GROUPS.some(g=>g.id===r)?r:'all';state.status='all';state.query='';state.source='all';history.replaceState(null,'','#'+r);render();window.scrollTo(0,0);}
+function moduleTabs(m){
+  return `<nav class="module-tabs" aria-label="${T('業務分頁','Module views','ទំព័រមុខងារ')}"><div class="module-tabs-inner">
+    <a href="#${m.id}" data-route="${m.id}" ${state.workspace?'aria-current="page"':''}>${I(m.icon)}${T('原系統作業','Operations','ប្រតិបត្តិការដើម')}</a>
+    <a href="#${m.id}/records" data-route="${m.id}/records" ${state.workspace?'':'aria-current="page"'}>${I('file')}${T('總表紀錄','Ledger records','តារាងកំណត់ត្រា')}</a>
+  </div>${link(T('另開原頁','Open original tab','បើកទំព័រដើម'),m.url,'btn small')}</nav>`;
+}
+function workspacePage(){
+  const m=MODULE_MAP[state.workspace];
+  return `<h1 class="visually-hidden">${esc(t(m.name))}</h1>${moduleTabs(m)}`;
+}
+function workspaceFrame(){
+  const m=MODULE_MAP[state.workspace];
+  return m?`<iframe title="${esc(t(m.name))}" src="${esc(m.url)}" referrerpolicy="no-referrer"></iframe>`:'';
+}
+function content(){
+  if(state.workspace)return workspacePage();
+  if(state.route==='overview')return overview();
+  if(state.route==='tasks')return tasksPage();
+  if(state.route==='records'||state.module||GROUPS.some(g=>g.id===state.route))return recordsPage();
+  if(state.route==='reports')return reportsPage();
+  if(state.route==='sources')return sourcesPage();
+  if(state.route==='architecture')return architecturePage();
+  return modulesPage();
+}
+let mountedWorkspace=null;
+function render(){
+  document.documentElement.lang=state.lang==='zh'?'zh-Hant':state.lang==='km'?'km':'en';
+  document.body.style.overflow=state.menu?'hidden':'';
+  document.title='VRT · '+(state.module?t(MODULE_MAP[state.module].name):T('總務整合工作台','General Affairs Workspace','ផ្ទាំងការងារកិច្ចការទូទៅ'));
+  const view=app.querySelector?.('#ga-content');
+  if(!view){app.innerHTML=shell();mountedWorkspace=state.workspace;return;}
+  const sidebar=app.querySelector('#ga-sidebar'),main=app.querySelector('#main'),cloud=app.querySelector('#cloud-slot'),host=app.querySelector('#ga-workspace');
+  sidebar.innerHTML=sideContent();sidebar.classList.toggle('open',state.menu);
+  app.querySelector('.backdrop').classList.toggle('on',state.menu);
+  app.querySelector('.topbar').innerHTML=topContent();
+  app.querySelector('.mobile-nav').innerHTML=mobileContent();
+  app.querySelector('.screen-footer').innerHTML=footer();
+  view.innerHTML=content();
+  cloud.hidden=!!state.workspace;cloud.innerHTML=cloudUI.toolbar();
+  main.classList.toggle('is-original',!!state.workspace);
+  host.hidden=!state.workspace;
+  // Keep one original page mounted when the user looks at its ledger.
+  if(state.workspace&&mountedWorkspace!==state.workspace){host.innerHTML=workspaceFrame();mountedWorkspace=state.workspace;}
+}
+function decodeRoute(path){
+  if(typeof path!=='string')return null;
+  const ledger=path.endsWith('/records'),name=ledger?path.slice(0,-8):path,mod=Object.hasOwn(MODULE_MAP,name)?name:null;
+  if(ledger&&!mod||!Object.hasOwn(routeNames(),name))return null;
+  return {name,mod,workspace:ledger?null:mod,path};
+}
+const currentPath=()=>state.module&&!state.workspace?state.route+'/records':state.route;
+function route(path,{write=true}={}){
+  const next=decodeRoute(path);if(!next)return;
+  const same=next.path===currentPath();
+  dialog.close();
+  if(same){setMenu(false);return;}
+  state.workspace=next.workspace;state.route=next.name;state.module=next.mod;state.menu=false;state.page=1;state.selected.clear();
+  state.group=GROUPS.some(g=>g.id===next.name)?next.name:'all';state.status='all';state.query='';state.source='all';
+  if(write)(history.pushState||history.replaceState).call(history,null,'','#'+next.path);
+  render();window.scrollTo(0,0);
+}
 function toast(text){const el=document.querySelector('#toast');el.textContent=text;el.classList.add('on');clearTimeout(toast.timer);toast.timer=setTimeout(()=>el.classList.remove('on'),4000);}
 function download(name,text,type='text/plain;charset=utf-8'){const url=URL.createObjectURL(new Blob([text],{type})),a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
 function openDialog(html,drawer=false){dialog.close();dialog.className=drawer?'drawer':'';dialog.innerHTML=html;dialog.showModal();}
 const closeButton=()=>`<button class="icon-button" data-action="close" aria-label="${T('關閉','Close','បិទ')}">${I('close')}</button>`;
-function newDialog(){openDialog(`<div class="dialog-head"><div><h2>${T('選擇要新增的業務','Choose a module to create a record','ជ្រើសមុខងារដើម្បីបង្កើតកំណត់ត្រា')}</h2><small>${T('開啟原模組，沿用原有表單與核可','Uses the original form and approval flow','ប្រើទម្រង់ និងលំហូរអនុម័តដើម')}</small></div>${closeButton()}</div><div class="dialog-body command-list">${MODULES.map(m=>`<button class="command-result" style="width:100%;border:0;background:transparent;text-align:left;color:inherit" data-action="module" data-module="${m.id}">${I(m.icon)}${esc(t(m.name))}<small>${SOURCES[m.source].name}</small>${I('chevron')}</button>`).join('')}</div>`);}
 let drawerList=[],drawerIndex=0,drawerTab='detail';
 function recordDialog(key){drawerList=rows();drawerIndex=drawerList.findIndex(r=>recordKey(r)===key);if(drawerIndex<0)return;drawerTab='detail';drawRecord();}
-function drawRecord(){const r=drawerList[drawerIndex],m=MODULE_MAP[r.module],f=(name,value)=>`<div><div class="field-label">${name}</div><div class="field-value">${esc(value||'—')}</div></div>`;const base=`<div class="dialog-head"><div><small>${SOURCES[r.source].name} / ${esc(t(m.name))}</small><h2>${esc(r.id)}</h2></div><div class="actions"><span class="small-muted">${drawerIndex+1}/${drawerList.length}</span>${button('','detail-prev','left','square',`aria-label="Previous record" ${drawerIndex===0?'disabled':''}`)}${button('','detail-next','chevron','square',`aria-label="Next record" ${drawerIndex===drawerList.length-1?'disabled':''}`)}${closeButton()}</div></div><div class="dialog-body">${statusPill(r.status)}<div class="detail-title">${esc(t(r.title))}</div><div class="tabs">${[['detail',T('基本資料','Details','ព័ត៌មានមូលដ្ឋាន')],['photos',T('照片／證據','Evidence','ភស្តុតាង')],['source',T('來源與核對','Source & checks','ប្រភព និងផ្ទៀងផ្ទាត់')]].map(([k,l])=>`<button data-detail-tab="${k}" class="${drawerTab===k?'on':''}">${l}${k==='photos'?' '+r.attachments.length:''}</button>`).join('')}</div>`;let body='';if(drawerTab==='detail')body=`<div class="detail-grid">${f(T('業務日期','Business date','ថ្ងៃប្រតិបត្តិការ'),r.date)}${f(T('所屬模組','Module','មុខងារ'),t(m.name))}${f(T('負責人','Owner','អ្នកទទួលខុសត្រូវ'),r.owner)}${f(T('地點','Location','ទីតាំង'),r.location)}${r.amount!=null?f(T('金額／幣別','Amount / currency','ចំនួនប្រាក់ / រូបិយប័ណ្ណ'),money(r.amount,r.currency)):''}${r.quantity!=null?f(T('數量／單位','Quantity / unit','បរិមាណ / ឯកតា'),n(r.quantity)+' '+r.unit):''}${r.reviewer?f(T('審查流程','Review','លំហូរពិនិត្យ'),r.reviewer):''}${r.approver?f(T('核可人','Approver','អ្នកអនុម័ត'),r.approver):''}</div>${r.notes?`<div class="detail-note">${esc(r.notes)}</div>`:''}<div class="scope-note">${T('新增、修改、照片與核可，進入原模組沿用原流程。','Editing, photos and approval continue in the original module.','ការកែប្រែ រូបថត និងអនុម័តបន្តនៅមុខងារដើម។')}</div>`;if(drawerTab==='photos')body=`<div style="padding:24px 0">${r.attachments.length?`<div class="attachments">${r.attachments.map((url,i)=>link(T('查看附件','Open evidence','បើកភស្តុតាង')+' '+(i+1),url)).join('')}</div>`:`<div class="empty-state">${I('camera')}<strong>${T('此筆預覽未附照片','No photos in this preview record','គ្មានរូបថតក្នុងកំណត់ត្រាមើលនេះ')}</strong><p>${T('原模組的照片功能仍保留；正式接入時帶入附件連結。','Original photo workflows remain available. Live adapters will provide attachment references.','មុខងាររូបថតដើមនៅរក្សា។ ការភ្ជាប់ទិន្នន័យពិតនឹងនាំចូលតំណឯកសារ។')}</p></div>`}</div>`;if(drawerTab==='source')body=`<div class="detail-grid">${f(T('原系統','Original system','ប្រព័ន្ធដើម'),SOURCES[r.source].name)}${f(T('原始 ID','Original ID','ID ដើម'),r.id)}${f(T('更新時間','Updated at','ពេលបច្ចុប្បន្នភាព'),r.updatedAt)}${f(T('已入帳實支','Posted actual expense','ចំណាយពិតបានចុះបញ្ជី'),r.posted?T('是','Yes','បាទ/ចាស'):T('否／其他業務階段','No / other workflow stage','ទេ / ដំណាក់កាលការងារផ្សេង'))}</div><div class="source-trace">${esc(r.sourceRefs.join('\n'))}${r.canonicalEventId?'\n\nEvent: '+esc(r.canonicalEventId):''}</div><p class="method-note">${T('相同來源與 ID 取最新版本；跨來源只依明確事件關聯去重。','Latest revision per source ID. Cross-source deduplication uses explicit event links.','យកកំណែថ្មីតាម ID ប្រភព។ បំបាត់ស្ទួនឆ្លងប្រភពដោយតំណកិច្ចការច្បាស់លាស់។')}</p>`;openDialog(base+body+`</div><div class="dialog-footer">${button(T('工作台開啟','Open workspace','បើកក្នុងផ្ទាំងការងារ'),'module',m.icon,'primary',`data-module="${m.id}"`)}${link(T('另開原頁','Open original page','បើកទំព័រដើម'),m.url)}</div>`,true);}
+function drawRecord(){const r=drawerList[drawerIndex],m=MODULE_MAP[r.module],f=(name,value)=>`<div><div class="field-label">${name}</div><div class="field-value">${esc(value||'—')}</div></div>`;const base=`<div class="dialog-head"><div><small>${SOURCES[r.source].name} / ${esc(t(m.name))}</small><h2>${esc(r.id)}</h2></div><div class="actions"><span class="small-muted">${drawerIndex+1}/${drawerList.length}</span>${button('','detail-prev','left','square',`aria-label="Previous record" ${drawerIndex===0?'disabled':''}`)}${button('','detail-next','chevron','square',`aria-label="Next record" ${drawerIndex===drawerList.length-1?'disabled':''}`)}${closeButton()}</div></div><div class="dialog-body">${statusPill(r.status)}<div class="detail-title">${esc(t(r.title))}</div><div class="tabs">${[['detail',T('基本資料','Details','ព័ត៌មានមូលដ្ឋាន')],['photos',T('照片／證據','Evidence','ភស្តុតាង')],['source',T('來源與核對','Source & checks','ប្រភព និងផ្ទៀងផ្ទាត់')]].map(([k,l])=>`<button data-detail-tab="${k}" class="${drawerTab===k?'on':''}">${l}${k==='photos'?' '+r.attachments.length:''}</button>`).join('')}</div>`;let body='';if(drawerTab==='detail')body=`<div class="detail-grid">${f(T('業務日期','Business date','ថ្ងៃប្រតិបត្តិការ'),r.date)}${f(T('所屬模組','Module','មុខងារ'),t(m.name))}${f(T('負責人','Owner','អ្នកទទួលខុសត្រូវ'),r.owner)}${f(T('地點','Location','ទីតាំង'),r.location)}${r.amount!=null?f(T('金額／幣別','Amount / currency','ចំនួនប្រាក់ / រូបិយប័ណ្ណ'),money(r.amount,r.currency)):''}${r.quantity!=null?f(T('數量／單位','Quantity / unit','បរិមាណ / ឯកតា'),n(r.quantity)+' '+r.unit):''}${r.reviewer?f(T('審查流程','Review','លំហូរពិនិត្យ'),r.reviewer):''}${r.approver?f(T('核可人','Approver','អ្នកអនុម័ត'),r.approver):''}</div>${r.notes?`<div class="detail-note">${esc(r.notes)}</div>`:''}<div class="scope-note">${T('可在總表編輯紀錄；原系統的核可及原始照片從原頁處理。','Edit this ledger record here. Original approvals and photos remain in the source system.','អាចកែតារាងនៅទីនេះ។ ការអនុម័ត និងរូបថតដើមនៅប្រព័ន្ធដើម។')}</div>`;if(drawerTab==='photos')body=`<div style="padding:24px 0">${r.attachments.length?`<div class="attachments">${r.attachments.map((url,i)=>link(T('查看附件','Open evidence','បើកភស្តុតាង')+' '+(i+1),url)).join('')}</div>`:`<div class="empty-state">${I('camera')}<strong>${T('此筆預覽未附照片','No photos in this preview record','គ្មានរូបថតក្នុងកំណត់ត្រាមើលនេះ')}</strong><p>${T('原模組的照片功能仍保留；正式接入時帶入附件連結。','Original photo workflows remain available. Live adapters will provide attachment references.','មុខងាររូបថតដើមនៅរក្សា។ ការភ្ជាប់ទិន្នន័យពិតនឹងនាំចូលតំណឯកសារ។')}</p></div>`}</div>`;if(drawerTab==='source')body=`<div class="detail-grid">${f(T('原系統','Original system','ប្រព័ន្ធដើម'),SOURCES[r.source].name)}${f(T('原始 ID','Original ID','ID ដើម'),r.id)}${f(T('更新時間','Updated at','ពេលបច្ចុប្បន្នភាព'),r.updatedAt)}${f(T('已入帳實支','Posted actual expense','ចំណាយពិតបានចុះបញ្ជី'),r.posted?T('是','Yes','បាទ/ចាស'):T('否／其他業務階段','No / other workflow stage','ទេ / ដំណាក់កាលការងារផ្សេង'))}</div><div class="source-trace">${esc(r.sourceRefs.join('\n'))}${r.canonicalEventId?'\n\nEvent: '+esc(r.canonicalEventId):''}</div><p class="method-note">${T('相同來源與 ID 取最新版本；跨來源只依明確事件關聯去重。','Latest revision per source ID. Cross-source deduplication uses explicit event links.','យកកំណែថ្មីតាម ID ប្រភព។ បំបាត់ស្ទួនឆ្លងប្រភពដោយតំណកិច្ចការច្បាស់លាស់។')}</p>`;openDialog(base+body+`</div><div class="dialog-footer">${state.dataset==='snapshot'?button(T('編輯','Edit','កែ'),'ledger-edit','edit','primary',`data-key="${esc(recordKey(r))}"`)+button(T('刪除','Delete','លុប'),'ledger-delete','trash','danger',`data-key="${esc(recordKey(r))}"`):''}${link(T('另開原頁','Open original page','បើកទំព័រដើម'),m.url)}</div>`,true);}
 function command(){openDialog(`<div class="dialog-head">${I('search')}<input class="command-input" id="command-input" placeholder="${T('搜尋功能、紀錄或單號…','Search tools, records or IDs…','ស្វែងរកមុខងារ កំណត់ត្រា ឬលេខ…')}" aria-label="Search">${closeButton()}</div><div class="dialog-body command-list" id="command-list"></div>`);updateCommand('');document.querySelector('#command-input').focus();}
 function updateCommand(q){q=q.toLowerCase().trim();const mods=MODULES.filter(m=>[...Object.values(m.name),...Object.values(m.desc),m.id,m.source].join(' ').toLowerCase().includes(q));const records=q?eventRows(sources()).filter(r=>[r.id,t(r.title),r.owner].join(' ').toLowerCase().includes(q)).slice(0,8):[];document.querySelector('#command-list').innerHTML=mods.slice(0,12).map(m=>`<button class="command-result" style="width:100%;border:0;background:transparent;text-align:left;color:inherit" data-action="module" data-module="${m.id}">${I(m.icon)}${esc(t(m.name))}<small>${SOURCES[m.source].name}</small>${I('chevron')}</button>`).join('')+records.map(r=>`<button class="command-result" style="width:100%;border:0;background:transparent;text-align:left;color:inherit" data-command-record="${esc(recordKey(r))}">${I('file')}${esc(t(r.title))}<small>${esc(r.id)}</small></button>`).join('')+(!mods.length&&!records.length?`<p class="small-muted">${T('找不到相符項目','No matching results','រកមិនឃើញលទ្ធផលត្រូវគ្នា')}</p>`:'');}
-function selectModule(id){if(!MODULE_MAP[id])return;if(state.workspace&&state.workspace!==id&&!confirm(T('請先儲存原模組內容，再切換。確定繼續？','Save changes in the current module before switching. Continue?','សូមរក្សាទុកការកែប្រែមុនប្ដូរ។ បន្ត?')))return;dialog.close();state.workspace=id;state.route='modules';state.menu=false;render();window.scrollTo(0,0);}
+function selectModule(id){if(Object.hasOwn(MODULE_MAP,id))route(id);}
+function setMenu(open){
+  state.menu=open;
+  const sidebar=document.querySelector('.sidebar'),backdrop=document.querySelector('.backdrop');
+  if(!sidebar||!backdrop){render();return;}
+  sidebar.classList.toggle('open',open);backdrop.classList.toggle('on',open);
+  app.querySelector('[aria-controls="ga-sidebar"]')?.setAttribute('aria-expanded',String(open));
+  document.body.style.overflow=open?'hidden':'';
+  if(open){sidebar.querySelector('[aria-current="page"]')?.scrollIntoView({block:'nearest'});}
+}
 const cloudUI=createCloudUI({state,storage,T,t,esc,I,button,dialog,closeButton,openDialog,render,toast,download});
 const appearanceUI=createAppearanceUI({storage,T,dialog,openDialog,closeButton,toast});
-async function action(a,el){if(a==='appearance'||a.startsWith('appearance-')){await appearanceUI.handle(a,el);return;}if(a==='cloud-export'){cloudUI.exportSnapshot();return;}if(a.startsWith('cloud-')){await cloudUI.handle(a);return;}if(a==='close'){dialog.close();return;}if(a==='module'){selectModule(el.dataset.module);return;}if(a==='menu'||a==='menu-close'){state.menu=a==='menu'?!state.menu:false;render();return;}if(a==='command'){command();return;}if(a==='new'){newDialog();return;}if(a==='sources'||a==='records'){route(a);return;}if(['pending','abnormal','completed'].includes(a)){state.route=a==='pending'?'tasks':'records';state.status=a;state.page=1;render();return;}if(a==='previous'||a==='next'||a==='today'){state.ref=a==='today'?todayICT():shiftPeriod(state.mode,state.ref,a==='previous'?-1:1);state.page=1;state.selected.clear();render();return;}if(a==='demo'||a==='empty'){state.dataset=a==='empty'&&state.snapshot?'snapshot':a;state.page=1;state.selected.clear();storage.set('dataset',state.dataset);render();return;}if(a==='workspace-back'){route('modules');return;}if(a==='page-next'||a==='page-prev'){state.page+=a==='page-next'?1:-1;render();return;}if(a==='detail-prev'||a==='detail-next'){drawerIndex+=a==='detail-prev'?-1:1;drawRecord();return;}if(a==='select-all'){const list=rows(),view=state.route==='overview'?list.slice(0,6):list.slice((state.page-1)*20,state.page*20);view.forEach(r=>el.checked?state.selected.add(recordKey(r)):state.selected.delete(recordKey(r)));render();return;}if(a==='export'){const all=rows(),list=state.selected.size?all.filter(r=>state.selected.has(recordKey(r))):all;if(!list.length){toast(T('此範圍沒有可匯出的紀錄','No records to export in this scope','គ្មានកំណត់ត្រាសម្រាប់នាំចេញក្នុងជម្រើសនេះ'));return;}download(`VRT_GA_${state.dataset}_${state.mode}_${state.ref}.csv`,recordsCSV(list,state.lang),'text/csv;charset=utf-8');toast(T('已匯出所選範圍，含來源與單位。','Exported the selected scope with sources and units.','បាននាំចេញជម្រើសជាមួយប្រភព និងឯកតា។'));return;}if(a==='template'){download('VRT_GA_SAMPLE_snapshot.json',JSON.stringify(demo,null,2),'application/json');return;}if(a==='import'){const input=document.createElement('input');input.type='file';input.accept='.json,application/json';input.addEventListener('change',()=>cloudUI.importSnapshot(input.files[0]));input.click();return;}}
-document.addEventListener('click',e=>{const sel=e.target.closest('[data-select]');if(sel){sel.checked?state.selected.add(sel.dataset.select):state.selected.delete(sel.dataset.select);e.stopPropagation();render();return;}const lang=e.target.closest('[data-lang]');if(lang){state.lang=lang.dataset.lang;storage.set('lang',state.lang);render();return;}const period=e.target.closest('[data-period]');if(period){state.mode=period.dataset.period;state.page=1;state.selected.clear();render();return;}const tab=e.target.closest('[data-detail-tab]');if(tab){drawerTab=tab.dataset.detailTab;drawRecord();return;}const cmdRecord=e.target.closest('[data-command-record]');if(cmdRecord){const key=cmdRecord.dataset.commandRecord,found=eventRows(sources()).find(r=>recordKey(r)===key);if(found){state.ref=found.date;state.group='all';state.source='all';state.status='all';state.query='';render();recordDialog(key);}return;}const routeEl=e.target.closest('[data-route]');if(routeEl){e.preventDefault();route(routeEl.dataset.route);return;}const actionEl=e.target.closest('[data-action]');if(actionEl){e.preventDefault();action(actionEl.dataset.action,actionEl);return;}const record=e.target.closest('[data-record]');if(record)recordDialog(record.dataset.record);});
+async function action(a,el={}){
+  if(a==='appearance'||a.startsWith('appearance-')){await appearanceUI.handle(a,el);return;}
+  if(a==='cloud-export'){cloudUI.exportSnapshot({module:state.module,group:state.group});return;}
+  if(a.startsWith('cloud-')){await cloudUI.handle(a);return;}
+  if(a==='close'){dialog.close();return;}
+  if(a==='module'){selectModule(el.dataset?.module);return;}
+  if(a==='menu'||a==='menu-close'){setMenu(a==='menu'?!state.menu:false);return;}
+  if(a==='command'){command();return;}
+  if(a==='new'){ledgerEditor();return;}
+  if(a==='ledger-edit'){ledgerEditor(el.dataset?.key);return;}
+  if(a==='ledger-save'){await saveLedgerForm();return;}
+  if(a==='ledger-delete'){await deleteLedger([el.dataset?.key]);return;}
+  if(a==='ledger-delete-selected'){await deleteLedger([...state.selected]);return;}
+  if(a==='ledger-trash'){ledgerTrash();return;}
+  if(a==='ledger-restore'){await restoreLedger(el.dataset?.key);return;}
+  if(a==='ledger-conflict-discard'){
+    if(confirm(T('採用雲端版本，捨棄這筆本機修改？','Keep the cloud version and discard this local draft?','ប្រើកំណែពពក ហើយបោះបង់ការកែប្រែក្នុងម៉ាស៊ីន?'))&&cloudUI.discardConflict(el.dataset?.key))render();
+    return;
+  }
+  if(a==='ledger-conflict-keep'){
+    const key=el.dataset?.key,row=rawLedgerRow(key);
+    if(row&&cloudUI.hasConflict(key)&&confirm(T('以本機版本更新這筆雲端紀錄？','Update this cloud record with the local version?','ធ្វើបច្ចុប្បន្នភាពកំណត់ត្រាពពកដោយកំណែក្នុងម៉ាស៊ីន?'))){
+      await cloudUI.saveRecords([{...row,updatedAt:ledgerNextStamp(row,cloudUI.serverRow(key))}],{resolve:new Set([key])});
+    }
+    return;
+  }
+  if(a==='sources'||a==='records'){route(a);return;}
+  if(['pending','abnormal','completed'].includes(a)){route(a==='pending'?'tasks':'records');state.status=a;render();return;}
+  if(a==='previous'||a==='next'||a==='today'){state.ref=a==='today'?todayICT():shiftPeriod(state.mode,state.ref,a==='previous'?-1:1);state.page=1;state.selected.clear();render();return;}
+  if(a==='demo'||a==='empty'){state.dataset=a==='empty'&&state.snapshot?'snapshot':a;state.page=1;state.selected.clear();storage.set('dataset',state.dataset);render();return;}
+  if(a==='page-next'||a==='page-prev'){state.page+=a==='page-next'?1:-1;render();return;}
+  if(a==='detail-prev'||a==='detail-next'){drawerIndex+=a==='detail-next'?1:-1;drawRecord();return;}
+  if(a==='select-all'){const list=rows(),view=state.route==='overview'?list.slice(0,6):list.slice((state.page-1)*20,state.page*20);view.forEach(r=>el.checked?state.selected.add(recordKey(r)):state.selected.delete(recordKey(r)));render();return;}
+  if(a==='export'){
+    const all=rows(),list=state.selected.size?all.filter(r=>state.selected.has(recordKey(r))):all;
+    if(!list.length){toast(T('此範圍沒有可匯出的紀錄','No records to export in this scope','គ្មានកំណត់ត្រាសម្រាប់នាំចេញក្នុងជម្រើសនេះ'));return;}
+    download('PSJGA_'+(state.module||'records')+'_'+state.mode+'_'+state.ref+'.csv',ledgerCSV(list,state.lang),'text/csv;charset=utf-8');
+    toast(T('已匯出所選範圍，含來源、單號和版本。','Exported the selected scope with sources, IDs, and revisions.','បាននាំចេញជម្រើសជាមួយប្រភព លេខ និងកំណែ។'));return;
+  }
+  if(a==='template'){download('VRT_GA_SAMPLE_snapshot.json',JSON.stringify(demo,null,2),'application/json');return;}
+  if(a==='import'){
+    if(cloudUI.isBusy()||!cloudUI.ensureConnected())return;
+    openDialog(`<div class="dialog-head"><div><small>PSJGA</small><h2>${T('匯入總表紀錄','Import ledger records','នាំចូលកំណត់ត្រា')}</h2></div>${closeButton()}</div>
+      <div class="dialog-body cloud-dialog"><p>${T('選擇 JSON 備份或 Excel 另存的 UTF-8 CSV。相同業務與單號會比對版本。','Choose a JSON backup or UTF-8 CSV saved from Excel. Existing records are matched by module and ID.','ជ្រើស JSON ឬ CSV UTF-8 ពី Excel។ ផ្គូផ្គងតាមមុខងារ និងលេខកំណត់ត្រា។')}</p>
+      <p>${T('使用 CSV 範本時，日期請填 YYYY-MM-DD。匯入後可先核對，再按上傳。','In the CSV template, use YYYY-MM-DD for dates. Review imported rows before uploading.','ប្រើកាលបរិច្ឆេទ YYYY-MM-DD។ ពិនិត្យទិន្នន័យមុនផ្ទុក។')}</p>
+      ${button(T('下載 CSV 範本','Download CSV template','ទាញយកគំរូ CSV'),'ledger-template','download','small')}</div>
+      <div class="dialog-footer">${button(T('選擇檔案','Choose file','ជ្រើសឯកសារ'),'ledger-choose','upload','primary')}</div>`);
+    return;
+  }
+  if(a==='ledger-template'){
+    download('PSJGA_'+(state.module||'records')+'_template.csv',ledgerCSVTemplate(state.module),'text/csv;charset=utf-8');
+    return;
+  }
+  if(a==='ledger-choose'){
+    const module=state.module,group=state.group,input=document.createElement('input');input.type='file';input.accept='.json,.csv,application/json,text/csv';
+    input.addEventListener('change',()=>{if(input.files[0]){dialog.close();void cloudUI.importSnapshot(input.files[0],{module,group});}},{once:true});
+    input.click();return;
+  }
+}
+document.addEventListener('submit',e=>{if(e.target.id==='ledger-form'){e.preventDefault();void saveLedgerForm();}});
+document.addEventListener('click',e=>{const sel=e.target.closest('[data-select]');if(sel){sel.checked?state.selected.add(sel.dataset.select):state.selected.delete(sel.dataset.select);e.stopPropagation();render();return;}const lang=e.target.closest('[data-lang]');if(lang){state.lang=lang.dataset.lang;storage.set('lang',state.lang);render();return;}const period=e.target.closest('[data-period]');if(period){state.mode=period.dataset.period;state.page=1;state.selected.clear();render();return;}const tab=e.target.closest('[data-detail-tab]');if(tab){drawerTab=tab.dataset.detailTab;drawRecord();return;}const cmdRecord=e.target.closest('[data-command-record]');if(cmdRecord){const key=cmdRecord.dataset.commandRecord,found=eventRows(sources()).find(r=>recordKey(r)===key);if(found){route(found.module+'/records');state.ref=found.date;render();recordDialog(key);}return;}const routeEl=e.target.closest('[data-route]');if(routeEl){e.preventDefault();route(routeEl.dataset.route);return;}const actionEl=e.target.closest('[data-action]');if(actionEl){e.preventDefault();action(actionEl.dataset.action,actionEl);return;}const record=e.target.closest('[data-record]');if(record)recordDialog(record.dataset.record);});
 let searchTimer;document.addEventListener('input',e=>{if(e.target.id==='command-input')updateCommand(e.target.value);if(e.target.dataset.filter==='query'){state.query=e.target.value;clearTimeout(searchTimer);const pos=e.target.selectionStart;searchTimer=setTimeout(()=>{state.page=1;state.selected.clear();render();const input=document.querySelector('[data-filter=query]');if(input){input.focus();input.setSelectionRange(pos,pos);}},150);}});
-document.addEventListener('change',e=>{const f=e.target.dataset.filter;if(!f)return;const v=e.target.value;if(f==='date'||f==='week'){if(!v)return;try{periodRange('day',v);}catch{return;}state.ref=v;}else if(f==='year'){state.ref=v+'-'+(state.mode==='year'?'01':state.ref.slice(5,7))+'-01';}else if(f==='month'){state.ref=state.ref.slice(0,4)+'-'+v.padStart(2,'0')+'-01';}else state[f]=v;state.page=1;state.selected.clear();render();});
-document.addEventListener('keydown',e=>{if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='k'){e.preventDefault();command();}if(e.key==='Escape'&&state.menu){state.menu=false;render();}if(e.key==='Enter'&&e.target.matches('tr[data-record]'))recordDialog(e.target.dataset.record);});
+document.addEventListener('change',e=>{const f=e.target.dataset.filter;if(!f)return;const v=e.target.value;if(f==='ledger-module'){if(v)route(v+'/records');return;}if(f==='date'||f==='week'){if(!v)return;try{periodRange('day',v);}catch{return;}state.ref=v;}else if(f==='year'){state.ref=v+'-'+(state.mode==='year'?'01':state.ref.slice(5,7))+'-01';}else if(f==='month'){state.ref=state.ref.slice(0,4)+'-'+v.padStart(2,'0')+'-01';}else state[f]=v;state.page=1;state.selected.clear();render();});
+document.addEventListener('keydown',e=>{if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='k'){e.preventDefault();command();}if(e.key==='Escape'&&state.menu)setMenu(false);if(e.key==='Enter'&&e.target.matches('tr[data-record]'))recordDialog(e.target.dataset.record);});
 dialog.addEventListener('click',e=>{if(e.target===dialog){const rect=dialog.getBoundingClientRect();if(e.clientX<rect.left||e.clientX>rect.right||e.clientY<rect.top||e.clientY>rect.bottom)dialog.close();}});
-const start=location.hash.slice(1);if(Object.hasOwn(routeNames(),start)){state.route=start;state.group=GROUPS.some(g=>g.id===start)?start:'all';}render();
-void cloudUI.start(location.hash);
-window.addEventListener('hashchange',()=>{if(location.hash.startsWith('#pair=')||location.hash==='#phone')void cloudUI.start(location.hash);});
+const start=decodeRoute(location.hash.slice(1));
+if(start){state.route=start.name;state.workspace=start.workspace;state.module=start.mod;state.group=GROUPS.some(g=>g.id===start.name)?start.name:'all';}
+render();void cloudUI.start(location.hash);
+function followLocation(){
+  const h=location.hash.slice(1);
+  if(h.startsWith('pair=')||h==='phone'){void cloudUI.start(location.hash);return;}
+  if((h||'overview')!==currentPath())route(h||'overview',{write:false});
+}
+window.addEventListener('hashchange',followLocation);
+window.addEventListener('popstate',followLocation);
 
 </script></body></html>
