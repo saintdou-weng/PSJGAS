@@ -154,3 +154,8 @@ PSJGA 與 PSJHR、PSJERP 命名一致；GA 是 General Affairs（總務）。原
 - 舊的配對／金鑰流程保留，只在直連失敗時才會出現。
 - 線上 PSJGA_CORE 程式比本檔案夾的 PSJGA_CORE.gs 新（1.1.9 在 `psjgaDispatch_` 多接受 `PSJGA_OPEN_TOKEN`）；以 Apps Script 線上版為準。
 - 改 index.html 的程式後一定要重算 CSP sha256，否則整頁空白。
+
+## 2026-11-13 · v1.4.2 一組密碼，每台裝置輸入一次
+- 取代 v1.4.1 的免密碼直連：開頁面先問密碼，對了就記在這台裝置（localStorage `cloud_open`），之後不再問。
+- 頁面與雲端都不存密碼本身，只比對由密碼算出的通行碼（sha256('psjga-open|'+密碼)，前面加 `device_`）；雲端 PSJGA_CORE 部署第 8 版的 `PSJGA_OPEN_TOKEN` 就是這個值。換密碼＝改這個常數後重新部署。
+- PSJGA 本身沒有自己的資料：通過密碼後直接讀 SEC、GasCheck、GA-EXP 三個原系統的雲端（唯讀）。PSJGA_CORE 只負責驗證。
