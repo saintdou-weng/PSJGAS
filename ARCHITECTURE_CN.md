@@ -148,3 +148,9 @@ PSJGA 與 PSJHR、PSJERP 命名一致；GA 是 General Affairs（總務）。原
   https://help.safetyculture.com/en-US/005384/
 
 畫面結構沿用使用者提供的 PSJHR／PSJERP：可收合側邊導覽、明細抽屜、上一筆／下一筆、三語切換與清楚的主要操作。未複製截圖中的員工照片或個資作示範。
+
+## 2026-11-13 · v1.4.1 直接連雲端（不用配對）
+- 頁面開啟後直接用內建通行代碼連 PSJGA_CORE（雲端 1.1.9，部署第 7 版），不再要求手機配對或金鑰。
+- 舊的配對／金鑰流程保留，只在直連失敗時才會出現。
+- 線上 PSJGA_CORE 程式比本檔案夾的 PSJGA_CORE.gs 新（1.1.9 在 `psjgaDispatch_` 多接受 `PSJGA_OPEN_TOKEN`）；以 Apps Script 線上版為準。
+- 改 index.html 的程式後一定要重算 CSP sha256，否則整頁空白。
