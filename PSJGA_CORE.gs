@@ -245,7 +245,7 @@ function psjgaSend_(q,cfg){
   const key='PSJGA_TG_'+psjgaDigest_(tg.chat+'|'+s.summaryId).slice(0,32);
   const previous=psjgaWithLock_(()=>{if(psjgaHead_().revision!==s.revision)throw syncError('SUMMARY_STALE');const p=psjgaProps_(),raw=p.getProperty(key),r=raw?JSON.parse(raw):null;if(r?.state==='sent')return r;if(r?.state==='pending')throw syncError('TG_PENDING');p.setProperty(key,JSON.stringify({state:'pending',time:psjgaNow_()}));return null;});
   if(previous)return {messageId:previous.messageId,deduped:true,sentAt:previous.time};
-  let result;try{result=psjgaTelegram_(tg,'sendMessage',{chat_id:tg.chat,text:s.message,protect_content:true,link_preview_options:{is_disabled:true}});}catch(e){if(['TG_REJECTED','TG_TOKEN','TG_DENIED','TG_RATE'].includes(e.code))psjgaWithLock_(()=>psjgaProps_().deleteProperty(key));throw e;}
+  let result;try{result=psjgaTelegram_(tg,'sendMessage',{chat_id:tg.chat,text:s.message,protect_content:true,link_preview_options:{is_disabled:true},reply_markup:{inline_keyboard:[[{text:'🏢 開啟總務平台 PSJGA',url:PSJGA_PLATFORM_URL}]]}});}catch(e){if(['TG_REJECTED','TG_TOKEN','TG_DENIED','TG_RATE'].includes(e.code))psjgaWithLock_(()=>psjgaProps_().deleteProperty(key));throw e;}
   if(!result||!Number.isInteger(result.message_id))throw syncError('TG_UNCERTAIN');
   const time=psjgaNow_();psjgaWithLock_(()=>psjgaProps_().setProperty(key,JSON.stringify({state:'sent',messageId:result.message_id,time})));return {messageId:result.message_id,deduped:false,sentAt:time};
 }
