@@ -154,6 +154,13 @@ main.is-original{padding-top:12px}
   .source-table .data-table td:nth-child(6){grid-column:2;grid-row:3;color:#118b74;justify-self:end}
 }
 
+.ann-tabs{display:flex;gap:6px;flex-wrap:wrap;margin:6px 0 16px}.ann-tab{border:1px solid var(--line,#d9dee8);background:var(--panel,#fff);border-radius:999px;padding:8px 14px;font:inherit;font-weight:700;cursor:pointer}.ann-tab b{font-size:11px;opacity:.6}.ann-tab.on{background:#0d8074;color:#fff;border-color:#0d8074}
+.ann-cal{display:grid;gap:8px;margin-bottom:16px}.ann-month{display:grid;grid-template-columns:76px 28px 1fr;align-items:center;gap:8px;text-align:left;background:var(--panel,#fff);border:1px solid var(--line,#e3e7ef);border-radius:12px;padding:10px 12px;font:inherit;cursor:pointer}.ann-m{font-weight:800;color:#0d8074}.ann-ico{font-size:18px}
+.ann-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px}.ann-sum{display:flex;flex-direction:column;gap:4px;text-align:left;background:var(--panel,#fff);border:1px solid var(--line,#e3e7ef);border-radius:14px;padding:14px;font:inherit;cursor:pointer}.ann-sum-i{font-size:24px}.ann-sum span{font-size:12px;opacity:.7}.ann-sum small{font-size:12px;opacity:.85}
+.ann-years{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}.ann-y{border:1px solid var(--line,#d9dee8);background:transparent;border-radius:8px;padding:5px 10px;font:inherit;font-size:12px;cursor:pointer}.ann-y.on{background:#1f2937;color:#fff}
+.ann-list{display:grid;gap:10px}.ann-card{display:grid;grid-template-columns:96px 1fr;gap:12px;background:var(--panel,#fff);border:1px solid var(--line,#e3e7ef);border-radius:14px;padding:14px}.ann-date{font-family:ui-monospace,monospace;font-weight:800;font-size:13px;color:#0d8074}.ann-main h3{font-size:15px;margin:0 0 6px}.ann-meta{display:flex;gap:14px;flex-wrap:wrap;font-size:12.5px;opacity:.85}.ann-main p{font-size:13px;line-height:1.6;margin:6px 0 0;opacity:.9}
+.ann-ph{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}.ann-ph img{width:120px;height:86px;object-fit:cover;border-radius:8px;cursor:zoom-in;border:1px solid var(--line,#e3e7ef)}.ann-gal{margin-top:16px}.ann-gal h4{font-size:13px;margin:0 0 6px;opacity:.8}.ann-foot{margin-top:18px;font-size:12px;opacity:.75}
+@media(max-width:640px){.ann-card{grid-template-columns:1fr}.ann-month{grid-template-columns:60px 24px 1fr}}
 </style></head>
 <body><a class="skip" href="#main">跳至內容 · Skip to content</a><div class="ga-wallpaper" aria-hidden="true"></div><div id="app"></div><noscript>請啟用 JavaScript 使用總務工作台。<a href="./legacy.html">開啟原稽核評鑑</a></noscript><dialog id="dialog"></dialog><div id="toast" role="status" aria-live="polite"></div><script type="module">
 const L=(zh,en,km)=>({zh,en,km});
@@ -1766,7 +1773,7 @@ const rows=()=>filterRecords(sources(),selection()).filter(r=>state.kind==='all'
 const kindText=k=>t(SOURCE_KINDS[k])||k;
 const sourceTime=ms=>new Date(ms).toLocaleString(state.lang==='zh'?'zh-TW':'en-GB',{timeZone:'Asia/Phnom_Penh',hour12:false});
 function sourceToolbar(){
-  if(state.workspace||state.route==='architecture'||state.route==='modules')return '';
+  if(state.workspace||state.route==='architecture'||state.route==='modules'||state.route==='annual')return '';
   const auth=cloudUI.isAuthorized(),c=sourceCoverage(),skipped=c.items.reduce((a,v)=>a+(v.omitted||0),0);
   const label=!auth?T('裝置待驗證','Device needs verification','ត្រូវផ្ទៀងផ្ទាត់ឧបករណ៍'):
     c.busy?T('讀取中','Reading','កំពុងអាន')+' · '+c.ready+'/'+c.total:
@@ -1780,7 +1787,7 @@ function sourceToolbar(){
 }
 let sourcePaint=false,refreshingSources=false,sourceRunning=0,hadSourceAccess=false;
 const sourceJobs=new Map();
-const sourceRelevant=()=>!state.workspace&&state.route!=='modules'&&state.route!=='architecture';
+const sourceRelevant=()=>!state.workspace&&state.route!=='modules'&&state.route!=='architecture'&&state.route!=='annual';
 function sourceSchedulePaint(){
   if(sourcePaint)return;
   sourcePaint=true;
@@ -1829,12 +1836,12 @@ const n=x=>new Intl.NumberFormat(state.lang==='zh'?'zh-TW':state.lang==='km'?'km
 const money=(amount,currency)=>new Intl.NumberFormat(state.lang==='zh'?'zh-TW':'en-US',{style:'currency',currency,maximumFractionDigits:2}).format(amount);
 const statusText=s=>({recorded:T('已登記','Recorded','បានកត់ត្រា'),pending:T('待核可','Awaiting approval','រង់ចាំអនុម័ត'),in_progress:T('處理中','In progress','កំពុងដំណើរការ'),abnormal:T('需注意','Needs attention','ត្រូវយកចិត្តទុកដាក់'),completed:T('已完成','Completed','បានបញ្ចប់'),rejected:T('已退件','Rejected','បានបដិសេធ')})[s]||s;
 const statusPill=s=>`<span class="pill ${{pending:'amber',in_progress:'blue',abnormal:'red',completed:'teal',rejected:'gray'}[s]||'gray'}"><span class="dot"></span>${esc(statusText(s))}</span>`;
-const routeNames=()=>({overview:T('總務總覽','Operations overview','ទិដ្ឋភាពទូទៅ'),tasks:T('待辦中心','Action center','កិច្ចការត្រូវធ្វើ'),records:T('全部紀錄','All records','កំណត់ត្រាទាំងអស់'),reports:T('分析報表','Reports & insights','របាយការណ៍ និងវិភាគ'),modules:T('功能總覽','All modules','មុខងារទាំងអស់'),sources:T('資料與連線','Data & connections','ទិន្នន័យ និងការតភ្ជាប់'),architecture:T('系統架構','System architecture','រចនាសម្ព័ន្ធប្រព័ន្ធ'),...Object.fromEntries(GROUPS.map(g=>[g.id,t(g.name)])),...Object.fromEntries(MODULES.map(m=>[m.id,t(m.name)]))});
+const routeNames=()=>({overview:T('總務總覽','Operations overview','ទិដ្ឋភាពទូទៅ'),tasks:T('待辦中心','Action center','កិច្ចការត្រូវធ្វើ'),records:T('全部紀錄','All records','កំណត់ត្រាទាំងអស់'),reports:T('分析報表','Reports & insights','របាយការណ៍ និងវិភាគ'),modules:T('功能總覽','All modules','មុខងារទាំងអស់'),sources:T('資料與連線','Data & connections','ទិន្នន័យ និងការតភ្ជាប់'),architecture:T('系統架構','System architecture','រចនាសម្ព័ន្ធប្រព័ន្ធ'),annual:T('總務年度活動','Yearly activities','សកម្មភាពប្រចាំឆ្នាំ'),...Object.fromEntries(GROUPS.map(g=>[g.id,t(g.name)])),...Object.fromEntries(MODULES.map(m=>[m.id,t(m.name)]))});
 function button(label,action,icon,cls='',extra=''){return `<button type="button" class="btn ${cls}" data-action="${action}" ${extra}>${icon?I(icon):''}${label}</button>`;}
 function link(label,url,cls='btn',icon='external'){return `<a class="${cls}" href="${esc(url)}" target="_blank" rel="noopener noreferrer">${I(icon)}${label}</a>`;}
 function nav(route,icon,name,badge=''){return `<button class="nav-btn ${state.route===route?'active':''}" data-route="${route}" ${state.route===route?'aria-current="page"':''}>${I(icon)}<span>${esc(name)}</span>${badge?`<span class="nav-count">${badge}</span>`:''}</button>`;}
 function areaNavigation(){return GROUPS.map(g=>`<section class="nav-group" aria-label="${esc(t(g.name))}"><div class="nav-caption">${esc(t(g.name))}</div>${MODULES.filter(m=>m.group===g.id).map(m=>nav(m.id,m.icon,t(m.name))).join('')}</section>`).join('');}
-function sideContent(){return `<a class="brand" href="#overview" data-route="overview"><span class="brand-mark">VRT</span><span><strong>${T('總務工作台','General Affairs','កិច្ចការទូទៅ')}</strong><small>GENERAL AFFAIRS</small></span></a><div class="nav-caption">${T('工作空間','Workspace','កន្លែងធ្វើការ')}</div>${nav('overview','grid',routeNames().overview)}${nav('tasks','clipboard',routeNames().tasks)}${nav('records','file',routeNames().records)}${nav('reports','chart',routeNames().reports)}${areaNavigation()}<div class="nav-caption">${T('管理工具','Administration','ឧបករណ៍គ្រប់គ្រង')}</div>${nav('sources','database',routeNames().sources)}${nav('architecture','link',routeNames().architecture)}<a class="nav-btn legacy-nav" href="./legacy.html" target="_blank" rel="noopener noreferrer">${I('external')}<span>${T('原稽核評鑑','Compliance assessment','ការវាយតម្លៃអនុលោមភាព')}</span></a><div class="nav-foot"><div class="nav-rule"></div><strong>Vantage River Textiles</strong><br>Sihanoukville · Cambodia<br><span>${T('總務工作台 v1.4.3','GA workspace v1.4.3','កិច្ចការទូទៅ v1.3')}</span></div>`;}
+function sideContent(){return `<a class="brand" href="#overview" data-route="overview"><span class="brand-mark">VRT</span><span><strong>${T('總務工作台','General Affairs','កិច្ចការទូទៅ')}</strong><small>GENERAL AFFAIRS</small></span></a><div class="nav-caption">${T('工作空間','Workspace','កន្លែងធ្វើការ')}</div>${nav('overview','grid',routeNames().overview)}${nav('tasks','clipboard',routeNames().tasks)}${nav('records','file',routeNames().records)}${nav('reports','chart',routeNames().reports)}${nav('annual','layers',routeNames().annual)}<a class="nav-btn legacy-nav" href="https://saintdou-weng.github.io/ac-ga-exp/facility.html" target="_blank" rel="noopener noreferrer">${I('wrench')}<span>${T('工務設備紀錄','Facility log','កំណត់ត្រាឧបករណ៍')}</span></a>${areaNavigation()}<div class="nav-caption">${T('管理工具','Administration','ឧបករណ៍គ្រប់គ្រង')}</div>${nav('sources','database',routeNames().sources)}${nav('architecture','link',routeNames().architecture)}<a class="nav-btn legacy-nav" href="./legacy.html" target="_blank" rel="noopener noreferrer">${I('external')}<span>${T('原稽核評鑑','Compliance assessment','ការវាយតម្លៃអនុលោមភាព')}</span></a><div class="nav-foot"><div class="nav-rule"></div><strong>Vantage River Textiles</strong><br>Sihanoukville · Cambodia<br><span>${T('總務工作台 v1.4.3','GA workspace v1.4.3','កិច្ចការទូទៅ v1.3')}</span></div>`;}
 function topContent(){return `<button class="icon-button mobile-only" data-action="menu" aria-controls="ga-sidebar" aria-expanded="${state.menu}" aria-label="${T('開啟選單','Open menu','បើកម៉ឺនុយ')}">${I('menu')}</button><div class="breadcrumbs">VRT <span> / </span><strong>${esc(routeNames()[state.route]||routeNames().overview)}</strong></div><button class="search-trigger" data-action="command" aria-label="${T('搜尋功能與紀錄','Search modules and records','ស្វែងរកមុខងារ និងកំណត់ត្រា')}">${I('search')}<span>${T('搜尋功能、紀錄…','Search modules, records…','ស្វែងរកមុខងារ កំណត់ត្រា…')}</span><kbd>⌘ K</kbd></button><button class="icon-button ga-theme-trigger" data-action="appearance" aria-haspopup="dialog" aria-label="${T('背景與色彩','Background & colour','ផ្ទៃខាងក្រោយ និងពណ៌')}" title="${T('背景與色彩','Background & colour','ផ្ទៃខាងក្រោយ និងពណ៌')}">🎨</button><div class="langs" aria-label="Language">${[['zh','中'],['en','EN'],['km','ខ្មែរ']].map(([l,label])=>`<button data-lang="${l}" class="${state.lang===l?'on':''}" aria-pressed="${state.lang===l}">${label}</button>`).join('')}</div><span class="avatar" title="VRT General Affairs">GA</span>`;}
 function mobileContent(){return `${[['overview','grid'],['tasks','clipboard'],['records','file'],['reports','chart'],['menu','menu']].map(([r,i])=>`<button ${r==='menu'?'data-action="menu"':'data-route="'+r+'"'} class="${state.route===r||r==='menu'&&state.module?'on':''}">${I(i)}<span>${r==='menu'?T('業務選單','Modules','មុខងារ'):routeNames()[r]}</span></button>`).join('')}`;}
 function footer(){return `<span>VRT · General Affairs Workspace · v1.3</span><span>${T('業務日期 · Asia/Phnom_Penh · 資料可追溯','Business date · Asia/Phnom_Penh · traceable data','ថ្ងៃប្រតិបត្តិការ · Asia/Phnom_Penh · ទិន្នន័យអាចតាមដាន')}</span>`;}
@@ -1925,6 +1932,108 @@ function workspaceFrame(){
   const m=MODULE_MAP[state.workspace];
   return m?`<iframe title="${esc(t(m.name))}" src="${esc(m.url)}" referrerpolicy="no-referrer"></iframe>`:'';
 }
+// ── 總務年度活動（歷年 email 整理；靜態資料，不寫回原系統） ──
+const ANN_CATS=[
+ {id:'cal',ico:'🗓️',zh:'每年固定行事',en:'Yearly calendar'},
+ {id:'donate',ico:'🙏',zh:'捐贈與祈福',en:'Donations'},
+ {id:'holiday',ico:'🏖️',zh:'長假與年底安排',en:'Holiday plans'},
+ {id:'dinner',ico:'🍽️',zh:'節日聚餐與員工活動',en:'Festival dinners'},
+ {id:'drill',ico:'🧯',zh:'演習與消防',en:'Drills & fire safety'}];
+const ANN_CAL=[
+ ['1月','新年幹部聚餐（外幹／幹部 40$/人）','dinner'],
+ ['3–4月','柬新年：放假通知、管理部長假規劃、當地幹部烤肉聚餐（15$/人，約 66–80 人）、送禮、假期清潔巡檢','holiday'],
+ ['5–6月','端午節幹部聚餐＋粽子；上半年消防演習（6 月）','dinner'],
+ ['8–9月','中秋節幹部聚餐＋月餅；亡人節長假規劃','dinner'],
+ ['9–10月','亡人節前週六 Pagoda 參拜捐贈（2020 起每年，500$ 物資，標示工廠名稱）','donate'],
+ ['10–11月','送水節／獨立日放假通知、提早發薪評估','holiday'],
+ ['11月','年底安排總表（稽查、驗廠、宿舍、最低工資）','holiday'],
+ ['12月','下半年消防演習（計畫須在演習前 2 週提交）；年底員工活動（視情況）','drill'],
+ ['每 2 年','消防證書更新（目前效期 2024/01/10–2026/01/10）','drill']];
+const ANN=[
+ // donate
+ {c:'donate',d:'2026-10-03',t:'亡人節 Pagoda 參拜捐贈（第 7 年）',who:'Paul 親自帶隊＋車縫大組長阿南（生產部首次參加）、Isay、Sokha',amt:'500$ 物資',s:'工廠附近、靠近克良勒的小廟；廟方用英文廣播感謝 VRT 贊助。',ph:['pagoda_004','pagoda_017']},
+ {c:'donate',d:'2025-09-13',t:'亡人節 Pagoda 參拜捐贈（第 6 年）',who:'Isay 代表參加（Paul 回台手術）',amt:'500$ 物資（9/2 申請）',s:'建議明年生意好轉可順道捐物資給附近醫院或孤兒院。',ph:['pagoda_2025']},
+ {c:'donate',d:'2024-09-21',t:'亡人節 Pagoda 參拜捐贈（第 5 年）',who:'總務、人事等',amt:'500$ 物資',s:'利用亡人節長假前週六；少數能持之以恆的工廠活動。',ph:[]},
+ {c:'donate',d:'2023-10-06',t:'亡人節 Pagoda 參拜捐贈（第 4 年）',who:'總務、人事、Paul、Isay、Sokha',amt:'500$ 物資',s:'寺廟遠、泥土路；選平日人少。捐贈物資標示工廠名稱，手放在物品上給和尚祈福。',ph:['pagoda_010','pagoda_015']},
+ {c:'donate',d:'2022-09',t:'亡人節 Pagoda 參拜捐贈（第 3 年）',who:'Fenny＋總務代表',amt:'物資＋現金',s:'找離工廠約 1 小時車程的小廟；週六下午進行，不想太多人在上班時間參加。',ph:['pagoda_020']},
+ {c:'donate',d:'2022-04-06',t:'西港孤兒院拜訪捐贈',who:'管理部、Phary',amt:'現金 200$＋物資',s:'Village Enfants d’Asie ASPECA；院長頒感謝狀（裱框放會議室）。因疫情未近距離互動。',ph:['orphanage_2022']},
+ {c:'donate',d:'2021-10-03',t:'亡人節 Pagoda 參拜捐贈（第 2 年）',who:'總務、人事、Paul、Isay（4 人）',amt:'500$ 物資',s:'疫情期間政府不准去廟裡拜拜，選西港郊外小而窮的廟，人少可進去捐獻。',ph:['pagoda_005']},
+ {c:'donate',d:'2021-07-13',t:'疫情期間捐物資給 NGO M’Lop Tapang',who:'總務',amt:'約 500$（10 戶，每戶 40–50$ 米、罐頭）',s:'5/4 提案，5/11 送交 NGO，7/13 NGO 已發給貧困家庭。',ph:[]},
+ {c:'donate',d:'2021-06-17',t:'疫苗施打捐贈勞工部（提案）',who:'人事',amt:'—',s:'向西港勞工部秘書長諮詢後提報台北。',ph:[]},
+ {c:'donate',d:'2020-09-13',t:'亡人節 Pagoda 參拜捐贈（第 1 年）',who:'總務、人事、Paul、David、辦公室同仁',amt:'物資',s:'新廠疫情期間首次辦，為工廠祈福消災；不強迫參加。',ph:['pagoda_023']},
+ {c:'donate',d:'2025-12-19',t:'TAFTAC：捐木棧板給受戰事影響家庭',who:'GA 確認',amt:'實物',s:'請確認工廠是否有多餘木棧板可捐。',ph:[]},
+ {c:'donate',d:'2025-12-12',t:'TAFTAC：捐助流離失所家庭（轉知）',who:'—',amt:'—',s:'FYI 轉給各部門。',ph:[]},
+ {c:'donate',d:'2024-03-30',t:'TAFTAC：捐助柏威夏省士兵',who:'—',amt:'先不捐',s:'等勞工部正式要求再與台北確認金額。',ph:[]},
+ {c:'donate',d:'2023-02-11',t:'土耳其大使館地震捐款請求（轉知）',who:'—',amt:'—',s:'TAFTAC 轉來，轉知各部門及台北。',ph:[]},
+ // holiday
+ {c:'holiday',d:'2026-11-16',t:'VRT 工廠近況與年底安排',who:'Phary／Phea／Jenny／Malen',amt:'—',s:'必追日期：11/17 外勞聯合稽查、11/23–25 送水節（11/26 復工）、12/03 跨部會檢查、12/14–18 GRS、2027/01/01 新最低工資、1/11–22 WRAP、2–3 月宿舍搬遷。',ph:[]},
+ {c:'holiday',d:'2026-09-22',t:'2026 亡人節長假前中後營運與復工規劃（行政＋生產）',who:'Malen／Aleak／Sokhom／Phea／Phary',amt:'—',s:'7 天（比近兩年平均少 1 天）。假前：9/28–30 全廠預檢、10/3 Pagoda、10/5–7 提前發薪付款、10/8 最後巡檢交接；假中：保安每日一則簡報、有異常即報；最後一天約 3 點–3 點半下班。',ph:[]},
+ {c:'holiday',d:'2025-04-21',t:'2025 柬新年系列安排（調假／請假／送禮／提前收工／聚餐＋巡檢＋清潔）',who:'管理部',amt:'—',s:'3/17 起分 6 封報告：調假、請假、送禮、提前收工、4/11 聚餐（工人 10 點後 party 到 2:30，幹部 3 點開始，有遊戲小獎品）、假期巡檢清潔。',ph:[]},
+ {c:'holiday',d:'2024-04-27',t:'2024 柬新年（4/13–4/21）管理部規劃＋假日清潔巡邏',who:'管理部',amt:'—',s:'連續第 4 年柬新年不加班；4/10 規劃，4/27 回報清潔巡邏情況。3/29 另做 2019–2024 歷年放假分析。',ph:[]},
+ {c:'holiday',d:'2023-10-25',t:'2023 亡人節（10/11–10/24）管理部規劃＋第一天上班情形',who:'管理部',amt:'—',s:'長假 14 天；10/9 規劃、10/25 回報復工第一天人數。',ph:[]},
+ {c:'holiday',d:'2023-04-05',t:'2023 柬新年（4/11–4/18）管理部規劃',who:'管理部',amt:'—',s:'第 3 年沒加班；長假期間維護、巡查、跟進處理。',ph:[]},
+ {c:'holiday',d:'2022-11-01',t:'送水節員工要求提早發薪',who:'人事／會計',amt:'—',s:'報台北評估提早發薪。',ph:[]},
+ {c:'holiday',d:'2022-09-16',t:'2022 亡人節（9/23–10/2）管理部規劃',who:'管理部',amt:'—',s:'放 10 天；管理部仍主動公開規劃給台北。',ph:[]},
+ {c:'holiday',d:'2022-06-09',t:'柬新年長假後人員離職分析（4/20、5/4、6/9 三次）',who:'人事',amt:'—',s:'追蹤長假後離職情況。',ph:[]},
+ {c:'holiday',d:'2022-04-18',t:'2022 柬新年（4/11–4/15）管理部規劃＋假日清潔',who:'管理部',amt:'—',s:'4/5 規劃，4/18 回報清潔情況。',ph:[]},
+ {c:'holiday',d:'2021-09-22',t:'10 月長假薪資發放方案',who:'人事／會計',amt:'—',s:'長假前薪資發放安排。',ph:[]},
+ {c:'holiday',d:'2020-03-31',t:'柬新年放假安排（疫情：政府延後新年假）',who:'全廠',amt:'—',s:'2020 柬新年延到 8 月，幹部聚餐取消。',ph:[]},
+ // dinner
+ {c:'dinner',d:'2026-09-09',t:'中秋節幹部聚餐（9/25）',who:'6 人：Paul、Malen、Aleak、Phea、Phary、Isay',amt:'40$×6＝240$',s:'月餅：廠商沒送就自行補買。',ph:[]},
+ {c:'dinner',d:'2026-06-13',t:'端午節幹部聚餐（改名「幹部聚餐」）',who:'6 人：Paul、Malen、Aleak、Phea、Phary、Isay',amt:'40$×6＝240$',s:'外幹降到 3 人（史低）；加入當地主要幹部取代 Sam／Thu 名額。粽子外幹每人 4 粒，辦公室及生產大組長各 1 盒。',ph:[]},
+ {c:'dinner',d:'2025-09-30',t:'中秋節聚餐（10/6）',who:'6 人：Paul、Sam、Isay、Thu、Malen、Aleak',amt:'40$×6＝240$',s:'首次加入 Malen／Aleak 夫婦；無供應商送月餅，工廠補買。',ph:[]},
+ {c:'dinner',d:'2025-05-12',t:'端午節外幹聚餐（5 月第 3 週）',who:'8 人',amt:'40$×8＝320$',s:'粽子每人 3–4 粒。',ph:[]},
+ {c:'dinner',d:'2025-03-28',t:'柬新年當地幹部聚餐（4/11）',who:'66 人（含外藉）',amt:'15$×66＝990 → 申請 1,000$',s:'工人上午 party，幹部下午 3 點聚餐，有遊戲與小獎品。',ph:[]},
+ {c:'dinner',d:'2025-01-04',t:'新年外幹聚餐',who:'8 人',amt:'40$×8＝320$',s:'等大家都在時再聚。',ph:[]},
+ {c:'dinner',d:'2024-08-30',t:'中秋節外幹聚餐（9 月第 1 週）',who:'8 人',amt:'40$×8＝320$',s:'端午額度已在 8 月 David 施與廠商來訪時用掉。',ph:[]},
+ {c:'dinner',d:'2024-05-14',t:'端午節聚餐延後／與中秋合併',who:'—',amt:'—',s:'接單不佳；粽子每人 3 粒照買。',ph:[]},
+ {c:'dinner',d:'2024-03-19',t:'柬新年當地幹部聚餐（4/11 或 12）',who:'72 人',amt:'申請 1,000$',s:'請台北決定是否辦；當年生產部曾強迫全員提前請假 2 天。',ph:[]},
+ {c:'dinner',d:'2024-01-24',t:'新年外幹聚餐',who:'7 人',amt:'40$×7＝280$',s:'',ph:[]},
+ {c:'dinner',d:'2023-09-01',t:'中秋節外幹聚餐＋開業 10 週年',who:'8 人',amt:'40$×8＝320$',s:'',ph:[]},
+ {c:'dinner',d:'2023-06-16',t:'端午節外幹聚餐',who:'8 人',amt:'40$×8＝320$',s:'粽子每人 3 粒。',ph:[]},
+ {c:'dinner',d:'2023-03-21',t:'柬新年當地幹部聚餐（4/8 戶外烤肉）',who:'73 人',amt:'申請 1,000$',s:'疫情及停工後恢復；安排團建活動。',ph:[]},
+ {c:'dinner',d:'2023-01-31',t:'新年外幹聚餐（延後到人齊）',who:'7 人',amt:'40$×7＝280$',s:'',ph:[]},
+ {c:'dinner',d:'2022-08-30',t:'中秋節外幹聚餐（9/10）',who:'5 人',amt:'40$×5＝200$',s:'',ph:[]},
+ {c:'dinner',d:'2022-05-30',t:'端午節外幹聚餐（6/3）',who:'9 人',amt:'40$×9＝360$',s:'粽子每人 3 粒。柬新年幹部聚餐因停工取消。',ph:[]},
+ {c:'dinner',d:'2022-01-13',t:'新年外幹聚餐',who:'8 人',amt:'40$×8＝320$',s:'',ph:[]},
+ {c:'dinner',d:'2021-09-01',t:'中秋＋端午合併外幹聚餐（9/24）＋柬新年幹部烤肉延到 9/18',who:'外幹 8 人；當地幹部約 80 人',amt:'640$＋1,200$＝1,840$',s:'疫情：端午延後合併；柬新年聚餐從 4 月延到 9 月。',ph:[]},
+ {c:'dinner',d:'2021-01-29',t:'新年外幹聚餐',who:'14 人',amt:'450$',s:'',ph:[]},
+ {c:'dinner',d:'2020-09-19',t:'中秋節外幹聚餐',who:'15 人',amt:'480$',s:'2020 端午因疫情停工取消；柬新年聚餐取消。',ph:[]},
+ {c:'dinner',d:'2020-01-09',t:'新年外幹聚餐',who:'13 人',amt:'420$',s:'拜拜取消。',ph:[]},
+ {c:'dinner',d:'2019-12-28',t:'2019 員工年度表演 Party',who:'約 500 人參加、30 多位員工表演',amt:'有限預算（無摸彩、無餐點）',s:'6 點到 9 點半，員工照常 4:30 下班。2021 因疫情延後，之後未再辦。',ph:[]},
+ {c:'dinner',d:'2019-05-29',t:'幹部聚餐額度調整',who:'11 人',amt:'柬新年 500$；端午、中秋 300 → 360$',s:'後來統一為外幹 40$/人、當地幹部 15$/人。',ph:[]},
+ // drill
+ {c:'drill',d:'2025-12-09',t:'2025-12 消防演習／緊急應變訓練',who:'Bunna、Phea、Kunthea、Phary 等',amt:'—',s:'演習／疏散計畫必須在演習前 2 週提交，不要等最後一週。',ph:[]},
+ {c:'drill',d:'2025-10-31',t:'消防證書每 2 年更新',who:'總務',amt:'上次 5,500 談到 4,000$；這次對方要 3,000，試談 2,000$',s:'2024 年起每 2 年更新；目前效期 2024/01/10–2026/01/10，提前到年底報台北。',ph:[]},
+ {c:'drill',d:'2024-03-22',t:'勞工部消防安全培訓課程（3/27–28）',who:'GA＋HR 或保安隊長',amt:'—',s:'此次名單未含 VRT，列入時再派 2 人。',ph:[]},
+ {c:'drill',d:'2023-06-24',t:'消防演習',who:'HR（Kunthea）',amt:'—',s:'',ph:[]},
+ {c:'drill',d:'2022-12-17',t:'消防演習＋培訓',who:'HR／GA',amt:'—',s:'',ph:[]},
+ {c:'drill',d:'2022-06-11',t:'年度消防演習（與病毒共存後首次正常辦）',who:'總務／人事自行運作',amt:'—',s:'週六 4:00 開始、4:27 結束；之後請 Bunna／Phea 在保險公司來檢查前測試全部消防設施。另有急救演練。',ph:[]},
+ {c:'drill',d:'2021-12-18',t:'2021 第 2 次消防演習',who:'行政管理部自行安排（Paul 返台）',amt:'—',s:'2020/5 導入 PDCA 後演習步入正軌。',ph:[]},
+ {c:'drill',d:'2021-07-24',t:'年度消防演習（疫情延後）',who:'全廠',amt:'—',s:'4:08 開始、4:20 結束；原定 5 月底，等全廠打完第 2 劑疫苗後才辦。',ph:[]},
+ {c:'drill',d:'2020-11-21',t:'消防演習培訓證書',who:'人事',amt:'—',s:'',ph:[]},
+ {c:'drill',d:'2020-07-19',t:'當地員工宿舍（23 間）消防演習',who:'人事',amt:'—',s:'',ph:[]}
+];
+let annTab='cal',annYear='all';
+function annualPage(){
+  const cat=ANN_CATS.find(c=>c.id===annTab)||ANN_CATS[0];
+  const tabs=`<div class="ann-tabs">${ANN_CATS.map(c=>`<button class="ann-tab ${annTab===c.id?'on':''}" data-ann-tab="${c.id}">${c.ico} ${state.lang==='zh'?c.zh:c.en}${c.id==='cal'?'':` <b>${ANN.filter(a=>a.c===c.id).length}</b>`}</button>`).join('')}</div>`;
+  let body='';
+  if(annTab==='cal'){
+    body=`<div class="ann-cal">${ANN_CAL.map(([m,txt,c])=>{const k=ANN_CATS.find(x=>x.id===c);return `<button class="ann-month" data-ann-tab="${c}"><span class="ann-m">${m}</span><span class="ann-ico">${k.ico}</span><span>${esc(txt)}</span></button>`}).join('')}</div>
+    <div class="ann-grid">${ANN_CATS.slice(1).map(c=>{const l=ANN.filter(a=>a.c===c.id).sort((a,b)=>b.d.localeCompare(a.d));return `<button class="ann-sum" data-ann-tab="${c.id}"><span class="ann-sum-i">${c.ico}</span><strong>${c.zh}</strong><span>${l.length} 筆 · 最近 ${l[0].d}</span><small>${esc(l[0].t)}</small></button>`}).join('')}</div>`;
+  }else{
+    const list=ANN.filter(a=>a.c===annTab).sort((a,b)=>b.d.localeCompare(a.d));
+    const years=[...new Set(list.map(a=>a.d.slice(0,4)))];
+    const shown=list.filter(a=>annYear==='all'||a.d.startsWith(annYear));
+    body=`<div class="ann-years"><button class="ann-y ${annYear==='all'?'on':''}" data-ann-year="all">全部</button>${years.map(y=>`<button class="ann-y ${annYear===y?'on':''}" data-ann-year="${y}">${y}</button>`).join('')}</div>
+    <div class="ann-list">${shown.map(a=>`<article class="ann-card"><div class="ann-date">${a.d}</div><div class="ann-main"><h3>${esc(a.t)}</h3><div class="ann-meta"><span>👥 ${esc(a.who)}</span><span>💵 ${esc(a.amt)}</span></div>${a.s?`<p>${esc(a.s)}</p>`:''}${a.ph.length?`<div class="ann-ph">${a.ph.map(p=>`<img loading="lazy" src="assets/annual/${p}.jpg" alt="${esc(a.t)}" data-ann-img>`).join('')}</div>`:''}</div></article>`).join('')||emptyState()}</div>`;
+    if(annTab==='donate')body+=`<div class="ann-gal"><h4>歷年 Pagoda 參拜照片（取自 email，年份未逐張標註）</h4><div class="ann-ph">${['pagoda_004','pagoda_005','pagoda_010','pagoda_015','pagoda_017','pagoda_020','pagoda_023','pagoda_025'].map(p=>`<img loading="lazy" src="assets/annual/${p}.jpg" alt="Pagoda" data-ann-img>`).join('')}</div></div>`;
+  }
+  return `${title(T('總務年度活動','GA yearly activities','សកម្មភាពប្រចាំឆ្នាំ'),T('每年固定要辦的事：捐贈祈福、長假安排、節日聚餐、消防演習。資料整理自 2019–2026 email。','What GA runs every year, compiled from 2019–2026 emails.','សកម្មភាពប្រចាំឆ្នាំរបស់ GA'))}${tabs}${body}
+  <div class="ann-foot">${T('相關：','Related: ','')}<a href="https://saintdou-weng.github.io/ac-ga-exp/facility.html" target="_blank" rel="noopener">⚡ 工務設備紀錄（發電機／ATS）</a> · ${T('來源為 Paul 寄台北的 email 主旨與日期；金額為申請額。','Source: Paul’s emails to Taipei; amounts are requested budgets.','')}</div>`;
+}
+document.addEventListener('click',e=>{const tb=e.target.closest('[data-ann-tab]');if(tb){annTab=tb.dataset.annTab;annYear='all';render();window.scrollTo(0,0);return;}const y=e.target.closest('[data-ann-year]');if(y){annYear=y.dataset.annYear;render();return;}const im=e.target.closest('[data-ann-img]');if(im){openDialog(`<div class="dialog-head"><div><h2>${esc(im.alt)}</h2></div>${closeButton()}</div><div class="dialog-body"><img src="${im.src}" style="width:100%;border-radius:10px"></div>`);}});
 function content(){
   if(state.workspace)return workspacePage();
   if(state.route==='overview')return overview();
@@ -1933,6 +2042,7 @@ function content(){
   if(state.route==='reports')return reportsPage();
   if(state.route==='sources')return sourcesPage();
   if(state.route==='architecture')return architecturePage();
+  if(state.route==='annual')return annualPage();
   return modulesPage();
 }
 let mountedWorkspace=null;
